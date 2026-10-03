@@ -1,0 +1,17 @@
+{
+  "name": "Employeetrade CRM",
+  "short_name": "ET CRM",
+  "description": "CRM на Employeetrade.eu – работодатели, кандидати, задачи / İşverenler, adaylar, görevler",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "bg",
+  "background_color": "#0d2b50",
+  "theme_color": "#0d2b50",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
