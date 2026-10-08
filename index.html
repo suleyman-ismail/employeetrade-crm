@@ -156,11 +156,11 @@ input,textarea,.notes{-webkit-user-select:text;user-select:text}
 <div id="toast"></div><div id="prog"><div id="progT"></div><div class="pb"><i id="progB"></i></div></div>
 <script>
 var API_URL = 'https://script.google.com/macros/s/AKfycbw0FRgMaF2-h8xpuQqG92n4kL_uisbbduWT7FxWgJePem5aWlWkb4DvAKIhaGRrLr5VTw/exec';
-var APP_VER = '1.0';
+var APP_VER = '1.1';
 function ls(k, v){ try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }
 
 // ================= 🇧🇬 / 🇹🇷 ЕЗИК =================
-var LANG = ls('crm_lang') === 'tr' ? 'tr' : 'bg';
+var LANG = ls('et_lang') === 'tr' ? 'tr' : 'bg';
 var I = {
  bg: { tabT:'📋 Задачи', tabC:'🏢 Работодатели', tabR:'📊 Отчет', mine:'👤 Мои', all:'👥 Всички', off:'📴 Няма интернет – показани са последните данни', loading:'Зареждане…',
   pin:'Въведи своя PIN', checking:'Проверка…', hello:'Здравей, {n}! 👋', today:'Днес', overdue:'Просрочено', who:'Кой си?', refreshed:'Обновено',
@@ -236,7 +236,7 @@ var TRX = { 'Планирана':'Planlı', 'Изпълнена':'Tamamlandı', 
 var MONS = { bg:['яну','фев','мар','апр','май','юни','юли','авг','сеп','окт','ное','дек'], tr:['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'] };
 function t(k, p){ var s = (I[LANG][k] != null ? I[LANG][k] : I.bg[k]) || k; if (p) for (var x in p) s = s.split('{' + x + '}').join(p[x]); return s; }
 function tv(x){ if (LANG !== 'tr' || !x) return x || ''; return (D && D.tr && D.tr[x]) || TRX[x] || x; }
-function toggleLang(){ LANG = LANG === 'tr' ? 'bg' : 'tr'; ls('crm_lang', LANG); applyLang(); if (D) { render(D); if (CUR && el('card').style.display === 'block') drawCard(); } closeSheet(); }
+function toggleLang(){ LANG = LANG === 'tr' ? 'bg' : 'tr'; ls('et_lang', LANG); applyLang(); if (D) { render(D); if (CUR && el('card').style.display === 'block') drawCard(); } closeSheet(); }
 function applyLang(){
   document.documentElement.lang = LANG;
   el('lgB').textContent = LANG === 'tr' ? 'BG' : 'TR'; el('lgL').textContent = el('lgB').textContent;
@@ -246,7 +246,7 @@ function applyLang(){
 }
 
 // ================= API =================
-var TOKEN = ls('crm_token') || '';
+var TOKEN = ls('et_token') || '';
 function apiCall(fn, args, extra){
   var body = { fn: fn, args: args || [], token: TOKEN, lang: LANG };
   if (extra) for (var k in extra) body[k] = extra[k];
@@ -272,11 +272,11 @@ function api(fn, args){ syncOn(1); return apiCall(fn, args).then(function(r){ sy
 var SYNC = 0;
 function syncOn(n){ SYNC = Math.max(0, SYNC + n); var e = el('sync'); if (e) e.className = SYNC ? 'on' : ''; }
 var D = null, CUR = null, CAND = null, TAB = 't', SEG = 'm', Q = '', OPEN = {};
-try { OPEN = JSON.parse(localStorage.getItem('crm_open') || '{}') || {}; } catch (e) {}
+try { OPEN = JSON.parse(localStorage.getItem('et_open') || '{}') || {}; } catch (e) {}
 var STC = {'Ново запитване':['#dbeafe','#1d4ed8'],'Осъществен контакт':['#e0e7ff','#4338ca'],'Изпратена оферта':['#fef3c7','#b45309'],
   'Подписан договор':['#ede9fe','#6d28d9'],'Изпратени кандидати':['#cffafe','#0063b5'],'Интервю / подбор':['#ffedd5','#c2410c'],
   'Документи / виза':['#fce7f3','#be185d'],'Работниците започнаха':['#dcfce7','#15803d'],'Активен клиент':['#bbf7d0','#166534'],'Загубен':['#f3f4f6','#6b7280']};
-try { TAB = localStorage.getItem('crm_tab') || 't'; SEG = localStorage.getItem('crm_seg') || 'm'; } catch (e) {}
+try { TAB = localStorage.getItem('et_tab') || 't'; SEG = localStorage.getItem('et_seg') || 'm'; } catch (e) {}
 function el(id){ return document.getElementById(id); }
 function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
 // value = български (както в таблицата), текст = преведен
@@ -292,13 +292,13 @@ function err(e){ busy(false); progOff(); toast(t('err') + (e && e.message ? e.me
 function localToday(){ var n = new Date(); return n.getFullYear() + '-' + ('0' + (n.getMonth() + 1)).slice(-2) + '-' + ('0' + n.getDate()).slice(-2); }
 function load(manual){
   if (!TOKEN) return;
-  google.script.run.withSuccessHandler(function(d){ el('off').style.display = 'none'; ls('crm_data', JSON.stringify(d)); render(d); if (manual) toast(t('refreshed')); })
+  google.script.run.withSuccessHandler(function(d){ el('off').style.display = 'none'; ls('et_data', JSON.stringify(d)); render(d); if (manual) toast(t('refreshed')); })
     .withFailureHandler(function(e){ busy(false); if (e.offline && D) el('off').style.display = 'block'; else toast(t('err') + e.message, 4500); }).getAppData();
 }
 function boot(){
   applyLang();
   if (!TOKEN) { showLogin(); return; }
-  var c = ls('crm_data');
+  var c = ls('et_data');
   if (c) { try { var d = JSON.parse(c); d.today = localToday(); render(d); } catch (e) {} }
   load();
 }
@@ -318,8 +318,8 @@ function render(d){
   draw();
   if (!NEWS_DONE && d.news && el('sheet').style.display !== 'block' && el('login').style.display !== 'flex') { NEWS_DONE = true; setTimeout(function(){ showNews(false); }, 600); }
 }
-function tab(x){ TAB = x; try { localStorage.setItem('crm_tab', x); } catch (e) {} draw(); window.scrollTo(0, 0); }
-function seg(s){ SEG = s; try { localStorage.setItem('crm_seg', s); } catch (e) {} draw(); }
+function tab(x){ TAB = x; try { localStorage.setItem('et_tab', x); } catch (e) {} draw(); window.scrollTo(0, 0); }
+function seg(s){ SEG = s; try { localStorage.setItem('et_seg', s); } catch (e) {} draw(); }
 function draw(){
   if (!D) return;
   var ae = document.activeElement, fq = !!(ae && ae.id === 'q'), pos = fq ? ae.selectionStart : 0;
@@ -479,13 +479,13 @@ var NEWS_DONE = false;
 function verCmp(a, b){ var x = String(a).split('.'), y = String(b).split('.'); for (var i = 0; i < 3; i++) { var d = (+x[i] || 0) - (+y[i] || 0); if (d) return d; } return 0; }
 function showNews(all){
   if (!D || !D.news || !D.ver) return;
-  var seen = ls('crm_seen') || '1.0';
+  var seen = ls('et_seen') || '1.0';
   var a = all ? D.news.slice(0, 5) : D.news.filter(function(n){ return verCmp(n[0], seen) > 0; });
   if (!a.length) return;
   openSheet(t('news'), a.map(function(n){ return '<div class="nw"><b>v' + esc(n[0]) + ' · ' + fmt(n[1]) + '</b><div>' + esc(n[2]) + '</div></div>'; }).join('') +
     '<button class="save" onclick="newsOk()">' + t('gotIt') + '</button>');
 }
-function newsOk(){ ls('crm_seen', D.ver); closeSheet(); }
+function newsOk(){ ls('et_seen', D.ver); closeSheet(); }
 function meMenu(){
   openSheet('👤 ' + (D && D.me ? D.me : ''), '<div class="who"><p style="font-size:15px;color:#334155">' + t('loggedAs') + ' <b>' + esc(D && D.me || '') + '</b>.</p>' +
     '<button onclick="toggleLang()">' + t('langBtn') + '</button><button onclick="showNews(true)">' + t('news') + '</button><button onclick="load(true);closeSheet()">' + t('refresh') + '</button><button onclick="logout()">' + t('logout') + '</button></div>');
@@ -499,10 +499,10 @@ function pinK(n){
   if (PIN.length < 6) return;
   el('lerr').textContent = t('checking');
   apiCall('login', [], { pin: PIN }).then(function(r){
-    TOKEN = r.token; ls('crm_token', TOKEN); el('login').style.display = 'none'; SEG = 'm'; toast(t('hello', { n: r.rep })); boot();
+    TOKEN = r.token; ls('et_token', TOKEN); el('login').style.display = 'none'; SEG = 'm'; toast(t('hello', { n: r.rep })); boot();
   }, function(e){ PIN = ''; dots(); el('lerr').textContent = e.message; });
 }
-function logout(){ TOKEN = ''; ls('crm_token', null); ls('crm_data', null); D = null; closeSheet(); closeCard(); el('main').innerHTML = ''; showLogin(); }
+function logout(){ TOKEN = ''; ls('et_token', null); ls('et_data', null); D = null; closeSheet(); closeCard(); el('main').innerHTML = ''; showLogin(); }
 
 // ---------- Формуляри ----------
 function openSheet(ti, h){ el('shT').textContent = ti; el('shB').innerHTML = h; el('sheet').style.display = 'block'; el('sheet').scrollTop = 0; }
@@ -590,7 +590,7 @@ function sendDone(e){
   var p = { note: d.note, stage: d.stage, next: nx ? { type: d.ntype, date: d.ndate, time: d.ntime, remind: d.nremind } : null };
   closeSheet(); D.tasks = D.tasks.filter(function(y){ return y.row !== x.row; }); render(D); toast(t('rec'));
   google.script.run.withSuccessHandler(function(r){
-    ls('crm_data', JSON.stringify(r)); render(r); toast(nx ? t('doneNext') : t('doneOnly'));
+    ls('et_data', JSON.stringify(r)); render(r); toast(nx ? t('doneNext') : t('doneOnly'));
     if (CUR && el('card').style.display === 'block' && CUR.name === x.client) openC(x.client);
   }).withFailureHandler(function(er){ err(er); load(); }).completeTask(x.row, x.client, p);
   return false;
@@ -603,7 +603,7 @@ function openC(n){
 }
 function refreshCard(){ if (!CUR) return; var n = CUR.name; google.script.run.withSuccessHandler(function(c){ if (CUR && CUR.name === n) { CUR = c; drawCard(); } }).withFailureHandler(function(){}).getClient(n); }
 function closeCard(){ el('card').style.display = 'none'; CUR = null; }
-function secT(d){ OPEN[d.getAttribute('data-k')] = d.open; try { localStorage.setItem('crm_open', JSON.stringify(OPEN)); } catch (e) {} }
+function secT(d){ OPEN[d.getAttribute('data-k')] = d.open; try { localStorage.setItem('et_open', JSON.stringify(OPEN)); } catch (e) {} }
 function fold(k, title, sum, inner){
   return '<details class="sec" data-k="' + k + '" ontoggle="secT(this)"' + (OPEN[k] ? ' open' : '') + '><summary>' + title +
     '<span class="sm">' + (sum || '') + '</span></summary><div class="in">' + inner + '</div></details>';
@@ -711,7 +711,7 @@ function sendLaw(e){
 // ---------- 👷 Кандидати ----------
 function newCand(){
   var n = prompt(t('candPrompt')); n = String(n || '').trim(); if (!n) return;
-  cardBusy(true); OPEN.cands = true; try { localStorage.setItem('crm_open', JSON.stringify(OPEN)); } catch (e) {}
+  cardBusy(true); OPEN.cands = true; try { localStorage.setItem('et_open', JSON.stringify(OPEN)); } catch (e) {}
   google.script.run.withSuccessHandler(function(c){ CUR = c; cardBusy(false); drawCard(); toast(t('candAdded', { n: n })); openCand(n); load(); })
     .withFailureHandler(cardErr).addCandidate(CUR.name, n);
 }
@@ -765,7 +765,7 @@ function upload(fs, mode, cand){
   var finish = function(){
     progOff(); if (nOk) toast(t('upd', { n: nOk }));
     if (cand) { if (CAND && CAND.name === cand) openCand(cand); refreshCard(); }
-    else { if (mode === 'photo') OPEN.photos = true; else OPEN.files = true; try { localStorage.setItem('crm_open', JSON.stringify(OPEN)); } catch (e) {} refreshCard(); }
+    else { if (mode === 'photo') OPEN.photos = true; else OPEN.files = true; try { localStorage.setItem('et_open', JSON.stringify(OPEN)); } catch (e) {} refreshCard(); }
   };
   var nextF = function(){
     if (i >= fs.length) { finish(); return; }
