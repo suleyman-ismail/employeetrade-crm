@@ -142,12 +142,39 @@ input,textarea,.notes{-webkit-user-select:text;user-select:text}
 #prog{position:fixed;left:16px;right:16px;bottom:calc(20px + env(safe-area-inset-bottom));background:#0f172a;color:#fff;padding:12px 14px;border-radius:12px;display:none;z-index:21;font-size:14px}
 #prog .pb{height:6px;background:rgba(255,255,255,.2);border-radius:3px;margin-top:8px;overflow:hidden}#prog .pb i{display:block;height:100%;width:0;background:#38bdf8;transition:width .2s}
 .vl{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #f1f5f9;color:#0f172a;text-decoration:none}
+.tabs button{min-width:0;font-size:11.5px!important;padding:6px 1px 7px!important;display:flex;flex-direction:column;align-items:center;gap:1px;white-space:nowrap}
+.tabs button i{font-style:normal;font-size:18px;line-height:1.15}
+.kr{display:flex;align-items:center;gap:10px;padding:11px 14px;border-top:1px solid #f1f5f9;cursor:pointer}.kls>.kr:first-child{border-top:0}
+.kr .av{width:36px;height:36px;border-radius:50%;background:#e0f2fe;display:flex;align-items:center;justify-content:center;font-size:18px;flex:none}
+.kr .cx{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}.kr .cx b{font-size:15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.kr .cx small{font-size:12.5px;color:#64748b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kr .ar{color:#94a3b8;font-size:22px}
+.dl{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid #f1f5f9;font-size:14px}.dl span:first-child{flex:1;color:#334155}.dl b{font-size:14px}
+.db{font-size:11.5px;font-weight:800;border-radius:9px;padding:2px 8px;background:#f1f5f9;color:#64748b;white-space:nowrap}.db.x{background:#fee2e2;color:#b91c1c}.db.w{background:#ffedd5;color:#c2410c}.db.ok{background:#dcfce7;color:#15803d}
+.ord{background:#fff;margin:0 16px 10px;border-radius:12px;padding:12px 14px;box-shadow:0 1px 3px rgba(0,0,0,.08);border-left:5px solid #0063b5}
+.ord.over{border-left-color:#ef4444}.ord.today{border-left-color:#f97316}.ord.no{border-left-color:#f59e0b}
+.ord .sh{display:flex;align-items:center;gap:8px;cursor:pointer}.ord .sh b{font-size:16.5px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ord .sh .ar{color:#94a3b8;font-size:22px}
+.og{display:flex;gap:8px;margin-top:10px}.og>div{flex:1;background:#f8fafc;border-radius:10px;padding:7px 10px}.og small{display:block;font-size:11px;color:#64748b;font-weight:700;text-transform:uppercase}.og b{font-size:18px}.og .ow b{color:#b45309}
+.mb{height:7px;border-radius:4px;background:#e2e8f0;margin-top:10px;overflow:hidden}.mb div{height:100%;background:#22c55e;border-radius:4px}
+.mg{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12.5px;color:#475569;margin-top:7px}.mg b{color:#0f172a}
+.nxt.late{color:#dc2626}
+.wab{display:block;width:100%;text-align:left;border:1px solid #cbd5e1;background:#fff;border-radius:12px;padding:12px;margin:8px 0;font-family:inherit}.wab b{display:block;font-size:15px;color:#0f172a}.wab small{display:block;color:#64748b;font-size:12.5px;margin-top:3px}
+.sws{margin-top:8px}.sw{display:flex;align-items:flex-start;gap:12px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:12px;margin:8px 0;font-weight:400}
+.sw input{width:24px;height:24px;flex:none;margin:1px 0 0;accent-color:#0063b5}.sw span{display:flex;flex-direction:column;gap:2px}.sw b{font-size:15.5px;color:#0f172a}.sw small{font-size:12.5px;color:#64748b;font-weight:400}
+.pinbig{font-size:46px;font-weight:800;letter-spacing:8px;margin:18px 0 10px;color:#0f172a}
+.pask{background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;margin:12px 16px 0;padding:12px 14px;display:flex;flex-direction:column;gap:3px}.pask b{font-size:15px;color:#155e75}.pask span{font-size:13px;color:#334155}
+.wf{padding:0 16px 10px}.wf button{padding:6px 10px;font-size:12.5px}
+[data-lp]{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+#lpm{position:fixed;inset:0;z-index:16;background:rgba(15,23,42,.45);display:none;align-items:flex-end}
+#lpm .bx{background:#fff;width:100%;border-radius:18px 18px 0 0;padding:14px 14px calc(14px + env(safe-area-inset-bottom));max-height:82vh;overflow:auto}
+#lpm h4{margin:2px 4px 10px;font-size:15px;color:#475569;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#lpm button{display:block;width:100%;text-align:left;border:0;background:#f1f5f9;border-radius:12px;padding:15px 16px;margin:0 0 8px;font-size:16.5px;font-family:inherit;color:#0f172a}
+#lpm button.dg{background:#fee2e2;color:#b91c1c;font-weight:700}#lpm button.cx{background:none;text-align:center;color:#64748b;margin:0}
 </style></head><body>
 <div class="hd"><header><div><h1><img src="icon-192.png" alt="">ET CRM</h1><div class="d" id="dt"></div></div><div class="hr"><button class="lg" id="lgB" onclick="toggleLang()">TR</button><button class="me" id="meB" onclick="meMenu()">👤</button><button onclick="load(true)" id="rfB">⟳</button></div></header>
-<div id="sync"></div><nav class="tabs"><button id="tb_t" onclick="tab('t')"></button><button id="tb_c" onclick="tab('c')"></button><button id="tb_r" onclick="tab('r')"></button></nav></div>
+<div id="sync"></div><nav class="tabs"><button id="tb_t" onclick="tab('t')"></button><button id="tb_o" onclick="tab('o')"></button><button id="tb_c" onclick="tab('c')"></button><button id="tb_k" onclick="tab('k')"></button><button id="tb_r" onclick="tab('r')"></button></nav></div>
 <div class="seg" id="seg"><button id="sg_m" onclick="seg('m')"></button><button id="sg_a" onclick="seg('a')"></button></div>
 <div id="off"></div><div id="main"><div class="load" id="ld0"></div></div>
-<div id="card" class="sheet"><div class="top"><button onclick="closeCard()">←</button><b id="cdT"></b></div><div id="cdB"></div></div>
+<div id="lpm" onclick="if(event.target===this)lpClose()"><div class="bx" id="lpmB"></div></div><div id="card" class="sheet"><div class="top"><button onclick="closeCard()">←</button><b id="cdT"></b></div><div id="cdB"></div></div>
 <div id="sheet" class="sheet"><div class="top"><b id="shT"></b><button onclick="closeSheet()">✕</button></div><div id="shB"></div></div>
 <div id="pv"><button class="c" onclick="closePv()">✕</button><div class="l" id="pvL"></div><img id="pvI" alt=""></div>
 <div id="login"><button class="lgl" id="lgL" onclick="toggleLang()">TR</button><div class="logo"><img src="icon-192.png" alt=""></div><h1>Employeetrade CRM</h1><p id="lgP"></p>
@@ -156,7 +183,7 @@ input,textarea,.notes{-webkit-user-select:text;user-select:text}
 <div id="toast"></div><div id="prog"><div id="progT"></div><div class="pb"><i id="progB"></i></div></div>
 <script>
 var API_URL = 'https://script.google.com/macros/s/AKfycbw0FRgMaF2-h8xpuQqG92n4kL_uisbbduWT7FxWgJePem5aWlWkb4DvAKIhaGRrLr5VTw/exec';
-var APP_VER = '1.1';
+var APP_VER = '2.0';
 function ls(k, v){ try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }
 
 // ================= 🇧🇬 / 🇹🇷 ЕЗИК =================
@@ -240,7 +267,7 @@ function toggleLang(){ LANG = LANG === 'tr' ? 'bg' : 'tr'; ls('et_lang', LANG); 
 function applyLang(){
   document.documentElement.lang = LANG;
   el('lgB').textContent = LANG === 'tr' ? 'BG' : 'TR'; el('lgL').textContent = el('lgB').textContent;
-  el('tb_t').textContent = t('tabT'); el('tb_c').textContent = t('tabC'); el('tb_r').textContent = t('tabR');
+  [['t', 'tabT'], ['o', 'tabO'], ['c', 'tabC'], ['k', 'tabK'], ['r', 'tabR']].forEach(function(x){ var s = t(x[1]), i = s.indexOf(' '); el('tb_' + x[0]).innerHTML = '<i>' + s.slice(0, i) + '</i>' + esc(s.slice(i + 1)); });
   el('sg_m').textContent = t('mine'); el('sg_a').textContent = t('all'); el('off').textContent = t('off');
   el('lgP').textContent = t('pin'); if (el('ld0')) el('ld0').textContent = t('loading');
 }
@@ -298,6 +325,7 @@ function load(manual){
 function boot(){
   applyLang();
   if (!TOKEN) { showLogin(); return; }
+  keepTok(TOKEN);
   var c = ls('et_data');
   if (c) { try { var d = JSON.parse(c); d.today = localToday(); render(d); } catch (e) {} }
   load();
@@ -317,16 +345,18 @@ function render(d){
   el('seg').style.display = d.me && d.reps && d.reps.length > 1 ? 'flex' : 'none';
   draw();
   if (!NEWS_DONE && d.news && el('sheet').style.display !== 'block' && el('login').style.display !== 'flex') { NEWS_DONE = true; setTimeout(function(){ showNews(false); }, 600); }
+  pendOpen();
 }
 function tab(x){ TAB = x; try { localStorage.setItem('et_tab', x); } catch (e) {} draw(); window.scrollTo(0, 0); }
 function seg(s){ SEG = s; try { localStorage.setItem('et_seg', s); } catch (e) {} draw(); }
 function draw(){
   if (!D) return;
   var ae = document.activeElement, fq = !!(ae && ae.id === 'q'), pos = fq ? ae.selectionStart : 0;
+  if (TAB === 'k' && ae && ae.id === 'kq') { listK(); return; }
   setTimeout(function(){ var q = el('q'); if (fq && q && document.activeElement !== q) { q.focus(); try { q.setSelectionRange(pos, pos); } catch (e) {} } }, 0);
-  ['t','c','r'].forEach(function(k){ el('tb_' + k).className = TAB === k ? 'on' : ''; });
+  ['t','o','c','k','r'].forEach(function(k){ el('tb_' + k).className = TAB === k ? 'on' : ''; });
   el('sg_m').className = SEG === 'm' ? 'on' : ''; el('sg_a').className = SEG === 'a' ? 'on' : '';
-  if (TAB === 'c') drawClients(); else if (TAB === 'r') drawReport(); else drawTasks();
+  if (TAB === 'c') drawClients(); else if (TAB === 'o') drawOrders(); else if (TAB === 'k') drawCands(); else if (TAB === 'r') drawReport(); else drawTasks();
 }
 
 // ---------- 📋 Задачи ----------
@@ -361,7 +391,7 @@ var OPENT = null;
 function togT(row){ OPENT = OPENT === row ? null : row; drawTasks(); }
 function taskCard(x){
   var r = rel(x.date), op = OPENT === x.row;
-  var h = '<div class="ti ' + r + (op ? ' op' : '') + '"><div class="tr" onclick="togT(' + x.row + ')"><span class="dt"></span><span class="tx"><b>' + esc(x.client) + '</b>' +
+  var h = '<div class="ti ' + r + (op ? ' op' : '') + '"><div class="tr" data-lp="t" data-row="' + x.row + '" onclick="togT(' + x.row + ')"><span class="dt"></span><span class="tx"><b>' + esc(x.client) + '</b>' +
     '<small>' + esc(whenTxt(x.date, x.time)) + ' · ' + esc(tv(x.type)) + (SEG === 'a' && x.rep ? ' · 👤 ' + esc(x.rep) : '') + '</small></span><span class="ar">›</span></div>';
   if (!op) return h + '</div>';
   var sub = [x.desc, x.city].filter(Boolean).join(' · ');
@@ -374,11 +404,11 @@ function noTask(){ return D.clients.filter(function(c){ return !c.nx && D.closed
 function drawTasks(){
   var ts = D.tasks.filter(function(x){ return mine(x.rep); });
   var now = ts.filter(function(x){ return x.date <= D.today; }), next = ts.filter(function(x){ return x.date > D.today; }), free = noTask(), st = stale(); free = free.filter(function(c){ return st.indexOf(c) < 0; });
-  el('main').innerHTML = srchBox() + '<div id="qres"></div><div id="tbody"><div class="big"><button onclick="openForm()">' + t('newTask') + '</button></div>' +
-    sec(t('secToday'), now.length, '<div class="lst">' + now.map(taskCard).join('') + '</div>', t('noToday')) + staleSec() +
+  el('main').innerHTML = srchBox() + '<div id="qres"></div><div id="tbody"><div id="pushAsk"></div><div class="big"><button onclick="openForm()">' + t('newTask') + '</button></div>' +
+    sec(t('secToday'), now.length, '<div class="lst">' + now.map(taskCard).join('') + '</div>', t('noToday')) + expSec() + clubSec() + staleSec() +
     sec(t('next7'), next.length, '<div class="lst">' + next.map(taskCard).join('') + '</div>', t('noNext')) +
     sec(t('noTaskSec'), free.length, rows(free), t('allHave')) + '</div>';
-  onQ();
+  onQ(); pushAskDraw();
 }
 function snooze(row, days){
   var x = taskBy(row); x.date = addD(days); x.time = x.time || ''; render(D);
@@ -428,7 +458,7 @@ function findC(q){
 }
 function clientRow(c){
   var col = (STC[c.s] || ['#e2e8f0', '#94a3b8'])[1];
-  return '<div class="lr" data-n="' + esc(c.n) + '" onclick="openC(this.dataset.n)" title="' + esc(tv(c.s)) + '"><span class="dt" style="background:' + col + '"></span>' +
+  return '<div class="lr" data-lp="c" data-n="' + esc(c.n) + '" onclick="openC(this.dataset.n)" title="' + esc(tv(c.s)) + '"><span class="dt" style="background:' + col + '"></span>' +
     '<span class="nm">' + esc(c.n) + '</span><span class="ar">›</span></div>';
 }
 function rows(a){ return '<div class="lst">' + a.map(clientRow).join('') + '</div>'; }
@@ -464,7 +494,9 @@ function drawReport(){
   var k = function(l, v, col){ return '<div class="kpi"><div class="l">' + l + '</div><div class="v" style="color:' + col + '">' + v + '</div></div>'; };
   var h = '<div class="kpis">' + k(t('kAct'), open.length, '#0d2b50') + k(t('kWork'), sumW(open), '#0063b5') +
     k(t('kToday'), ts.filter(function(x){ return x.date === D.today; }).length, '#c2410c') + k(t('kLate'), ts.filter(function(x){ return x.date < D.today; }).length, '#b91c1c') +
-    k(t('kNew'), neu.length, '#1d4ed8') + k(t('kWon'), won.length, '#15803d') + '</div>';
+    k(t('kNew'), neu.length, '#1d4ed8') + k(t('kWon'), won.length, '#15803d');
+  var kc = (D.cands || []).filter(kMine), ka = kc.filter(function(x){ return !kOut(x.st); });
+  h += k(t('kgActive'), ka.length, '#0063b5') + k(t('kgWork'), kc.filter(function(x){ return x.st === 'Работи'; }).length, '#166534') + k(t('kgDocs'), ka.filter(function(x){ return kWarn(x); }).length, '#b91c1c') + '</div>';
   var st = D.stages.slice(); cs.forEach(function(c){ if (c.s && st.indexOf(c.s) < 0) st.push(c.s); });
   var rws = st.map(function(s){ var a = cs.filter(function(c){ return c.s === s; }); return { s: s, n: a.length, w: sumW(a) }; });
   var mx = Math.max.apply(null, rws.map(function(r){ return r.n; }).concat([1]));
@@ -488,7 +520,9 @@ function showNews(all){
 function newsOk(){ ls('et_seen', D.ver); closeSheet(); }
 function meMenu(){
   openSheet('👤 ' + (D && D.me ? D.me : ''), '<div class="who"><p style="font-size:15px;color:#334155">' + t('loggedAs') + ' <b>' + esc(D && D.me || '') + '</b>.</p>' +
+    '<button id="pushB" onclick="closeSheet();pushOn()">' + t('pushOn') + '</button>' + (isAdm() ? '<button onclick="admOpen()">' + t('adm') + '</button>' : '') +
     '<button onclick="toggleLang()">' + t('langBtn') + '</button><button onclick="showNews(true)">' + t('news') + '</button><button onclick="load(true);closeSheet()">' + t('refresh') + '</button><button onclick="logout()">' + t('logout') + '</button></div>');
+  pushBtn();
 }
 var PIN = '';
 function showLogin(){ PIN = ''; dots(); el('lerr').textContent = ''; el('login').style.display = 'flex'; }
@@ -499,10 +533,10 @@ function pinK(n){
   if (PIN.length < 6) return;
   el('lerr').textContent = t('checking');
   apiCall('login', [], { pin: PIN }).then(function(r){
-    TOKEN = r.token; ls('et_token', TOKEN); el('login').style.display = 'none'; SEG = 'm'; toast(t('hello', { n: r.rep })); boot();
+    TOKEN = r.token; ls('et_token', TOKEN); keepTok(TOKEN); el('login').style.display = 'none'; SEG = 'm'; toast(t('hello', { n: r.rep })); boot();
   }, function(e){ PIN = ''; dots(); el('lerr').textContent = e.message; });
 }
-function logout(){ TOKEN = ''; ls('et_token', null); ls('et_data', null); D = null; closeSheet(); closeCard(); el('main').innerHTML = ''; showLogin(); }
+function logout(){ try { navigator.serviceWorker.ready.then(function(r){ return r.pushManager.getSubscription(); }).then(function(x){ if (x) x.unsubscribe(); }).catch(function(){}); } catch (e) {} keepTok(''); TOKEN = ''; ls('et_token', null); ls('et_data', null); D = null; closeSheet(); closeCard(); el('main').innerHTML = ''; showLogin(); }
 
 // ---------- Формуляри ----------
 function openSheet(ti, h){ el('shT').textContent = ti; el('shB').innerHTML = h; el('sheet').style.display = 'block'; el('sheet').scrollTop = 0; }
@@ -597,9 +631,9 @@ function sendDone(e){
 }
 
 // ---------- 🏢 Карта на работодателя ----------
-function openC(n){
+function openC(n, cb){
   el('cdT').textContent = n; el('cdB').innerHTML = '<div class="load">' + t('loading') + '</div>'; el('card').style.display = 'block'; el('card').scrollTop = 0;
-  google.script.run.withSuccessHandler(function(c){ CUR = c; drawCard(); }).withFailureHandler(function(e){ closeCard(); err(e); }).getClient(n);
+  google.script.run.withSuccessHandler(function(c){ CUR = c; drawCard(); if (typeof cb === 'function') cb(); }).withFailureHandler(function(e){ closeCard(); err(e); }).getClient(n);
 }
 function refreshCard(){ if (!CUR) return; var n = CUR.name; google.script.run.withSuccessHandler(function(c){ if (CUR && CUR.name === n) { CUR = c; drawCard(); } }).withFailureHandler(function(){}).getClient(n); }
 function closeCard(){ el('card').style.display = 'none'; CUR = null; }
@@ -620,26 +654,26 @@ function drawCard(){
   // Винаги видимо: етап, следваща задача и бързи бутони
   h += '<div class="box hero"><div class="t">' + esc(c.name) + ' ' + pill(c.stage) + '</div>' +
     '<div class="s">' + [esc(c.contact), esc(c.city), c.workers ? '👷 ' + esc(c.workers) + ' ' + t('workers') : '', c.rep ? '👤 ' + esc(c.rep) : ''].filter(Boolean).join(' · ') + '</div>' +
+    (c.club ? '<div class="s" style="color:#b45309;font-weight:700">💳 ' + esc(c.club) + (c.clubTo ? ' · ' + esc(t('clubTxt', { d: fmt(c.clubTo) })) : '') + '</div>' : '') +
     (nx ? '<div class="nxt">📅 ' + fmt(nx.date) + (nx.time ? ' · ' + esc(nx.time) : '') + ' – ' + esc(tv(nx.type)) + (nx.remind ? ': ' + esc(nx.remind) : '') + '</div>'
         : '<div class="nxt no">' + t('noPlan') + '</div>') + staleLine(c) +
     '<div class="acts">' + tel(c.phone) + (c.email ? '<a href="mailto:' + esc(c.email) + '">✉️</a>' : '') + '</div>' +
     '<div class="acts"><button class="ok" data-n="' + esc(c.name) + '" onclick="openForm(this.dataset.n)">' + t('addTask') + '</button>' +
-    '<button onclick="newCand()">' + t('addCand') + '</button>' + upLabel(t('doc'), '', 'doc', '') + '</div></div>';
+    '<button data-n="' + esc(c.name) + '" onclick="kForm({emp:this.dataset.n})">' + t('addCand') + '</button><button onclick="slShare()">' + t('slBtn') + '</button>' + (c.phone ? '<button onclick="waPick(\'e\')">' + t('waBtn') + '</button>' : '') +
+    '<button data-n="' + esc(c.name) + '" onclick="lpShow(\'🏢 \' + this.dataset.n, cMenu(this.dataset.n).slice(1))">' + t('more') + '</button></div></div>';
   // ⚖️ Адвокат – винаги видим
   h += '<div class="box law"><div class="lb">' + t('lawyer') + '</div>' + (c.lawyer || c.lawPhone
     ? '<div class="t">' + esc(c.lawyer || '—') + '</div>' + (c.lawPhone ? '<div class="s">📞 ' + esc(c.lawPhone) + '</div>' : '') +
       '<div class="acts">' + tel(c.lawPhone) + '<button onclick="editLaw()">✏️</button></div>'
     : '<div class="s">' + t('noLawyer') + '</div><div class="acts"><button onclick="editLaw()">' + t('addLawyer') + '</button></div>') + '</div>';
   // 👷 Кандидати
-  var cs = c.cands || [];
-  var ch = c.photoErr ? '<div class="s">' + esc(c.photoErr) + '</div>' : (cs.length ? cs.map(function(k){
-    var cnt = [k.ph ? k.ph + ' ' + t(k.ph === 1 ? 'cPh1' : 'cPh') : '', k.vid ? k.vid + ' ' + t('cVid') : '', k.doc ? k.doc + ' ' + t('cDoc') : ''].filter(Boolean).join(' · ') || t('candEmpty');
-    return '<div class="cr" data-n="' + esc(k.name) + '" onclick="openCand(this.dataset.n)"><span class="av">👷</span><span class="cx"><b>' + esc(k.name) + '</b><small><span class="cs s' + csIdx(k.st) + '">' + esc(tv(k.st)) + '</span> ' + esc(cnt) + '</small></span><span class="ar" style="color:#94a3b8;font-size:22px">›</span></div>';
-  }).join('') : '<div class="s">' + t('noCands') + '</div>') + '<div class="acts"><button class="ok" onclick="newCand()">' + t('addCand') + '</button></div>';
-  h += fold('cands', t('sCands') + ' (' + cs.length + ')', '', ch);
+  var cs = (c.cands || []).filter(function(k){ return !kOut(k.st); }), cso = (c.cands || []).filter(function(k){ return kOut(k.st); });
+  var ch = (cs.length || cso.length ? '<div class="lst kls" style="margin:0">' + cs.concat(cso).map(kRow).join('') + '</div>' : '<div class="s">' + t('noCands') + '</div>') +
+    '<div class="acts"><button class="ok" data-n="' + esc(c.name) + '" onclick="kForm({emp:this.dataset.n})">' + t('addCand') + '</button><button onclick="slShare()">' + t('slBtn') + '</button></div>';
+  h += fold('cands', t('sCands') + ' (' + cs.length + (c.workers ? ' / ' + c.workers : '') + ')', '', ch);
   // 👤 Информация
   var info = [['🧑‍💼', c.contact], ['📞', c.phone], ['✉️', c.email], ['🌍', c.city], ['🛠️', tv(c.pos)], ['👷', c.workers ? c.workers + ' ' + t('workers') : ''],
-    ['💶', c.salary ? t('salary') + c.salary : ''], ['🔎', c.src ? t('src') + tv(c.src) : ''], ['👤', c.rep], ['🗓️', c.inq ? t('inq') + fmt(c.inq) : ''], ['☎️', c.last ? t('last') + fmt(c.last) : '']]
+    ['💶', c.salary ? t('salary') + c.salary : ''], ['💳', c.club ? c.club + (c.clubTo ? ' · ' + t('clubTxt', { d: fmt(c.clubTo) }) : '') : ''], ['🔎', c.src ? t('src') + tv(c.src) : ''], ['👤', c.rep], ['🗓️', c.inq ? t('inq') + fmt(c.inq) : ''], ['☎️', c.last ? t('last') + fmt(c.last) : '']]
     .filter(function(r){ return r[1]; }).map(function(r){ return '<div>' + r[0] + ' ' + esc(r[1]) + '</div>'; }).join('');
   h += fold('info', t('sInfo'), esc(c.phone || c.city),
     '<div class="info">' + (info || '<div>—</div>') + '</div><div class="acts"><button onclick="editC()">' + t('edit') + '</button>' + mapB(c.maps) + '<button onclick="locC()">' + t('saveLoc') + '</button></div>');
@@ -647,9 +681,9 @@ function drawCard(){
   h += fold('stage', t('sStage'), pill(c.stage), '<div class="chips">' + D.stages.map(function(s){
     return '<button class="' + (s === c.stage ? 'on' : '') + '" data-s="' + esc(s) + '" onclick="stageC(this.dataset.s)">' + esc(tv(s)) + '</button>'; }).join('') + '</div>');
   // 🕑 История
-  var hist = c.tasks.length ? c.tasks.map(function(x){
+  var hist = c.tasks.length ? c.tasks.map(function(x, hi){
     var p = x.status === 'Планирана', ic = p ? '🔵' : x.status === 'Изпълнена' ? '✅' : '✖️';
-    return '<div class="hist ' + (p ? 'pl' : 'dn') + '"><div class="when">' + ic + ' ' + fmt(x.date) + (x.time ? ' · ' + esc(x.time) : '') + ' · ' + esc(tv(x.status)) + '</div>' +
+    return '<div class="hist ' + (p ? 'pl' : 'dn') + '" data-lp="h" data-i="' + hi + '"><div class="when">' + ic + ' ' + fmt(x.date) + (x.time ? ' · ' + esc(x.time) : '') + ' · ' + esc(tv(x.status)) + '</div>' +
       '<div class="t">' + esc(tv(x.type)) + (x.rep ? ' <span class="s">👤 ' + esc(x.rep) + '</span>' : '') + '</div>' +
       (x.remind ? '<div class="s" style="color:#92400e">🔔 ' + esc(x.remind) + '</div>' : '') + (x.desc ? '<div class="s notes">' + esc(x.desc) + '</div>' : '') + '</div>';
   }).join('') : '<div class="s">' + t('noTasks') + '</div>';
@@ -675,7 +709,7 @@ function fileRow(f, cand){
   return '<div class="fl"><a class="fn" href="' + esc(f.url) + '" target="_blank" rel="noopener"><span class="fi">' + fIcon(f) + '</span><span class="fx"><b>' + esc(f.name) + '</b><small>' +
     [fSize(f.size), f.t ? fmt(dayOf(f.t)) : ''].filter(Boolean).join(' · ') + '</small></span></a>' +
     (isV ? '' : '<button data-id="' + esc(f.id) + '" onclick="dlF(this.dataset.id)">⬇️</button>') +
-    '<button data-id="' + esc(f.id) + '" data-n="' + esc(f.name) + '" data-c="' + esc(cand || '') + '" onclick="delF(this.dataset.id,this.dataset.n,this.dataset.c)">🗑️</button></div>';
+    (canDel() ? '<button data-id="' + esc(f.id) + '" data-n="' + esc(f.name) + '" data-c="' + esc(cand || '') + '" onclick="delF(this.dataset.id,this.dataset.n,this.dataset.c)">🗑️</button>' : '') + '</div>';
 }
 function dayOf(x){ var d = new Date(x); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
 function fSize(b){ b = Number(b) || 0; return b >= 1048576 ? (b / 1048576).toFixed(1).replace('.', ',') + ' MB' : b ? Math.max(1, Math.round(b / 1024)) + ' KB' : ''; }
@@ -753,8 +787,8 @@ function upPick(inp){ var fs = Array.prototype.slice.call(inp.files || []), m = 
 function prog(txt, pct){ el('prog').style.display = 'block'; el('progT').textContent = txt; el('progB').style.width = Math.max(2, Math.min(100, pct || 0)) + '%'; }
 function progOff(){ el('prog').style.display = 'none'; }
 function upload(fs, mode, cand){
-  if (!CUR) return;
-  var emp = CUR.name, i = 0, nOk = 0;
+  if (!CUR && !cand) return;
+  var emp = CUR ? CUR.name : '', i = 0, nOk = 0;
   var big = fs.filter(function(f){ return f.size > MAXMB * 1048576; });
   fs = fs.filter(function(f){ return f.size > 0 && f.size <= MAXMB * 1048576; });
   if (big.length) toast(t('tooBig', { mb: MAXMB }) + big.map(function(f){ return f.name; }).join(', '), 7000);
@@ -764,7 +798,7 @@ function upload(fs, mode, cand){
   var fail = function(e){ progOff(); err(e); finish(); };
   var finish = function(){
     progOff(); if (nOk) toast(t('upd', { n: nOk }));
-    if (cand) { if (CAND && CAND.name === cand) openCand(cand); refreshCard(); }
+    if (cand) { if (KC && KC.id === cand) kOpen(cand); else if (CAND && CAND.name === cand) openCand(cand); if (CUR) refreshCard(); }
     else { if (mode === 'photo') OPEN.photos = true; else OPEN.files = true; try { localStorage.setItem('et_open', JSON.stringify(OPEN)); } catch (e) {} refreshCard(); }
   };
   var nextF = function(){
@@ -810,6 +844,10 @@ function dlF(id){
 }
 function delF(id, name, cand){
   if (!confirm(t('del', { n: name }))) return;
+  if (cand && /^K-/.test(cand)) {
+    google.script.run.withSuccessHandler(function(k){ if (KC && KC.id === cand) { KC = k; kDraw(); } toast(t('deleted') + name); }).withFailureHandler(err).trashFile(id, '', cand);
+    return;
+  }
   if (cand) {
     google.script.run.withSuccessHandler(function(k){ if (CAND && CAND.name === cand) { CAND = k; drawCand(); } toast(t('deleted') + name); refreshCard(); }).withFailureHandler(err).trashFile(id, CUR.name, cand);
     return;
@@ -831,6 +869,7 @@ function editC(){
   h += half(fld(t('fSalary'), '<input name="salary" value="' + esc(c.salary) + '">'), fld(t('fSrc').replace(/ \(.*/, ''), '<select name="src">' + opts(blank(withCur(D.sources, c.src)), c.src) + '</select>'));
   h += fld(t('fRep'), '<select name="rep">' + opts(blank(D.reps), c.rep) + '</select>');
   h += half(fld(t('lawName'), '<input name="lawyer" value="' + esc(c.lawyer) + '">'), fld(t('lawPhone'), '<input name="lawPhone" type="tel" value="' + esc(c.lawPhone) + '">'));
+  h += half(fld(t('club'), '<input name="club" list="clubl" value="' + esc(c.club || '') + '"><datalist id="clubl"><option value="Basic"><option value="Pro"><option value="Premium"></datalist>'), fld(t('clubTo'), '<input type="date" name="clubTo" value="' + esc(c.clubTo || '') + '">'));
   h += fld(t('fNotes'), '<textarea name="notes" rows="6">' + esc(c.notes) + '</textarea>');
   h += '<button class="save" id="sv">' + t('save') + '</button></form>';
   openSheet('✏️ ' + c.name, h);
@@ -872,6 +911,454 @@ function shrink2(file, cb){
   };
   rd.readAsDataURL(file);
 }
+
+// ================= v2.0 =================
+Object.assign(I.bg, { tabO:'📑 Заявки', tabK:'👷 Кандидати', tabT2:'Задачи', tabO2:'Заявки', tabC2:'Работодатели', tabK2:'Кандидати', tabR2:'Отчет',
+  kNew:'➕ Нов кандидат', kQ:'🔎 Търси кандидат: име, телефон, професия, държава…', kAll:'Активни', kOut:'Отказани / отпаднали', kNone:'Няма кандидати',
+  kName:'Име на кандидата *', kPhone:'Телефон / WhatsApp', kCountry:'Държава', kPos:'Професия', kExp:'Опит (год.)', kLang:'Езици', kPass:'🛂 Паспорт №',
+  kPassTo:'🛂 Паспорт валиден до', kEmp:'🏢 Работодател', kStage:'Етап', kRep:'Отговорник', kSrc:'Партньор / източник', kRate:'Оценка', kMed:'🩺 Медицинско до',
+  kCrim:'📄 Съдимост до', kWp:'📝 Разрешение за работа до', kVisa:'✈️ Виза до', kNotes:'Бележки', kDocs:'🛂 Документи и срокове', kFiles:'📁 Файлове',
+  kDup:'⚠️ Този телефон вече е на кандидата: {n}. Да запиша ли въпреки това?', kSaved:'✅ Кандидатът е записан', kDel:'Да изтрия ли кандидата „{n}“?\nПапката му отива в кошчето на Google Drive, а редът – в лист „🗑️ Изтрити“.',
+  kDeleted:'🗑️ Изтрит кандидат: ', kNoEmp:'без работодател', kDec:'Решение на работодателя', yrs:'год.', docNone:'няма дата', docExp:'изтекъл', docDays:'{n} дни', docOk:'валиден',
+  kExpSec:'🛂 Документи, които изтичат', clubSec:'💳 Club – подновяване', clubTxt:'Club до {d}', club:'💳 Club пакет', clubTo:'💳 Club валиден до',
+  ordTitle:'📑 Заявки (подписан договор)', ordNone:'Няма активни заявки. Тук идват работодателите от етап „Подписан договор“ нататък.', ordReq:'Искат', ordFilled:'Заети',
+  ordOpen:'Остават', gSent:'Изпратени', gAppr:'Одобрени', gDocs:'Документи / виза', gTrav:'Пътуват / пристигнали', gWork:'Работят',
+  slBtn:'🔗 Линк за работодателя', slTxt:'Работодателят вижда кандидатите си (без телефони и паспорти) и избира ✅ / 🗣️ / ❌. Отговорът идва като известие.', slCopy:'📋 Копирай', slCopied:'📋 Копирано',
+  waBtn:'💬 WhatsApp шаблон', waPick:'Избери шаблон', waOpen:'🟢 Отвори WhatsApp', waNoPh:'Няма телефон', kgActive:'👷 Активни кандидати', kgWork:'✅ Работят', kgDocs:'🛂 Изтичат документи',
+  lpOpen:'👁️ Отвори', lpEdit:'✏️ Промени', lpDel:'🗑️ Изтрий', lpClose:'Затвори', lpTask:'➕ Нова задача', lpCand:'➕ Кандидат', lpDone:'✅ Готово', lpTEdit:'✏️ Промени задачата', lpRep:'👤 Отговорник',
+  lpCancel:'❌ Отмени задачата', lpReopen:'↩️ Върни като планирана', lpTDel:'🗑️ Изтрий задачата', lpNextSt:'➡️ Следващ етап: {s}', tCancelQ:'Да отменя ли задачата? Остава в историята.', tDelQ:'Да изтрия ли задачата завинаги? (пази се в „🗑️ Изтрити“)',
+  cDelQ:'🗑️ Да изтрия ли работодателя „{n}“?\nЗадачите му (и от календара) се изтриват, папката отива в кошчето, кандидатите остават без работодател.\nВсичко се пази в лист „🗑️ Изтрити“.',
+  cancelled:'❌ Отменена', tDeleted:'🗑️ Изтрита', tSaved:'✅ Задачата е променена', repT:'👤 Отговорник', more:'⋯ Още',
+  pushOn:'🔔 Включи известията', pushOff:'🔕 Изключи известията', pushAskT:'🔔 Включи известията', pushAskB:'Разбираш веднага за нова задача или кандидат – дори при затворено приложение.', pushYes:'🔔 Включи', pushNo:'Не сега',
+  pushDone:'🔔 Известията са включени – идва пробно известие', pushOffDone:'🔕 Известията са изключени', pushDenied:'Известията са забранени. Разреши ги от настройките на телефона и опитай пак.',
+  pushIos:'🔔 На iPhone известията работят само от иконата на началния екран:\nSafari → Сподели → „Добави към началния екран“ → отвори от иконата → 👤 → 🔔.', pushNoSup:'Този браузър не поддържа известия. Използвай Chrome (Android) или иконата на началния екран (iPhone).',
+  adm:'⚙️ Хора и достъп', admHint:'Докосни човек → права, PIN, блокиране. Промените важат веднага.', admAdd:'➕ Добави човек', admA:'👑 Администратор', admAB:'Вижда и прави всичко + тези настройки, вижда паспортните номера',
+  admO:'👀 Само своите', admOB:'Вижда само работодателите и кандидатите, на които е отговорник или има задача', admD:'🗑️ Може да изтрива', admDB:'Работодатели, задачи, кандидати, файлове',
+  admMail:'📧 Имейл (по желание – задачите влизат и в неговия Google Календар)', admName:'Име (както ще се вижда в задачите)', admSaveNew:'➕ Добави и дай PIN', admYou:' (ти)', admBlocked:' · 🚫 без достъп',
+  admSeen:'🕑 {t}', admNever:'🕑 още не е влизал', admPush:'🔔 известия ({n})', admNoPush:'🔕 без известия', admTagA:'👑 Админ – всичко', admTagO:'👀 само своите', admTagAll:'👀 всичко', admTagD:'🗑️ трие',
+  admShow:'🔑 Покажи PIN', admNewPin:'🔄 Нов PIN', admBlock:'🚫 Блокирай', admRemove:'🗑️ Премахни', admUnblock:'✅ Върни достъпа (нов PIN)', admPinFor:'🔑 PIN – {n}', admPinTxt:'Дай този PIN на {n}. С него влиза в приложението.',
+  admShare:'📤 Изпрати линка и PIN-а', admBack:'← Назад', admQPin:'Нов PIN за {n}? Старият спира и {n} трябва да влезе отново.', admQBlock:'Да блокирам ли {n}? Излиза от приложението на всички телефони.',
+  admQRemove:'Да премахна ли {n} от екипа? Данните остават, но вече не може да влиза.', admAdded:'✅ {n} е добавен.', now:'сега', agoM:'преди {n} мин', agoH:'преди {n} ч', agoD:'преди {n} дни' });
+Object.assign(I.tr, { tabO:'📑 Talepler', tabK:'👷 Adaylar', tabT2:'Görevler', tabO2:'Talepler', tabC2:'İşverenler', tabK2:'Adaylar', tabR2:'Rapor',
+  kNew:'➕ Yeni aday', kQ:'🔎 Aday ara: isim, telefon, meslek, ülke…', kAll:'Aktif', kOut:'Reddedilen / vazgeçen', kNone:'Aday yok',
+  kName:'Adayın adı *', kPhone:'Telefon / WhatsApp', kCountry:'Ülke', kPos:'Meslek', kExp:'Tecrübe (yıl)', kLang:'Diller', kPass:'🛂 Pasaport no',
+  kPassTo:'🛂 Pasaport geçerlilik', kEmp:'🏢 İşveren', kStage:'Aşama', kRep:'Sorumlu', kSrc:'Partner / kaynak', kRate:'Puan', kMed:'🩺 Sağlık raporu',
+  kCrim:'📄 Sabıka kaydı', kWp:'📝 Çalışma izni', kVisa:'✈️ Vize', kNotes:'Notlar', kDocs:'🛂 Belgeler ve süreler', kFiles:'📁 Dosyalar',
+  kDup:'⚠️ Bu telefon zaten şu adayda: {n}. Yine de kaydedilsin mi?', kSaved:'✅ Aday kaydedildi', kDel:'"{n}" adayı silinsin mi?\nKlasörü Drive çöp kutusuna, satırı "🗑️ Изтрити" sayfasına gider.',
+  kDeleted:'🗑️ Aday silindi: ', kNoEmp:'işveren yok', kDec:'İşverenin kararı', yrs:'yıl', docNone:'tarih yok', docExp:'süresi doldu', docDays:'{n} gün', docOk:'geçerli',
+  kExpSec:'🛂 Süresi dolan belgeler', clubSec:'💳 Club – yenileme', clubTxt:'Club {d} tarihine kadar', club:'💳 Club paketi', clubTo:'💳 Club bitiş',
+  ordTitle:'📑 Talepler (sözleşmeli)', ordNone:'Aktif talep yok. "Sözleşme imzalandı" aşamasından itibaren işverenler burada.', ordReq:'İstenen', ordFilled:'Dolan',
+  ordOpen:'Kalan', gSent:'Gönderilen', gAppr:'Onaylanan', gDocs:'Evrak / vize', gTrav:'Yolda / geldi', gWork:'Çalışıyor',
+  slBtn:'🔗 İşveren linki', slTxt:'İşveren adaylarını (telefon ve pasaport olmadan) görür ve ✅ / 🗣️ / ❌ seçer. Cevap bildirim olarak gelir.', slCopy:'📋 Kopyala', slCopied:'📋 Kopyalandı',
+  waBtn:'💬 WhatsApp şablonu', waPick:'Şablon seç', waOpen:'🟢 WhatsApp\'ı aç', waNoPh:'Telefon yok', kgActive:'👷 Aktif adaylar', kgWork:'✅ Çalışıyor', kgDocs:'🛂 Süresi dolan belge',
+  lpOpen:'👁️ Aç', lpEdit:'✏️ Düzenle', lpDel:'🗑️ Sil', lpClose:'Kapat', lpTask:'➕ Yeni görev', lpCand:'➕ Aday', lpDone:'✅ Tamam', lpTEdit:'✏️ Görevi düzenle', lpRep:'👤 Sorumlu',
+  lpCancel:'❌ Görevi iptal et', lpReopen:'↩️ Tekrar planla', lpTDel:'🗑️ Görevi sil', lpNextSt:'➡️ Sonraki aşama: {s}', tCancelQ:'Görev iptal edilsin mi? Geçmişte kalır.', tDelQ:'Görev tamamen silinsin mi? ("🗑️ Изтрити" sayfasında saklanır)',
+  cDelQ:'🗑️ "{n}" işvereni silinsin mi?\nGörevleri (takvimden de) silinir, klasörü çöp kutusuna gider, adaylar işverensiz kalır.\nHepsi "🗑️ Изтрити" sayfasında saklanır.',
+  cancelled:'❌ İptal edildi', tDeleted:'🗑️ Silindi', tSaved:'✅ Görev güncellendi', repT:'👤 Sorumlu', more:'⋯ Daha',
+  pushOn:'🔔 Bildirimleri aç', pushOff:'🔕 Bildirimleri kapat', pushAskT:'🔔 Bildirimleri aç', pushAskB:'Yeni görev veya aday olunca hemen haberin olur – uygulama kapalıyken bile.', pushYes:'🔔 Aç', pushNo:'Şimdi değil',
+  pushDone:'🔔 Bildirimler açıldı – deneme bildirimi geliyor', pushOffDone:'🔕 Bildirimler kapatıldı', pushDenied:'Bildirimler engellenmiş. Telefon ayarlarından izin verip tekrar dene.',
+  pushIos:'🔔 iPhone\'da bildirimler sadece ana ekran ikonundan çalışır:\nSafari → Paylaş → "Ana Ekrana Ekle" → ikondan aç → 👤 → 🔔.', pushNoSup:'Bu tarayıcı bildirimleri desteklemiyor. Chrome (Android) veya ana ekran ikonunu (iPhone) kullan.',
+  adm:'⚙️ Kişiler ve erişim', admHint:'Kişiye dokun → yetkiler, PIN, engelleme. Değişiklikler hemen geçerli.', admAdd:'➕ Kişi ekle', admA:'👑 Yönetici', admAB:'Her şeyi görür ve yapar + bu ayarlar, pasaport numaralarını görür',
+  admO:'👀 Sadece kendininkiler', admOB:'Sadece sorumlu olduğu veya görevi olan işverenleri ve adayları görür', admD:'🗑️ Silebilir', admDB:'İşveren, görev, aday, dosya',
+  admMail:'📧 E-posta (isteğe bağlı – görevler onun Google Takvimine de girer)', admName:'İsim (görevlerde görüneceği gibi)', admSaveNew:'➕ Ekle ve PIN ver', admYou:' (sen)', admBlocked:' · 🚫 erişim yok',
+  admSeen:'🕑 {t}', admNever:'🕑 henüz girmedi', admPush:'🔔 bildirim ({n})', admNoPush:'🔕 bildirim yok', admTagA:'👑 Yönetici – her şey', admTagO:'👀 sadece kendininkiler', admTagAll:'👀 hepsi', admTagD:'🗑️ siler',
+  admShow:'🔑 PIN göster', admNewPin:'🔄 Yeni PIN', admBlock:'🚫 Engelle', admRemove:'🗑️ Kaldır', admUnblock:'✅ Erişimi geri ver (yeni PIN)', admPinFor:'🔑 PIN – {n}', admPinTxt:'Bu PIN\'i {n} kişisine ver. Uygulamaya bununla girer.',
+  admShare:'📤 Linki ve PIN\'i gönder', admBack:'← Geri', admQPin:'{n} için yeni PIN? Eskisi çalışmaz, {n} tekrar giriş yapmalı.', admQBlock:'{n} engellensin mi? Tüm telefonlarda uygulamadan çıkar.',
+  admQRemove:'{n} ekipten kaldırılsın mı? Veriler kalır ama artık giremez.', admAdded:'✅ {n} eklendi.', now:'şimdi', agoM:'{n} dk önce', agoH:'{n} sa önce', agoD:'{n} gün önce' });
+Object.assign(TRX, { 'Нов кандидат':'Yeni aday', 'Проверен':'Kontrol edildi', 'Изпратен на работодател':'İşverene gönderildi', 'Интервю':'Mülakat', 'Документи':'Evrak', 'Разрешение за работа':'Çalışma izni',
+  'Виза':'Vize', 'Пътува':'Yolda', 'Пристигна':'Geldi', 'Работи':'Çalışıyor', 'Отпаднал':'Vazgeçti' });
+
+function canDel(){ return !!D && !!(D.perm && D.perm.d); }
+function isAdm(){ return !!D && !!(D.perm && D.perm.a); }
+function dcOf(n){ var k = String(n || '').toLowerCase(); return ((D && D.clients) || []).filter(function(c){ return c.n.toLowerCase() === k; })[0]; }
+function kById(id){ return ((D && D.cands) || []).filter(function(k){ return k.id === id; })[0]; }
+function kOut(s){ return ((D && D.kout) || ['Отказан', 'Отпаднал']).indexOf(s) > -1; }
+var KG = { sent: ['Изпратен на работодател', 'Интервю'], appr: ['Одобрен'], docs: ['Документи', 'Разрешение за работа', 'Виза'], trav: ['Пътува', 'Пристигна'], work: ['Работи'] };
+var KCOL = { 'Нов кандидат':['#e0f2fe','#0369a1'], 'Проверен':['#dbeafe','#1d4ed8'], 'Изпратен на работодател':['#ffedd5','#c2410c'], 'Интервю':['#fef3c7','#b45309'], 'Одобрен':['#dcfce7','#15803d'],
+  'Документи':['#ede9fe','#6d28d9'], 'Разрешение за работа':['#ede9fe','#6d28d9'], 'Виза':['#fce7f3','#be185d'], 'Пътува':['#cffafe','#0e7490'], 'Пристигна':['#cffafe','#0e7490'], 'Работи':['#bbf7d0','#166534'],
+  'Отказан':['#f3f4f6','#6b7280'], 'Отпаднал':['#f3f4f6','#6b7280'] };
+function kPill(s){ var c = KCOL[s] || ['#e2e8f0','#334155']; return s ? '<span class="pill" style="background:' + c[0] + ';color:' + c[1] + '">' + esc(tv(s)) + '</span>' : ''; }
+var KDOCS = [['ppTo', 'kPassTo'], ['med', 'kMed'], ['crim', 'kCrim'], ['wp', 'kWp'], ['visa', 'kVisa']];
+function dDays(d){ return Math.round((Date.parse(d) - Date.parse(D.today)) / 86400000); }
+function docSt(d){ if (!d) return ''; var n = dDays(d); return n < 0 ? 'x' : n <= 45 ? 'w' : 'ok'; }
+function kWarn(k){ if (kOut(k.st)) return ''; var w = ''; KDOCS.forEach(function(x){ var s = docSt(k[x[0]]); if (s === 'x') w = 'x'; else if (s === 'w' && w !== 'x') w = 'w'; }); return w; }
+function kMine(k){ return SEG === 'a' || !D.me || k.rep === D.me || mine((dcOf(k.emp) || {}).r); }
+
+// ---------- 👷 Кандидати ----------
+var KQ = '', KF = '';
+function kRow(k){
+  var w = kWarn(k);
+  return '<div class="kr" data-lp="k" data-k="' + esc(k.id) + '" onclick="kOpen(this.dataset.k)"><span class="av">' + (w === 'x' ? '⛔' : w === 'w' ? '⚠️' : '👷') + '</span><span class="cx"><b>' + esc(k.n) + '</b>' +
+    '<small>' + kPill(k.st) + ' ' + esc([tv(k.pos), k.co, k.emp || t('kNoEmp')].filter(Boolean).join(' · ')) + '</small></span><span class="ar">›</span></div>';
+}
+function kFind(q){
+  var toks = lat(q).split(' ').filter(Boolean), qd = q.replace(/[^0-9]/g, ''), digits = /^[0-9\s+()\/-]+$/.test(q.trim());
+  return (D.cands || []).filter(function(k){
+    if (digits) return qd.length >= 3 && String(k.ph || '').replace(/[^0-9]/g, '').indexOf(qd) > -1;
+    var hay = lat([k.n, k.pos, tv(k.pos), k.co, k.emp, k.lg, k.src, k.rep].join(' '));
+    return toks.every(function(x){ return hay.indexOf(x) > -1; });
+  });
+}
+function drawCands(){
+  el('main').innerHTML = '<div class="srch"><input id="kq" type="search" enterkeyhint="search" autocomplete="off" placeholder="' + esc(t('kQ')) + '" value="' + esc(KQ) + '" oninput="KQ=this.value;listK()"></div>' +
+    '<div class="big"><button onclick="kForm()">' + t('kNew') + '</button></div><div class="chips wf" id="kf"></div><div id="kl"></div>';
+  listK();
+}
+function listK(){
+  var all = (D.cands || []).filter(kMine), q = KQ.trim(), a = q ? kFind(q).filter(kMine) : all;
+  var sts = []; all.forEach(function(k){ if (k.st && sts.indexOf(k.st) < 0) sts.push(k.st); });
+  var ord = D.kst || []; sts.sort(function(x, y){ return ord.indexOf(x) - ord.indexOf(y); });
+  if (KF && KF !== '_out' && sts.indexOf(KF) < 0) KF = '';
+  el('kf').innerHTML = '<button class="' + (!KF ? 'on' : '') + '" onclick="KF=\'\';listK()">' + t('kAll') + '</button>' + sts.filter(function(s){ return !kOut(s); }).map(function(s){
+    return '<button data-v="' + esc(s) + '" class="' + (KF === s ? 'on' : '') + '" onclick="KF=this.dataset.v;listK()">' + esc(tv(s)) + ' ' + all.filter(function(k){ return k.st === s; }).length + '</button>'; }).join('') +
+    '<button class="' + (KF === '_out' ? 'on' : '') + '" onclick="KF=\'_out\';listK()">' + t('kOut') + '</button>';
+  if (KF === '_out') a = a.filter(function(k){ return kOut(k.st); }); else if (KF) a = a.filter(function(k){ return k.st === KF; }); else if (!q) a = a.filter(function(k){ return !kOut(k.st); });
+  a.sort(function(x, y){ var w = { x: 0, w: 1, '': 2 }; return w[kWarn(x)] - w[kWarn(y)] || ord.indexOf(x.st) - ord.indexOf(y.st) || x.n.localeCompare(y.n); });
+  el('kl').innerHTML = '<h2>' + (q ? t('results') : t('tabK2')) + '<span>' + a.length + '</span></h2>' + (a.length ? '<div class="lst kls">' + a.map(kRow).join('') + '</div>' : '<div class="empty">' + t('kNone') + '</div>');
+  if (document.activeElement && document.activeElement.id !== 'kq' && q) { var e = el('kq'); if (e) { e.focus(); e.setSelectionRange(q.length, q.length); } }
+}
+var KC = null;
+function kOpen(id){
+  var k = kById(id); KC = k ? Object.assign({ photos: [], videos: [], docs: [], loading: true }, k) : { id: id, n: '…', loading: true, photos: [], videos: [], docs: [] };
+  openSheet('👷 ' + KC.n, ''); kDraw();
+  google.script.run.withSuccessHandler(function(x){ if (KC && KC.id === id) { KC = x; kDraw(); var i = (D.cands || []).findIndex(function(c){ return c.id === id; }); if (i > -1) D.cands[i] = x; } })
+    .withFailureHandler(function(e){ if (KC && KC.id === id) { closeSheet(); err(e); } }).kGet(id);
+}
+function docLine(k, f, lab){
+  var d = k[f], s = docSt(d), n = d ? dDays(d) : 0;
+  var badge = !d ? '<span class="db">' + t('docNone') + '</span>' : s === 'x' ? '<span class="db x">' + t('docExp') + '</span>' : s === 'w' ? '<span class="db w">' + t('docDays', { n: n }) + '</span>' : '<span class="db ok">' + t('docOk') + '</span>';
+  return '<div class="dl"><span>' + t(lab) + '</span><b>' + (d ? fmt(d) + ' ' + d.slice(0, 4) : '—') + '</b>' + badge + '</div>';
+}
+function kDraw(){
+  var k = KC; if (!k || el('sheet').style.display !== 'block') return;
+  el('shT').textContent = '👷 ' + k.n;
+  var h = '<div class="box hero"><div class="t">' + esc(k.n) + ' ' + kPill(k.st) + '</div>' +
+    '<div class="s">' + esc([tv(k.pos), k.co, k.exp ? k.exp + ' ' + t('yrs') : '', k.lg ? '🗣️ ' + k.lg : ''].filter(Boolean).join(' · ')) + '</div>' +
+    '<div class="s">' + (k.emp ? '🏢 <span class="lnk" data-n="' + esc(k.emp) + '" onclick="closeSheet();openC(this.dataset.n)">' + esc(k.emp) + '</span>' : '🏢 ' + t('kNoEmp')) + (k.rep ? ' · 👤 ' + esc(k.rep) : '') + (k.src ? ' · 🤝 ' + esc(k.src) : '') + (k.rt ? ' · ' + '★★★★★'.slice(0, k.rt) : '') + '</div>' +
+    (k.dec ? '<div class="nxt" style="color:#15803d">' + esc(k.dec) + '</div>' : '') +
+    '<div class="acts">' + tel(k.ph) + '<button onclick="waPick(\'k\')">' + t('waBtn') + '</button><button onclick="kForm(KC)">' + t('edit') + '</button></div></div>';
+  h += '<div class="box"><h4>' + t('kStage') + '</h4><div class="chips">' + (D.kst || []).map(function(s){
+    return '<button class="' + (s === k.st ? 'on' : '') + '" data-s="' + esc(s) + '" onclick="kSt(this.dataset.s)">' + esc(tv(s)) + '</button>'; }).join('') + '</div></div>';
+  h += '<div class="box"><h4>' + t('kDocs') + '</h4>' + (isAdm() && k.pp ? '<div class="dl"><span>' + t('kPass') + '</span><b>' + esc(k.pp) + '</b><span></span></div>' : '') +
+    KDOCS.map(function(x){ return docLine(k, x[0], x[1]); }).join('') + '<div class="acts"><button onclick="kForm(KC)">' + t('edit') + '</button></div></div>';
+  if (k.notes) h += '<div class="box"><h4>' + t('kNotes') + '</h4><div class="notes">' + esc(k.notes) + '</div></div>';
+  h += '<div class="upb">' + upLabel('<span>📸</span>' + t('photo').replace('📸 ', ''), 'image/*', 'photo', k.id) + upLabel('<span>🎬</span>' + t('video').replace('🎬 ', ''), 'video/*', 'doc', k.id) +
+    upLabel('<span>📎</span>' + t('doc').replace('📎 ', ''), '', 'doc', k.id) + '</div>';
+  if (k.loading) h += '<div class="load">' + t('loading') + '</div>';
+  else {
+    h += '<div class="box"><h4>' + t('sPhotos').replace(/ .*/, '') + ' ' + k.photos.length + '</h4>' + (k.photos.length ? photoGrid(k.photos) : '<div class="s">—</div>') + '</div>';
+    h += '<div class="box"><h4>' + t('sVideos') + ' ' + k.videos.length + '</h4>' + (k.videos.length ? k.videos.map(function(f){ return fileRow(f, k.id); }).join('') : '<div class="s">—</div>') + '</div>';
+    h += '<div class="box"><h4>' + t('sDocs') + ' ' + k.docs.length + '</h4>' + (k.docs.length ? k.docs.map(function(f){ return fileRow(f, k.id); }).join('') : '<div class="s">—</div>') + '</div>';
+  }
+  h += '<div class="acts" style="margin:12px 16px 30px">' + (k.url ? '<a href="' + esc(k.url) + '" target="_blank">' + t('openF') + '</a>' : '') +
+    (canDel() ? '<button style="color:#b91c1c" onclick="kDelQ(KC.id)">' + t('lpDel') + '</button>' : '') + '</div>';
+  el('shB').innerHTML = h;
+}
+function kLocal(id, f){ (D.cands || []).forEach(function(c){ if (c.id === id) f(c); }); if (KC && KC.id === id) f(KC); if (CUR && CUR.cands) CUR.cands.forEach(function(c){ if (c.id === id) f(c); }); }
+function kSt(s, id){
+  id = id || (KC && KC.id); var k = kById(id) || KC; if (!k || k.st === s) return;
+  kLocal(id, function(c){ c.st = s; }); kDraw(); if (CUR && el('card').style.display === 'block') drawCard(); draw();
+  google.script.run.withSuccessHandler(function(x){ kLocal(id, function(c){ Object.assign(c, { st: x.st, sd: x.sd }); }); toast('👷 ' + x.n + ': ' + tv(x.st)); })
+    .withFailureHandler(function(e){ err(e); load(); }).kStage(id, s);
+}
+function kDelQ(id){
+  var k = kById(id) || KC; if (!k || !confirm(t('kDel', { n: k.n }))) return;
+  D.cands = (D.cands || []).filter(function(c){ return c.id !== id; }); if (CUR && CUR.cands) CUR.cands = CUR.cands.filter(function(c){ return c.id !== id; });
+  closeSheet(); draw(); if (CUR && el('card').style.display === 'block') drawCard(); toast(t('kDeleted') + k.n);
+  google.script.run.withSuccessHandler(function(){}).withFailureHandler(function(e){ err(e); load(); }).kDel(id);
+}
+var COUNTRIES = ['Непал', 'Индия', 'Бангладеш', 'Шри Ланка', 'Филипини', 'Узбекистан', 'Киргизстан', 'Пакистан', 'Виетнам', 'Индонезия'];
+function kForm(k){
+  k = k || {}; var isNew = !k.id;
+  var h = '<form id="frm" onsubmit="return kSend(event)"><input type="hidden" name="id" value="' + esc(k.id || '') + '">';
+  h += fld(t('kName'), '<input name="n" required autocomplete="off" value="' + esc(k.n || '') + '">');
+  h += half(fld(t('kPhone'), '<input name="ph" type="tel" value="' + esc(k.ph || '') + '" placeholder="+977…">'), fld(t('kCountry'), '<input name="co" list="kcl" value="' + esc(k.co || '') + '"><datalist id="kcl">' + COUNTRIES.map(function(c){ return '<option value="' + c + '">'; }).join('') + '</datalist>'));
+  h += half(fld(t('kPos'), '<select name="pos">' + opts(blank(withCur(D.positions, k.pos)), k.pos) + '</select>'), fld(t('kExp'), '<input name="exp" inputmode="decimal" value="' + esc(k.exp || '') + '">'));
+  h += fld(t('kLang'), '<input name="lg" value="' + esc(k.lg || '') + '" placeholder="English, Hindi…">');
+  h += half(fld(t('kEmp'), '<input name="emp" list="kel" autocomplete="off" value="' + esc(k.emp || '') + '"><datalist id="kel">' + D.clients.map(function(c){ return '<option value="' + esc(c.n) + '">'; }).join('') + '</datalist>'),
+    fld(t('kStage'), '<select name="st">' + opts(withCur(D.kst || [], k.st), k.st || (D.kst || [])[0]) + '</select>'));
+  h += half(fld(t('kRep'), '<select name="rep">' + opts(blank(D.reps), k.rep || (isNew ? D.me : '')) + '</select>'), fld(t('kSrc'), '<input name="src" value="' + esc(k.src || '') + '">'));
+  h += fld(t('kRate'), '<select name="rt">' + ['', '1', '2', '3', '4', '5'].map(function(x){ return '<option value="' + x + '"' + (String(k.rt || '') === x ? ' selected' : '') + '>' + (x ? '★★★★★'.slice(0, +x) : '—') + '</option>'; }).join('') + '</select>');
+  h += '<div class="nx"><h3>' + t('kDocs') + '</h3>' + (isAdm() ? fld(t('kPass'), '<input name="pp" autocomplete="off" value="' + esc(k.pp || '') + '">') : '') +
+    half(fld(t('kPassTo'), '<input type="date" name="ppTo" value="' + esc(k.ppTo || '') + '">'), fld(t('kMed'), '<input type="date" name="med" value="' + esc(k.med || '') + '">')) +
+    half(fld(t('kCrim'), '<input type="date" name="crim" value="' + esc(k.crim || '') + '">'), fld(t('kWp'), '<input type="date" name="wp" value="' + esc(k.wp || '') + '">')) +
+    fld(t('kVisa'), '<input type="date" name="visa" value="' + esc(k.visa || '') + '">') + '</div>';
+  h += fld(t('kNotes'), '<textarea name="notes" rows="4">' + esc(k.notes || '') + '</textarea>');
+  h += '<button class="save" id="sv">' + t('save') + '</button></form>';
+  openSheet(isNew ? t('kNew') : '✏️ ' + k.n, h);
+}
+function kSend(e, again){
+  if (e) e.preventDefault();
+  var d = again || formData(); if (!d.id) delete d.id; svState(true);
+  google.script.run.withSuccessHandler(function(x){
+    if (x && x.dup) { svState(false); if (confirm(t('kDup', { n: x.dup }))) { d.confirmDup = true; kSend(null, d); } return; }
+    var i = (D.cands || []).findIndex(function(c){ return c.id === x.id; }); if (i > -1) D.cands[i] = x; else (D.cands = D.cands || []).push(x);
+    toast(t('kSaved')); KC = x; openSheet('👷 ' + x.n, ''); kDraw(); draw();
+    if (CUR && el('card').style.display === 'block') refreshCard();
+  }).withFailureHandler(function(er){ svState(false); err(er); }).saveCand(d);
+  return false;
+}
+
+// ---------- 💬 WhatsApp шаблони ----------
+var WAK = '', WAT = null;
+function waPick(kind){
+  WAK = kind; var list = (D.wa || []).filter(function(w){ return kind === 'e' ? /^🏢/.test(w[0]) : !/^🏢/.test(w[0]); });
+  var ph = kind === 'e' ? (CUR && CUR.phone) : (KC && KC.ph);
+  if (!ph || intl(ph).length < 6) { toast(t('waNoPh')); return; }
+  openSheet(t('waPick'), '<div style="padding:8px 16px 30px">' + list.map(function(w, i){ return '<button class="wab" onclick="waUse(' + (D.wa || []).indexOf(w) + ')"><b>' + esc(w[0]) + '</b><small>' + esc(w[1].slice(0, 90)) + '…</small></button>'; }).join('') + '</div>');
+}
+function waFill(txt, link){
+  var k = WAK === 'k' ? KC : null, c = WAK === 'e' ? CUR : (k && dcOf(k.emp));
+  var miss = k ? KDOCS.filter(function(x){ return !k[x[0]] || docSt(k[x[0]]) === 'x'; }).map(function(x){ return { ppTo: 'passport', med: 'medical certificate', crim: 'police clearance', wp: 'work permit', visa: 'visa' }[x[0]]; }).join(', ') : '';
+  return String(txt).split('{name}').join(WAK === 'e' ? (CUR.contact || CUR.name) : (k ? k.n.split(/\s+/)[0] : '')).split('{employer}').join(WAK === 'e' ? CUR.name : (k && k.emp) || '')
+    .split('{position}').join(WAK === 'e' ? (CUR.pos || '') : (k && k.pos) || '').split('{docs}').join(miss || '—').split('{link}').join(link || '');
+}
+function waUse(i){
+  var w = D.wa[i], ph = intl(WAK === 'e' ? CUR.phone : KC.ph);
+  var show = function(link){
+    openSheet(w[0], '<div style="padding:8px 16px 30px"><textarea id="waT" rows="8" oninput="waUpd()">' + esc(waFill(w[1], link)) + '</textarea>' +
+      '<a class="save" id="waA" style="display:block;text-align:center;text-decoration:none;background:#16a34a" target="_blank" rel="noopener">' + t('waOpen') + '</a></div>');
+    WAT = ph; waUpd();
+  };
+  if (WAK === 'e' && /\{link\}/.test(w[1])) { toast(t('loading')); google.script.run.withSuccessHandler(function(r){ show(r.url); }).withFailureHandler(err).shortLink(CUR.name); }
+  else show('');
+}
+function waUpd(){ var a = el('waA'); if (a) a.href = 'https://wa.me/' + WAT + '?text=' + encodeURIComponent(el('waT').value); }
+// ---------- 🔗 Линк за работодателя ----------
+function slShare(n){
+  n = n || (CUR && CUR.name); toast(t('loading'));
+  google.script.run.withSuccessHandler(function(r){
+    window.__SL = r.url;
+    openSheet(t('slBtn'), '<div style="padding:12px 16px 30px"><p class="s" style="font-size:14px">' + t('slTxt') + '</p><input readonly value="' + esc(r.url) + '" onclick="this.select()">' +
+      '<button class="save" onclick="slSend()">📤 ' + t('slBtn').replace(/^🔗 /, '') + '</button><button class="save" style="background:#64748b" onclick="slCopy()">' + t('slCopy') + '</button></div>');
+  }).withFailureHandler(err).shortLink(n);
+}
+function slSend(){ if (navigator.share) navigator.share({ text: window.__SL }).catch(function(){}); else slCopy(); }
+function slCopy(){ try { navigator.clipboard.writeText(window.__SL).then(function(){ toast(t('slCopied')); }); } catch (e) { prompt('', window.__SL); } }
+
+// ---------- 📋 Заявки ----------
+function kOf(emp){ var k = String(emp || '').toLowerCase(); return (D.cands || []).filter(function(c){ return String(c.emp || '').toLowerCase() === k; }); }
+function drawOrders(){
+  var a = D.clients.filter(function(c){ return (D.orderSt || []).indexOf(c.s) > -1 && mine(c.r); });
+  a.sort(function(x, y){ var ox = x.nx && x.nx !== '-' ? x.nx : '9999', oy = y.nx && y.nx !== '-' ? y.nx : '9999'; return ox.localeCompare(oy) || x.n.localeCompare(y.n); });
+  var h = '<h2>' + t('ordTitle') + '<span>' + a.length + '</span></h2>';
+  if (!a.length) h += '<div class="empty">' + t('ordNone') + '</div>';
+  a.forEach(function(c){
+    var ks = kOf(c.n), g = {}; Object.keys(KG).forEach(function(x){ g[x] = ks.filter(function(k){ return KG[x].indexOf(k.st) > -1; }).length; });
+    var filled = g.appr + g.docs + g.trav + g.work, w = c.w || 0, left = Math.max(0, w - filled), pct = w ? Math.min(100, Math.round(filled / w * 100)) : 0;
+    var nx = c.nx && c.nx !== '-' ? c.nx : '', cls = !nx ? ' no' : nx < D.today ? ' over' : nx === D.today ? ' today' : '';
+    var warn = ks.filter(function(k){ return kWarn(k); }).length;
+    h += '<div class="ord' + cls + '" data-lp="c" data-n="' + esc(c.n) + '"><div class="sh" data-n="' + esc(c.n) + '" onclick="openC(this.dataset.n)"><b>' + esc(c.n) + '</b>' + pill(c.s) + '<span class="ar">›</span></div>' +
+      '<div class="s">' + esc([c.c, tv(c.m), c.r ? '👤 ' + c.r : ''].filter(Boolean).join(' · ')) + '</div>' +
+      '<div class="og"><div><small>' + t('ordReq') + '</small><b>' + (w || '—') + '</b></div><div><small>' + t('ordFilled') + '</small><b style="color:#15803d">' + filled + '</b></div><div class="' + (left ? 'ow' : '') + '"><small>' + t('ordOpen') + '</small><b>' + left + '</b></div></div>' +
+      (w ? '<div class="mb"><div style="width:' + pct + '%"></div></div>' : '') +
+      '<div class="mg">' + [['gSent', g.sent], ['gAppr', g.appr], ['gDocs', g.docs], ['gTrav', g.trav], ['gWork', g.work]].map(function(x){ return '<span>' + t(x[0]) + ' <b>' + x[1] + '</b></span>'; }).join('') + (warn ? '<span style="color:#b91c1c">🛂 <b>' + warn + '</b></span>' : '') + '</div>' +
+      '<div class="nxt' + (cls === ' over' ? ' late' : cls === ' no' ? ' no' : '') + '">' + (nx ? '📅 ' + fmt(nx) : t('noPlan')) + '</div>' +
+      '<div class="acts"><button class="ok" data-n="' + esc(c.n) + '" onclick="kForm({emp:this.dataset.n})">' + t('lpCand') + '</button><button data-n="' + esc(c.n) + '" onclick="slShare(this.dataset.n)">' + t('slBtn') + '</button><button data-n="' + esc(c.n) + '" onclick="openForm(this.dataset.n)">' + t('addTask') + '</button></div></div>';
+  });
+  el('main').innerHTML = h;
+}
+// ---------- 🛂 / 💳 в „Задачи“ ----------
+function expSec(){
+  var a = (D.cands || []).filter(function(k){ return kWarn(k) && kMine(k); });
+  if (!a.length) return '';
+  return sec(t('kExpSec'), a.length, '<div class="lst">' + a.map(function(k){
+    var bad = KDOCS.filter(function(x){ return docSt(k[x[0]]) === 'x' || docSt(k[x[0]]) === 'w'; }).map(function(x){ var n = dDays(k[x[0]]); return t(x[1]).split(' ')[0] + ' ' + (n < 0 ? t('docExp') : t('docDays', { n: n })); }).join(' · ');
+    return '<div class="ti ' + (kWarn(k) === 'x' ? 'over' : 'today') + '"><div class="tr" data-lp="k" data-k="' + esc(k.id) + '" onclick="kOpen(this.dataset.k)"><span class="dt"></span><span class="tx"><b>' + esc(k.n) + '</b><small>' + esc(bad) + (k.emp ? ' · 🏢 ' + esc(k.emp) : '') + '</small></span><span class="ar">›</span></div></div>';
+  }).join('') + '</div>', '');
+}
+function clubSec(){
+  var lim = addD(30), a = D.clients.filter(function(c){ return c.clTo && c.clTo <= lim && mine(c.r); }).sort(function(x, y){ return x.clTo.localeCompare(y.clTo); });
+  if (!a.length) return '';
+  return sec(t('clubSec'), a.length, '<div class="lst">' + a.map(function(c){
+    return '<div class="ti ' + (c.clTo < D.today ? 'over' : 'today') + '"><div class="tr" data-n="' + esc(c.n) + '" onclick="openC(this.dataset.n)"><span class="dt"></span><span class="tx"><b>' + esc(c.n) + '</b><small>💳 ' + esc(c.cl) + ' · ' + esc(t('clubTxt', { d: fmt(c.clTo) })) + '</small></span><span class="ar">›</span></div></div>';
+  }).join('') + '</div>', '');
+}
+
+// ---------- 👆 Задръж пръста → меню ----------
+var LP = null, LPX = 0, LPY = 0, LPFIRED = false, LPT = 0, LPA = [];
+function lpStart(e){
+  var tg = e.target.closest && e.target.closest('[data-lp]'); if (!tg) return;
+  var p = e.touches ? e.touches[0] : e; LPX = p.clientX; LPY = p.clientY; clearTimeout(LP);
+  LP = setTimeout(function(){ LP = null; LPFIRED = true; try { if (navigator.vibrate) navigator.vibrate(25); } catch (x) {} lpOpen(tg); }, 450);
+}
+function lpMove(e){ if (!LP) return; var p = e.touches ? e.touches[0] : e; if (Math.abs(p.clientX - LPX) > 10 || Math.abs(p.clientY - LPY) > 10) { clearTimeout(LP); LP = null; } }
+function lpEnd(){ if (LP) { clearTimeout(LP); LP = null; } }
+document.addEventListener('touchstart', function(e){ LPFIRED = false; lpStart(e); }, { passive: true });
+document.addEventListener('touchmove', lpMove, { passive: true }); document.addEventListener('touchend', lpEnd); document.addEventListener('touchcancel', lpEnd);
+document.addEventListener('mousedown', function(e){ if (e.button === 0 && !('ontouchstart' in window)) { LPFIRED = false; lpStart(e); } });
+document.addEventListener('mousemove', lpMove); document.addEventListener('mouseup', lpEnd);
+document.addEventListener('click', function(e){ if (LPFIRED) { LPFIRED = false; e.stopPropagation(); e.preventDefault(); } }, true);
+document.addEventListener('contextmenu', function(e){ var tg = e.target.closest && e.target.closest('[data-lp]'); if (!tg) return; e.preventDefault(); clearTimeout(LP); LP = null; if (Date.now() - LPT > 900) lpOpen(tg); });
+function lpShow(title, b){
+  if (!b.length) return; LPT = Date.now(); LPA = b;
+  el('lpmB').innerHTML = '<h4>' + esc(title) + '</h4>' + b.map(function(x, i){ return '<button class="' + (x[2] || '') + '" onclick="lpGo(' + i + ')">' + x[0] + '</button>'; }).join('') + '<button class="cx" onclick="lpClose()">' + t('lpClose') + '</button>';
+  el('lpm').style.display = 'flex';
+}
+function lpClose(){ el('lpm').style.display = 'none'; }
+function lpGo(i){ var a = LPA[i]; lpClose(); if (a) a[1](); }
+function lpOpen(tg){
+  var k = tg.getAttribute('data-lp');
+  if (k === 't') { var x = taskBy(+tg.getAttribute('data-row')); if (x) lpShow(tv(x.type) + ' · ' + x.client, tMenu(x)); }
+  else if (k === 'c') { var n = tg.getAttribute('data-n'); lpShow('🏢 ' + n, cMenu(n)); }
+  else if (k === 'k') { var id = tg.getAttribute('data-k'), c = kById(id); if (c) lpShow('👷 ' + c.n, kMenu(c)); }
+  else if (k === 'h') { var h = CUR && CUR.tasks[+tg.getAttribute('data-i')]; if (h) lpShow(tv(h.type) + ' · ' + CUR.name, tMenu(Object.assign({ client: CUR.name }, h))); }
+}
+function cMenu(n){
+  var b = [[t('lpOpen'), function(){ openC(n); }], [t('lpTask'), function(){ openForm(n); }], [t('lpCand'), function(){ kForm({ emp: n }); }],
+    [t('lpEdit'), function(){ whenCard(n, editC); }], [t('slBtn'), function(){ slShare(n); }]];
+  if (canDel()) b.push([t('lpDel'), function(){ delClient(n); }, 'dg']);
+  return b;
+}
+function whenCard(n, fn){ if (CUR && CUR.name === n && el('card').style.display === 'block') { fn(); return; } openC(n, fn); }
+function kMenu(c){
+  var ord = D.kst || [], i = ord.indexOf(c.st), nx = i > -1 && i + 1 < ord.length && !kOut(ord[i + 1]) ? ord[i + 1] : '';
+  var b = [[t('lpOpen'), function(){ kOpen(c.id); }]];
+  if (nx) b.push([t('lpNextSt', { s: tv(nx) }), function(){ kSt(nx, c.id); }]);
+  b.push([t('lpEdit'), function(){ kForm(c); }]);
+  if (c.ph) b.push([t('waBtn'), function(){ KC = c; waPick('k'); }]);
+  if (canDel()) b.push([t('lpDel'), function(){ kDelQ(c.id); }, 'dg']);
+  return b;
+}
+function tMenu(x){
+  var pl = x.status === undefined || x.status === 'Планирана', b = [];
+  if (pl && x.row) b.push([t('lpDone'), function(){ if (taskBy(x.row)) doneForm(x.row); else openC(x.client); }]);
+  b.push([t('lpTEdit'), function(){ taskEdit(x); }]);
+  if (pl) b.push([t('lpRep'), function(){ taskEdit(x, false, true); }]);
+  if (x.status === 'Отменена') b.push([t('lpReopen'), function(){ taskEdit(x, true); }]);
+  if (pl) b.push([t('lpCancel'), function(){ tCancel(x); }]);
+  if (canDel()) b.push([t('lpTDel'), function(){ tDel(x); }, 'dg']);
+  return b;
+}
+var TE = null;
+function taskEdit(x, reopen, repOnly){
+  TE = x; TE.reopen = !!reopen;
+  var h = '<form id="frm" onsubmit="return sendTE(event)">';
+  if (!repOnly) {
+    h += fld(t('fType'), '<select name="type">' + opts(withCur(D.types, x.type), x.type) + '</select>');
+    h += half(fld(t('fDate'), '<input type="date" name="date" required value="' + esc(x.date) + '">'), fld(t('fTime'), '<input type="time" name="time" value="' + esc(String(x.time || '').slice(0, 5)) + '">'));
+    h += fld(t('fRemind'), '<input name="remind" class="remind" maxlength="80" value="' + esc(x.remind || '') + '">');
+    h += fld(t('fDesc'), '<textarea name="desc" rows="3">' + esc(x.desc || '') + '</textarea>');
+  }
+  h += fld(t('fRep'), '<select name="rep">' + opts(withCur(D.reps, x.rep), x.rep || D.me) + '</select>');
+  h += '<button class="save" id="sv">' + t('save') + '</button></form>';
+  openSheet('✏️ ' + x.client + ' · ' + tv(x.type), h);
+}
+function tAfter(r, n, msg){ if (r && r.tasks) { ls('et_data', JSON.stringify(r)); render(r); } toast(msg); if (CUR && el('card').style.display === 'block' && CUR.name === n) refreshCard(); }
+function sendTE(e){
+  e.preventDefault(); var d = formData(), x = TE; d.row = x.row; d.client = x.client; if (x.reopen) d.reopen = true; svState(true);
+  google.script.run.withSuccessHandler(function(r){ closeSheet(); tAfter(r, x.client, t('tSaved')); }).withFailureHandler(function(er){ svState(false); err(er); }).editTask(x.id || '', d);
+  return false;
+}
+function tCancel(x){ if (!confirm(t('tCancelQ'))) return; google.script.run.withSuccessHandler(function(r){ tAfter(r, x.client, t('cancelled')); }).withFailureHandler(err).cancelTask(x.id || '', x.row, x.client); }
+function tDel(x){ if (!confirm(t('tDelQ'))) return; google.script.run.withSuccessHandler(function(r){ tAfter(r, x.client, t('tDeleted')); }).withFailureHandler(err).deleteTask(x.id || '', x.row, x.client); }
+function delClient(n){
+  if (!confirm(t('cDelQ', { n: n }))) return;
+  if (CUR && CUR.name === n) closeCard();
+  D.clients = D.clients.filter(function(c){ return c.n !== n; }); D.tasks = D.tasks.filter(function(x){ return x.client !== n; }); render(D); toast(t('deleted') + n);
+  google.script.run.withSuccessHandler(function(r){ if (r && r.tasks) { ls('et_data', JSON.stringify(r)); render(r); } }).withFailureHandler(function(e){ err(e); load(); }).deleteClient(n);
+}
+
+// ---------- ⚙️ Хора и достъп ----------
+var ADMD = null;
+function ago(ts){ var m = Math.round((Date.now() - ts) / 60000); if (m < 2) return t('now'); if (m < 60) return t('agoM', { n: m }); var hh = Math.round(m / 60); if (hh < 24) return t('agoH', { n: hh }); return t('agoD', { n: Math.round(hh / 24) }); }
+function admOpen(){ openSheet(t('adm'), '<div class="load">' + t('loading') + '</div>'); api('admGet', []).then(function(r){ ADMD = r; admDraw(); }, function(e){ closeSheet(); err(e); }); }
+function admTags(p){ return p.a ? t('admTagA') : [p.o ? t('admTagO') : t('admTagAll'), p.d ? t('admTagD') : ''].filter(Boolean).join(' · '); }
+function admDraw(){
+  openSheet(t('adm'), '<div style="padding:6px 16px 30px"><div class="s" style="margin:6px 0 10px">' + t('admHint') + '</div><div class="lst" style="margin:0">' + ADMD.people.map(function(p, i){
+    return '<div class="ti"><div class="tr" onclick="admP(' + i + ')"><span class="tx"><b>' + esc(p.n) + (p.n === ADMD.me ? t('admYou') : '') + (p.b ? t('admBlocked') : '') + '</b><small>' + esc(admTags(p)) + '</small>' +
+      '<small>' + (p.seen ? t('admSeen', { t: ago(p.seen) }) : t('admNever')) + ' · ' + (p.push ? t('admPush', { n: p.push }) : t('admNoPush')) + '</small></span><span class="ar">›</span></div></div>';
+  }).join('') + '</div><button class="save" onclick="admP(-1)">' + t('admAdd') + '</button></div>');
+}
+function admSwH(p, k, dis){ return '<label class="sw"><input type="checkbox" id="as_' + k + '"' + (p[k] ? ' checked' : '') + (dis ? ' disabled' : '') + ' onchange="admSw()"><span><b>' + t('adm' + k.toUpperCase()) + '</b><small>' + t('adm' + k.toUpperCase() + 'B') + '</small></span></label>'; }
+function admP(i){
+  var p = i < 0 ? { n: '', a: false, o: false, d: false, mail: '' } : ADMD.people[i], me = p.n === ADMD.me;
+  var h = '<form id="frm" onsubmit="return admSend(event,' + i + ')">';
+  if (i < 0) h += fld(t('admName'), '<input name="n" required maxlength="30" autocomplete="off">');
+  h += '<div class="sws">' + admSwH(p, 'a', me) + '<div id="admX">' + admSwH(p, 'o') + admSwH(p, 'd') + '</div></div>';
+  h += fld(t('admMail'), '<input name="mail" type="email" autocomplete="off" value="' + esc(p.mail || '') + '">');
+  h += '<button class="save" id="sv">' + (i < 0 ? t('admSaveNew') : t('save')) + '</button></form>';
+  if (i >= 0) h += '<div class="acts" style="padding:0 16px 34px;margin-top:-24px">' + (p.b ? '<button class="ok" onclick="admDo(\'admPin\',' + i + ')">' + t('admUnblock') + '</button>'
+    : '<button onclick="admShowPin(' + i + ')">' + t('admShow') + '</button><button onclick="admDo(\'admPin\',' + i + ')">' + t('admNewPin') + '</button>' + (me ? '' : '<button onclick="admDo(\'admBlock\',' + i + ')">' + t('admBlock') + '</button>')) +
+    (me ? '' : '<button style="color:#b91c1c" onclick="admDo(\'admRemove\',' + i + ')">' + t('admRemove') + '</button>') + '</div>';
+  openSheet(i < 0 ? t('admAdd') : '👤 ' + p.n, h); admSw();
+}
+function admSw(){ var a = el('as_a'), x = el('admX'); if (!a || !x) return; x.style.opacity = a.checked ? .4 : 1; x.style.pointerEvents = a.checked ? 'none' : 'auto'; }
+function admVal(k){ var e = el('as_' + k); return !!(e && e.checked); }
+function admSend(e, i){
+  e.preventDefault(); var d = formData(), p = { a: admVal('a'), o: admVal('o'), d: admVal('d'), mail: d.mail || '' };
+  if (i >= 0 && ADMD.people[i].n === ADMD.me) p.a = true;
+  svState(true);
+  api(i < 0 ? 'admAdd' : 'admSave', i < 0 ? [d.n, p] : [ADMD.people[i].n, p]).then(function(r){ ADMD = r; if (r.pin) admPinShow(r.who, r.pin, true); else { toast(t('rec')); admDraw(); } }, function(er){ svState(false); err(er); });
+  return false;
+}
+function admDo(fn, i){
+  var p = ADMD.people[i], q = fn === 'admPin' ? t('admQPin', { n: p.n }) : fn === 'admBlock' ? t('admQBlock', { n: p.n }) : t('admQRemove', { n: p.n });
+  if (!confirm(q)) return;
+  api(fn, [p.n]).then(function(r){ ADMD = r; if (r.pin) admPinShow(r.who, r.pin); else { toast(t('rec')); admDraw(); } }, err);
+}
+function admShowPin(i){ api('admShow', [ADMD.people[i].n]).then(function(r){ admPinShow(r.who, r.pin); }, err); }
+var PINTXT = '';
+function admPinShow(who, pin, isNew){
+  PINTXT = 'Employeetrade CRM: ' + location.origin + location.pathname + '\nPIN: ' + pin;
+  openSheet(t('admPinFor', { n: who }), '<div style="padding:20px 16px 30px;text-align:center">' + (isNew ? '<div class="s" style="font-size:15px">' + esc(t('admAdded', { n: who })) + '</div>' : '') +
+    '<div class="pinbig">' + esc(pin || '—') + '</div><div class="s" style="font-size:14px">' + esc(t('admPinTxt', { n: who })) + '</div>' +
+    (pin ? '<button class="save" onclick="admShare()">' + t('admShare') + '</button>' : '') + '<button class="save" style="background:#64748b" onclick="admDraw()">' + t('admBack') + '</button></div>');
+}
+function admShare(){ if (navigator.share) { navigator.share({ text: PINTXT }).catch(function(){}); return; } try { navigator.clipboard.writeText(PINTXT).then(function(){ toast(t('slCopied')); }); } catch (e) { prompt('', PINTXT); } }
+
+// ---------- 🔔 Известия ----------
+function idb(fn){
+  try { var q = indexedDB.open('crm', 1); q.onupgradeneeded = function(){ q.result.createObjectStore('kv'); };
+    q.onsuccess = function(){ var st = null; try { st = q.result.transaction('kv', 'readwrite').objectStore('kv'); } catch (e) {} fn(st); };
+    q.onerror = function(){ fn(null); }; } catch (e) { fn(null); }
+}
+function keepTok(tk){ idb(function(st){ try { if (st) { if (tk) st.put(tk, 'token'); else st.delete('token'); } } catch (e) {} }); }
+function isIOS(){ return /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); }
+function standalone(){ return (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true; }
+function u8(b){ var s = atob(String(b).replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((String(b).length + 3) % 4)), a = new Uint8Array(s.length); for (var i = 0; i < s.length; i++) a[i] = s.charCodeAt(i); return a; }
+function pushState(cb){
+  if (isIOS() && !standalone()) return cb('ios');
+  if (!('serviceWorker' in navigator) || !('PushManager' in window) || !('Notification' in window)) return cb('no');
+  if (Notification.permission === 'denied') return cb('denied');
+  navigator.serviceWorker.ready.then(function(r){ return r.pushManager.getSubscription(); }).then(function(s){ cb(s ? 'on' : 'off'); }, function(){ cb('no'); });
+}
+function pushOn(){
+  if (!D || !D.pk) { toast(t('wait')); return; }
+  pushState(function(st){
+    if (st === 'ios') { alert(t('pushIos')); return; }
+    if (st === 'no') { alert(t('pushNoSup')); return; }
+    if (st === 'denied') { alert(t('pushDenied')); return; }
+    Notification.requestPermission().then(function(p){
+      if (p !== 'granted') { toast(t('pushDenied'), 5000); return; }
+      keepTok(TOKEN);
+      navigator.serviceWorker.ready.then(function(r){
+        return r.pushManager.getSubscription().then(function(s){ return s ? s.unsubscribe() : null; }).then(function(){ return r.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: u8(D.pk) }); });
+      }).then(function(s){ return api('pushSub', [s.endpoint]); }).then(function(){ toast(t('pushDone'), 4000); pushAskDraw(); api('pushTest', []).catch(function(){}); }, function(e){ toast('⚠️ ' + (e && e.message || e), 6000); });
+    });
+  });
+}
+function pushOff(){
+  navigator.serviceWorker.ready.then(function(r){ return r.pushManager.getSubscription(); }).then(function(s){ if (!s) return; var ep = s.endpoint; return s.unsubscribe().then(function(){ return api('pushUnsub', [ep]); }); })
+    .then(function(){ toast(t('pushOffDone')); }, err);
+}
+function pushBtn(){ pushState(function(st){ var b = el('pushB'); if (!b) return; b.textContent = st === 'on' ? t('pushOff') : t('pushOn'); b.onclick = st === 'on' ? function(){ closeSheet(); pushOff(); } : function(){ closeSheet(); pushOn(); }; }); }
+function pushAskDraw(){
+  var e = el('pushAsk'); if (!e) return;
+  if (ls('et_pushno') === '1' || !D || !D.pk) { e.innerHTML = ''; return; }
+  pushState(function(st){
+    var e2 = el('pushAsk'); if (!e2) return;
+    if (st !== 'off' && st !== 'ios') { e2.innerHTML = ''; return; }
+    e2.innerHTML = '<div class="pask"><b>' + t('pushAskT') + '</b><span>' + t('pushAskB') + '</span><div class="acts"><button class="ok" onclick="pushOn()">' + t('pushYes') + '</button><button onclick="ls(\'et_pushno\',\'1\');pushAskDraw()">' + t('pushNo') + '</button></div></div>';
+  });
+}
+var PENDOPEN = null;
+try { (function(){ var q = new URLSearchParams(location.search), c = q.get('c'), k = q.get('k'); if (c || k) { PENDOPEN = { c: c || '', k: k || '' }; history.replaceState(null, '', location.pathname); } })(); } catch (e) {}
+function pendOpen(){
+  if (!PENDOPEN || !D) return; var p = PENDOPEN; PENDOPEN = null;
+  setTimeout(function(){ if (p.k && kById(p.k)) kOpen(p.k); else if (p.c && dcOf(p.c)) openC(dcOf(p.c).n); }, 80);
+}
+if ('serviceWorker' in navigator) navigator.serviceWorker.addEventListener('message', function(e){ var m = e.data && e.data.crmOpen; if (!m) return; PENDOPEN = { c: m.c || '', k: m.k || '' }; load(); });
 
 document.addEventListener('visibilitychange', function(){ if (!document.hidden && D && TOKEN && el('sheet').style.display !== 'block' && el('prog').style.display !== 'block') load(); });
 // Нова версия → проверява се при всяко отваряне/връщане в приложението и се зарежда сама
