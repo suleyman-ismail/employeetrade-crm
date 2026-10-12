@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src blob:; frame-src blob:; connect-src https://script.google.com https://script.googleusercontent.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer"><meta name="robots" content="noindex,nofollow">
+<title>Employeetrade.eu – shared file</title>
+<link rel="icon" type="image/png" href="icon-192.png">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,Roboto,Arial,sans-serif;background:#f1f5f9;color:#0f172a}
+.hd{background:#0d2b50;color:#fff;padding:18px 16px;display:flex;align-items:center;gap:12px}.hd img{width:40px;height:40px;border-radius:10px;background:#fff}
+.hd b{font-size:18px;display:block}.hd small{opacity:.8;font-size:12.5px}
+.bx{max-width:720px;margin:16px auto;background:#fff;border-radius:14px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+h1{font-size:18px;margin:0 0 6px;word-break:break-word}.s{color:#64748b;font-size:14px}
+.pv{margin-top:14px}.pv img,.pv video{max-width:100%;border-radius:10px;display:block}.pv iframe{width:100%;height:70vh;border:1px solid #e2e8f0;border-radius:10px}
+.btn{display:block;width:100%;text-align:center;margin-top:16px;padding:15px;border-radius:12px;background:#0063b5;color:#fff;font-size:17px;font-weight:700;text-decoration:none;border:0}
+.ld{text-align:center;color:#64748b;padding:30px}.er{text-align:center;padding:24px 6px}.er div{font-size:44px}
+.ft{text-align:center;color:#94a3b8;font-size:12px;margin:10px 0 30px}
+@media (prefers-color-scheme:dark){body{background:#0b1220;color:#e2e8f0}.bx{background:#111a2e}.pv iframe{border-color:#24324d}}
+</style></head><body>
+<div class="hd"><img src="icon-192.png" alt=""><div><b>Employeetrade.eu</b><small>Shared document · Споделен документ</small></div></div>
+<div class="bx" id="b"><div class="ld">Loading… · Зареждане…</div></div>
+<div class="ft">employeetrade.eu · 0% commission for employers</div>
+<script>
+var API_URL = 'https://script.google.com/macros/s/AKfycbw0FRgMaF2-h8xpuQqG92n4kL_uisbbduWT7FxWgJePem5aWlWkb4DvAKIhaGRrLr5VTw/exec';
+function el(id){ return document.getElementById(id); }
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+function size(b){ b = Number(b) || 0; return b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(b / 1024)) + ' KB'; }
+function fail(m){ el('b').innerHTML = '<div class="er"><div>🔒</div><h1>' + esc(m) + '</h1><p class="s">Please ask Employeetrade.eu for a new link.<br>Моля, поискайте нов линк от Employeetrade.eu.</p></div>'; }
+var tok = String(location.hash || '').replace(/^#/, '').replace(/[^a-f0-9]/g, '');
+if (!tok) fail('Invalid link');
+else fetch(API_URL, { method: 'POST', body: JSON.stringify({ fn: 'lf', t: tok }) }).then(function(r){ return r.json(); }).then(function(j){
+  if (!j.ok) { fail(/EXPIRED/.test(j.error) ? 'This link has expired' : 'Link not available'); return; }
+  var d = j.data, b = atob(d.data), u = new Uint8Array(b.length); for (var i = 0; i < b.length; i++) u[i] = b.charCodeAt(i);
+  var mime = String(d.mime || 'application/octet-stream'), safe = /^(image\/(png|jpeg|gif|webp)|application\/pdf|video\/(mp4|webm)|text\/plain)$/.test(mime);
+  var url = URL.createObjectURL(new Blob([u], { type: safe ? mime : 'application/octet-stream' }));
+  var pv = '';
+  if (/^image\//.test(mime) && safe) pv = '<img src="' + url + '" alt="">';
+  else if (mime === 'application/pdf') pv = '<iframe src="' + url + '" title="PDF"></iframe>';
+  else if (/^video\//.test(mime) && safe) pv = '<video src="' + url + '" controls playsinline></video>';
+  el('b').innerHTML = '<h1>📎 ' + esc(d.name) + '</h1><div class="s">' + esc(size(d.size)) + ' · valid until ' + esc(String(d.exp).split('-').reverse().join('.')) + '</div>' +
+    (pv ? '<div class="pv">' + pv + '</div>' : '') + '<a class="btn" id="dl" href="' + url + '">⬇️ Download</a>';
+  el('dl').setAttribute('download', d.name);
+}).catch(function(){ fail('No connection – please try again'); });
+</script></body></html>

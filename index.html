@@ -1,5 +1,7 @@
 <!DOCTYPE html><html lang="bg"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.googleusercontent.com; connect-src https://script.google.com https://script.googleusercontent.com; media-src 'self' blob: data:; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
 <title>Employeetrade CRM</title>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0d2b50">
@@ -169,21 +171,104 @@ input,textarea,.notes{-webkit-user-select:text;user-select:text}
 #lpm h4{margin:2px 4px 10px;font-size:15px;color:#475569;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #lpm button{display:block;width:100%;text-align:left;border:0;background:#f1f5f9;border-radius:12px;padding:15px 16px;margin:0 0 8px;font-size:16.5px;font-family:inherit;color:#0f172a}
 #lpm button.dg{background:#fee2e2;color:#b91c1c;font-weight:700}#lpm button.cx{background:none;text-align:center;color:#64748b;margin:0}
+/* ================= v3.0 ================= */
+#main{max-width:900px;margin:0 auto}#main.wide{max-width:none}
+#qbar{display:none;background:#e0f2fe;color:#075985;font-size:13px;font-weight:700;text-align:center;padding:7px;cursor:pointer}
+.tbar{display:flex;gap:8px;align-items:center;margin:10px 16px 0;flex-wrap:wrap}
+.tbar>button{border:1px solid #cbd5e1;background:#fff;border-radius:10px;padding:8px 12px;font-size:14px;font-weight:700;color:#334155;font-family:inherit}
+.tbar>button.on{background:#0d2b50;color:#fff;border-color:#0d2b50}
+.vsw{display:flex;background:#e2e8f0;border-radius:10px;padding:3px}
+.vsw button{border:0;background:none;padding:7px 12px;border-radius:8px;font-size:14px;font-weight:700;color:#475569;font-family:inherit}
+.vsw button.on{background:#fff;color:#0f172a;box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.fbar{display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;margin:10px 16px 2px;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.fbar::-webkit-scrollbar{display:none}
+.fbar button{flex:none;border:1px solid #cbd5e1;background:#fff;border-radius:16px;padding:7px 11px;font-size:13px;font-weight:600;color:#334155;white-space:nowrap;font-family:inherit}
+.fbar button.on{background:#e0f2fe;border-color:#7dd3fc;color:#075985}.fbar .fbtn.on{background:#0d2b50;color:#fff;border-color:#0d2b50}.fbar .fclr{color:#b91c1c;border-style:dashed}
+.fpan{padding:4px 16px 30px}.fpan h4{margin:16px 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:#475569}
+.fpan .chips button small{opacity:.6;font-weight:400;margin-left:2px}
+.fact{position:sticky;bottom:0;background:inherit;padding-bottom:10px}.save.sec2{background:#64748b;margin-top:10px}
+.kr .ck{font-size:20px;flex:none}.kr.sel{background:#eff6ff}
+#ksb{display:none;position:fixed;left:0;right:0;bottom:0;z-index:9;background:#0d2b50;color:#fff;padding:10px 12px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -4px 14px rgba(0,0,0,.2)}
+body.selm{padding-bottom:140px}
+#ksb .kst{display:flex;align-items:center;gap:8px}#ksb .kst b{flex:1;font-size:15px}
+#ksb .kst button{background:rgba(255,255,255,.15);border:0;color:#fff;border-radius:9px;padding:7px 11px;font-size:14px;font-family:inherit}
+#ksb .ksa{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+#ksb .ksa button{background:#fff;color:#0f172a;border:0;border-radius:11px;padding:8px 2px;font-size:20px;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:inherit}
+#ksb .ksa button small{font-size:11.5px;font-weight:700}#ksb .ksa button:disabled{opacity:.45}
+.bwp{display:flex;align-items:center;gap:10px}.bwp .mb{flex:1;margin:0}
+.bwl{display:flex;flex-wrap:wrap;gap:5px;margin-top:16px}.bwl span{font-size:12.5px;background:#f1f5f9;border-radius:9px;padding:3px 8px;color:#475569}
+.bwl span.ok{background:#dcfce7;color:#15803d}.bwl span.cur{background:#0d2b50;color:#fff}
+/* ▦ канбан */
+.kb{display:flex;gap:10px;overflow-x:auto;padding:10px 16px 24px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;align-items:flex-start}
+.kcol{flex:0 0 84vw;max-width:300px;background:#e2e8f0;border-radius:14px;padding:8px;scroll-snap-align:start;transition:background .15s,box-shadow .15s}
+@media (min-width:700px){.kcol{flex-basis:260px}}
+.kcol.ov{background:#bae6fd;box-shadow:inset 0 0 0 2px #0284c7}
+.kch{display:flex;justify-content:space-between;align-items:center;padding:4px 4px 8px;font-weight:700;font-size:13px;color:#475569}
+.kcb{display:flex;flex-direction:column;gap:7px;min-height:40px}
+.kc{display:flex;gap:6px;background:#fff;border-radius:11px;padding:9px 8px 9px 4px;box-shadow:0 1px 2px rgba(0,0,0,.1);border-left:4px solid #93c5fd;cursor:grab}
+.kc.over{border-left-color:#ef4444}.kc.today{border-left-color:#f97316}.kc.no{border-left-color:#f59e0b}
+.kc .kh{flex:none;width:26px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:20px;touch-action:none;cursor:grab}
+.kc .kx{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;cursor:pointer}
+.kc b{font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.kc small{font-size:12px;color:#64748b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kc.dragging{opacity:.35}.kg{position:fixed;left:0;top:0;z-index:40;pointer-events:none;box-shadow:0 12px 28px rgba(0,0,0,.28);opacity:.95}
+.kdrop{display:none;border:2px dashed #94a3b8;border-radius:11px;padding:12px;text-align:center;font-size:12.5px;color:#64748b}
+body.dragm .kdrop{display:block}body.dragm{cursor:grabbing}
+/* 📧 писма */
+.ml{padding:9px 0;border-bottom:1px solid #f1f5f9;display:flex;flex-direction:column;gap:3px}.ml:last-of-type{border:0}
+.ml .mt{display:flex;gap:8px;align-items:center}.ml .mt b{flex:1;min-width:0;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ml small{font-size:12.5px;color:#64748b}
+.att{display:flex;flex-direction:column;gap:2px}.att .chk{font-weight:400;font-size:14px;margin:6px 0}.att small{color:#94a3b8}
+/* 📊 */
+.tbl .trw{display:flex;align-items:center;gap:10px;padding:11px 14px;border-top:1px solid #f1f5f9;font-size:14px}.tbl .trw:first-child{border-top:0}
+.tbl .trw span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}.tbl .trw small{color:#64748b;flex:none}.tbl .trw b{flex:none;min-width:64px;text-align:right}
+.tbl .th{font-size:11.5px;text-transform:uppercase;color:#64748b;background:#f8fafc}.tbl .th span,.tbl .th b{font-weight:700}
+.kpi .s{font-size:11.5px;margin-top:2px}
+.money{border-left:5px solid #b45309}.nx.money{background:#fffbeb;border-color:#fde68a}
+@media (min-width:900px){.kpis{grid-template-columns:repeat(4,1fr)}}
+
+/* ================= 🌓 тъмна тема ================= */
+html.dark{color-scheme:dark}
+html.dark body{background:#0b1220;color:#e2e8f0}
+html.dark .hd,html.dark .sheet .top,html.dark #login{background:#0f1d33}
+html.dark .sheet{background:#0b1220}html.dark #sheet{background:#0f172a}
+html.dark .card,html.dark .empty,html.dark .kpi,html.dark .bar,html.dark .box,html.dark details.sec,html.dark .lst,html.dark .ord,html.dark .kc,html.dark .nw,html.dark .pask,html.dark #lpm .bx,html.dark .qnew button,html.dark .upb label,html.dark .wab,html.dark .who button,html.dark .tbar>button,html.dark .fbar button{background:#111a2e;color:#e2e8f0;border-color:#24324d}
+html.dark input,html.dark select,html.dark textarea,html.dark .srch input{background:#0f172a;color:#e2e8f0;border-color:#24324d}
+html.dark .remind{background:#2a2312;border-color:#b45309}
+html.dark .seg,html.dark .vsw,html.dark .kcol{background:#172238}html.dark .seg button.on,html.dark .vsw button.on{background:#24324d;color:#fff}
+html.dark .seg button,html.dark .vsw button{color:#94a3b8}
+html.dark h2,html.dark .box h4,html.dark .fpan h4,html.dark .kch{color:#94a3b8}html.dark h2 span{background:#172238;color:#cbd5e1}
+html.dark .t,html.dark .lr .nm,html.dark .tr .tx b,html.dark .kr .cx b,html.dark .fl .fn,html.dark .wab b,html.dark .sw b,html.dark .pinbig,html.dark .mg b,html.dark .nw div,html.dark .ord .sh b,html.dark .who button,html.dark #lpm button,html.dark .tbl .trw,html.dark .ml .mt b{color:#e2e8f0}
+html.dark .s,html.dark label,html.dark .dl span:first-child,html.dark .mg,html.dark .info div{color:#cbd5e1}
+html.dark .info div,html.dark .fl,html.dark .lr,html.dark .ti,html.dark .kr,html.dark .dl,html.dark .ml,html.dark details.sec[open] summary,html.dark .tbl .trw,html.dark .cr{border-color:#1e2a42}
+html.dark .acts a,html.dark .acts button,html.dark .acts label,html.dark .chips button,html.dark .fl button,html.dark .qd button{background:#172238;color:#e2e8f0;border-color:#2b3a57}
+html.dark .acts .ok{background:#14361f;border-color:#166534;color:#bbf7d0}
+html.dark .chips button.on{background:#38bdf8;border-color:#38bdf8;color:#0b1220}
+html.dark #lpm button{background:#172238}html.dark #lpm button.dg{background:#3b1414;color:#fca5a5}
+html.dark .ti.op,html.dark .tr:active,html.dark .lr:active,html.dark .kr.sel,html.dark .og>div,html.dark .tbl .th,html.dark .bwl span{background:#172238}
+html.dark .nx{background:#0f2138;border-color:#1e3a5f}html.dark .nx h3{color:#93c5fd}html.dark #newc{background:#0f2a1c;border-color:#166534}
+html.dark .nx.money{background:#2a2312;border-color:#78350f}
+html.dark .sw{background:#111a2e;border-color:#24324d}
+html.dark .lnk,html.dark .nxt,html.dark .when{color:#7dd3fc}html.dark .more{color:#7dd3fc}
+html.dark .kcol.ov{background:#0c4a6e}
+html.dark .pill{filter:saturate(.85) brightness(.95)}
+html.dark #toast,html.dark #prog{background:#e2e8f0;color:#0f172a}
+html.dark #qbar{background:#0c4a6e;color:#e0f2fe}html.dark #off{background:#3a2a0a;color:#fde68a}
+html.dark .db{background:#172238;color:#94a3b8}html.dark .db.ok{background:#14361f;color:#86efac}html.dark .db.w{background:#3a230a;color:#fdba74}html.dark .db.x{background:#3b1414;color:#fca5a5}
+html.dark .ph a,html.dark .mb{background:#172238}
 </style></head><body>
 <div class="hd"><header><div><h1><img src="icon-192.png" alt="">ET CRM</h1><div class="d" id="dt"></div></div><div class="hr"><button class="lg" id="lgB" onclick="toggleLang()">TR</button><button class="me" id="meB" onclick="meMenu()">👤</button><button onclick="load(true)" id="rfB">⟳</button></div></header>
 <div id="sync"></div><nav class="tabs"><button id="tb_t" onclick="tab('t')"></button><button id="tb_o" onclick="tab('o')"></button><button id="tb_c" onclick="tab('c')"></button><button id="tb_k" onclick="tab('k')"></button><button id="tb_r" onclick="tab('r')"></button></nav></div>
 <div class="seg" id="seg"><button id="sg_m" onclick="seg('m')"></button><button id="sg_a" onclick="seg('a')"></button></div>
-<div id="off"></div><div id="main"><div class="load" id="ld0"></div></div>
+<div id="off"></div><div id="qbar" onclick="qFlush()"></div><div id="main"><div class="load" id="ld0"></div></div>
 <div id="lpm" onclick="if(event.target===this)lpClose()"><div class="bx" id="lpmB"></div></div><div id="card" class="sheet"><div class="top"><button onclick="closeCard()">←</button><b id="cdT"></b></div><div id="cdB"></div></div>
 <div id="sheet" class="sheet"><div class="top"><b id="shT"></b><button onclick="closeSheet()">✕</button></div><div id="shB"></div></div>
 <div id="pv"><button class="c" onclick="closePv()">✕</button><div class="l" id="pvL"></div><img id="pvI" alt=""></div>
 <div id="login"><button class="lgl" id="lgL" onclick="toggleLang()">TR</button><div class="logo"><img src="icon-192.png" alt=""></div><h1>Employeetrade CRM</h1><p id="lgP"></p>
 <div class="dots" id="dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
 <div class="pad"><button onclick="pinK(1)">1</button><button onclick="pinK(2)">2</button><button onclick="pinK(3)">3</button><button onclick="pinK(4)">4</button><button onclick="pinK(5)">5</button><button onclick="pinK(6)">6</button><button onclick="pinK(7)">7</button><button onclick="pinK(8)">8</button><button onclick="pinK(9)">9</button><span></span><button onclick="pinK(0)">0</button><button class="x" onclick="pinB()">⌫</button></div><div id="lerr"></div></div>
-<div id="toast"></div><div id="prog"><div id="progT"></div><div class="pb"><i id="progB"></i></div></div>
+<div id="ksb"></div><div id="toast"></div><div id="prog"><div id="progT"></div><div class="pb"><i id="progB"></i></div></div>
 <script>
 var API_URL = 'https://script.google.com/macros/s/AKfycbw0FRgMaF2-h8xpuQqG92n4kL_uisbbduWT7FxWgJePem5aWlWkb4DvAKIhaGRrLr5VTw/exec';
-var APP_VER = '2.0';
+var APP_VER = '3.0';
 function ls(k, v){ try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }
 
 // ================= 🇧🇬 / 🇹🇷 ЕЗИК =================
@@ -274,27 +359,39 @@ function applyLang(){
 
 // ================= API =================
 var TOKEN = ls('et_token') || '';
+// Функции, които само четат – след тях не викаме „bg“
+var READ_FN = { getAppData: 1, getClient: 1, getPhoto: 1, getFile: 1, getCandidate: 1, kGet: 1, getNotif: 1, admGet: 1, admShow: 1, kSearch: 1, analytics: 1, bg: 1, ping: 1, shortLink: 1, pushTest: 1, login: 1 };
 function apiCall(fn, args, extra){
   var body = { fn: fn, args: args || [], token: TOKEN, lang: LANG };
   if (extra) for (var k in extra) body[k] = extra[k];
   return fetch(API_URL, { method: 'POST', body: JSON.stringify(body) })
     .catch(function(){ var e = new Error(t('noNet')); e.offline = true; throw e; })
-    .then(function(r){ if (!r.ok) throw new Error(t('srv') + ' (' + r.status + ')'); return r.json(); })
+    .then(function(r){ if (!r.ok) { var e = new Error(t('srv') + ' (' + r.status + ')'); if (r.status >= 500 || r.status === 429) e.offline = true; throw e; } return r.json(); })
     .then(function(j){
       if (!j.ok) { if (j.error === 'AUTH') { logout(); throw new Error(t('reLogin')); } throw new Error(j.error); }
+      if (!READ_FN[fn]) bgKick();
       return j.data;
     });
 }
-// google.script.run.withSuccessHandler(...).withFailureHandler(...).fn(...)
-function mkRun(ok, fail){
+// ⚡ Календарът и известията се обработват на заден план – викаме „bg“ малко след последния запис
+var BGT = null;
+function bgKick(){ clearTimeout(BGT); BGT = setTimeout(function(){ apiCall('bg', []).catch(function(){}); }, 1500); }
+// google.script.run.withSuccessHandler(...).withFailureHandler(...).withQueued(...).fn(...)
+// withQueued: ако няма интернет, записът се пази в телефона (IndexedDB) и се праща сам, когато връзката се върне
+function mkRun(ok, fail, qd){
   return new Proxy({}, { get: function(tg, k){
-    if (k === 'withSuccessHandler') return function(f){ return mkRun(f, fail); };
-    if (k === 'withFailureHandler') return function(f){ return mkRun(ok, f); };
+    if (k === 'withSuccessHandler') return function(f){ return mkRun(f, fail, qd); };
+    if (k === 'withFailureHandler') return function(f){ return mkRun(ok, f, qd); };
+    if (k === 'withQueued') return function(f){ return mkRun(ok, fail, f || function(){}); };
     return function(){ var a = Array.prototype.slice.call(arguments); syncOn(1);
-      apiCall(k, a).then(function(r){ syncOn(-1); if (ok) ok(r); }, function(e){ syncOn(-1); if (fail) fail(e); else toast(t('err') + e.message, 4500); }); };
+      apiCall(k, a).then(function(r){ syncOn(-1); if (ok) ok(r); }, function(e){
+        syncOn(-1);
+        if (qd && e.offline) { qAdd(k, a).then(function(){ qd(); }); return; }
+        if (fail) fail(e); else toast(t('err') + e.message, 4500);
+      }); };
   }});
 }
-var google = { script: { get run(){ return mkRun(null, null); } } };
+var google = { script: { get run(){ return mkRun(null, null, null); } } };
 function api(fn, args){ syncOn(1); return apiCall(fn, args).then(function(r){ syncOn(-1); return r; }, function(e){ syncOn(-1); throw e; }); }
 var SYNC = 0;
 function syncOn(n){ SYNC = Math.max(0, SYNC + n); var e = el('sync'); if (e) e.className = SYNC ? 'on' : ''; }
@@ -305,7 +402,14 @@ var STC = {'Ново запитване':['#dbeafe','#1d4ed8'],'Осъществ
   'Документи / виза':['#fce7f3','#be185d'],'Работниците започнаха':['#dcfce7','#15803d'],'Активен клиент':['#bbf7d0','#166534'],'Загубен':['#f3f4f6','#6b7280']};
 try { TAB = localStorage.getItem('et_tab') || 't'; SEG = localStorage.getItem('et_seg') || 'm'; } catch (e) {}
 function el(id){ return document.getElementById(id); }
-function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+// 🛡️ само безопасни адреси във връзките (без javascript:, data: …)
+function safeUrl(u){ u = String(u || '').trim(); return /^(https?:|tel:|mailto:|viber:|whatsapp:)/i.test(u) ? esc(u) : '#'; }
+// Картата идва „лека“ (без Drive) след промени → пазим снимките и файловете от предишния път
+function setCur(c){
+  if (c && c.lite && CUR && CUR.name === c.name) ['photos', 'files', 'folder', 'photoErr'].forEach(function(k){ if (CUR[k] !== undefined) c[k] = CUR[k]; });
+  CUR = c;
+}
 // value = български (както в таблицата), текст = преведен
 function opts(a, sel){ return a.map(function(x){ return '<option value="' + esc(x) + '"' + (x === sel ? ' selected' : '') + '>' + esc(x ? tv(x) : '') + '</option>'; }).join(''); }
 function toast(s, ms){ var e = el('toast'); e.textContent = s; e.style.display = 'block'; clearTimeout(toast.h); toast.h = setTimeout(function(){ e.style.display = 'none'; }, ms || 2500); }
@@ -328,16 +432,83 @@ function boot(){
   keepTok(TOKEN);
   var c = ls('et_data');
   if (c) { try { var d = JSON.parse(c); d.today = localToday(); render(d); } catch (e) {} }
-  load();
+  load(); qBar(); setTimeout(qFlush, 1500);
 }
 function intl(p){ var d = String(p || '').replace(/[^0-9]/g, ''); if (d.indexOf('00') === 0) d = d.slice(2); else if (d.indexOf('0') === 0) d = '359' + d.slice(1); return d; }
 function tel(p){ if (!p) return ''; var d = intl(p); if (d.length < 6) return ''; return '<a href="tel:+' + d + '">' + t('call') + '</a><a href="viber://chat?number=%2B' + d + '">💜 Viber</a><a href="whatsapp://send?phone=' + d + '">🟢 WhatsApp</a>'; }
-function mapB(u){ return u ? '<a href="' + esc(u) + '" target="_blank">' + t('map') + '</a>' : ''; }
+function mapB(u){ return u ? '<a href="' + safeUrl(u) + '" target="_blank" rel="noopener">' + t('map') + '</a>' : ''; }
 function nm(n){ return '<span class="lnk" data-n="' + esc(n) + '" onclick="openC(this.dataset.n)">' + esc(n) + '</span>'; }
 function mine(r){ return SEG === 'a' || !D.me || !r || r === D.me; }
 function sec(ti, n, body, emptyTxt){ return '<h2>' + ti + '<span>' + n + '</span></h2>' + (n ? body : '<div class="empty">' + emptyTxt + '</div>'); }
 function taskBy(row){ return D.tasks.filter(function(x){ return x.row === row; })[0]; }
 
+// ================= 📴 Офлайн опашка (IndexedDB) =================
+// Нови задачи, бележки, етапи… записани без интернет чакат тук и се изпращат сами, щом връзката се върне.
+// ⚠️ Flexi CRM е на същия адрес → собствена база „et-crm“ (не „crm“)
+var IDB_NAME = 'et-crm';
+function idbOpen(cb){
+  try {
+    var q = indexedDB.open(IDB_NAME, 1);
+    q.onupgradeneeded = function(){ var db = q.result; if (!db.objectStoreNames.contains('kv')) db.createObjectStore('kv'); if (!db.objectStoreNames.contains('q')) db.createObjectStore('q', { autoIncrement: true }); };
+    q.onsuccess = function(){ cb(q.result); };
+    q.onerror = function(){ cb(null); };
+  } catch (e) { cb(null); }
+}
+function idbStore(name, mode, cb){ idbOpen(function(db){ var st = null; try { if (db) st = db.transaction(name, mode).objectStore(name); } catch (e) {} cb(st); }); }
+var QMEM = null;   // резерва без IndexedDB → localStorage
+function qLs(v){ if (v === undefined) { try { return JSON.parse(ls('et_q') || '[]') || []; } catch (e) { return []; } } ls('et_q', JSON.stringify(v)); }
+function qAdd(fn, args){
+  return new Promise(function(res){
+    var it = { fn: fn, args: args, t: Date.now() };
+    idbStore('q', 'readwrite', function(st){
+      if (!st) { var a = qLs(); a.push(it); qLs(a); qBar(); res(); return; }
+      var r = st.add(it); r.onsuccess = function(){ qBar(); res(); }; r.onerror = function(){ var a = qLs(); a.push(it); qLs(a); qBar(); res(); };
+    });
+  });
+}
+function qAll(cb){
+  idbStore('q', 'readonly', function(st){
+    var mem = qLs().map(function(x, i){ x.ls = i; return x; });
+    if (!st) { cb(mem); return; }
+    var out = [], c = st.openCursor();
+    c.onsuccess = function(){ var cur = c.result; if (cur) { var v = cur.value; v.key = cur.key; out.push(v); cur.continue(); } else cb(out.concat(mem).sort(function(a, b){ return a.t - b.t; })); };
+    c.onerror = function(){ cb(mem); };
+  });
+}
+function qDel(it, cb){
+  if (it.ls !== undefined) { var a = qLs(); a = a.filter(function(x){ return !(x.t === it.t && x.fn === it.fn); }); qLs(a); cb(); return; }
+  idbStore('q', 'readwrite', function(st){ if (!st) { cb(); return; } var r = st.delete(it.key); r.onsuccess = r.onerror = function(){ cb(); }; });
+}
+var QN = 0, QBUSY = false;
+function qBar(){
+  qAll(function(a){
+    QN = a.length; var b = el('qbar'); if (!b) return;
+    b.style.display = QN ? 'block' : 'none';
+    b.textContent = QN ? t('qWait', { n: QN }) : '';
+  });
+}
+function qFlush(){
+  if (QBUSY || !TOKEN) return; QBUSY = true;
+  qAll(function(a){
+    if (!a.length) { QBUSY = false; qBar(); return; }
+    var done = 0, i = 0;
+    var next = function(){
+      if (i >= a.length) { QBUSY = false; qBar(); if (done) { toast(t('qSynced', { n: done }), 3500); load(); } return; }
+      var it = a[i++];
+      apiCall(it.fn, it.args).then(function(r){
+        if (r && r.dup && it.args[0] && typeof it.args[0] === 'object' && !it.args[0].confirmDup) { it.args[0].confirmDup = true; toast(t('qDup', { n: r.dup }), 5000); return apiCall(it.fn, it.args); }
+      }).then(function(){ done++; qDel(it, next); }, function(e){
+        if (e.offline) { QBUSY = false; qBar(); if (done) load(); return; }
+        toast(t('qFail', { f: t('qf_' + it.fn) }) + ': ' + e.message, 6000); qDel(it, next);
+      });
+    };
+    next();
+  });
+}
+window.addEventListener('online', function(){ setTimeout(qFlush, 800); });
+setInterval(function(){ if (QN && navigator.onLine !== false) qFlush(); }, 60000);
+// Общо съобщение, когато записът остава в опашката
+function queued(){ closeSheet(); toast(t('qSaved'), 4000); qBar(); }
 function render(d){
   D = d; busy(false);
   el('dt').textContent = t('today') + ', ' + fmt(d.today) + ' · v' + APP_VER;
@@ -356,6 +527,7 @@ function draw(){
   setTimeout(function(){ var q = el('q'); if (fq && q && document.activeElement !== q) { q.focus(); try { q.setSelectionRange(pos, pos); } catch (e) {} } }, 0);
   ['t','o','c','k','r'].forEach(function(k){ el('tb_' + k).className = TAB === k ? 'on' : ''; });
   el('sg_m').className = SEG === 'm' ? 'on' : ''; el('sg_a').className = SEG === 'a' ? 'on' : '';
+  el('main').className = ''; if (TAB !== 'k') kSelOff(true);
   if (TAB === 'c') drawClients(); else if (TAB === 'o') drawOrders(); else if (TAB === 'k') drawCands(); else if (TAB === 'r') drawReport(); else drawTasks();
 }
 
@@ -384,8 +556,8 @@ function markC(){
   cardBusy(true);
   google.script.run.withSuccessHandler(function(c){
     var dc = D.clients.filter(function(x){ return x.n === c.name; })[0]; if (dc) dc.l = D.today;
-    CUR = c; cardBusy(false); drawCard(); render(D); toast(t('marked')); load();
-  }).withFailureHandler(cardErr).markContact(CUR.name);
+    setCur(c); cardBusy(false); drawCard(); render(D); toast(t('marked')); load();
+  }).withQueued(function(){ var dc = dcOf(CUR.name); if (dc) dc.l = D.today; cardBusy(false); drawCard(); toast(t('qSaved'), 4000); }).withFailureHandler(cardErr).markContact(CUR.name);
 }
 var OPENT = null;
 function togT(row){ OPENT = OPENT === row ? null : row; drawTasks(); }
@@ -412,7 +584,7 @@ function drawTasks(){
 }
 function snooze(row, days){
   var x = taskBy(row); x.date = addD(days); x.time = x.time || ''; render(D);
-  google.script.run.withSuccessHandler(function(d){ render(d); toast(t('moved', { n: days })); }).withFailureHandler(err).snoozeTask(row, x.client, days);
+  google.script.run.withSuccessHandler(function(d){ render(d); toast(t('moved', { n: days })); }).withQueued(function(){ toast(t('qSaved'), 4000); }).withFailureHandler(err).snoozeTask(row, x.client, days);
 }
 
 // ---------- 🔎 Търсачка (име, град, телефон, позиция, контакт, адвокат – и на латиница) ----------
@@ -462,8 +634,8 @@ function clientRow(c){
     '<span class="nm">' + esc(c.n) + '</span><span class="ar">›</span></div>';
 }
 function rows(a){ return '<div class="lst">' + a.map(clientRow).join('') + '</div>'; }
-function results(q){
-  var a = findC(q), MAXR = 50;
+function results(q, pre){
+  var a = pre || findC(q), MAXR = 50;
   return '<h2>' + t('results') + '<span>' + a.length + '</span></h2>' + (a.length ? rows(a.slice(0, MAXR)) +
     (a.length > MAXR ? '<div class="empty">' + t('moreRes', { n: a.length - MAXR }) + '</div>' : '')
     : '<div class="empty">' + esc(t('noRes', { q: q })) + '</div><div class="qnew"><button data-n="' + esc(q) + '" onclick="openForm(this.dataset.n)">' + esc(t('newEmpQ', { q: q })) + '</button></div>');
@@ -477,14 +649,22 @@ function onQ(){
 }
 
 // ---------- 🏢 Работодатели ----------
-function drawClients(){ el('main').innerHTML = srchBox() + '<div class="big"><button onclick="openForm()">' + t('newTask') + '</button></div><div id="cl"></div>'; listC(); }
+var CV = ls('et_cv') === 'b' ? 'b' : 'l';
+function cView(v){ CV = v; ls('et_cv', v); draw(); }
+function drawClients(){
+  el('main').innerHTML = srchBox() + '<div class="big"><button onclick="openForm()">' + t('newTask') + '</button></div><div class="tbar">' + vSw(CV, 'cView') + '</div>' + fBar('c') + '<div id="cl"></div>';
+  el('main').className = CV === 'b' ? 'wide' : '';
+  listC();
+}
 function listC(){
   var q = Q.trim();
-  if (q) { el('cl').innerHTML = results(q); return; }
-  var a = D.clients.filter(function(c){ return mine(c.r); }).sort(cmpC);
+  var a = D.clients.filter(function(c){ return mine(c.r) && fMatch('c', c); });
+  if (q) { var hit = findC(q); a = hit.filter(function(c){ return a.indexOf(c) > -1; }); }
+  if (CV === 'b') { el('cl').innerHTML = cBoard(a); return; }
+  if (q) { el('cl').innerHTML = results(q, a); return; }
+  a.sort(cmpC);
   el('cl').innerHTML = '<h2>' + t('empList') + '<span>' + a.length + '</span></h2>' + (a.length ? rows(a) : '<div class="empty">' + t('noEmp') + '</div>');
 }
-
 // ---------- 📊 Отчет ----------
 function drawReport(){
   var cs = D.clients.filter(function(c){ return mine(c.r); }), ts = D.tasks.filter(function(x){ return mine(x.rep); });
@@ -503,7 +683,8 @@ function drawReport(){
   h += '<h2>' + t('byStage') + '<span>' + cs.length + '</span></h2>' + rws.map(function(r){
     return '<div class="bar"><div class="r"><span>' + pill(r.s) + '</span><span><b>' + r.n + '</b>' + (r.w ? ' · 👷 ' + r.w + ' ' + t('wk') : '') + '</span></div><div class="b" style="width:' + Math.round(r.n / mx * 100) + '%"></div></div>';
   }).join('');
-  el('main').innerHTML = h;
+  el('main').innerHTML = h + '<div id="ana"></div>';
+  anaLoad();
 }
 
 // ---------- 👤 Профил / вход ----------
@@ -521,7 +702,7 @@ function newsOk(){ ls('et_seen', D.ver); closeSheet(); }
 function meMenu(){
   openSheet('👤 ' + (D && D.me ? D.me : ''), '<div class="who"><p style="font-size:15px;color:#334155">' + t('loggedAs') + ' <b>' + esc(D && D.me || '') + '</b>.</p>' +
     '<button id="pushB" onclick="closeSheet();pushOn()">' + t('pushOn') + '</button>' + (isAdm() ? '<button onclick="admOpen()">' + t('adm') + '</button>' : '') +
-    '<button onclick="toggleLang()">' + t('langBtn') + '</button><button onclick="showNews(true)">' + t('news') + '</button><button onclick="load(true);closeSheet()">' + t('refresh') + '</button><button onclick="logout()">' + t('logout') + '</button></div>');
+    '<button onclick="themeNext()" id="thB">' + themeLab() + '</button><button onclick="toggleLang()">' + t('langBtn') + '</button><button onclick="showNews(true)">' + t('news') + '</button><button onclick="load(true);closeSheet()">' + t('refresh') + '</button><button onclick="logout()">' + t('logout') + '</button></div>');
   pushBtn();
 }
 var PIN = '';
@@ -596,6 +777,7 @@ function send(e){
         return;
       }
       afterSave(m, d); })
+    .withQueued(function(){ svState(false); queued(); })
     .withFailureHandler(function(er){ svState(false); err(er); }).saveTask(d);
   return false;
 }
@@ -626,16 +808,16 @@ function sendDone(e){
   google.script.run.withSuccessHandler(function(r){
     ls('et_data', JSON.stringify(r)); render(r); toast(nx ? t('doneNext') : t('doneOnly'));
     if (CUR && el('card').style.display === 'block' && CUR.name === x.client) openC(x.client);
-  }).withFailureHandler(function(er){ err(er); load(); }).completeTask(x.row, x.client, p);
+  }).withQueued(function(){ toast(t('qSaved'), 4000); }).withFailureHandler(function(er){ err(er); load(); }).completeTask(x.row, x.client, p);
   return false;
 }
 
 // ---------- 🏢 Карта на работодателя ----------
 function openC(n, cb){
   el('cdT').textContent = n; el('cdB').innerHTML = '<div class="load">' + t('loading') + '</div>'; el('card').style.display = 'block'; el('card').scrollTop = 0;
-  google.script.run.withSuccessHandler(function(c){ CUR = c; drawCard(); if (typeof cb === 'function') cb(); }).withFailureHandler(function(e){ closeCard(); err(e); }).getClient(n);
+  google.script.run.withSuccessHandler(function(c){ setCur(c); drawCard(); if (typeof cb === 'function') cb(); }).withFailureHandler(function(e){ closeCard(); err(e); }).getClient(n);
 }
-function refreshCard(){ if (!CUR) return; var n = CUR.name; google.script.run.withSuccessHandler(function(c){ if (CUR && CUR.name === n) { CUR = c; drawCard(); } }).withFailureHandler(function(){}).getClient(n); }
+function refreshCard(){ if (!CUR) return; var n = CUR.name; google.script.run.withSuccessHandler(function(c){ if (CUR && CUR.name === n) { setCur(c); drawCard(); } }).withFailureHandler(function(){}).getClient(n); }
 function closeCard(){ el('card').style.display = 'none'; CUR = null; }
 function secT(d){ OPEN[d.getAttribute('data-k')] = d.open; try { localStorage.setItem('et_open', JSON.stringify(OPEN)); } catch (e) {} }
 function fold(k, title, sum, inner){
@@ -671,6 +853,7 @@ function drawCard(){
   var ch = (cs.length || cso.length ? '<div class="lst kls" style="margin:0">' + cs.concat(cso).map(kRow).join('') + '</div>' : '<div class="s">' + t('noCands') + '</div>') +
     '<div class="acts"><button class="ok" data-n="' + esc(c.name) + '" onclick="kForm({emp:this.dataset.n})">' + t('addCand') + '</button><button onclick="slShare()">' + t('slBtn') + '</button></div>';
   h += fold('cands', t('sCands') + ' (' + cs.length + (c.workers ? ' / ' + c.workers : '') + ')', '', ch);
+  h += mailSec(c);
   // 👤 Информация
   var info = [['🧑‍💼', c.contact], ['📞', c.phone], ['✉️', c.email], ['🌍', c.city], ['🛠️', tv(c.pos)], ['👷', c.workers ? c.workers + ' ' + t('workers') : ''],
     ['💶', c.salary ? t('salary') + c.salary : ''], ['💳', c.club ? c.club + (c.clubTo ? ' · ' + t('clubTxt', { d: fmt(c.clubTo) }) : '') : ''], ['🔎', c.src ? t('src') + tv(c.src) : ''], ['👤', c.rep], ['🗓️', c.inq ? t('inq') + fmt(c.inq) : ''], ['☎️', c.last ? t('last') + fmt(c.last) : '']]
@@ -695,20 +878,21 @@ function drawCard(){
   var fl = c.files || [];
   var fh = c.photoErr ? '<div class="s">' + esc(c.photoErr) + '</div>' : (fl.length ? fl.map(fileRow).join('') + '<div class="s" style="margin-top:6px">' + t('fHint') + '</div>'
     : '<div class="s">' + t('noFiles') + '</div>') +
-    '<div class="acts">' + upLabel(t('addFile'), '', 'doc', '') + (c.folder ? '<a href="' + esc(c.folder) + '" target="_blank">' + t('openF') + '</a>' : '') + '</div>';
+    '<div class="acts">' + upLabel(t('addFile'), '', 'doc', '') + (c.folder ? '<a href="' + safeUrl(c.folder) + '" target="_blank">' + t('openF') + '</a>' : '') + '</div>';
   h += fold('files', t('sFiles') + ' (' + fl.length + ')', '', fh);
   // 📸 Снимки на фирмата
   var ph = c.photoErr ? '' : (c.photos.length ? photoGrid(c.photos) : '<div class="s">' + t('noPhotos') + '</div>') +
-    '<div class="acts">' + upLabel(t('photo'), 'image/*', 'photo', '') + (c.folder ? '<a href="' + esc(c.folder) + '" target="_blank">' + t('openF') + '</a>' : '') + '</div>';
+    '<div class="acts">' + upLabel(t('photo'), 'image/*', 'photo', '') + (c.folder ? '<a href="' + safeUrl(c.folder) + '" target="_blank">' + t('openF') + '</a>' : '') + '</div>';
   h += fold('photos', t('sPhotos') + ' (' + c.photos.length + ')', '', ph);
   el('cdB').innerHTML = h;
 }
-function photoGrid(a){ return '<div class="ph">' + a.map(function(p){ return '<a data-id="' + esc(p.id) + '" onclick="viewPhoto(this.dataset.id)">' + (p.thumb ? '<img src="' + p.thumb + '" alt="">' : '📷') + '</a>'; }).join('') + '</div>'; }
+function photoGrid(a){ return '<div class="ph">' + a.map(function(p){ return '<a data-id="' + esc(p.id) + '" onclick="viewPhoto(this.dataset.id)">' + (p.thumb ? '<img src="' + esc(p.thumb) + '" alt="">' : '📷') + '</a>'; }).join('') + '</div>'; }
 function fileRow(f, cand){
   var isV = /^video\//.test(f.mime || '') || /\.(mp4|mov|m4v|3gp|webm|avi|mkv)$/i.test(f.name || '');
-  return '<div class="fl"><a class="fn" href="' + esc(f.url) + '" target="_blank" rel="noopener"><span class="fi">' + fIcon(f) + '</span><span class="fx"><b>' + esc(f.name) + '</b><small>' +
+  return '<div class="fl"><a class="fn" href="' + safeUrl(f.url) + '" target="_blank" rel="noopener"><span class="fi">' + fIcon(f) + '</span><span class="fx"><b>' + esc(f.name) + '</b><small>' +
     [fSize(f.size), f.t ? fmt(dayOf(f.t)) : ''].filter(Boolean).join(' · ') + '</small></span></a>' +
     (isV ? '' : '<button data-id="' + esc(f.id) + '" onclick="dlF(this.dataset.id)">⬇️</button>') +
+    (canShare() && !isV && (Number(f.size) || 0) <= 15728640 ? '<button data-id="' + esc(f.id) + '" data-n="' + esc(f.name) + '" title="' + esc(t('shT')) + '" onclick="shareF(this.dataset.id,this.dataset.n)">🔗</button>' : '') +
     (canDel() ? '<button data-id="' + esc(f.id) + '" data-n="' + esc(f.name) + '" data-c="' + esc(cand || '') + '" onclick="delF(this.dataset.id,this.dataset.n,this.dataset.c)">🗑️</button>' : '') + '</div>';
 }
 function dayOf(x){ var d = new Date(x); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
@@ -737,7 +921,7 @@ function editLaw(){
 function lawFill(){ var n = el('lwN').value.trim(), hit = (D.lawyers || []).filter(function(l){ return l[0] === n; })[0]; if (hit && hit[1] && !el('lwP').value.trim()) el('lwP').value = hit[1]; }
 function sendLaw(e){
   e.preventDefault(); var d = formData(); svState(true);
-  google.script.run.withSuccessHandler(function(c){ CUR = c; closeSheet(); drawCard(); toast(t('lawSaved')); load(); })
+  google.script.run.withSuccessHandler(function(c){ setCur(c); closeSheet(); drawCard(); toast(t('lawSaved')); load(); })
     .withFailureHandler(function(er){ svState(false); err(er); }).setLawyer(CUR.name, d.lawyer, d.lawPhone);
   return false;
 }
@@ -746,7 +930,7 @@ function sendLaw(e){
 function newCand(){
   var n = prompt(t('candPrompt')); n = String(n || '').trim(); if (!n) return;
   cardBusy(true); OPEN.cands = true; try { localStorage.setItem('et_open', JSON.stringify(OPEN)); } catch (e) {}
-  google.script.run.withSuccessHandler(function(c){ CUR = c; cardBusy(false); drawCard(); toast(t('candAdded', { n: n })); openCand(n); load(); })
+  google.script.run.withSuccessHandler(function(c){ setCur(c); cardBusy(false); drawCard(); toast(t('candAdded', { n: n })); openCand(n); load(); })
     .withFailureHandler(cardErr).addCandidate(CUR.name, n);
 }
 function openCand(n){
@@ -766,7 +950,7 @@ function drawCand(){
   h += '<div class="box"><h4>' + t('sPhotos').replace(/ .*/, '') + ' ' + (k.photos.length) + '</h4>' + (k.photos.length ? photoGrid(k.photos) : '<div class="s">—</div>') + '</div>';
   h += '<div class="box"><h4>' + t('sVideos') + ' ' + k.videos.length + '</h4>' + (k.videos.length ? k.videos.map(function(f){ return fileRow(f, k.name); }).join('') : '<div class="s">—</div>') + '</div>';
   h += '<div class="box"><h4>' + t('sDocs') + ' ' + k.docs.length + '</h4>' + (k.docs.length ? k.docs.map(function(f){ return fileRow(f, k.name); }).join('') : '<div class="s">—</div>') + '</div>';
-  h += '<div class="acts" style="margin:12px 16px">' + (k.url ? '<a href="' + esc(k.url) + '" target="_blank">' + t('openF') + '</a>' : '') +
+  h += '<div class="acts" style="margin:12px 16px">' + (k.url ? '<a href="' + safeUrl(k.url) + '" target="_blank">' + t('openF') + '</a>' : '') +
     '<button data-n="' + esc(k.name) + '" onclick="delCand(this.dataset.n)">' + t('delCandB') + '</button></div>';
   el('shB').innerHTML = h;
 }
@@ -778,7 +962,7 @@ function candSt(s){
 function delCand(n){
   if (!confirm(t('delCand', { n: n }))) return;
   closeSheet(); cardBusy(true);
-  google.script.run.withSuccessHandler(function(c){ CUR = c; cardBusy(false); drawCard(); toast(t('deleted') + n); }).withFailureHandler(cardErr).trashCandidate(CUR.name, n);
+  google.script.run.withSuccessHandler(function(c){ setCur(c); cardBusy(false); drawCard(); toast(t('deleted') + n); }).withFailureHandler(cardErr).trashCandidate(CUR.name, n);
 }
 
 // ---------- 📤 Качване: снимки (смалени) / документи и видеа (на части по 8 MB) ----------
@@ -853,13 +1037,17 @@ function delF(id, name, cand){
     return;
   }
   cardBusy(true);
-  google.script.run.withSuccessHandler(function(c){ CUR = c; cardBusy(false); drawCard(); toast(t('deleted') + name); }).withFailureHandler(cardErr).trashFile(id, CUR.name, '');
+  google.script.run.withSuccessHandler(function(c){ setCur(c); cardBusy(false); drawCard(); toast(t('deleted') + name); }).withFailureHandler(cardErr).trashFile(id, CUR.name, '');
 }
 function cardBusy(on){ el('cdB').style.opacity = on ? .45 : 1; el('cdB').style.pointerEvents = on ? 'none' : 'auto'; }
 function cardErr(e){ cardBusy(false); err(e); }
-function stageC(s){
-  if (!CUR || s === CUR.stage) return; cardBusy(true);
-  google.script.run.withSuccessHandler(function(c){ CUR = c; cardBusy(false); drawCard(); toast(t('stageT') + tv(s)); load(); }).withFailureHandler(cardErr).setStage(CUR.name, s);
+function stageC(s, name){
+  name = name || (CUR && CUR.name); if (!name) return;
+  var dc = dcOf(name), old = CUR && CUR.name === name ? CUR.stage : dc && dc.s; if (s === old) return;
+  if (dc) dc.s = s; if (CUR && CUR.name === name) { CUR.stage = s; drawCard(); } if (D) draw(); toast(t('stageT') + tv(s));
+  google.script.run.withSuccessHandler(function(c){ if (CUR && CUR.name === c.name) { setCur(c); drawCard(); } })
+    .withQueued(function(){ toast(t('qSaved'), 4000); })
+    .withFailureHandler(function(e){ if (dc) dc.s = old; if (CUR && CUR.name === name) { CUR.stage = old; drawCard(); } if (D) draw(); err(e); }).setStage(name, s);
 }
 function editC(){
   var c = CUR, h = '<form id="frm" onsubmit="return sendEdit(event)">';
@@ -877,7 +1065,8 @@ function editC(){
 function sendEdit(e){
   e.preventDefault();
   var d = formData(); svState(true);
-  google.script.run.withSuccessHandler(function(c){ CUR = c; closeSheet(); drawCard(); toast(t('rec')); load(); })
+  google.script.run.withSuccessHandler(function(c){ setCur(c); closeSheet(); drawCard(); toast(t('rec')); load(); })
+    .withQueued(function(){ Object.keys(d).forEach(function(k){ CUR[k] = d[k]; }); queued(); drawCard(); })
     .withFailureHandler(function(er){ svState(false); err(er); }).updateClient(CUR.name, d);
   return false;
 }
@@ -885,7 +1074,7 @@ function locC(){
   if (!navigator.geolocation) { toast(t('noGeo')); return; }
   toast(t('geo'), 10000); cardBusy(true);
   navigator.geolocation.getCurrentPosition(function(p){
-    google.script.run.withSuccessHandler(function(c){ CUR = c; cardBusy(false); drawCard(); toast(t('geoOk')); })
+    google.script.run.withSuccessHandler(function(c){ setCur(c); cardBusy(false); drawCard(); toast(t('geoOk')); })
       .withFailureHandler(cardErr).saveLocation(CUR.name, p.coords.latitude, p.coords.longitude);
   }, function(){ cardBusy(false); toast(t('geoErr'), 4500); }, { enableHighAccuracy: true, timeout: 20000, maximumAge: 60000 });
 }
@@ -969,9 +1158,10 @@ Object.assign(TRX, { 'Нов кандидат':'Yeni aday', 'Проверен':'
   'Виза':'Vize', 'Пътува':'Yolda', 'Пристигна':'Geldi', 'Работи':'Çalışıyor', 'Отпаднал':'Vazgeçti' });
 
 function canDel(){ return !!D && !!(D.perm && D.perm.d); }
+function canShare(){ return !!D && !(D.perm && D.perm.o); }
 function isAdm(){ return !!D && !!(D.perm && D.perm.a); }
 function dcOf(n){ var k = String(n || '').toLowerCase(); return ((D && D.clients) || []).filter(function(c){ return c.n.toLowerCase() === k; })[0]; }
-function kById(id){ return ((D && D.cands) || []).filter(function(k){ return k.id === id; })[0]; }
+function kById(id){ return ((D && D.cands) || []).filter(function(k){ return k.id === id; })[0] || (typeof KOUTMAP !== 'undefined' && KOUTMAP[id]) || null; }
 function kOut(s){ return ((D && D.kout) || ['Отказан', 'Отпаднал']).indexOf(s) > -1; }
 var KG = { sent: ['Изпратен на работодател', 'Интервю'], appr: ['Одобрен'], docs: ['Документи', 'Разрешение за работа', 'Виза'], trav: ['Пътува', 'Пристигна'], work: ['Работи'] };
 var KCOL = { 'Нов кандидат':['#e0f2fe','#0369a1'], 'Проверен':['#dbeafe','#1d4ed8'], 'Изпратен на работодател':['#ffedd5','#c2410c'], 'Интервю':['#fef3c7','#b45309'], 'Одобрен':['#dcfce7','#15803d'],
@@ -985,38 +1175,73 @@ function kWarn(k){ if (kOut(k.st)) return ''; var w = ''; KDOCS.forEach(function
 function kMine(k){ return SEG === 'a' || !D.me || k.rep === D.me || mine((dcOf(k.emp) || {}).r); }
 
 // ---------- 👷 Кандидати ----------
-var KQ = '', KF = '';
+var KQ = '', KF = '', KV = ls('et_kv') === 'b' ? 'b' : 'l', KPAGE = 0, KSEL = null, KOUT = null, KMAX = 80;
+function kSelOn(){ return !!KSEL && TAB === 'k' && el('card').style.display !== 'block'; }
 function kRow(k){
-  var w = kWarn(k);
-  return '<div class="kr" data-lp="k" data-k="' + esc(k.id) + '" onclick="kOpen(this.dataset.k)"><span class="av">' + (w === 'x' ? '⛔' : w === 'w' ? '⚠️' : '👷') + '</span><span class="cx"><b>' + esc(k.n) + '</b>' +
+  var w = kWarn(k), so = kSelOn(), sel = so && KSEL[k.id];
+  return '<div class="kr' + (sel ? ' sel' : '') + '" data-lp="k" data-k="' + esc(k.id) + '" onclick="kTap(this.dataset.k)">' + (so ? '<span class="ck">' + (sel ? '☑️' : '⬜') + '</span>' : '') +
+    '<span class="av">' + (w === 'x' ? '⛔' : w === 'w' ? '⚠️' : '👷') + '</span><span class="cx"><b>' + esc(k.n) + '</b>' +
     '<small>' + kPill(k.st) + ' ' + esc([tv(k.pos), k.co, k.emp || t('kNoEmp')].filter(Boolean).join(' · ')) + '</small></span><span class="ar">›</span></div>';
 }
+function kTap(id){ if (kSelOn()) { if (KSEL[id]) delete KSEL[id]; else KSEL[id] = 1; listK(); kSelBar(); return; } kOpen(id); }
 function kFind(q){
   var toks = lat(q).split(' ').filter(Boolean), qd = q.replace(/[^0-9]/g, ''), digits = /^[0-9\s+()\/-]+$/.test(q.trim());
   return (D.cands || []).filter(function(k){
     if (digits) return qd.length >= 3 && String(k.ph || '').replace(/[^0-9]/g, '').indexOf(qd) > -1;
-    var hay = lat([k.n, k.pos, tv(k.pos), k.co, k.emp, k.lg, k.src, k.rep].join(' '));
+    var hay = lat([k.n, k.pos, tv(k.pos), k.co, k.emp, k.lg, k.src, k.rep, k.id].join(' '));
     return toks.every(function(x){ return hay.indexOf(x) > -1; });
   });
 }
+function vSw(cur, fn){ return '<div class="vsw"><button class="' + (cur === 'l' ? 'on' : '') + '" onclick="' + fn + '(\'l\')">☰ ' + t('vList') + '</button><button class="' + (cur === 'b' ? 'on' : '') + '" onclick="' + fn + '(\'b\')">▦ ' + t('vBoard') + '</button></div>'; }
+function kView(v){ KV = v; ls('et_kv', v); if (v === 'b') { KSEL = null; kSelBar(); } drawCands(); }
 function drawCands(){
-  el('main').innerHTML = '<div class="srch"><input id="kq" type="search" enterkeyhint="search" autocomplete="off" placeholder="' + esc(t('kQ')) + '" value="' + esc(KQ) + '" oninput="KQ=this.value;listK()"></div>' +
-    '<div class="big"><button onclick="kForm()">' + t('kNew') + '</button></div><div class="chips wf" id="kf"></div><div id="kl"></div>';
+  el('main').innerHTML = '<div class="srch"><input id="kq" type="search" enterkeyhint="search" autocomplete="off" placeholder="' + esc(t('kQ')) + '" value="' + esc(KQ) + '" oninput="KQ=this.value;KPAGE=0;KOUT=null;listK()"></div>' +
+    '<div class="big"><button onclick="kForm()">' + t('kNew') + '</button></div>' +
+    '<div class="tbar">' + vSw(KV, 'kView') + (KV === 'l' ? '<button class="' + (KSEL ? 'on' : '') + '" onclick="kSelMode()">☑️ ' + t('kSel') + '</button>' : '') + '</div>' +
+    fBar('k') + '<div class="chips wf" id="kf"></div><div id="kl"></div>';
+  el('main').className = KV === 'b' ? 'wide' : '';
   listK();
 }
 function listK(){
-  var all = (D.cands || []).filter(kMine), q = KQ.trim(), a = q ? kFind(q).filter(kMine) : all;
+  if (!el('kl')) return;
+  var all = (D.cands || []).filter(kMine).filter(function(k){ return fMatch('k', k); }), q = KQ.trim(), a = q ? kFind(q).filter(kMine).filter(function(k){ return fMatch('k', k); }) : all;
   var sts = []; all.forEach(function(k){ if (k.st && sts.indexOf(k.st) < 0) sts.push(k.st); });
   var ord = D.kst || []; sts.sort(function(x, y){ return ord.indexOf(x) - ord.indexOf(y); });
   if (KF && KF !== '_out' && sts.indexOf(KF) < 0) KF = '';
-  el('kf').innerHTML = '<button class="' + (!KF ? 'on' : '') + '" onclick="KF=\'\';listK()">' + t('kAll') + '</button>' + sts.filter(function(s){ return !kOut(s); }).map(function(s){
-    return '<button data-v="' + esc(s) + '" class="' + (KF === s ? 'on' : '') + '" onclick="KF=this.dataset.v;listK()">' + esc(tv(s)) + ' ' + all.filter(function(k){ return k.st === s; }).length + '</button>'; }).join('') +
-    '<button class="' + (KF === '_out' ? 'on' : '') + '" onclick="KF=\'_out\';listK()">' + t('kOut') + '</button>';
-  if (KF === '_out') a = a.filter(function(k){ return kOut(k.st); }); else if (KF) a = a.filter(function(k){ return k.st === KF; }); else if (!q) a = a.filter(function(k){ return !kOut(k.st); });
+  var outN = D.kOutN != null ? D.kOutN : all.filter(function(k){ return kOut(k.st); }).length;
+  el('kf').innerHTML = KV === 'b' ? '' : '<button class="' + (!KF ? 'on' : '') + '" onclick="KF=\'\';KPAGE=0;listK()">' + t('kAll') + ' ' + all.filter(function(k){ return !kOut(k.st); }).length + '</button>' + sts.filter(function(s){ return !kOut(s); }).map(function(s){
+    return '<button data-v="' + esc(s) + '" class="' + (KF === s ? 'on' : '') + '" onclick="KF=this.dataset.v;KPAGE=0;listK()">' + esc(tv(s)) + ' ' + all.filter(function(k){ return k.st === s; }).length + '</button>'; }).join('') +
+    '<button class="' + (KF === '_out' ? 'on' : '') + '" onclick="KF=\'_out\';KOUT=null;listK()">' + t('kOut') + (outN ? ' ' + outN : '') + '</button>';
+  if (KF === '_out' && KV === 'l') { kOutList(q); return; }
+  if (KF) a = a.filter(function(k){ return k.st === KF; }); else a = a.filter(function(k){ return !kOut(k.st); });
+  if (KV === 'b') { el('kl').innerHTML = kBoard(a); return; }
   a.sort(function(x, y){ var w = { x: 0, w: 1, '': 2 }; return w[kWarn(x)] - w[kWarn(y)] || ord.indexOf(x.st) - ord.indexOf(y.st) || x.n.localeCompare(y.n); });
-  el('kl').innerHTML = '<h2>' + (q ? t('results') : t('tabK2')) + '<span>' + a.length + '</span></h2>' + (a.length ? '<div class="lst kls">' + a.map(kRow).join('') + '</div>' : '<div class="empty">' + t('kNone') + '</div>');
+  var shown = a.slice(0, (KPAGE + 1) * KMAX);
+  el('kl').innerHTML = '<h2>' + (q ? t('results') : t('tabK2')) + '<span>' + a.length + '</span></h2>' + (a.length ? '<div class="lst kls">' + shown.map(kRow).join('') + '</div>' +
+    (a.length > shown.length ? '<div class="qnew"><button onclick="KPAGE++;listK()">' + t('kMore', { n: a.length - shown.length }) + '</button></div>' : '') : '<div class="empty">' + t('kNone') + '</div>');
   if (document.activeElement && document.activeElement.id !== 'kq' && q) { var e = el('kq'); if (e) { e.focus(); e.setSelectionRange(q.length, q.length); } }
 }
+// Отказани / отпаднали – не идват с началните данни (по-бързо), а от сървъра на страници по 50
+function kOutList(q){
+  var f = { out: true }; FG.k.forEach(function(g){ if (g !== 'st' && (FL.k[g] || []).length) f[g] = FL.k[g]; });
+  var key = JSON.stringify([q, f]);
+  if (KOUT && KOUT.key === key && !KOUT.err) { kOutDraw(); return; }
+  KOUT = { key: key, items: [], page: -1, total: 0, pages: 1, loading: true }; kOutDraw(); kOutMore(q, f);
+}
+function kOutMore(q, f){
+  var o = KOUT; if (!o) return; o.loading = true;
+  if (!q && !f) { var k = JSON.parse(o.key); q = k[0]; f = k[1]; }
+  api('kSearch', [q, f, o.page + 1]).then(function(r){ if (KOUT !== o) return; o.items = o.items.concat(r.items); o.page = r.page; o.total = r.total; o.pages = r.pages; o.loading = false; kOutDraw(); },
+    function(e){ if (KOUT !== o) return; o.loading = false; o.err = e.message; kOutDraw(); });
+}
+function kOutDraw(){
+  var o = KOUT, b = el('kl'); if (!b || !o) return;
+  b.innerHTML = '<h2>' + t('kOut') + '<span>' + (o.loading && !o.items.length ? '…' : o.total) + '</span></h2>' + (o.err ? '<div class="empty">⚠️ ' + esc(o.err) + '</div>' :
+    o.items.length ? '<div class="lst kls">' + o.items.map(kRow).join('') + '</div>' : o.loading ? '<div class="load">' + t('loading') + '</div>' : '<div class="empty">' + t('kNone') + '</div>') +
+    (!o.loading && o.page + 1 < o.pages ? '<div class="qnew"><button onclick="kOutMore()">' + t('kMore', { n: o.total - o.items.length }) + '</button></div>' : o.loading && o.items.length ? '<div class="load">' + t('loading') + '</div>' : '');
+  (o.items || []).forEach(function(x){ if (!kById(x.id)) KOUTMAP[x.id] = x; });
+}
+var KOUTMAP = {};
 var KC = null;
 function kOpen(id){
   var k = kById(id); KC = k ? Object.assign({ photos: [], videos: [], docs: [], loading: true }, k) : { id: id, n: '…', loading: true, photos: [], videos: [], docs: [] };
@@ -1036,7 +1261,9 @@ function kDraw(){
     '<div class="s">' + esc([tv(k.pos), k.co, k.exp ? k.exp + ' ' + t('yrs') : '', k.lg ? '🗣️ ' + k.lg : ''].filter(Boolean).join(' · ')) + '</div>' +
     '<div class="s">' + (k.emp ? '🏢 <span class="lnk" data-n="' + esc(k.emp) + '" onclick="closeSheet();openC(this.dataset.n)">' + esc(k.emp) + '</span>' : '🏢 ' + t('kNoEmp')) + (k.rep ? ' · 👤 ' + esc(k.rep) : '') + (k.src ? ' · 🤝 ' + esc(k.src) : '') + (k.rt ? ' · ' + '★★★★★'.slice(0, k.rt) : '') + '</div>' +
     (k.dec ? '<div class="nxt" style="color:#15803d">' + esc(k.dec) + '</div>' : '') +
-    '<div class="acts">' + tel(k.ph) + '<button onclick="waPick(\'k\')">' + t('waBtn') + '</button><button onclick="kForm(KC)">' + t('edit') + '</button></div></div>';
+    '<div class="acts">' + tel(k.ph) + '<button onclick="waPick(\'k\')">' + t('waBtn') + '</button><button onclick="kForm(KC)">' + t('edit') + '</button><button onclick="kPdfGet([KC.id])">' + t('pdfBtn') + '</button></div></div>';
+  if (isAdm() && (k.cost || k.pfee)) h += '<div class="box money"><h4>' + t('mTitle') + '</h4>' + (k.cost ? '<div class="dl"><span>' + t('mCost') + '</span><b>' + esc(k.cost) + ' €</b><span></span></div>' : '') +
+    (k.pfee ? '<div class="dl"><span>' + t('mPfee') + (k.src ? ' · ' + esc(k.src) : '') + '</span><b>' + esc(k.pfee) + ' €</b>' + (k.ppaid ? '<span class="db ok">' + t('mPaid') + ' ' + fmt(k.ppaid) + '</span>' : '<span class="db w">' + t('mDue') + '</span>') + '</div>' : '') + '</div>';
   h += '<div class="box"><h4>' + t('kStage') + '</h4><div class="chips">' + (D.kst || []).map(function(s){
     return '<button class="' + (s === k.st ? 'on' : '') + '" data-s="' + esc(s) + '" onclick="kSt(this.dataset.s)">' + esc(tv(s)) + '</button>'; }).join('') + '</div></div>';
   h += '<div class="box"><h4>' + t('kDocs') + '</h4>' + (isAdm() && k.pp ? '<div class="dl"><span>' + t('kPass') + '</span><b>' + esc(k.pp) + '</b><span></span></div>' : '') +
@@ -1050,7 +1277,7 @@ function kDraw(){
     h += '<div class="box"><h4>' + t('sVideos') + ' ' + k.videos.length + '</h4>' + (k.videos.length ? k.videos.map(function(f){ return fileRow(f, k.id); }).join('') : '<div class="s">—</div>') + '</div>';
     h += '<div class="box"><h4>' + t('sDocs') + ' ' + k.docs.length + '</h4>' + (k.docs.length ? k.docs.map(function(f){ return fileRow(f, k.id); }).join('') : '<div class="s">—</div>') + '</div>';
   }
-  h += '<div class="acts" style="margin:12px 16px 30px">' + (k.url ? '<a href="' + esc(k.url) + '" target="_blank">' + t('openF') + '</a>' : '') +
+  h += '<div class="acts" style="margin:12px 16px 30px">' + (k.url ? '<a href="' + safeUrl(k.url) + '" target="_blank">' + t('openF') + '</a>' : '') +
     (canDel() ? '<button style="color:#b91c1c" onclick="kDelQ(KC.id)">' + t('lpDel') + '</button>' : '') + '</div>';
   el('shB').innerHTML = h;
 }
@@ -1059,7 +1286,7 @@ function kSt(s, id){
   id = id || (KC && KC.id); var k = kById(id) || KC; if (!k || k.st === s) return;
   kLocal(id, function(c){ c.st = s; }); kDraw(); if (CUR && el('card').style.display === 'block') drawCard(); draw();
   google.script.run.withSuccessHandler(function(x){ kLocal(id, function(c){ Object.assign(c, { st: x.st, sd: x.sd }); }); toast('👷 ' + x.n + ': ' + tv(x.st)); })
-    .withFailureHandler(function(e){ err(e); load(); }).kStage(id, s);
+    .withQueued(function(){ toast(t('qSaved'), 4000); }).withFailureHandler(function(e){ err(e); load(); }).kStage(id, s);
 }
 function kDelQ(id){
   var k = kById(id) || KC; if (!k || !confirm(t('kDel', { n: k.n }))) return;
@@ -1083,6 +1310,8 @@ function kForm(k){
     half(fld(t('kPassTo'), '<input type="date" name="ppTo" value="' + esc(k.ppTo || '') + '">'), fld(t('kMed'), '<input type="date" name="med" value="' + esc(k.med || '') + '">')) +
     half(fld(t('kCrim'), '<input type="date" name="crim" value="' + esc(k.crim || '') + '">'), fld(t('kWp'), '<input type="date" name="wp" value="' + esc(k.wp || '') + '">')) +
     fld(t('kVisa'), '<input type="date" name="visa" value="' + esc(k.visa || '') + '">') + '</div>';
+  if (isAdm()) h += '<div class="nx money"><h3>' + t('mTitle') + '</h3>' + half(fld(t('mCost'), '<input name="cost" inputmode="decimal" value="' + esc(k.cost === undefined ? '' : k.cost) + '" placeholder="0">'), fld(t('mPfee'), '<input name="pfee" inputmode="decimal" value="' + esc(k.pfee === undefined ? '' : k.pfee) + '" placeholder="0">')) +
+    fld(t('mPaidOn'), '<input type="date" name="ppaid" value="' + esc(k.ppaid || '') + '">') + '</div>';
   h += fld(t('kNotes'), '<textarea name="notes" rows="4">' + esc(k.notes || '') + '</textarea>');
   h += '<button class="save" id="sv">' + t('save') + '</button></form>';
   openSheet(isNew ? t('kNew') : '✏️ ' + k.n, h);
@@ -1095,7 +1324,8 @@ function kSend(e, again){
     var i = (D.cands || []).findIndex(function(c){ return c.id === x.id; }); if (i > -1) D.cands[i] = x; else (D.cands = D.cands || []).push(x);
     toast(t('kSaved')); KC = x; openSheet('👷 ' + x.n, ''); kDraw(); draw();
     if (CUR && el('card').style.display === 'block') refreshCard();
-  }).withFailureHandler(function(er){ svState(false); err(er); }).saveCand(d);
+  }).withQueued(function(){ if (d.id) kLocal(d.id, function(c){ Object.keys(d).forEach(function(k){ if (k !== 'confirmDup') c[k] = d[k]; }); }); queued(); draw(); })
+    .withFailureHandler(function(er){ svState(false); err(er); }).saveCand(d);
   return false;
 }
 
@@ -1178,6 +1408,7 @@ function clubSec(){
 // ---------- 👆 Задръж пръста → меню ----------
 var LP = null, LPX = 0, LPY = 0, LPFIRED = false, LPT = 0, LPA = [];
 function lpStart(e){
+  if (DG || (e.target.closest && e.target.closest('.kh'))) return;
   var tg = e.target.closest && e.target.closest('[data-lp]'); if (!tg) return;
   var p = e.touches ? e.touches[0] : e; LPX = p.clientX; LPY = p.clientY; clearTimeout(LP);
   LP = setTimeout(function(){ LP = null; LPFIRED = true; try { if (navigator.vibrate) navigator.vibrate(25); } catch (x) {} lpOpen(tg); }, 450);
@@ -1192,7 +1423,7 @@ document.addEventListener('click', function(e){ if (LPFIRED) { LPFIRED = false; 
 document.addEventListener('contextmenu', function(e){ var tg = e.target.closest && e.target.closest('[data-lp]'); if (!tg) return; e.preventDefault(); clearTimeout(LP); LP = null; if (Date.now() - LPT > 900) lpOpen(tg); });
 function lpShow(title, b){
   if (!b.length) return; LPT = Date.now(); LPA = b;
-  el('lpmB').innerHTML = '<h4>' + esc(title) + '</h4>' + b.map(function(x, i){ return '<button class="' + (x[2] || '') + '" onclick="lpGo(' + i + ')">' + x[0] + '</button>'; }).join('') + '<button class="cx" onclick="lpClose()">' + t('lpClose') + '</button>';
+  el('lpmB').innerHTML = '<h4>' + esc(title) + '</h4>' + b.map(function(x, i){ return '<button class="' + (x[2] || '') + '" onclick="lpGo(' + i + ')">' + esc(x[0]) + '</button>'; }).join('') + '<button class="cx" onclick="lpClose()">' + t('lpClose') + '</button>';
   el('lpm').style.display = 'flex';
 }
 function lpClose(){ el('lpm').style.display = 'none'; }
@@ -1308,11 +1539,7 @@ function admPinShow(who, pin, isNew){
 function admShare(){ if (navigator.share) { navigator.share({ text: PINTXT }).catch(function(){}); return; } try { navigator.clipboard.writeText(PINTXT).then(function(){ toast(t('slCopied')); }); } catch (e) { prompt('', PINTXT); } }
 
 // ---------- 🔔 Известия ----------
-function idb(fn){
-  try { var q = indexedDB.open('crm', 1); q.onupgradeneeded = function(){ q.result.createObjectStore('kv'); };
-    q.onsuccess = function(){ var st = null; try { st = q.result.transaction('kv', 'readwrite').objectStore('kv'); } catch (e) {} fn(st); };
-    q.onerror = function(){ fn(null); }; } catch (e) { fn(null); }
-}
+function idb(fn){ idbStore('kv', 'readwrite', fn); }
 function keepTok(tk){ idb(function(st){ try { if (st) { if (tk) st.put(tk, 'token'); else st.delete('token'); } } catch (e) {} }); }
 function isIOS(){ return /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); }
 function standalone(){ return (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true; }
@@ -1352,6 +1579,369 @@ function pushAskDraw(){
     e2.innerHTML = '<div class="pask"><b>' + t('pushAskT') + '</b><span>' + t('pushAskB') + '</span><div class="acts"><button class="ok" onclick="pushOn()">' + t('pushYes') + '</button><button onclick="ls(\'et_pushno\',\'1\');pushAskDraw()">' + t('pushNo') + '</button></div></div>';
   });
 }
+// ================= v3.0 · 🇧🇬 / 🇹🇷 нови текстове =================
+Object.assign(I.bg, {
+  qWait:'⏳ {n} записа чакат интернет – ще се изпратят сами (докосни за опит сега)', qSaved:'📴 Няма интернет – записано в телефона, ще се изпрати само', qSynced:'✅ Изпратени записи от офлайн: {n}',
+  qFail:'⚠️ Не мина: {f}', qDup:'⚠️ Телефонът вече е на {n} – записано въпреки това', qf_saveTask:'нова задача', qf_completeTask:'приключена задача', qf_snoozeTask:'преместена задача',
+  qf_kStage:'етап на кандидат', qf_setStage:'етап на работодател', qf_updateClient:'промяна на работодател', qf_markContact:'контакт', qf_saveCand:'кандидат', qf_kBulk:'промяна на много кандидати',
+  fCo:'🌍 Държава', fPosL:'🛠️ Професия', fSt:'🏷️ Етап', fRepL:'👤 Отговорник', fEmpL:'🏢 Работодател', fBtn:'Филтри', fClear:'✕ Изчисти', fTitle:'⚙️ Филтри', fShow:'✓ Покажи ({n})',
+  vList:'Списък', vBoard:'Канбан', kSel:'Избери', kMore:'⬇️ Покажи още ({n})', kbDrop:'⤵️ Пусни тук',
+  selN:'Избрани: {n}', selAll:'☑️ Всички', bEmp:'Работодател', bSt:'Етап', bEmpT:'🏢 Работодател за {n} кандидати', bAlsoSt:'Етап (по желание)', bNoEmp:'Без работодател',
+  bNoSuch:'Няма такъв работодател – избери от списъка', bStT:'🏷️ Етап за {n} кандидати', bWorking:'☑️ Записвам {n} кандидати…', bDone:'✅ Променени: {n}',
+  bwHint:'Избери шаблон. После за всеки човек: „🟢 Изпрати“ отваря WhatsApp с готовия текст → натискаш „изпрати“ там → връщаш се тук за следващия.',
+  bwSend:'🟢 Изпрати на {n}', bwSkip:'Пропусни ›', bwEnd:'✓ Край', bwDone:'💬 Готово – изпратени: {n}',
+  pdfBtn:'📄 PDF профил', pdfMaking:'📄 Правя PDF профила…',
+  shT:'🔗 Линк с краен срок', shTxt:'„{n}“ – линкът работи само до избраната дата, без Google акаунт. Всяко отваряне се записва в лист „📥 Достъп до файлове“.',
+  shDays:'{n} дни', shUntil:'Важи до {d}', shSend:'Изпрати линка',
+  mTitle:'💶 Пари (само админ)', mCost:'💶 Разходи по кандидата (€)', mPfee:'🤝 Комисион за партньора (€)', mPaid:'платено', mDue:'дължимо', mPaidOn:'🤝 Платено на партньора на',
+  mSec:'📧 Писма', mNone:'Още няма изпратени писма от приложението.', mNew:'✉️ Ново писмо', mHint:'👁️ „Отворено“ = работодателят е отворил писмото (ако пощата му показва снимки).',
+  mOpened:'отворено', mSent:'изпратено', mFirst:'отворено за 1-ви път: {d}', mTo:'До (имейл)', mKind:'Вид', mSubj:'Тема', mBody:'Текст', mAtt:'📎 Прикачи',
+  mNoFiles:'Няма документи на фирмата (добави в „📎 Документи на фирмата“).', mPdf:'PDF профили на кандидатите ({n})', mSend:'📤 Изпрати', mDone:'📧 Писмото е изпратено',
+  mkOffer:'💼 Оферта', mkContract:'📝 Договор', mkCands:'👷 Кандидати', mkOther:'✉️ Друго',
+  aTitle:'📈 Анализ', aDays:'дни', aTth:'⏱️ Време до назначаване', aMed:'медиана {m} · {n} души', aNoData:'още няма назначени', aS2h:'📤 От изпращане до работа', aN:'{n} бр.',
+  aClosed:'✅ Затворени позиции', aVisa:'🛂 Във виза / документи', aByPos:'⏱️ Време до назначаване по професия', aClosedL:'✅ Затворени позиции (дни до попълване)',
+  aMoney:'💶 Разходи (само админ)', aCostAll:'💶 Разходи общо', aCostAvg:'💶 Средно на кандидат', aPart:'🤝 Партньори и комисиони', aPartN:'Партньор', aDue:'Дължимо', aPaid:'Платено',
+  thLab:'🌓 Тема', thAuto:'Авто', thLight:'Светла', thDark:'Тъмна'
+});
+Object.assign(I.tr, {
+  qWait:'⏳ {n} kayıt internet bekliyor – kendiliğinden gönderilecek (şimdi denemek için dokun)', qSaved:'📴 İnternet yok – telefona kaydedildi, kendiliğinden gönderilecek', qSynced:'✅ Çevrimdışı kayıtlar gönderildi: {n}',
+  qFail:'⚠️ Gönderilemedi: {f}', qDup:'⚠️ Telefon zaten {n} kişisinde – yine de kaydedildi', qf_saveTask:'yeni görev', qf_completeTask:'tamamlanan görev', qf_snoozeTask:'ertelenen görev',
+  qf_kStage:'aday aşaması', qf_setStage:'işveren aşaması', qf_updateClient:'işveren değişikliği', qf_markContact:'iletişim', qf_saveCand:'aday', qf_kBulk:'toplu aday değişikliği',
+  fCo:'🌍 Ülke', fPosL:'🛠️ Meslek', fSt:'🏷️ Aşama', fRepL:'👤 Sorumlu', fEmpL:'🏢 İşveren', fBtn:'Filtreler', fClear:'✕ Temizle', fTitle:'⚙️ Filtreler', fShow:'✓ Göster ({n})',
+  vList:'Liste', vBoard:'Kanban', kSel:'Seç', kMore:'⬇️ Daha fazla ({n})', kbDrop:'⤵️ Buraya bırak',
+  selN:'Seçili: {n}', selAll:'☑️ Hepsi', bEmp:'İşveren', bSt:'Aşama', bEmpT:'🏢 {n} aday için işveren', bAlsoSt:'Aşama (isteğe bağlı)', bNoEmp:'İşveren yok',
+  bNoSuch:'Böyle bir işveren yok – listeden seç', bStT:'🏷️ {n} aday için aşama', bWorking:'☑️ {n} aday kaydediliyor…', bDone:'✅ Değiştirildi: {n}',
+  bwHint:'Şablon seç. Sonra her kişi için: "🟢 Gönder" WhatsApp\'ı hazır metinle açar → orada "gönder"e bas → bir sonraki için buraya dön.',
+  bwSend:'🟢 {n} kişisine gönder', bwSkip:'Atla ›', bwEnd:'✓ Bitir', bwDone:'💬 Tamam – gönderilen: {n}',
+  pdfBtn:'📄 PDF profil', pdfMaking:'📄 PDF profil hazırlanıyor…',
+  shT:'🔗 Süreli link', shTxt:'"{n}" – link sadece seçilen tarihe kadar çalışır, Google hesabı gerekmez. Her açılış "📥 Достъп до файлове" sayfasına yazılır.',
+  shDays:'{n} gün', shUntil:'{d} tarihine kadar geçerli', shSend:'Linki gönder',
+  mTitle:'💶 Para (sadece yönetici)', mCost:'💶 Aday masrafları (€)', mPfee:'🤝 Partner komisyonu (€)', mPaid:'ödendi', mDue:'borç', mPaidOn:'🤝 Partnere ödeme tarihi',
+  mSec:'📧 E-postalar', mNone:'Uygulamadan henüz e-posta gönderilmedi.', mNew:'✉️ Yeni e-posta', mHint:'👁️ "Açıldı" = işveren e-postayı açtı (e-postası resimleri gösteriyorsa).',
+  mOpened:'açıldı', mSent:'gönderildi', mFirst:'ilk açılış: {d}', mTo:'Kime (e-posta)', mKind:'Tür', mSubj:'Konu', mBody:'Metin', mAtt:'📎 Ekle',
+  mNoFiles:'Firma belgesi yok ("📎 Firma belgeleri"ne ekle).', mPdf:'Adayların PDF profilleri ({n})', mSend:'📤 Gönder', mDone:'📧 E-posta gönderildi',
+  mkOffer:'💼 Teklif', mkContract:'📝 Sözleşme', mkCands:'👷 Adaylar', mkOther:'✉️ Diğer',
+  aTitle:'📈 Analiz', aDays:'gün', aTth:'⏱️ İşe alım süresi', aMed:'medyan {m} · {n} kişi', aNoData:'henüz işe başlayan yok', aS2h:'📤 Gönderimden işe', aN:'{n} adet',
+  aClosed:'✅ Kapanan pozisyonlar', aVisa:'🛂 Vize / evrak aşamasında', aByPos:'⏱️ Mesleğe göre işe alım süresi', aClosedL:'✅ Kapanan pozisyonlar (dolma süresi)',
+  aMoney:'💶 Masraflar (sadece yönetici)', aCostAll:'💶 Toplam masraf', aCostAvg:'💶 Aday başına ortalama', aPart:'🤝 Partnerler ve komisyonlar', aPartN:'Partner', aDue:'Borç', aPaid:'Ödenen',
+  thLab:'🌓 Tema', thAuto:'Otomatik', thLight:'Açık', thDark:'Koyu'
+});
+// ================= v3.0 · 🔎 Многостепенен филтър (Държава И Професия И Етап И Отговорник И Работодател) =================
+// В една група: „или“ (Непал или Индия) · между групите: „и“
+var FG = { k: ['co', 'pos', 'st', 'rep', 'emp'], c: ['co', 'pos', 'st', 'rep'] };
+var FL = { k: {}, c: {} };
+try { var _fl = JSON.parse(ls('et_flt') || 'null'); if (_fl && _fl.k && _fl.c) FL = _fl; } catch (e) {}
+function fSave(){ ls('et_flt', JSON.stringify(FL)); }
+function reps(s){ return String(s || '').split(/\s*[,;\/]\s*/).filter(Boolean); }
+function cCountry(c){ return String(c.c || '').split(',')[0].trim(); }
+function fGet(kind, it, g){
+  if (kind === 'c') return g === 'co' ? [cCountry(it)] : g === 'pos' ? [it.m] : g === 'st' ? [it.s] : reps(it.r);
+  return g === 'rep' ? reps(it.rep) : [g === 'emp' ? (it.emp || '') : it[g] || ''];
+}
+function fSrc(kind){ return kind === 'c' ? (D.clients || []) : (D.cands || []); }
+function fVals(kind, g){
+  var m = {};
+  fSrc(kind).forEach(function(it){ fGet(kind, it, g).forEach(function(v){ v = String(v == null ? '' : v); if (v || g === 'emp') m[v] = (m[v] || 0) + 1; }); });
+  var ord = g === 'st' ? (kind === 'c' ? D.stages : D.kst) || [] : [];
+  return Object.keys(m).sort(function(a, b){ var ia = ord.indexOf(a), ib = ord.indexOf(b); if (ia > -1 || ib > -1) return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib); return a ? b ? a.localeCompare(b) : -1 : 1; })
+    .map(function(v){ return [v, m[v]]; });
+}
+function fMatch(kind, it){
+  var f = FL[kind];
+  return FG[kind].every(function(g){ var a = f[g]; if (!a || !a.length) return true; var v = fGet(kind, it, g); return v.some(function(x){ return a.indexOf(String(x || '')) > -1; }); });
+}
+function fCount(kind){ var f = FL[kind]; return FG[kind].reduce(function(s, g){ return s + ((f[g] || []).length); }, 0); }
+function fLab(g, kind){ return t({ co: 'fCo', pos: 'fPosL', st: 'fSt', rep: 'fRepL', emp: 'fEmpL' }[g]); }
+function fVal(g, v){ return g === 'emp' && !v ? t('kNoEmp') : tv(v); }
+// лента над списъка: бутон + активните филтри (× маха)
+function fBar(kind){
+  var n = fCount(kind), f = FL[kind], chips = [];
+  FG[kind].forEach(function(g){ (f[g] || []).forEach(function(v){ chips.push('<button class="on" data-k="' + kind + '" data-g="' + g + '" data-v="' + esc(v) + '" onclick="fTog(this.dataset.k,this.dataset.g,this.dataset.v,1)">' + esc(fVal(g, v)) + ' ✕</button>'); }); });
+  return '<div class="fbar"><button class="fbtn' + (n ? ' on' : '') + '" onclick="fOpen(\'' + kind + '\')">⚙️ ' + t('fBtn') + (n ? ' · ' + n : '') + '</button>' + chips.join('') +
+    (n ? '<button class="fclr" onclick="fClear(\'' + kind + '\',1)">' + t('fClear') + '</button>' : '') + '</div>';
+}
+function fTog(kind, g, v, redraw){
+  var a = FL[kind][g] = FL[kind][g] || [], i = a.indexOf(v);
+  if (i > -1) a.splice(i, 1); else a.push(v);
+  fSave(); KPAGE = 0;
+  if (redraw) draw(); else fDraw(kind);
+}
+function fClear(kind, redraw){ FL[kind] = {}; fSave(); KPAGE = 0; if (redraw) draw(); else fDraw(kind); }
+function fOpen(kind){ openSheet(t('fTitle'), ''); fDraw(kind); }
+function fDraw(kind){
+  var n = fSrc(kind).filter(function(it){ return fMatch(kind, it); }).length, f = FL[kind];
+  var h = '<div class="fpan">' + FG[kind].map(function(g){
+    var vs = fVals(kind, g); if (!vs.length) return '';
+    return '<h4>' + fLab(g, kind) + '</h4><div class="chips">' + vs.map(function(x){
+      return '<button class="' + ((f[g] || []).indexOf(x[0]) > -1 ? 'on' : '') + '" data-g="' + g + '" data-v="' + esc(x[0]) + '" onclick="fTog(\'' + kind + '\',this.dataset.g,this.dataset.v)">' + esc(fVal(g, x[0])) + ' <small>' + x[1] + '</small></button>';
+    }).join('') + '</div>';
+  }).join('') + '<div class="fact"><button class="save" onclick="closeSheet();draw()">' + t('fShow', { n: n }) + '</button><button class="save sec2" onclick="fClear(\'' + kind + '\')">' + t('fClear') + '</button></div></div>';
+  el('shB').innerHTML = h;
+}
+// ================= v3.0 · ☑️ Много кандидати наведнъж =================
+function kSelMode(){ KSEL = KSEL ? null : {}; drawCands(); kSelBar(); }
+function kSelOff(quiet){ if (!KSEL) return; KSEL = null; kSelBar(); if (!quiet) draw(); }
+function kSelIds(){ return KSEL ? Object.keys(KSEL) : []; }
+function kSelAll(){
+  var vis = Array.prototype.map.call(document.querySelectorAll('#kl .kr[data-k]'), function(e){ return e.getAttribute('data-k'); });
+  var allOn = vis.length && vis.every(function(id){ return KSEL[id]; });
+  vis.forEach(function(id){ if (allOn) delete KSEL[id]; else KSEL[id] = 1; });
+  listK(); kSelBar();
+}
+function kSelBar(){
+  var b = el('ksb'); if (!b) return;
+  if (!KSEL || TAB !== 'k') { b.style.display = 'none'; document.body.classList.remove('selm'); return; }
+  var n = kSelIds().length; document.body.classList.add('selm');
+  b.style.display = 'block';
+  b.innerHTML = '<div class="kst"><b>' + t('selN', { n: n }) + '</b><button onclick="kSelAll()">' + t('selAll') + '</button><button onclick="kSelOff()">✕</button></div>' +
+    '<div class="ksa"><button ' + (n ? '' : 'disabled ') + 'onclick="bEmp()">🏢<small>' + t('bEmp') + '</small></button><button ' + (n ? '' : 'disabled ') + 'onclick="bSt()">🏷️<small>' + t('bSt') + '</small></button>' +
+    '<button ' + (n ? '' : 'disabled ') + 'onclick="bWa()">💬<small>WhatsApp</small></button><button ' + (n ? '' : 'disabled ') + 'onclick="kPdfGet(kSelIds())">📄<small>PDF</small></button></div>';
+}
+function bEmp(){
+  openSheet(t('bEmpT', { n: kSelIds().length }), '<form id="frm" onsubmit="return bEmpGo(event)">' +
+    fld(t('kEmp'), '<input name="emp" id="bE" list="bel" autocomplete="off" required><datalist id="bel">' + D.clients.map(function(c){ return '<option value="' + esc(c.n) + '">'; }).join('') + '</datalist>') +
+    fld(t('bAlsoSt'), '<select name="st"><option value="">' + t('noChange') + '</option>' + opts(D.kst || [], 'Изпратен на работодател') + '</select>') +
+    '<button class="save">' + t('save') + '</button><button type="button" class="save sec2" onclick="kBulkDo({emp:\'\'})">' + t('bNoEmp') + '</button></form>');
+}
+function bEmpGo(e){
+  e.preventDefault(); var d = formData();
+  if (!dcOf(d.emp)) { toast(t('bNoSuch'), 4000); return false; }
+  var x = { emp: dcOf(d.emp).n }; if (d.st) x.st = d.st; kBulkDo(x); return false;
+}
+function bSt(){
+  openSheet(t('bStT', { n: kSelIds().length }), '<div class="box"><div class="chips">' + (D.kst || []).map(function(s){ return '<button data-s="' + esc(s) + '" onclick="kBulkDo({st:this.dataset.s})">' + esc(tv(s)) + '</button>'; }).join('') + '</div></div>');
+}
+function kBulkDo(d){
+  var ids = kSelIds(); if (!ids.length) return;
+  ids.forEach(function(id){ kLocal(id, function(c){ if ('emp' in d) c.emp = d.emp; if (d.st) c.st = d.st; }); });
+  closeSheet(); KSEL = null; kSelBar(); draw(); toast(t('bWorking', { n: ids.length }));
+  google.script.run.withSuccessHandler(function(r){ (r.items || []).forEach(function(x){ kLocal(x.id, function(c){ Object.assign(c, x); }); }); toast(t('bDone', { n: r.n })); draw(); })
+    .withQueued(function(){ toast(t('qSaved'), 4000); })
+    .withFailureHandler(function(e){ err(e); load(); }).kBulk(ids, d);
+}
+// 💬 WhatsApp на много хора: един шаблон, изпращане едно по едно (WhatsApp не позволява автоматично)
+var BW = null;
+function bWa(){
+  var list = (D.wa || []).filter(function(w){ return !/^🏢/.test(w[0]); });
+  openSheet(t('waPick'), '<div style="padding:8px 16px 30px"><div class="s" style="margin-bottom:6px">' + t('bwHint') + '</div>' + list.map(function(w){ return '<button class="wab" onclick="bwStart(' + (D.wa || []).indexOf(w) + ')"><b>' + esc(w[0]) + '</b><small>' + esc(w[1].slice(0, 90)) + '…</small></button>'; }).join('') + '</div>');
+}
+function bwStart(i){ BW = { w: D.wa[i], ids: kSelIds(), i: 0, sent: {} }; bwDraw(); }
+function bwCur(){ return BW && kById(BW.ids[BW.i]); }
+function bwDraw(){
+  var k = bwCur(); if (!k) { BW = null; closeSheet(); return; }
+  KC = k; WAK = 'k';
+  var ph = intl(k.ph), okPh = ph.length >= 6, n = BW.ids.length;
+  var h = '<div style="padding:8px 16px 30px"><div class="bwp"><b>' + (BW.i + 1) + ' / ' + n + '</b><div class="mb"><div style="width:' + Math.round(Object.keys(BW.sent).length / n * 100) + '%"></div></div></div>' +
+    '<div class="box" style="margin:10px 0"><div class="t">' + esc(k.n) + '</div><div class="s">' + (okPh ? '📞 ' + esc(k.ph) : '⚠️ ' + t('waNoPh')) + '</div></div>' +
+    '<textarea id="waT" rows="7" oninput="waUpd()">' + esc(waFill(BW.w[1], '')) + '</textarea>' +
+    (okPh ? '<a class="save" id="waA" style="display:block;text-align:center;text-decoration:none;background:#16a34a" target="_blank" rel="noopener" onclick="bwSent()">' + t('bwSend', { n: esc(k.n.split(/\s+/)[0]) }) + '</a>' : '') +
+    '<button class="save sec2" onclick="bwNext()">' + (BW.i + 1 < n ? t('bwSkip') : t('bwEnd')) + '</button>' +
+    '<div class="bwl">' + BW.ids.map(function(id, j){ var c = kById(id) || { n: id }; return '<span class="' + (BW.sent[id] ? 'ok' : j === BW.i ? 'cur' : '') + '">' + (BW.sent[id] ? '✓ ' : '') + esc(c.n) + '</span>'; }).join('') + '</div></div>';
+  openSheet(BW.w[0], h); WAT = ph; if (okPh) waUpd();
+}
+function bwSent(){ var k = bwCur(); if (k) BW.sent[k.id] = 1; setTimeout(bwNext, 400); }
+function bwNext(){ if (!BW) return; BW.i++; if (BW.i >= BW.ids.length) { toast(t('bwDone', { n: Object.keys(BW.sent).length })); BW = null; closeSheet(); return; } bwDraw(); }
+// 📄 PDF профил (без телефон и паспорт) → споделяне / сваляне
+function kPdfGet(ids){
+  ids = (ids || []).filter(Boolean); if (!ids.length) return;
+  toast(t('pdfMaking'), 60000);
+  api('kPdf', [ids]).then(function(r){
+    if (!r.b64) { toast(t('openDrive')); window.open(r.url, '_blank'); return; }
+    var b = atob(r.b64), u = new Uint8Array(b.length); for (var i = 0; i < b.length; i++) u[i] = b.charCodeAt(i);
+    var blob = new Blob([u], { type: 'application/pdf' }), file = null;
+    try { file = new File([blob], r.name, { type: 'application/pdf' }); } catch (e) {}
+    if (file && navigator.canShare && navigator.canShare({ files: [file] })) { toast('📄 ' + r.name); navigator.share({ files: [file], title: r.name }).catch(function(){ dlBlob(blob, r.name); }); return; }
+    dlBlob(blob, r.name); toast('✅ ' + r.name);
+  }, err);
+}
+function dlBlob(blob, name){
+  var url = URL.createObjectURL(blob), a = document.createElement('a');
+  a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 60000);
+}
+// 🔗 Линк към файл с краен срок (вместо публичен линк от Drive) – всяко отваряне се записва
+function shareF(id, name){
+  openSheet(t('shT'), '<div style="padding:12px 16px 30px"><p class="s" style="font-size:14px">' + esc(t('shTxt', { n: name })) + '</p><div class="chips" id="shd">' +
+    [1, 3, 7, 14, 30].map(function(d){ return '<button data-d="' + d + '" onclick="shareGo(\'' + esc(id) + '\',' + d + ')">' + t('shDays', { n: d }) + '</button>'; }).join('') + '</div><div id="shr"></div></div>');
+}
+function shareGo(id, days){
+  el('shr').innerHTML = '<div class="load">' + t('loading') + '</div>';
+  api('shareFile', [id, days]).then(function(r){
+    window.__SL = r.url;
+    el('shr').innerHTML = '<input readonly value="' + esc(r.url) + '" onclick="this.select()" style="margin-top:14px"><div class="s">' + esc(t('shUntil', { d: fmt(r.exp) + ' ' + r.exp.slice(0, 4) })) + '</div>' +
+      '<button class="save" onclick="slSend()">📤 ' + t('shSend') + '</button><button class="save sec2" onclick="slCopy()">' + t('slCopy') + '</button>';
+  }, function(e){ el('shr').innerHTML = ''; err(e); });
+}
+// ================= v3.0 · ▦ Канбан: плъзни картата в друга колона = нов етап =================
+// Компютър / таблет: хващаш картата с мишката · телефон: хващаш ⠿ (за да не пречи на превъртането)
+function kBoard(a){
+  var cols = (D.kst || []).filter(function(s){ return !kOut(s); });
+  return '<div class="kb" id="kb">' + cols.map(function(s){
+    var cs = a.filter(function(k){ return k.st === s; }).sort(function(x, y){ return x.n.localeCompare(y.n); });
+    return '<div class="kcol" data-s="' + esc(s) + '"><div class="kch">' + kPill(s) + '<span>' + cs.length + '</span></div><div class="kcb">' + cs.map(function(k){
+      var w = kWarn(k);
+      return '<div class="kc" data-b="k" data-id="' + esc(k.id) + '" data-lp="k" data-k="' + esc(k.id) + '"><span class="kh" aria-label="drag">⠿</span><div class="kx" data-k="' + esc(k.id) + '" onclick="kOpen(this.dataset.k)"><b>' + (w === 'x' ? '⛔ ' : w === 'w' ? '⚠️ ' : '') + esc(k.n) + '</b>' +
+        '<small>' + esc([tv(k.pos), k.co].filter(Boolean).join(' · ')) + '</small><small>🏢 ' + esc(k.emp || t('kNoEmp')) + '</small></div></div>';
+    }).join('') + '<div class="kdrop">' + t('kbDrop') + '</div></div></div>';
+  }).join('') + '</div>';
+}
+function cBoard(a){
+  return '<div class="kb" id="kb">' + D.stages.map(function(s){
+    var cs = a.filter(function(c){ return c.s === s; });
+    return '<div class="kcol" data-s="' + esc(s) + '"><div class="kch">' + pill(s) + '<span>' + cs.length + '</span></div><div class="kcb">' + cs.map(function(c){
+      var nx = c.nx && c.nx !== '-' ? c.nx : '', cls = !nx ? 'no' : nx < D.today ? 'over' : nx === D.today ? 'today' : '';
+      return '<div class="kc ' + cls + '" data-b="c" data-id="' + esc(c.n) + '" data-lp="c" data-n="' + esc(c.n) + '"><span class="kh" aria-label="drag">⠿</span><div class="kx" data-n="' + esc(c.n) + '" onclick="openC(this.dataset.n)"><b>' + esc(c.n) + '</b>' +
+        '<small>' + esc([c.c, tv(c.m), c.w ? '👷 ' + c.w : ''].filter(Boolean).join(' · ')) + '</small><small>' + (nx ? '📅 ' + fmt(nx) : t('noPlan')) + (SEG === 'a' && c.r ? ' · 👤 ' + esc(c.r) : '') + '</small></div></div>';
+    }).join('') + '<div class="kdrop">' + t('kbDrop') + '</div></div></div>';
+  }).join('') + '</div>';
+}
+var DG = null, DGJUST = 0;
+function dgCol(x, y){ var e = document.elementFromPoint(x, y); return e && e.closest ? e.closest('.kcol') : null; }
+function dgOn(e){
+  var c = DG.c, r = c.getBoundingClientRect();
+  DG.on = true; DG.dx = e.clientX - r.left; DG.dy = e.clientY - r.top; DG.from = c.closest('.kcol');
+  var g = c.cloneNode(true); g.className = 'kc kg'; g.style.width = r.width + 'px'; document.body.appendChild(g); DG.g = g;
+  c.classList.add('dragging'); document.body.classList.add('dragm');
+  try { clearTimeout(LP); LP = null; } catch (x) {}
+  try { if (navigator.vibrate) navigator.vibrate(15); } catch (x) {}
+  dgMove(e);
+}
+function dgMove(e){
+  var x = e.clientX, y = e.clientY;
+  DG.g.style.transform = 'translate(' + (x - DG.dx) + 'px,' + (y - DG.dy) + 'px) rotate(2deg)';
+  var col = dgCol(x, y);
+  if (col !== DG.over) { if (DG.over) DG.over.classList.remove('ov'); DG.over = col; if (col && col !== DG.from) col.classList.add('ov'); }
+  var kb = el('kb'); DG.sx = kb ? (x < 48 ? -1 : x > innerWidth - 48 ? 1 : 0) : 0; DG.sy = y < 70 ? -1 : y > innerHeight - 60 ? 1 : 0;
+  if ((DG.sx || DG.sy) && !DG.raf) dgScroll();
+}
+function dgScroll(){
+  if (!DG || !DG.on || (!DG.sx && !DG.sy)) { if (DG) DG.raf = 0; return; }
+  var kb = el('kb'); if (kb && DG.sx) kb.scrollLeft += DG.sx * 14; if (DG.sy) window.scrollBy(0, DG.sy * 12);
+  DG.raf = requestAnimationFrame(dgScroll);
+}
+function dgEnd(e, cancel){
+  if (!DG) return; var d = DG; DG = null;
+  if (!d.on) return;
+  DGJUST = Date.now();
+  var col = cancel ? null : dgCol(e.clientX, e.clientY);
+  if (d.over) d.over.classList.remove('ov');
+  if (d.g) d.g.remove(); d.c.classList.remove('dragging'); document.body.classList.remove('dragm');
+  if (!col || col === d.from) return;
+  var s = col.getAttribute('data-s');
+  col.querySelector('.kcb').insertBefore(d.c, col.querySelector('.kdrop'));   // веднага на новото място
+  if (d.kind === 'k') kSt(s, d.id); else stageC(s, d.id);
+}
+document.addEventListener('pointerdown', function(e){
+  var c = e.target.closest && e.target.closest('.kc'); if (!c || c.classList.contains('kg')) return;
+  var h = e.target.closest('.kh');
+  if (e.pointerType !== 'mouse' && !h) return;
+  if (e.pointerType === 'mouse' && e.button !== 0) return;
+  DG = { c: c, kind: c.getAttribute('data-b'), id: c.getAttribute('data-id'), x0: e.clientX, y0: e.clientY, on: false };
+  if (h) { e.preventDefault(); dgOn(e); }
+});
+document.addEventListener('pointermove', function(e){
+  if (!DG) return;
+  if (!DG.on) { if (Math.abs(e.clientX - DG.x0) + Math.abs(e.clientY - DG.y0) < 8) return; dgOn(e); }
+  e.preventDefault(); dgMove(e);
+}, { passive: false });
+document.addEventListener('pointerup', function(e){ dgEnd(e); });
+document.addEventListener('pointercancel', function(e){ dgEnd(e, true); });
+document.addEventListener('click', function(e){ if (Date.now() - DGJUST < 350) { e.stopPropagation(); e.preventDefault(); } }, true);
+// клавиатура / без плъзгане: дълго натискане → „➡️ Следващ етап“ остава в менюто
+// ================= v3.0 · 📧 Писма до работодателя (оферта, договор, кандидати) + дали е отворено =================
+var MAILK = [['offer', 'mkOffer'], ['contract', 'mkContract'], ['cands', 'mkCands'], ['other', 'mkOther']];
+function mailSec(c){
+  var ms = c.mails || [], op = ms.filter(function(m){ return m.op; }).length;
+  var list = ms.length ? ms.map(function(m){
+    var k = MAILK.filter(function(x){ return x[0] === m.k; })[0];
+    return '<div class="ml"><div class="mt"><b>' + esc(m.su) + '</b>' + (m.op ? '<span class="db ok">👁️ ' + t('mOpened') + (m.n > 1 ? ' ×' + m.n : '') + '</span>' : '<span class="db">📤 ' + t('mSent') + '</span>') + '</div>' +
+      '<small>' + esc([k ? t(k[1]) : '', '→ ' + m.to, dayTxt(m.t), m.by ? '👤 ' + m.by : ''].filter(Boolean).join(' · ')) + '</small>' +
+      (m.op ? '<small style="color:#15803d">👁️ ' + esc(t('mFirst', { d: dayTxt(m.op) })) + '</small>' : '') + (m.f ? '<small>📎 ' + esc(m.f) + '</small>' : '') + '</div>';
+  }).join('') : '<div class="s">' + t('mNone') + '</div>';
+  return fold('mails', t('mSec') + ' (' + ms.length + ')', ms.length ? '👁️ ' + op + '/' + ms.length : '', list +
+    '<div class="acts"><button class="ok" onclick="mailForm()">' + t('mNew') + '</button></div><div class="s" style="margin-top:6px">' + t('mHint') + '</div>');
+}
+function dayTxt(ts){ if (!ts) return ''; var d = new Date(ts); return fmt(dayOf(ts)) + ' ' + ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2); }
+function mailForm(kind){
+  var c = CUR; if (!c) return; kind = kind || 'offer';
+  var fl = (c.files || []).filter(function(f){ return (Number(f.size) || 0) < 15 * 1048576; });
+  var ks = (c.cands || []).filter(function(k){ return !kOut(k.st); });
+  var h = '<form id="frm" onsubmit="return mailSend(event)">';
+  h += fld(t('mTo'), '<input name="to" type="email" multiple required value="' + esc(c.email || '') + '" placeholder="hr@firma.de">');
+  h += fld(t('mKind'), '<div class="chips" id="mk">' + MAILK.map(function(x){ return '<button type="button" data-k="' + x[0] + '" class="' + (x[0] === kind ? 'on' : '') + '" onclick="mailKind(this.dataset.k)">' + t(x[1]) + '</button>'; }).join('') + '</div><input type="hidden" name="kind" id="mkV" value="' + kind + '">');
+  h += fld(t('mSubj'), '<input name="subject" id="mS" required maxlength="200" value="' + esc(mailSubj(kind)) + '">');
+  h += fld(t('mBody'), '<textarea name="body" id="mB" rows="9">' + esc(mailBody(kind)) + '</textarea>');
+  h += '<label>' + t('mAtt') + '</label><div class="att">' + (fl.length ? fl.map(function(f){ return '<label class="chk"><input type="checkbox" name="f" value="' + esc(f.id) + '"> ' + fIcon(f) + ' ' + esc(f.name) + ' <small>' + fSize(f.size) + '</small></label>'; }).join('') : '<div class="s">' + t('mNoFiles') + '</div>') +
+    (ks.length ? '<label class="chk"><input type="checkbox" id="mPdf"' + (kind === 'cands' ? ' checked' : '') + '> 📄 ' + esc(t('mPdf', { n: ks.length })) + '</label>' : '') + '</div>';
+  h += '<button class="save" id="sv">' + t('mSend') + '</button></form>';
+  openSheet(t('mNew') + ' – ' + c.name, h);
+}
+function mailKind(k){
+  Array.prototype.forEach.call(document.querySelectorAll('#mk button'), function(b){ b.className = b.getAttribute('data-k') === k ? 'on' : ''; });
+  var old = el('mkV').value; el('mkV').value = k;
+  if (el('mS').value === mailSubj(old)) el('mS').value = mailSubj(k);
+  if (el('mB').value === mailBody(old)) el('mB').value = mailBody(k);
+  if (el('mPdf')) el('mPdf').checked = k === 'cands';
+}
+function mailSubj(k){ var n = CUR ? CUR.name : ''; return { offer: 'Employeetrade.eu – offer for ' + n, contract: 'Employeetrade.eu – contract / ' + n, cands: 'Employeetrade.eu – candidate profiles for ' + n, other: 'Employeetrade.eu' }[k] || ''; }
+function mailBody(k){
+  var c = CUR || {}, hi = 'Dear ' + (c.contact || 'Sir or Madam') + ',\n\n', end = '\n\nKind regards,\n' + (D && D.me ? D.me + '\n' : '') + 'Employeetrade.eu';
+  return hi + ({ offer: 'Thank you for your interest. Please find attached our offer for ' + (c.workers ? c.workers + ' ' : '') + (c.pos ? c.pos + ' ' : '') + 'workers. Employeetrade.eu works with 0% commission for employers.',
+    contract: 'Please find attached the contract. Kindly review, sign and send it back to us.',
+    cands: 'Please find attached the profiles of the candidates we propose. You can also select them online using the link we sent you.',
+    other: '' }[k] || '') + end;
+}
+function mailSend(e){
+  e.preventDefault();
+  var fm = el('frm'), d = { to: fm.to.value.trim(), subject: fm.subject.value.trim(), body: fm.body.value, kind: el('mkV').value,
+    files: Array.prototype.filter.call(fm.querySelectorAll('input[name=f]'), function(x){ return x.checked; }).map(function(x){ return x.value; }) };
+  var n = CUR.name, pdf = el('mPdf') && el('mPdf').checked; svState(true);
+  var go = function(){
+    api('sendMail', [n, d]).then(function(r){ if (CUR && CUR.name === n) { CUR.mails = r.mails; OPEN.mails = true; drawCard(); } closeSheet(); toast(t('mDone')); }, function(er){ svState(false); err(er); });
+  };
+  if (!pdf) { go(); return false; }
+  var ids = (CUR.cands || []).filter(function(k){ return !kOut(k.st); }).map(function(k){ return k.id; });
+  api('kPdf', [ids]).then(function(r){ d.files.push(r.id); go(); }, function(er){ svState(false); err(er); });
+  return false;
+}
+// ================= v3.0 · 📊 Анализ: време до назначаване, затворени позиции, разходи по виза, партньори =================
+var ANA = null, ANAT = 0;
+function anaLoad(force){
+  if (ANA && !force && Date.now() - ANAT < 300000) { anaDraw(); return; }
+  if (el('ana') && !ANA) el('ana').innerHTML = '<h2>' + t('aTitle') + '</h2><div class="load">' + t('loading') + '</div>';
+  api('analytics', []).then(function(r){ ANA = r; ANAT = Date.now(); anaDraw(); }, function(e){ if (el('ana')) el('ana').innerHTML = '<h2>' + t('aTitle') + '</h2><div class="empty">⚠️ ' + esc(e.message) + '</div>'; });
+}
+function eur(n){ n = Math.round(Number(n) || 0); return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' €'; }
+function anaDraw(){
+  var a = ANA, b = el('ana'); if (!a || !b || TAB !== 'r') return;
+  var k = function(l, v, col, sub){ return '<div class="kpi"><div class="l">' + l + '</div><div class="v" style="color:' + col + '">' + v + '</div>' + (sub ? '<div class="s">' + sub + '</div>' : '') + '</div>'; };
+  var dd = function(n){ return n + ' ' + t('aDays'); };
+  var h = '<h2>' + t('aTitle') + '<span onclick="anaLoad(true)" style="cursor:pointer">⟳</span></h2><div class="kpis">' +
+    k(t('aTth'), a.tth.n ? dd(a.tth.avg) : '—', '#0063b5', a.tth.n ? esc(t('aMed', { m: a.tth.med, n: a.tth.n })) : esc(t('aNoData'))) +
+    k(t('aS2h'), a.s2h.n ? dd(a.s2h.avg) : '—', '#6d28d9', a.s2h.n ? esc(t('aN', { n: a.s2h.n })) : '') +
+    k(t('aClosed'), a.closed.length ? dd(a.closedAvg) : '—', '#15803d', esc(t('aN', { n: a.closed.length }))) +
+    k(t('aVisa'), a.visaN, '#be185d', a.adm && a.visaCost ? esc(eur(a.visaCost)) : '') + '</div>';
+  if (a.tth.byPos.length) h += '<h2>' + t('aByPos') + '</h2><div class="lst tbl">' + a.tth.byPos.map(function(r){ return '<div class="trw"><span>' + esc(tv(r[0])) + '</span><small>' + r[1] + ' 👷</small><b>' + dd(r[2]) + '</b></div>'; }).join('') + '</div>';
+  if (a.closed.length) h += '<h2>' + t('aClosedL') + '</h2><div class="lst tbl">' + a.closed.map(function(r){ return '<div class="trw" data-n="' + esc(r[0]) + '" onclick="openC(this.dataset.n)"><span>' + esc(r[0]) + '</span><small>' + r[1] + ' / ' + r[2] + ' 👷</small><b>' + dd(r[3]) + '</b></div>'; }).join('') + '</div>';
+  if (a.adm) {
+    h += '<h2>' + t('aMoney') + '</h2><div class="kpis">' + k(t('aCostAll'), eur(a.costAll), '#b45309', esc(t('aN', { n: a.costN }))) + k(t('aCostAvg'), a.costN ? eur(a.costAll / a.costN) : '—', '#b45309') + '</div>';
+    if (a.partners && a.partners.length) h += '<h2>' + t('aPart') + '</h2><div class="lst tbl"><div class="trw th"><span>' + t('aPartN') + '</span><small>👷 / ✅</small><b>' + t('aDue') + '</b><b>' + t('aPaid') + '</b></div>' + a.partners.map(function(r){
+      return '<div class="trw"><span>' + esc(r[0]) + '</span><small>' + r[1] + ' / ' + r[2] + '</small><b style="color:' + (r[3] ? '#b45309' : '#64748b') + '">' + eur(r[3]) + '</b><b style="color:#15803d">' + eur(r[4]) + '</b></div>'; }).join('') + '</div>';
+  }
+  b.innerHTML = h;
+}
+// ================= v3.0 · 🌓 Тъмна тема (Авто = както е телефонът) =================
+var THEME = ls('et_theme') || 'auto';
+var THM = window.matchMedia ? matchMedia('(prefers-color-scheme: dark)') : null;
+function themeApply(){
+  var dark = THEME === 'dark' || (THEME === 'auto' && THM && THM.matches);
+  document.documentElement.classList.toggle('dark', !!dark);
+  var m = document.querySelector('meta[name=theme-color]'); if (m) m.setAttribute('content', dark ? '#0b1220' : '#0d2b50');
+}
+function themeLab(){ return t('thLab') + ': ' + t({ auto: 'thAuto', light: 'thLight', dark: 'thDark' }[THEME]); }
+function themeNext(){ THEME = { auto: 'light', light: 'dark', dark: 'auto' }[THEME] || 'auto'; ls('et_theme', THEME); themeApply(); var b = el('thB'); if (b) b.textContent = themeLab(); }
+if (THM) { try { THM.addEventListener('change', themeApply); } catch (e) { try { THM.addListener(themeApply); } catch (x) {} } }
+themeApply();
 var PENDOPEN = null;
 try { (function(){ var q = new URLSearchParams(location.search), c = q.get('c'), k = q.get('k'); if (c || k) { PENDOPEN = { c: c || '', k: k || '' }; history.replaceState(null, '', location.pathname); } })(); } catch (e) {}
 function pendOpen(){
@@ -1360,7 +1950,7 @@ function pendOpen(){
 }
 if ('serviceWorker' in navigator) navigator.serviceWorker.addEventListener('message', function(e){ var m = e.data && e.data.crmOpen; if (!m) return; PENDOPEN = { c: m.c || '', k: m.k || '' }; load(); });
 
-document.addEventListener('visibilitychange', function(){ if (!document.hidden && D && TOKEN && el('sheet').style.display !== 'block' && el('prog').style.display !== 'block') load(); });
+document.addEventListener('visibilitychange', function(){ if (document.hidden) return; if (QN) qFlush(); if (D && TOKEN && el('sheet').style.display !== 'block' && el('prog').style.display !== 'block') load(); });
 // Нова версия → проверява се при всяко отваряне/връщане в приложението и се зарежда сама
 if ('serviceWorker' in navigator) {
   var swHad = !!navigator.serviceWorker.controller, swDone = false;

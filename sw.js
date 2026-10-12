@@ -1,7 +1,7 @@
 // Employeetrade CRM – кешира интерфейса, за да се отваря веднага (данните идват от API-то)
 // ⚠️ Flexi CRM е на същия адрес (suleyman-ismail.github.io) – трием САМО нашите стари кешове (et-crm-*)
-const CACHE = 'et-crm-v20';
-const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
+const CACHE = 'et-crm-v30';
+const SHELL = ['./', 'index.html', 'f.html', 'manifest.webmanifest', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: 'reload' }))))); self.skipWaiting(); });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('et-crm-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
@@ -20,8 +20,9 @@ const API = 'https://script.google.com/macros/s/AKfycbw0FRgMaF2-h8xpuQqG92n4kL_u
 function tok() {
   return new Promise(res => {
     try {
-      const q = indexedDB.open('crm', 1);
-      q.onupgradeneeded = () => q.result.createObjectStore('kv');
+      // ⚠️ собствена база „et-crm“ – Flexi CRM е на същия адрес и има своя
+      const q = indexedDB.open('et-crm', 1);
+      q.onupgradeneeded = () => { const db = q.result; if (!db.objectStoreNames.contains('kv')) db.createObjectStore('kv'); if (!db.objectStoreNames.contains('q')) db.createObjectStore('q', { autoIncrement: true }); };
       q.onsuccess = () => { try { const g = q.result.transaction('kv', 'readonly').objectStore('kv').get('token'); g.onsuccess = () => res(g.result || ''); g.onerror = () => res(''); } catch (e) { res(''); } };
       q.onerror = () => res('');
     } catch (e) { res(''); }
