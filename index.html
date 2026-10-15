@@ -392,9 +392,104 @@ html.dark .cr2 .cx b,html.dark .kr2 .cx b{color:#e2e8f0}html.dark .lst>.over{bac
 html.dark .lgd span,html.dark .nfrm,html.dark .arrc,html.dark .srow,html.dark .sed,html.dark .qadd,html.dark .stabs button{background:#111a2e;color:#e2e8f0}
 html.dark .nt{background:#111a2e!important;color:#e2e8f0}html.dark .ebox{background:#0c2236;border-color:#0c4a6e}html.dark .kv div,html.dark .pbar{background:#172238}
 html.dark .ckr .cb{background:#0f172a}html.dark .ckr{border-color:#1e2a42}html.dark .arrw{background:#0c2a36;border-color:#155e75;color:#a5f3fc}
+/* ================= v3.3 · меню долу, карти със сгъваеми секции, календар, приходи ================= */
+body{padding-bottom:calc(78px + env(safe-area-inset-bottom))}
+header{padding:10px 14px 8px}.hr{gap:4px}.hr button{font-size:20px;padding:4px 6px}.hr .gs{font-size:19px}
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:8;display:flex;background:#fff;border-top:1px solid #e2e8f0;box-shadow:0 -4px 16px rgba(15,23,42,.07);padding:5px 4px calc(6px + env(safe-area-inset-bottom))}
+.bn button{flex:1;min-width:0;position:relative;border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:1px;padding:4px 0 2px;font-family:inherit;font-size:10.5px;font-weight:700;color:#94a3b8;-webkit-tap-highlight-color:transparent}
+.bn button i{font-style:normal;font-size:21px;line-height:26px;filter:grayscale(1);opacity:.55;transition:transform .15s}
+.bn button span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.bn button.on{color:#0d2b50}.bn button.on i{filter:none;opacity:1;transform:translateY(-1px)}
+.bn button.on:before{content:'';position:absolute;top:-5px;left:30%;right:30%;height:3px;border-radius:0 0 3px 3px;background:#14b8a6}
+.bn em{position:absolute;top:0;left:calc(50% + 6px);background:#ef4444;color:#fff;font-style:normal;font-size:9.5px;font-weight:800;border-radius:9px;padding:0 5px;line-height:16px;min-width:16px;text-align:center}
+#fab{bottom:calc(84px + env(safe-area-inset-bottom));background:#14b8a6;box-shadow:0 8px 20px rgba(20,184,166,.45)}
+#toast{bottom:calc(86px + env(safe-area-inset-bottom))}
+@media (min-width:900px){.bn{left:50%;right:auto;transform:translateX(-50%);width:620px;border-radius:18px 18px 0 0;border:1px solid #e2e8f0;border-bottom:0}}
+/* ☰ Още */
+.mt3g{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:6px 0 12px}
+.mt3{display:flex;flex-direction:column;align-items:center;gap:4px;background:#fff;border:1px solid #eef2f7;border-radius:16px;padding:12px 6px;font-family:inherit;color:#0f172a;box-shadow:0 1px 3px rgba(15,23,42,.06);text-align:center}
+.mt3 i{font-style:normal;font-size:22px;width:42px;height:42px;border-radius:13px;display:grid;place-items:center}.mt3 b{font-size:13px}.mt3 small{font-size:10.5px;color:#64748b;line-height:1.25}
+.mt3l{display:grid;grid-template-columns:1fr 1fr;gap:6px}.mt3l button{border:1px solid #e2e8f0;background:#f8fafc;border-radius:12px;padding:11px 8px;font-family:inherit;font-size:13px;font-weight:600;color:#334155;text-align:left}
+.mt3l .lo{grid-column:1/-1;color:#b91c1c;text-align:center}
+/* 🏠 4 броячa */
+.hm4{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 16px 0}
+.hm{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:1px;background:#fff;border:0;border-left:4px solid var(--c);border-radius:15px;padding:10px 12px;font-family:inherit;text-align:left;color:#0f172a;box-shadow:0 1px 3px rgba(15,23,42,.08)}
+.hm span{position:absolute;right:10px;top:9px;font-size:18px}.hm small{font-size:11.5px;font-weight:600;color:#64748b}.hm b{font-size:22px;line-height:1.15}
+/* 🗂️ сгъваеми карти */
+.cwrap{padding:10px 12px 40px;max-width:760px;margin:0 auto}
+details.acc{background:#fff;border-radius:15px;margin:0 0 8px;box-shadow:0 1px 3px rgba(15,23,42,.07);overflow:hidden}
+#shB details.acc,#cdB>details.acc{margin:8px 12px}
+details.acc summary{list-style:none;display:flex;align-items:center;gap:10px;padding:10px 12px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+details.acc summary::-webkit-details-marker{display:none}
+.aic{flex:none;width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font-size:16px}
+.atx{flex:1;min-width:0;display:flex;flex-direction:column}.atx b{font-size:14px;font-weight:700}.atx small{font-size:11.5px;color:#64748b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.atx small .pill{font-size:10.5px;padding:1px 7px}
+.ach:after{content:'';display:block;width:8px;height:8px;border-right:2px solid #94a3b8;border-bottom:2px solid #94a3b8;transform:rotate(45deg);margin:0 4px 4px;transition:transform .2s}
+details.acc[open] .ach:after{transform:rotate(-135deg);margin:4px 4px 0}
+details.acc[open] summary{border-bottom:1px solid #f1f5f9}
+details.acc .in{padding:10px 12px 12px}
+/* герой на работодателя */
+.ch2{background:linear-gradient(135deg,#0d2b50,#1e4f8a);color:#fff;border-radius:18px;padding:12px 12px 10px;box-shadow:0 6px 18px rgba(13,43,80,.25);position:relative;overflow:hidden}
+.ch2:before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--c)}
+.pls{display:flex;flex-wrap:wrap;gap:5px}.pls .pill{font-size:11px}.pl2{background:rgba(255,255,255,.16);border-radius:10px;padding:2px 8px;font-size:11px;font-weight:700}.pl2.gold{background:#fbbf24;color:#422006}
+.ch2 h3{margin:6px 0 1px;font-size:19px;line-height:1.2}.ch2 .sb{font-size:12px;color:#cbd5e1}
+.qas{display:flex;gap:6px;margin-top:10px;overflow-x:auto;scrollbar-width:none}.qas::-webkit-scrollbar{display:none}
+.qa{flex:1 0 56px;display:flex;flex-direction:column;align-items:center;gap:1px;background:rgba(255,255,255,.13);border:0;border-radius:12px;padding:6px 2px 5px;color:#e2e8f0;font-family:inherit;font-size:10px;text-decoration:none;white-space:nowrap}
+.qa b{font-size:18px;font-weight:400;line-height:22px}.qa:active{background:rgba(255,255,255,.25)}
+.k3{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:8px 0}
+.k3>div{background:#fff;border-radius:13px;padding:7px 4px;text-align:center;box-shadow:0 1px 2px rgba(15,23,42,.06)}.k3 b{display:block;font-size:16px;white-space:nowrap}.k3 small{font-size:10px;color:#64748b}
+.k3 .late b{color:#b91c1c}.k3 .no{background:#fff7ed;cursor:pointer}.k3 .no b{color:#c2410c}
+.nx2{background:#fff;border-radius:12px;padding:7px 11px;font-size:12.5px;color:#92400e;margin-bottom:8px;box-shadow:0 1px 2px rgba(15,23,42,.05)}
+.cwrap .pinbox,.cwrap .stl{margin-left:0!important;margin-right:0!important}
+.kmg{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:6px}
+.kmc{background:#f8fafc;border-radius:11px;padding:7px 8px;border-top:3px solid var(--c);cursor:pointer;min-width:0}.kmc b{display:block;font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kmc small{display:block;font-size:10.5px;color:#64748b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.kmc .s2{color:#0369a1}.kmc.dim{opacity:.5}
+.kvg{display:grid;grid-template-columns:1fr 1fr;gap:6px}.kvg>div{background:#f8fafc;border-radius:10px;padding:6px 9px;min-width:0}
+.kvg small{display:block;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.02em}.kvg b{font-size:13px;font-weight:600;word-break:break-word}
+.hc{background:#f8fafc;border-radius:11px;padding:7px 10px;margin-bottom:6px;border-left:3px solid #cbd5e1}.hc.pl{border-left-color:#0063b5}.hc.late{border-left-color:#ef4444}.hc.dn{opacity:.75}
+.hc .when{font-size:11.5px;color:#64748b}.hc .t{font-size:13.5px;font-weight:600}
+.mtr{display:flex;align-items:center;gap:6px;padding:7px 0;border-top:1px solid #f1f5f9}.mtr:first-of-type{border-top:0}.mtr .cx{flex:1;min-width:0}.mtr b{font-size:13.5px;display:block}.mtr small{font-size:11.5px;color:#64748b}
+.mtr button{border:1px solid #e2e8f0;background:#fff;border-radius:10px;padding:6px 9px;font-family:inherit;font-size:12.5px;font-weight:700;color:#334155}.mtr button.ok{background:#14b8a6;border-color:#14b8a6;color:#fff}
+/* 🤝 партньор: етикет + пари */
+.ptag{display:inline-block;margin-top:4px;background:#ecfeff;color:#0e7490;border:1px solid #a5f3fc;border-radius:8px;font-size:11.5px;padding:2px 7px;font-style:italic;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ptg2{margin-top:8px;background:rgba(255,255,255,.16);border-radius:9px;padding:5px 9px;font-size:12.5px;font-style:italic}
+.mbx{background:#ecfdf5;border:1px solid #a7f3d0;border-radius:14px;padding:10px 12px;margin:10px 16px}.mbx .mh{font-size:11.5px;font-weight:800;color:#047857;text-transform:uppercase;letter-spacing:.02em}
+.mbar{display:flex;height:8px;background:#e0e7ff;border-radius:5px;margin:8px 0 6px;overflow:hidden}.mbar i{background:#10b981}.mbar u{background:#f59e0b}
+.mrow{display:flex;justify-content:space-between;gap:8px;font-size:13px}.mrow .w b{color:#b45309}.mbx .ms{font-size:11.5px;color:#64748b;margin-top:3px}
+/* ⚠️ дублиране */
+.dupw{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:10px;padding:7px 10px;font-size:12.5px;margin:-4px 0 10px}.dupw .lnk{font-weight:700;text-decoration:underline}
+/* 📅 календар */
+.cal{background:#fff;border-radius:16px;margin:12px 16px 0;padding:10px;box-shadow:0 1px 3px rgba(15,23,42,.07)}
+.calh{display:flex;align-items:center;gap:6px;margin-bottom:6px}.calh b{flex:1;text-align:center;font-size:16px;text-transform:capitalize}
+.calh button{border:1px solid #e2e8f0;background:#f8fafc;border-radius:10px;padding:5px 12px;font-size:16px;font-family:inherit;color:#334155}.calh .td{font-size:12px;font-weight:700}
+.calg{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}.calg .wd{text-align:center;font-size:10.5px;font-weight:700;color:#94a3b8;padding:2px 0}
+.cd{border:0;background:#f8fafc;border-radius:10px;height:46px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-family:inherit;color:#0f172a;padding:0}
+.cd b{font-size:13px;font-weight:600}.cd i{display:flex;gap:2px;height:6px}.cd u{width:6px;height:6px;border-radius:50%}
+.cd.past{color:#94a3b8}.cd.tdy{background:#e0f2fe}.cd.tdy b{color:#0369a1;font-weight:800}.cd.sel{background:#0d2b50;color:#fff}.cd.sel b{color:#fff}
+.calk{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:8px;font-size:10.5px;color:#64748b}.calk span{display:flex;align-items:center;gap:4px}.calk u{width:8px;height:8px;border-radius:50%}
+.cev{background:#fff}
+/* 💶 приходи */
+.rsw{margin-bottom:0}
+.rvc{display:flex;align-items:flex-end;gap:6px;height:150px;background:#fff;border-radius:16px;margin:0 16px;padding:12px 10px 6px;box-shadow:0 1px 3px rgba(15,23,42,.07)}
+.rvc>div{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:2px;min-width:0}
+.rvc i{width:70%;max-width:34px;background:linear-gradient(#34d399,#10b981);border-radius:6px 6px 2px 2px}.rvc b{font-size:10px;color:#047857}.rvc small{font-size:10px;color:#64748b}
+.rvb{border:0;background:#10b981;color:#fff;border-radius:10px;padding:7px 10px;font-family:inherit;font-size:12.5px;font-weight:700;flex:none}
+.tbl .tr4 b{min-width:58px;font-size:13px}
+/* 🧾 дневник */
+.lgf{margin:4px 16px 0}.lgr .cx{flex:1;min-width:0}.lgr .cx b{display:block;font-size:13.5px}.lgr .cx small{font-size:11.5px;color:#64748b;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* 🌙 тъмна тема */
+html.dark .bn{background:#0f172a;border-color:#1e2a42}html.dark .bn button.on{color:#e2e8f0}
+html.dark .mt3,html.dark .hm,html.dark details.acc,html.dark .k3>div,html.dark .nx2,html.dark .cal,html.dark .rvc,html.dark .cev{background:#111a2e;color:#e2e8f0;border-color:#24324d}
+html.dark .mt3l button,html.dark .kmc,html.dark .kvg>div,html.dark .hc,html.dark .cd,html.dark .calh button{background:#172238;color:#e2e8f0;border-color:#24324d}
+html.dark details.acc[open] summary,html.dark .mtr{border-color:#1e2a42}html.dark .hm,html.dark .atx b,html.dark .kvg b{color:#e2e8f0}
+html.dark .mbx{background:#0b2a22;border-color:#065f46}html.dark .ptag{background:#083344;border-color:#155e75;color:#a5f3fc}
+html.dark .dupw{background:#3b1d0b;border-color:#7c2d12;color:#fdba74}html.dark .cd.tdy{background:#0c4a6e}html.dark .cd.sel{background:#38bdf8;color:#0b1220}
+html.dark .mtr button{background:#172238;color:#e2e8f0;border-color:#2b3a57}
+#main .lr>.cx{flex:1;min-width:0}#main .lr>.cx>b{display:block}#main .lr>.cx>small{display:block;font-size:12px;color:#64748b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 </style></head><body>
-<div class="hd"><header><div><h1><img src="icon-192.png" alt="">ET CRM</h1><div class="d" id="dt"></div></div><div class="hr"><button class="lg" id="lgB" onclick="toggleLang()">TR</button><button class="me" id="meB" onclick="meMenu()">👤</button><button onclick="load(true)" id="rfB">⟳</button></div></header>
-<div id="sync"></div><nav class="tabs"><button id="tb_t" onclick="tab('t')"></button><button id="tb_o" onclick="tab('o')"></button><button id="tb_c" onclick="tab('c')"></button><button id="tb_k" onclick="tab('k')"></button><button id="tb_p" onclick="tab('p')"></button><button id="tb_r" onclick="tab('r')"></button></nav></div>
+<div class="hd"><header><div><h1><img src="icon-192.png" alt="">ET CRM</h1><div class="d" id="dt"></div></div><div class="hr"><button class="gs" id="gsB" onclick="gsOpen()" aria-label="search">🔍</button><button class="lg" id="lgB" onclick="toggleLang()">TR</button><button class="me" id="meB" onclick="meMenu()">👤</button><button onclick="load(true)" id="rfB">⟳</button></div></header>
+<div id="sync"></div></div>
+<nav class="bn" id="bn"><button id="tb_t" onclick="tab('t')"></button><button id="tb_c" onclick="tab('c')"></button><button id="tb_k" onclick="tab('k')"></button><button id="tb_p" onclick="tab('p')"></button><button id="tb_m" onclick="moreMenu()"></button></nav>
 <div class="seg" id="seg"><button id="sg_m" onclick="seg('m')"></button><button id="sg_a" onclick="seg('a')"></button></div>
 <div id="off"></div><div id="qbar" onclick="qFlush()"></div><div id="main"><div class="load" id="ld0"></div></div>
 <div id="lpm" onclick="if(event.target===this)lpClose()"><div class="bx" id="lpmB"></div></div><div id="card" class="sheet"><div class="top"><button onclick="closeCard()">←</button><b id="cdT"></b></div><div id="cdB"></div></div>
@@ -406,7 +501,7 @@ html.dark .ckr .cb{background:#0f172a}html.dark .ckr{border-color:#1e2a42}html.d
 <button id="fab" type="button" onclick="fabGo()" aria-label="+">＋</button><div id="ksb"></div><div id="toast"></div><div id="prog"><div id="progT"></div><div class="pb"><i id="progB"></i></div></div>
 <script>
 var API_URL = 'https://script.google.com/macros/s/AKfycbw0FRgMaF2-h8xpuQqG92n4kL_uisbbduWT7FxWgJePem5aWlWkb4DvAKIhaGRrLr5VTw/exec';
-var APP_VER = '3.2';
+var APP_VER = '3.3';
 function ls(k, v){ try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }
 
 // ================= 🇧🇬 / 🇹🇷 ЕЗИК =================
@@ -490,7 +585,7 @@ function toggleLang(){ LANG = LANG === 'tr' ? 'bg' : 'tr'; ls('et_lang', LANG); 
 function applyLang(){
   document.documentElement.lang = LANG;
   el('lgB').textContent = LANG === 'tr' ? 'BG' : 'TR'; el('lgL').textContent = el('lgB').textContent;
-  [['t', 'tabT'], ['o', 'tabO'], ['c', 'tabC'], ['k', 'tabK'], ['p', 'tabP'], ['r', 'tabR']].forEach(function(x){ var s = t(x[1]), i = s.indexOf(' '); el('tb_' + x[0]).innerHTML = '<i>' + s.slice(0, i) + '</i>' + esc(s.slice(i + 1)); });
+  [['t', 'nvT'], ['c', 'nvC'], ['k', 'nvK'], ['p', 'nvP'], ['m', 'nvM']].forEach(function(x){ var s = t(x[1]), i = s.indexOf(' '), b = el('tb_' + x[0]); if (b) b.innerHTML = '<i>' + s.slice(0, i) + '</i><span>' + esc(s.slice(i + 1)) + '</span>'; });
   el('sg_m').textContent = t('mine'); el('sg_a').textContent = t('all'); el('off').textContent = t('off');
   el('lgP').textContent = t('pin'); if (el('ld0')) el('ld0').textContent = t('loading');
 }
@@ -663,10 +758,11 @@ function draw(){
   var ae = document.activeElement, fq = !!(ae && ae.id === 'q'), pos = fq ? ae.selectionStart : 0;
   if (TAB === 'k' && ae && ae.id === 'kq') { listK(); return; }
   setTimeout(function(){ var q = el('q'); if (fq && q && document.activeElement !== q) { q.focus(); try { q.setSelectionRange(pos, pos); } catch (e) {} } }, 0);
-  ['t','o','c','k','p','r'].forEach(function(k){ el('tb_' + k).className = TAB === k ? 'on' : ''; });
+  ['t','c','k','p'].forEach(function(k){ el('tb_' + k).className = TAB === k ? 'on' : ''; }); el('tb_m').className = MORE_T.indexOf(TAB) > -1 ? 'on' : '';
   el('sg_m').className = SEG === 'm' ? 'on' : ''; el('sg_a').className = SEG === 'a' ? 'on' : '';
   el('main').className = ''; if (TAB !== 'k') kSelOff(true);
-  if (TAB === 'c') drawClients(); else if (TAB === 'o') drawOrders(); else if (TAB === 'k') drawCands(); else if (TAB === 'p') drawPartners(); else if (TAB === 'r') drawReport(); else drawTasks();
+  if (TAB === 'c') drawClients(); else if (TAB === 'o') drawOrders(); else if (TAB === 'k') drawCands(); else if (TAB === 'p') drawPartners(); else if (TAB === 'r') drawReport(); else if (TAB === 'd') drawCal(); else if (TAB === 'l') drawLog(); else drawTasks();
+  bnBadge();
   fabSet();
 }
 
@@ -2097,14 +2193,27 @@ function pStats(p){
   var key = p.n.toLowerCase();
   if (p.t === 's') {
     var ks = (D.cands || []).filter(function(k){ return String(k.src || '').trim().toLowerCase() === key; }), w = ks.filter(function(k){ return k.st === WORK_ST; });
-    var due = 0, paid = 0; ks.forEach(function(k){ var fee = Number(k.pfee) || Number(p.fee) || 0; if (!fee) return; if (k.ppaid) paid += fee; else if (k.st === WORK_ST) due += fee; });
-    return { a: ks.length, w: w.length, due: due, paid: paid, ks: ks };
+    var m = pMoney(p, ks);
+    return { a: ks.length, w: w.length, due: m.due, paid: m.paid, exp: m.exp, ks: ks };
   }
   var es = (D.clients || []).filter(function(c){ return String(c.lw || '').trim().toLowerCase() === key; }), en = es.map(function(c){ return c.n.toLowerCase(); });
   var kc = (D.cands || []).filter(function(k){ return en.indexOf(String(k.emp || '').toLowerCase()) > -1; });
   return { e: es.length, k: kc.length, v: kc.filter(function(k){ return VISA_ST.indexOf(k.st) > -1; }).length, es: es };
 }
-function pFind(q){ var toks = lat(q).split(' ').filter(Boolean); return pList(PSEG).filter(function(p){ var hay = lat([p.n, p.k, p.c, p.sp, p.rep].join(' ')); var d = q.replace(/\D/g, ''); return (d.length >= 3 && String(p.ph).replace(/\D/g, '').indexOf(d) > -1) || toks.every(function(x){ return hay.indexOf(x) > -1; }); }); }
+// 💶 v3.3: партньорът плаща комисион НА НАС – получено / за получаване (кандидатът работи) / очаквано (в процес)
+function kFee(k, p){ return k.pfee !== '' && k.pfee != null ? Number(k.pfee) || 0 : Number(p && p.fee) || 0; }
+function pMoney(p, ks){
+  var o = { due: 0, paid: 0, exp: 0 };
+  ks.forEach(function(k){ var fee = kFee(k, p); if (!fee) return; if (k.ppaid) o.paid += fee; else if (k.st === WORK_ST) o.due += fee; else if (!kOut(k.st)) o.exp += fee; });
+  return o;
+}
+function moneyBox(m, fee){
+  var tot = m.paid + m.due + m.exp, pc = tot ? Math.round(m.paid / tot * 100) : 0;
+  return '<div class="mbx"><div class="mh">💶 ' + t('pCom') + '</div>' + (tot ? '<div class="mbar"><i style="width:' + pc + '%"></i><u style="width:' + (tot ? Math.round(m.due / tot * 100) : 0) + '%"></u></div>' : '') +
+    '<div class="mrow"><span>✅ ' + t('pPaid') + ' <b>' + eur(m.paid) + '</b></span><span class="w">⏳ ' + t('pDue') + ' <b>' + eur(m.due) + '</b></span></div>' +
+    '<div class="ms">' + esc(t('pComTxt', { f: fee ? eur(fee) : '—', e: eur(m.exp) })) + '</div></div>';
+}
+function pFind(q){ var toks = lat(q).split(' ').filter(Boolean); return pList(PSEG).filter(function(p){ var hay = lat([p.n, p.k, p.c, p.sp, p.rep, p.tg].join(' ')); var d = q.replace(/\D/g, ''); return (d.length >= 3 && String(p.ph).replace(/\D/g, '').indexOf(d) > -1) || toks.every(function(x){ return hay.indexOf(x) > -1; }); }); }
 function pSeg(s){ PSEG = s; ls('et_pseg', s); PQ = ''; drawPartners(); }
 function drawPartners(){
   var ns = pList('s').length, nl = pList('l').length;
@@ -2120,11 +2229,11 @@ function listP(){
 }
 function pCard(p, s){
   var col = p.t === 'l' ? ['#ede9fe', '#6d28d9'] : pColor(p.n), st = p.t === 's'
-    ? [[t('pActive'), s.a], [t('pWork'), s.w, '#15803d'], isAdm() ? [t('pDue'), eur(s.due), s.due ? '#b45309' : ''] : [t('pVisa'), s.ks.filter(function(k){ return VISA_ST.indexOf(k.st) > -1; }).length]]
+    ? [[t('pActive'), s.a], [t('pWork'), s.w, '#15803d'], isAdm() ? [t('pDue'), eur(s.due), s.due ? '#b45309' : '#15803d'] : [t('pVisa'), s.ks.filter(function(k){ return VISA_ST.indexOf(k.st) > -1; }).length]]
     : [[t('pEmps'), s.e], [t('pCands'), s.k], [t('pVisa'), s.v, s.v ? '#be185d' : '']];
   return '<div class="pc' + (p.t === 'l' ? ' law' : '') + '" data-id="' + esc(p.id) + '" onclick="if(!event.target.closest(\'.tl\'))pOpen(this.dataset.id)">' +
     '<div class="ptop"><span class="pav" style="background:' + col[0] + ';color:' + col[1] + '">' + (p.t === 'l' ? '⚖️' : esc(ini(p.n))) + '</span><span class="px"><b>' + esc(p.n) + (p.rt ? ' <span class="prt">★ ' + p.rt + '</span>' : '') + '</b>' +
-    '<small>' + esc([p.c, p.sp, p.k].filter(Boolean).join(' · ') || '—') + '</small></span><span class="ar">›</span></div>' +
+    '<small>' + esc([p.c, p.sp, p.k].filter(Boolean).join(' · ') || '—') + '</small>' + (p.tg ? '<span class="ptag">🏷️ ' + esc(p.tg) + '</span>' : '') + '</span><span class="ar">›</span></div>' +
     '<div class="pst">' + st.map(function(x){ return '<div><small>' + x[0] + '</small><b' + (x[2] ? ' style="color:' + x[2] + '"' : '') + '>' + x[1] + '</b></div>'; }).join('') + '</div>' +
     tiles(telT(p.ph), 'mini') + '</div>';
 }
@@ -2135,20 +2244,19 @@ function pOpen(id){
   google.script.run.withSuccessHandler(function(x){ if (PC && PC.id === id) { PC = x; pDraw(); pLocal(x); } })
     .withFailureHandler(function(e){ if (PC && PC.id === id) { closeSheet(); err(e); } }).pGet(id);
 }
-function pLocal(x){ var a = (D.partners = D.partners || []), i = a.findIndex(function(p){ return p.id === x.id; }); var o = {}; ['id', 't', 'n', 'k', 'ph', 'em', 'c', 'sp', 'rt', 'rep', 'i', 'fee'].forEach(function(k){ if (k in x) o[k] = x[k]; }); if (i > -1) a[i] = o; else a.push(o); }
+function pLocal(x){ var a = (D.partners = D.partners || []), i = a.findIndex(function(p){ return p.id === x.id; }); var o = {}; ['id', 't', 'n', 'k', 'ph', 'em', 'c', 'sp', 'rt', 'rep', 'i', 'fee', 'tg'].forEach(function(k){ if (k in x) o[k] = x[k]; }); if (i > -1) a[i] = o; else a.push(o); }
 function pDraw(){
   var p = PC; if (!p || el('sheet').style.display !== 'block') return;
   var sup = p.t === 's', s = pStats(p);
   el('shT').textContent = (sup ? '🧑‍💼 ' : '⚖️ ') + p.n;
   var h = '<div class="phero' + (sup ? '' : ' law') + '"><div class="nm">' + esc(p.n) + (p.rt ? ' <span class="prt">★ ' + p.rt + '</span>' : '') + '</div><div class="sb">' + esc([p.k, p.c].filter(Boolean).join(' · ')) + '</div>' +
-    '<span class="pill2">' + (sup ? '🧑‍💼 ' + t('pSup1') : '⚖️ ' + t('pLaw1')) + (p.sp ? ' · ' + esc(p.sp) : '') + '</span></div>';
+    '<span class="pill2">' + (sup ? '🧑‍💼 ' + t('pSup1') : '⚖️ ' + t('pLaw1')) + (p.sp ? ' · ' + esc(p.sp) : '') + '</span>' + (p.tg ? '<div class="ptg2">🏷️ ' + esc(p.tg) + '</div>' : '') + '</div>';
   h += pinsBox('P', p.id);
   h += tiles(telT(p.ph) + tl('📝', t('tlNote'), 'onclick="nOpen(\'P\',PC.id,PC.n)"', '#fef3c7') + (p.em ? tl('✉️', t('tlEmail'), 'href="mailto:' + esc(p.em) + '"', '#fef3c7') : '') + tl('✏️', t('tlEdit'), 'onclick="pForm(PC)"', '#f1f5f9'));
   if (sup) {
     var ks = p.loading ? s.ks : p.cands, w = ks.filter(function(k){ return k.st === WORK_ST; }).length;
     h += '<div class="kts">' + kTile(t('pCands'), ks.length, '#0d2b50') + kTile(t('pWork'), w, '#15803d') + kTile(t('pOut'), ks.filter(function(k){ return kOut(k.st); }).length, '#64748b') + '</div>';
-    if (isAdm()) { var due = 0, paid = 0; ks.forEach(function(k){ var fee = Number(k.pfee) || Number(p.fee) || 0; if (k.ppaid) paid += fee; else if (k.st === WORK_ST) due += fee; });
-      h += '<div class="box money"><h4>' + t('pCom') + '</h4><div class="s">' + esc(t('pComTxt', { f: p.fee ? eur(p.fee) : '—', p: eur(paid) })) + ' · <b style="color:#b45309">' + t('pDue') + ' ' + eur(due) + '</b></div></div>'; }
+    if (isAdm()) h += moneyBox(pMoney(p, ks), p.fee);
     h += '<h2>' + t('pCandsL') + '<span>' + ks.length + '</span></h2>' + (ks.length ? '<div class="lst kls">' + ks.map(kRow).join('') + '</div>' : '<div class="empty">' + (p.loading ? t('loading') : t('pNoCands')) + '</div>');
   } else {
     var es = p.loading ? s.es.map(function(c){ return { n: c.n, s: c.s, c: c.c, w: c.w }; }) : p.emps;
@@ -2169,6 +2277,7 @@ function pForm(p, type){
   var h = '<form id="frm" onsubmit="return pSend(event)"><input type="hidden" name="id" value="' + esc(p.id || '') + '">';
   if (isNew) h += fld(t('pType'), '<div class="pseg" style="margin:0"><button type="button" id="pt_s" class="' + (ty === 's' ? 'on' : '') + '" onclick="pTy(\'s\')">🧑‍💼 ' + t('pSup1') + '</button><button type="button" id="pt_l" class="' + (ty === 'l' ? 'on' : '') + '" onclick="pTy(\'l\')">⚖️ ' + t('pLaw1') + '</button></div><input type="hidden" name="t" id="pT" value="' + (ty === 'l' ? 'Адвокат' : 'Доставчик') + '">');
   h += fld(t('pName'), '<input name="n" required autocomplete="off" value="' + esc(p.n || '') + '">');
+  h += fld(t('pTag'), '<input name="tg" maxlength="120" autocomplete="off" placeholder="' + esc(t('pTagPh')) + '" value="' + esc(p.tg || '') + '">');
   h += half(fld(t('pContact'), '<input name="k" value="' + esc(p.k || '') + '">'), fld(t('pPhone'), '<input name="ph" type="tel" value="' + esc(p.ph || '') + '">'));
   h += half(fld(t('pEmail'), '<input name="em" type="email" value="' + esc(p.em || '') + '">'), fld(t('pCity'), '<input name="c" value="' + esc(p.c || '') + '">'));
   h += fld('<span id="pSpL">' + (ty === 'l' ? t('pSpecL') : t('pSpecS')) + '</span>', '<input name="sp" value="' + esc(p.sp || '') + '">');
@@ -2551,6 +2660,365 @@ Object.assign(I.tr, { tlNote:'Not', dnLab:'📏 Görünüm', dnC:'Kompakt', dnR:
   setT:'⚙️ Süreç ve renkler', setCol:'Renkler', setDocs:'Belgeler', setVs:'Vize adımları', setTags:'Etiketler', setEmpSt:'İşveren aşamaları', setCandSt:'Aday aşamaları', setTeam:'Ekip (sorumlu rengi)',
   setColHint:'Renkler tüm ekip için ortaktır.', setDocsH:'Her aday için belge listesi. ↑↓ sırala · ✕ kaldır.', setVsH:'Vize süreci adımları. "+gün" = sonraki adım için kaç gün sonra görev açılsın.',
   setTagsH:'Not etiketleri (renk + ikon).', setDays:'gün', setAddDoc:'Yeni belge', setAddStep:'Yeni adım', setAddTag:'Yeni etiket', setRmQ:'"{n}" kaldırılsın mı?' });
+// ================= v3.3 · 📱 меню долу · 🗂️ карти със сгъваеми секции · 📅 календар · 💶 приходи · 🧾 дневник · 🗄️ копия · 🎯 подходящи · ⚠️ дублиране =================
+var MORE_T = ['o', 'r', 'd', 'l'], RTAB = 'o';
+function dAdd(n, from){ var d = new Date(Date.parse(from || D.today) + n * 86400000); return d.toISOString().slice(0, 10); }
+function ymOf(d){ return String(d || '').slice(0, 7); }
+
+// ---------- 📱 долно меню ----------
+function bnBadge(){
+  var b = el('tb_t'); if (!b || !D) return;
+  var late = (D.tasks || []).filter(function(x){ return x.date < D.today && mine(x.rep); }).length, i = b.querySelector('em');
+  if (late) { if (!i) { i = document.createElement('em'); b.appendChild(i); } i.textContent = late > 99 ? '99+' : late; } else if (i) i.remove();
+}
+function moreTile(ic, lab, sub, act, bg){ return '<button type="button" class="mt3" onclick="' + act + '"><i style="background:' + (bg || '#f1f5f9') + '">' + ic + '</i><b>' + esc(lab) + '</b>' + (sub ? '<small>' + esc(sub) + '</small>' : '') + '</button>'; }
+function moreMenu(){
+  if (!D) return;
+  var ord = (D.clients || []).filter(function(c){ return (D.orderSt || []).indexOf(c.s) > -1 && mine(c.r); }).length;
+  var h = '<div class="mt3g">' +
+    moreTile('📑', t('tabO2'), t('mmOrd', { n: ord }), "closeSheet();tab('o')", '#e0f2fe') +
+    moreTile('📅', t('calT'), t('mmCal'), "closeSheet();tab('d')", '#fef3c7') +
+    moreTile('📊', t('tabR2'), t('mmRep'), "closeSheet();RTAB='o';tab('r')", '#ede9fe') +
+    (isAdm() ? moreTile('💶', t('revT'), t('mmRev'), "closeSheet();RTAB='v';tab('r')", '#dcfce7') : '') +
+    (isAdm() ? moreTile('🧾', t('logT'), t('mmLog'), "closeSheet();tab('l')", '#f1f5f9') : '') +
+    (isAdm() ? moreTile('🗄️', t('bkT'), t('mmBk'), 'bkOpen()', '#fce7f3') : '') +
+    (isAdm() ? moreTile('⚙️', t('setT').replace(/^\S+\s/, ''), t('mmSet'), "setOpen('r')", '#f1f5f9') : '') +
+    (isAdm() ? moreTile('🔐', t('adm').replace(/^\S+\s/, ''), '', 'admOpen()', '#f1f5f9') : '') +
+    '</div><div class="mt3l">' +
+    '<button onclick="themeNext();moreMenu()">' + themeLab() + '</button><button onclick="densNext();moreMenu()">' + densLab() + '</button>' +
+    '<button onclick="toggleLang();moreMenu()">' + t('langBtn') + '</button><button id="pushB" onclick="closeSheet();pushOn()">' + t('pushOn') + '</button>' +
+    '<button onclick="showNews(true)">' + t('news') + '</button><button onclick="load(true);closeSheet()">' + t('refresh') + '</button>' +
+    '<button class="lo" onclick="logout()">' + t('logout') + ' · ' + esc(D.me || '') + '</button></div>';
+  openSheet('☰ ' + t('nvM').replace(/^\S+\s/, ''), h);
+  try { pushBtn(); } catch (e) {}
+}
+// ＋ на началния екран – бързо меню
+function fabSet(){
+  var b = el('fab'); if (!b) return;
+  var on = D && ['t', 'c', 'k', 'p'].indexOf(TAB) > -1 && !(KSEL && TAB === 'k');
+  b.style.display = on ? 'flex' : 'none';
+}
+function fabGo(){
+  if (TAB === 'c') openForm(); else if (TAB === 'k') kForm(); else if (TAB === 'p') pForm(null, PSEG);
+  else lpShow('＋', [[t('qtTask'), function(){ openForm(); }], [t('qtCand'), function(){ kForm(); }], [t('qtEmp'), function(){ openForm(); }], [t('qtPart'), function(){ pForm(); }]]);
+}
+// Начален екран: 4 големи броячa (вместо дублиращите се бутони)
+function homeTiles(now){
+  var late = now.filter(function(x){ return x.date < D.today; }).length, wk = dAdd(7);
+  var arr = (D.cands || []).filter(function(k){ return k.arr && k.arr.d && k.arr.d >= D.today && k.arr.d <= wk && kMine(k); }).length;
+  var docs = (D.cands || []).filter(function(k){ return kWarn(k) && kMine(k); }).length;
+  var last = isAdm() ? hmTile('💶', t('hmCol'), eur(revLocal().due), '#10b981', "RTAB='v';tab('r')") : hmTile('🛂', t('kpDocs'), docs, '#be185d', "tab('k')");
+  return '<div class="hm4">' + hmTile('⏰', t('kpLate'), late, '#ef4444', '') + hmTile('📅', t('kpToday'), now.length - late, '#f59e0b', '') +
+    hmTile('✈️', t('hmArr'), arr, '#0ea5e9', "tab('d')") + last + '</div>';
+}
+function hmTile(ic, l, v, c, act){ return '<button type="button" class="hm" style="--c:' + c + '"' + (act ? ' onclick="' + act + '"' : '') + '><span>' + ic + '</span><small>' + esc(l) + '</small><b>' + v + '</b></button>'; }
+
+// ---------- 🔍 търсене навсякъде ----------
+var GSQ = '';
+function gsOpen(){
+  if (!D) return;
+  openSheet('🔍 ' + t('gsT'), '<div class="srch" style="margin:4px 0 8px"><input id="gsq" type="search" autocomplete="off" placeholder="' + esc(t('gsPh')) + '" value="' + esc(GSQ) + '" oninput="GSQ=this.value;gsList()"></div><div id="gsl"></div>');
+  gsList(); setTimeout(function(){ var q = el('gsq'); if (q) q.focus(); }, 60);
+}
+function gsHit(hay, toks, q){ var d = q.replace(/\D/g, ''); return toks.length && toks.every(function(x){ return hay.indexOf(x) > -1; }) || false; }
+function gsList(){
+  var q = GSQ.trim(), b = el('gsl'); if (!b) return;
+  if (q.length < 2) { b.innerHTML = '<div class="s" style="padding:6px 4px">' + t('gsHint') + '</div>'; return; }
+  var toks = lat(q).split(' ').filter(Boolean), qd = q.replace(/\D/g, ''), ph = function(p){ return qd.length >= 4 && String(p || '').replace(/\D/g, '').indexOf(qd) > -1; };
+  var cs = findC(q).slice(0, 8);
+  var ks = (D.cands || []).filter(function(k){ return ph(k.ph) || gsHit(lat([k.n, k.co, tv(k.pos), k.emp, k.src].join(' ')), toks, q); }).slice(0, 8);
+  var ps = pList().filter(function(p){ return ph(p.ph) || gsHit(lat([p.n, p.c, p.sp, p.k, p.tg].join(' ')), toks, q); }).slice(0, 6);
+  var h = '';
+  if (cs.length) h += '<h2>' + t('nvC') + '<span>' + cs.length + '</span></h2><div class="lst">' + cs.map(function(c){ return clientRow(c); }).join('') + '</div>';
+  if (ks.length) h += '<h2>' + t('nvK') + '<span>' + ks.length + '</span></h2><div class="lst kls">' + ks.map(kRow).join('') + '</div>';
+  if (ps.length) h += '<h2>' + t('nvP') + '<span>' + ps.length + '</span></h2>' + ps.map(function(p){ return pCard(p, pStats(p)); }).join('');
+  b.innerHTML = h || '<div class="empty">' + t('gsNone') + '</div>';
+}
+
+// ---------- 🗂️ сгъваеми карти (вместо редове) ----------
+var FOLD_DEF = { cands: 1, kdocs: 1 }, FOLD_BG = { cands: '#e0f2fe', match: '#dcfce7', info: '#f1f5f9', stage: '#ede9fe', law: '#ede9fe', hist: '#fef3c7', notes: '#fce7f3', mails: '#e0f2fe', files: '#ede9fe', photos: '#fef3c7' };
+function fold(k, title, sum, inner){
+  var m = String(title).match(/^([^\s\wА-яЁё]+)\s+([\s\S]*)$/), ic = m ? m[1] : '•', ti = m ? m[2] : title, op = k in OPEN ? OPEN[k] : FOLD_DEF[k];
+  return '<details class="acc" data-k="' + k + '" ontoggle="secT(this)"' + (op ? ' open' : '') + '><summary><span class="aic" style="background:' + (FOLD_BG[k] || '#f1f5f9') + '">' + ic + '</span>' +
+    '<span class="atx"><b>' + ti + '</b>' + (sum ? '<small>' + sum + '</small>' : '') + '</span><span class="ach"></span></summary><div class="in">' + inner + '</div></details>';
+}
+function kMini(k){
+  var col = kWarn(k) === 'x' ? '#ef4444' : kStCol(k.st), dp = docPct(k), sub = '';
+  if (k.arr && k.arr.d && k.arr.d >= D.today) sub = '🛬 ' + fmt(k.arr.d);
+  else if (dp && !kOut(k.st) && k.st !== 'Работи') sub = '📋 %' + dp.p;
+  return '<div class="kmc' + (kOut(k.st) ? ' dim' : '') + '" style="--c:' + col + '" data-lp="k" data-k="' + esc(k.id) + '" onclick="kTap(this.dataset.k)"><b>' + esc(k.n) + '</b><small>' + esc(tv(k.st)) + '</small>' + (sub ? '<small class="s2">' + sub + '</small>' : '') + '</div>';
+}
+function qa(ic, lab, act){ var a = /^href=/.test(act); return '<' + (a ? 'a' : 'button type="button"') + ' class="qa" ' + act + (a ? ' rel="noopener"' : '') + '><b>' + ic + '</b>' + esc(lab) + '</' + (a ? 'a' : 'button') + '>'; }
+function drawCard(){
+  var c = CUR, h = '', NL = String.fromCharCode(10), col = cStCol(c.stage), d = intl(c.phone), ok = c.phone && d.length >= 6;
+  el('cdT').textContent = c.name;
+  var pl = c.tasks.filter(function(x){ return x.status === 'Планирана'; }).sort(function(a, b){ return (a.date + a.time).localeCompare(b.date + b.time); }), nx = pl[0];
+  var all = c.cands || [], cs = all.filter(function(k){ return !kOut(k.st); }), work = cs.filter(function(k){ return k.st === 'Работи'; }).length;
+  // герой: етап, име, данни, бързи действия
+  h += '<div class="ch2" style="--c:' + col + '"><div class="pls">' + pill(c.stage) + (c.rep ? '<span class="pl2">👤 ' + esc(c.rep) + '</span>' : '') + (c.club ? '<span class="pl2 gold">💳 ' + esc(c.club) + '</span>' : '') + '</div>' +
+    '<h3>' + esc(c.name) + '</h3><div class="sb">' + esc([tv(c.pos), c.city, c.contact].filter(Boolean).join(' · ') || '—') + '</div>' +
+    '<div class="qas">' + (ok ? qa('📞', t('tlCall'), 'href="tel:+' + d + '"') + qa('💬', 'WhatsApp', 'onclick="waPick(\'e\')"') + qa('💜', 'Viber', 'href="viber://chat?number=%2B' + d + '"') : '') +
+    (c.email ? qa('✉️', t('tlEmail'), 'onclick="mailForm()"') : '') + qa('📝', t('tlNote'), 'onclick="nOpen(\'C\',CUR.name,CUR.name)"') + qa('✅', t('tlTask'), 'data-n="' + esc(c.name) + '" onclick="openForm(this.dataset.n)"') +
+    qa('⋯', t('tlMore'), 'data-n="' + esc(c.name) + '" onclick="lpShow(\'🏢 \' + this.dataset.n, cMenu(this.dataset.n).slice(1))"') + '</div></div>';
+  // броячи
+  h += '<div class="k3">' + '<div><b>' + (c.workers || '—') + '</b><small>' + t('k3Need') + '</small></div><div><b>' + (cs.length - work) + '</b><small>' + t('k3Proc') + '</small></div>' +
+    '<div><b style="color:#15803d">' + work + '</b><small>' + t('k3Work') + '</small></div>' +
+    '<div class="' + (!nx ? 'no' : nx.date < D.today ? 'late' : '') + '" onclick="' + (nx ? '' : 'openForm(CUR.name)') + '"><b>' + (nx ? '📅 ' + fmt(nx.date) : '⚠️') + '</b><small>' + (nx ? esc(tv(nx.type)) : t('noPlanS')) + '</small></div></div>';
+  if (nx && nx.remind) h += '<div class="nx2">🔔 ' + esc(nx.remind) + (nx.time ? ' · ' + esc(nx.time) : '') + '</div>';
+  h += staleLine(c) + pinsBox('C', c.name);
+  // 👷 кандидати – мини карти
+  var ch = (all.length ? '<div class="kmg">' + cs.concat(all.filter(function(k){ return kOut(k.st); })).map(kMini).join('') + '</div>' : '<div class="s">' + t('noCands') + '</div>') +
+    '<div class="acts"><button class="ok" data-n="' + esc(c.name) + '" onclick="kForm({emp:this.dataset.n})">' + t('addCand') + '</button><button onclick="slShare()">' + t('slBtn') + '</button></div>';
+  h += fold('cands', t('sCands').replace(/\s*\(.*$/, ''), esc(t('aCands', { a: cs.length, w: work, n: c.workers || '—' })), ch);
+  // 🎯 подходящи свободни кандидати
+  var mt = matchFor(c);
+  if (mt.length) h += fold('match', '🎯 ' + t('mtT'), esc(t('mtSum', { n: mt.length })), '<div class="s" style="margin-bottom:8px">' + esc(t('mtHint')) + '</div>' + mt.map(function(k){
+    return '<div class="mtr"><span class="cx"><b>' + esc(k.n) + '</b><small>' + esc([tv(k.pos), k.co, k.exp ? k.exp + ' ' + t('mtYrs') : ''].filter(Boolean).join(' · ')) + '</small></span>' +
+      '<button data-k="' + esc(k.id) + '" onclick="kOpen(this.dataset.k)">👁️</button><button class="ok" data-k="' + esc(k.id) + '" onclick="mtAssign(this.dataset.k)">➕ ' + t('mtAdd') + '</button></div>'; }).join(''));
+  // 🏢 данни – карти
+  var kv = [['🧑‍💼', t('ivContact'), c.contact], ['📞', t('ivPhone'), c.phone], ['✉️', 'E-mail', c.email], ['🌍', t('ivCity'), c.city], ['🛠️', t('ivPos'), tv(c.pos)], ['👷', t('ivWorkers'), c.workers],
+    ['💶', t('ivSalary'), c.salary], ['💳', 'Club', c.club ? c.club + (c.clubTo ? ' · ' + fmt(c.clubTo) : '') : ''], ['🔎', t('ivSrc'), tv(c.src)], ['🗓️', t('ivInq'), c.inq ? fmt(c.inq) : ''], ['☎️', t('ivLast'), c.last ? fmt(c.last) : '']]
+    .filter(function(r){ return r[2]; });
+  h += fold('info', '🏢 ' + t('ivT'), esc([c.phone, c.city].filter(Boolean).join(' · ')), '<div class="kvg">' + kv.map(function(r){ return '<div><small>' + r[0] + ' ' + esc(r[1]) + '</small><b>' + esc(r[2]) + '</b></div>'; }).join('') + '</div>' +
+    '<div class="acts"><button onclick="editC()">' + t('edit') + '</button>' + mapB(c.maps) + '<button onclick="locC()">' + t('saveLoc') + '</button></div>');
+  // 🏷️ етап
+  h += fold('stage', '🏷️ ' + t('sStage').replace(/^\S+\s/, ''), pill(c.stage), '<div class="chips">' + D.stages.map(function(s){
+    return '<button class="' + (s === c.stage ? 'on' : '') + '" style="' + (s === c.stage ? 'background:' + cStCol(s) + ';border-color:' + cStCol(s) + ';color:#fff' : '') + '" data-s="' + esc(s) + '" onclick="stageC(this.dataset.s)">' + esc(tv(s)) + '</button>'; }).join('') + '</div>');
+  // ⚖️ адвокат
+  h += fold('law', '⚖️ ' + t('lawyer').replace(/^\S+\s/, ''), esc(c.lawyer || t('noLawyerS')), (c.lawyer || c.lawPhone
+    ? '<div class="kvg"><div><small>⚖️ ' + t('lawName') + '</small><b><span class="lnk" data-n="' + esc(c.lawyer || '') + '" onclick="pOpenName(\'l\',this.dataset.n)">' + esc(c.lawyer || '—') + '</span></b></div>' + (c.lawPhone ? '<div><small>📞</small><b>' + esc(c.lawPhone) + '</b></div>' : '') + '</div>' +
+      '<div class="acts">' + tel(c.lawPhone) + '<button onclick="editLaw()">✏️</button></div>'
+    : '<div class="s">' + t('noLawyer') + '</div><div class="acts"><button onclick="editLaw()">' + t('addLawyer') + '</button></div>'));
+  // ✅ задачи и история
+  var hist = c.tasks.length ? c.tasks.map(function(x, hi){
+    var p = x.status === 'Планирана', ic = p ? '🔵' : x.status === 'Изпълнена' ? '✅' : '✖️';
+    return '<div class="hc ' + (p ? 'pl' : 'dn') + (p && x.date < D.today ? ' late' : '') + '" data-lp="h" data-i="' + hi + '"><div class="when">' + ic + ' ' + fmt(x.date) + (x.time ? ' · ' + esc(x.time) : '') + ' · ' + esc(tv(x.type)) + (x.rep ? ' · 👤 ' + esc(x.rep) : '') + '</div>' +
+      (x.remind ? '<div class="t">' + esc(x.remind) + '</div>' : '') + (x.desc ? '<div class="s notes">' + esc(x.desc) + '</div>' : '') + '</div>';
+  }).join('') : '<div class="s">' + t('noTasks') + '</div>';
+  h += fold('hist', '✅ ' + t('hsT'), esc(t('hsSum', { p: pl.length, n: c.tasks.length })), hist + '<div class="acts"><button class="ok" data-n="' + esc(c.name) + '" onclick="openForm(this.dataset.n)">' + t('addTask') + '</button></div>');
+  // 📝 бележки
+  h += fold('notes', '📝 ' + t('sNotes').replace(/^\S+\s/, ''), esc((c.notes || '').split(NL)[0] || (pinsOf('C', c.name).length ? '📌 ' + pinsOf('C', c.name).length : '')),
+    '<div class="notes">' + (c.notes ? esc(c.notes) : '<span class="s">' + t('noNotes') + '</span>') + '</div><div class="acts"><button onclick="nOpen(\'C\',CUR.name,CUR.name)">📝 ' + t('ntAll') + '</button><button onclick="editC()">' + t('edit') + '</button></div>');
+  h += mailSec(c);
+  // 📁 документи и 📸 снимки
+  var fl = c.files || [];
+  h += fold('files', '📁 ' + t('sFiles').replace(/^\S+\s/, '').replace(/\s*\(.*$/, ''), esc(fl.length ? t('flSum', { n: fl.length, f: fl[0].name }) : t('noFiles')),
+    (c.photoErr ? '<div class="s">' + esc(c.photoErr) + '</div>' : (fl.length ? fl.map(fileRow).join('') : '<div class="s">' + t('noFiles') + '</div>')) +
+    '<div class="acts">' + upLabel(t('addFile'), '', 'doc', '') + (c.folder ? '<a href="' + safeUrl(c.folder) + '" target="_blank">' + t('openF') + '</a>' : '') + '</div>');
+  h += fold('photos', '📸 ' + t('sPhotos').replace(/^\S+\s/, '').replace(/\s*\(.*$/, ''), esc(String(c.photos.length)),
+    (c.photoErr ? '' : (c.photos.length ? photoGrid(c.photos) : '<div class="s">' + t('noPhotos') + '</div>')) +
+    '<div class="acts">' + upLabel(t('photo'), 'image/*', 'photo', '') + (c.folder ? '<a href="' + safeUrl(c.folder) + '" target="_blank">' + t('openF') + '</a>' : '') + '</div>');
+  el('cdB').innerHTML = '<div class="cwrap">' + h + '</div>';
+}
+
+// ---------- 🎯 подходящи кандидати (свободни, същата професия) ----------
+function posKey(x){ return lat(tv(x) + ' ' + (x || '')).split(' ').filter(function(w){ return w.length > 2; }); }
+function matchFor(c){
+  var want = posKey(c.pos); if (!want.length) return [];
+  return (D.cands || []).filter(function(k){ return !k.emp && !kOut(k.st) && k.st !== 'Работи'; }).map(function(k){
+    var have = posKey(k.pos), sc = want.filter(function(w){ return have.some(function(h){ return h === w || (w.length > 4 && (h.indexOf(w.slice(0, 5)) === 0)); }); }).length;
+    return { k: k, sc: sc + (Number(k.rt) || 0) / 10 + Math.min(Number(k.exp) || 0, 10) / 100 };
+  }).filter(function(x){ return x.sc >= 1; }).sort(function(a, b){ return b.sc - a.sc; }).slice(0, 8).map(function(x){ return x.k; });
+}
+function mtAssign(id){
+  var k = kById(id), c = CUR; if (!k || !c) return;
+  if (!confirm(t('mtQ', { k: k.n, e: c.name }))) return;
+  k.emp = c.name; c.cands = (c.cands || []).concat([k]); drawCard(); toast(t('mtOk', { k: k.n }));
+  google.script.run.withSuccessHandler(function(x){ var i = (D.cands || []).findIndex(function(q){ return q.id === x.id; }); if (i > -1) D.cands[i] = x; refreshCard(); })
+    .withQueued(function(){ qBar(); }).withFailureHandler(function(e){ k.emp = ''; err(e); refreshCard(); }).saveCand({ id: id, emp: c.name });
+}
+
+// ---------- 📅 календар ----------
+var CALM = '', CALD = '', CALX = {};
+function drawCal(){
+  CALM = CALM || ymOf(D.today); CALD = CALD || D.today;
+  var y = +CALM.slice(0, 4), m = +CALM.slice(5, 7), first = new Date(Date.UTC(y, m - 1, 1)), days = new Date(Date.UTC(y, m, 0)).getUTCDate();
+  var from = CALM + '-01', to = CALM + '-' + ('0' + days).slice(-2), key = from + to;
+  if (!CALX[key]) { CALX[key] = { loading: true, a: [] }; api('calGet', [from, to]).then(function(a){ CALX[key] = { a: a }; if (TAB === 'd') drawCal(); }, function(e){ CALX[key] = { a: [], err: e.message }; if (TAB === 'd') drawCal(); }); }
+  var ev = calEv(from, to, CALX[key].a), by = {}; ev.forEach(function(e){ (by[e.d] = by[e.d] || []).push(e); });
+  var wd = (first.getUTCDay() + 6) % 7, h = '<div class="cal"><div class="calh"><button onclick="calGo(-1)">‹</button><b>' + MONS[LANG][m - 1] + ' ' + y + '</b><button onclick="calGo(1)">›</button><button class="td" onclick="CALM=\'\';CALD=\'\';drawCal()">' + t('today') + '</button></div>' +
+    '<div class="calg">' + t('calWd').split(',').map(function(x){ return '<span class="wd">' + x + '</span>'; }).join('');
+  for (var i = 0; i < wd; i++) h += '<span></span>';
+  for (var dd = 1; dd <= days; dd++) {
+    var ds = CALM + '-' + ('0' + dd).slice(-2), es = by[ds] || [], cls = (ds === D.today ? ' tdy' : '') + (ds === CALD ? ' sel' : '') + (ds < D.today ? ' past' : '');
+    h += '<button class="cd' + cls + '" onclick="CALD=\'' + ds + '\';drawCal()"><b>' + dd + '</b><i>' + es.slice(0, 4).map(function(e){ return '<u style="background:' + e.c + '"></u>'; }).join('') + '</i></button>';
+  }
+  h += '</div><div class="calk">' + [['#0063b5', t('calTask')], ['#ef4444', t('overdue')], ['#14b8a6', t('calArr')], ['#be185d', t('calDoc')], ['#94a3b8', t('calDone')]].map(function(x){ return '<span><u style="background:' + x[0] + '"></u>' + x[1] + '</span>'; }).join('') + '</div></div>';
+  var sel = by[CALD] || [];
+  h += '<h2>' + fmt(CALD) + (CALX[key].loading ? ' · ' + t('loading') : '') + '<span>' + sel.length + '</span></h2>' + (sel.length ? '<div class="lst">' + sel.map(function(e){
+    return '<div class="lr cev" style="border-left:4px solid ' + e.c + '" ' + e.on + '><span class="cx"><b>' + esc(e.ti) + '</b><small>' + esc(e.sub) + '</small></span>' + (e.tm ? '<span class="kx2" style="color:#64748b">' + esc(e.tm) + '</span>' : '') + '</div>'; }).join('') + '</div>'
+    : '<div class="empty">' + t('calNone') + '</div>');
+  h += '<div class="s" style="margin:10px 18px 30px">📤 ' + t('calHint') + '</div>';
+  el('main').innerHTML = h;
+}
+function calGo(n){ var y = +CALM.slice(0, 4), m = +CALM.slice(5, 7) - 1 + n; y += Math.floor(m / 12); m = ((m % 12) + 12) % 12; CALM = y + '-' + ('0' + (m + 1)).slice(-2); CALD = CALM === ymOf(D.today) ? D.today : CALM + '-01'; drawCal(); }
+function calEv(from, to, srv){
+  var out = [], seen = {}, inR = function(d){ return d && d >= from && d <= to; };
+  (srv || []).concat(D.tasks || []).forEach(function(x){
+    if (!inR(x.date) || !mine(x.rep)) return; var id = x.row + '|' + x.date; if (seen[id]) return; seen[id] = 1;
+    out.push({ d: x.date, tm: x.time, c: x.done ? '#94a3b8' : x.date < D.today ? '#ef4444' : '#0063b5', ti: (x.done ? '✅ ' : '') + (x.remind || tv(x.type)), sub: [x.client, tv(x.type), x.rep ? '👤 ' + x.rep : ''].filter(Boolean).join(' · '), on: 'data-n="' + esc(x.client) + '" onclick="openC(this.dataset.n)"' });
+  });
+  (D.cands || []).forEach(function(k){
+    if (!kMine(k)) return;
+    var on = 'data-k="' + esc(k.id) + '" onclick="kOpen(this.dataset.k)"';
+    if (k.arr && inR(k.arr.d)) out.push({ d: k.arr.d, tm: k.arr.t || '', c: '#14b8a6', ti: '🛬 ' + k.n, sub: [k.arr.fl, k.emp ? '🏢 ' + k.emp : ''].filter(Boolean).join(' · '), on: on });
+    if (!kOut(k.st)) KDOCS.forEach(function(x){ if (inR(k[x[0]])) out.push({ d: k[x[0]], tm: '', c: '#be185d', ti: '🛂 ' + k.n, sub: t(x[1]) + ' – ' + t('calExp'), on: on }); });
+  });
+  return out.sort(function(a, b){ return (a.d + (a.tm || '99')).localeCompare(b.d + (b.tm || '99')); });
+}
+
+// ---------- 💶 приходи (админ) ----------
+function revLocal(){
+  var o = { due: 0, paid: 0, exp: 0 }, pf = {}; pList('s').forEach(function(p){ pf[p.n.toLowerCase()] = p; });
+  (D.cands || []).forEach(function(k){ if (!k.src) return; var fee = kFee(k, pf[String(k.src).trim().toLowerCase()]); if (!fee) return; if (k.ppaid) o.paid += fee; else if (k.st === WORK_ST) o.due += fee; else if (!kOut(k.st)) o.exp += fee; });
+  return o;
+}
+function revDraw(){
+  var a = ANA, b = el('ana'); if (!b) return;
+  if (!a) { b.innerHTML = '<div class="load">' + t('loading') + '</div>'; return; }
+  var r = a.rev || { due: 0, paid: 0, exp: 0, m: [] }, pf = {}; pList('s').forEach(function(p){ pf[p.n.toLowerCase()] = p; });
+  var h = '<div class="hm4">' + hmTile('✅', t('revPaid'), eur(r.paid), '#10b981') + hmTile('⏳', t('revDue'), eur(r.due), '#f59e0b') + hmTile('🔮', t('revExp'), eur(r.exp), '#6366f1') + hmTile('Σ', t('revTot'), eur(r.paid + r.due + r.exp), '#0d2b50') + '</div>';
+  if (r.m && r.m.length) { var mx = Math.max.apply(null, r.m.map(function(x){ return x[1]; }).concat([1]));
+    h += '<h2>' + t('revByM') + '</h2><div class="rvc">' + r.m.map(function(x){ var mm = +x[0].slice(5, 7); return '<div><i style="height:' + Math.max(4, Math.round(x[1] / mx * 100)) + '%" title="' + eur(x[1]) + '"></i><b>' + Math.round(x[1] / 100) / 10 + 'k</b><small>' + MONS[LANG][mm - 1] + '</small></div>'; }).join('') + '</div>'; }
+  var due = (D.cands || []).filter(function(k){ return k.src && !k.ppaid && k.st === WORK_ST && kFee(k, pf[String(k.src).trim().toLowerCase()]); });
+  h += '<h2>' + t('revCol') + '<span>' + due.length + '</span></h2>' + (due.length ? '<div class="lst">' + due.map(function(k){
+    return '<div class="lr"><span class="cx" data-k="' + esc(k.id) + '" onclick="kOpen(this.dataset.k)"><b>' + esc(k.n) + '</b><small>🤝 ' + esc(k.src) + (k.emp ? ' · 🏢 ' + esc(k.emp) : '') + '</small></span><b style="color:#b45309;margin-right:8px">' + eur(kFee(k, pf[String(k.src).trim().toLowerCase()])) + '</b>' +
+      '<button class="rvb" data-k="' + esc(k.id) + '" onclick="revGot(this.dataset.k)">✅ ' + t('revGot') + '</button></div>'; }).join('') + '</div>' : '<div class="empty">' + t('revNone') + '</div>');
+  if (a.partners && a.partners.length) h += '<h2>' + t('aPart') + '</h2><div class="lst tbl"><div class="trw th tr4"><span>' + t('aPartN') + '</span><small>👷/✅</small><b>' + t('revDue') + '</b><b>' + t('revPaid') + '</b><b>' + t('revExp') + '</b></div>' + a.partners.map(function(x){
+    return '<div class="trw tr4" data-n="' + esc(x[0]) + '" onclick="pOpenName(\'s\',this.dataset.n)"><span>' + esc(x[0]) + '</span><small>' + x[1] + '/' + x[2] + '</small><b style="color:' + (x[3] ? '#b45309' : '#94a3b8') + '">' + eur(x[3]) + '</b><b style="color:#15803d">' + eur(x[4]) + '</b><b style="color:#6366f1">' + eur(x[5] || 0) + '</b></div>'; }).join('') + '</div>';
+  h += '<div class="s" style="margin:10px 18px 30px">ℹ️ ' + t('revHint') + '</div>';
+  b.innerHTML = h;
+}
+function revGot(id){
+  var k = kById(id); if (!k || !confirm(t('revGotQ', { n: k.n }))) return;
+  k.ppaid = D.today; ANA = null; revDraw(); toast(t('rec'));
+  google.script.run.withSuccessHandler(function(x){ var i = (D.cands || []).findIndex(function(q){ return q.id === x.id; }); if (i > -1) D.cands[i] = x; anaLoad(true); })
+    .withQueued(function(){ qBar(); }).withFailureHandler(function(e){ k.ppaid = ''; err(e); anaLoad(true); }).saveCand({ id: id, ppaid: D.today });
+}
+// отчетът: 📊 Обзор | 💶 Приходи
+var drawReport0 = drawReport;
+drawReport = function(){
+  if (!isAdm()) RTAB = 'o';
+  var sw = isAdm() ? '<div class="pseg rsw"><button class="' + (RTAB === 'o' ? 'on' : '') + '" onclick="RTAB=\'o\';drawReport()">📊 ' + t('rpOv') + '</button><button class="' + (RTAB === 'v' ? 'on' : '') + '" onclick="RTAB=\'v\';drawReport()">💶 ' + t('revT') + '</button></div>' : '';
+  if (RTAB === 'v') { el('main').innerHTML = sw + '<div id="ana"></div>'; revDraw(); anaLoad(); return; }
+  drawReport0(); el('main').insertAdjacentHTML('afterbegin', sw);
+};
+var anaDraw0 = anaDraw;
+anaDraw = function(){ if (TAB === 'r' && RTAB === 'v') revDraw(); else anaDraw0(); };
+
+// ---------- 🧾 дневник (админ) ----------
+var LOGW = '', LOGD = null;
+function drawLog(){
+  if (!isAdm()) { tab('t'); return; }
+  var h = '<div class="chips lgf"><button class="' + (!LOGW ? 'on' : '') + '" onclick="LOGW=\'\';LOGD=null;drawLog()">' + t('all') + '</button>' + (D.reps || []).map(function(r){ return '<button class="' + (LOGW === r ? 'on' : '') + '" data-r="' + esc(r) + '" onclick="LOGW=this.dataset.r;LOGD=null;drawLog()">' + esc(r) + '</button>'; }).join('') + '</div><div id="lgl"><div class="load">' + t('loading') + '</div></div>';
+  el('main').innerHTML = '<h2>' + t('logT') + '</h2>' + h;
+  if (LOGD) return logList();
+  api('auditGet', [300, LOGW]).then(function(a){ LOGD = a; if (TAB === 'l') logList(); }, function(e){ if (el('lgl')) el('lgl').innerHTML = '<div class="empty">⚠️ ' + esc(e.message) + '</div>'; });
+}
+function logList(){
+  var b = el('lgl'); if (!b) return; var a = LOGD || [], day = '', h = '';
+  if (!a.length) { b.innerHTML = '<div class="empty">' + t('logNone') + '</div>'; return; }
+  a.forEach(function(x){ var d = dayOf(x.t); if (d !== day) { if (day) h += '</div>'; day = d; h += '<h2>' + fmt(d) + '</h2><div class="lst">'; }
+    var tm = new Date(x.t); h += '<div class="lr lgr"><span class="rdot" style="background:' + repCol(x.by) + '">' + esc(String(x.by).charAt(0)) + '</span><span class="cx"><b>' + esc(x.a) + (x.o ? ' · ' + esc(x.o) : '') + '</b><small>' + esc([x.by, x.d].filter(Boolean).join(' · ')) + '</small></span><span class="kx2" style="color:#64748b">' + ('0' + tm.getHours()).slice(-2) + ':' + ('0' + tm.getMinutes()).slice(-2) + '</span></div>'; });
+  b.innerHTML = h + '</div><div style="height:30px"></div>';
+}
+
+// ---------- 🗄️ резервни копия (админ) ----------
+function bkOpen(){
+  openSheet('🗄️ ' + t('bkT'), '<div id="bkb"><div class="load">' + t('loading') + '</div></div>');
+  api('backupInfo', []).then(bkDraw, function(e){ el('bkb').innerHTML = '<div class="empty">⚠️ ' + esc(e.message) + '</div>'; });
+}
+function bkDraw(o){
+  var b = el('bkb'); if (!b) return;
+  b.innerHTML = '<div class="box"><div class="kvg"><div><small>🕓 ' + t('bkLast') + '</small><b>' + (o.last ? fmt(dayOf(o.last)) : '—') + '</b></div><div><small>🗂️ ' + t('bkN') + '</small><b>' + o.n + ' / 8</b></div></div>' +
+    '<div class="s" style="margin-top:10px">' + t('bkHint') + '</div><div class="acts">' + (o.url ? '<a href="' + safeUrl(o.url) + '" target="_blank" rel="noopener">📁 Drive</a>' : '') + '</div></div>' +
+    '<button class="save" id="bkS" onclick="bkNow()">🗄️ ' + t('bkNow') + '</button>';
+}
+function bkNow(){ var s = el('bkS'); s.disabled = true; s.textContent = t('saving'); api('backupNow', []).then(function(o){ toast('✅ ' + t('bkDone')); bkDraw(o); }, function(e){ s.disabled = false; s.textContent = '🗄️ ' + t('bkNow'); err(e); }); }
+
+// ---------- ⚠️ предупреждение за дублиране (докато пишеш) ----------
+function simN(a, b){
+  a = lat(a); b = lat(b); if (!a || !b) return false; if (a === b) return true;
+  var A = a.replace(/\b(ltd|ood|eood|ad|gmbh|srl|llc|inc|co|company|firma|sirketi)\b/g, '').replace(/\s+/g, ' ').trim(), B = b.replace(/\b(ltd|ood|eood|ad|gmbh|srl|llc|inc|co|company|firma|sirketi)\b/g, '').replace(/\s+/g, ' ').trim();
+  if (A && A === B) return true;
+  if (A.length >= 5 && B.length >= 5 && (A.indexOf(B) > -1 || B.indexOf(A) > -1)) return true;
+  if (Math.abs(A.length - B.length) > 2 || A.length < 5) return false;
+  var d = [], i, j; for (i = 0; i <= A.length; i++) { d[i] = [i]; } for (j = 0; j <= B.length; j++) d[0][j] = j;
+  for (i = 1; i <= A.length; i++) for (j = 1; j <= B.length; j++) d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (A[i - 1] === B[j - 1] ? 0 : 1));
+  return d[A.length][B.length] <= (A.length > 9 ? 2 : 1);
+}
+function samePh(a, b){ a = String(a || '').replace(/\D/g, ''); b = String(b || '').replace(/\D/g, ''); return a.length >= 7 && b.length >= 7 && a.slice(-8) === b.slice(-8); }
+function dupFind(kind, v, isPh, selfId){
+  v = String(v || '').trim(); if (v.length < (isPh ? 7 : 3)) return [];
+  if (kind === 'c') return (D.clients || []).filter(function(c){ return isPh ? samePh(c.p, v) : c.n.toLowerCase() !== v.toLowerCase() && simN(c.n, v); }).slice(0, 3).map(function(c){ return { n: c.n, on: 'data-n="' + esc(c.n) + '" onclick="closeSheet();openC(this.dataset.n)"' }; });
+  if (kind === 'k') return (D.cands || []).filter(function(k){ return k.id !== selfId && (isPh ? samePh(k.ph, v) : simN(k.n, v)); }).slice(0, 3).map(function(k){ return { n: k.n + (k.emp ? ' · 🏢 ' + k.emp : ''), on: 'data-k="' + esc(k.id) + '" onclick="kOpen(this.dataset.k)"' }; });
+  return pList().filter(function(p){ return p.id !== selfId && (isPh ? samePh(p.ph, v) : simN(p.n, v)); }).slice(0, 3).map(function(p){ return { n: p.n, on: 'data-id="' + esc(p.id) + '" onclick="pOpen(this.dataset.id)"' }; });
+}
+document.addEventListener('input', function(e){
+  var x = e.target, f = x && x.form; if (!f || f.getAttribute('id') !== 'frm' || !D) return;
+  var os = f.getAttribute('onsubmit') || '', kind = /kSend/.test(os) ? 'k' : /pSend/.test(os) ? 'p' : /return send\(/.test(os) ? 'c' : '';
+  var nm = x.name, isPh = nm === 'ph' || nm === 'phone'; if (!kind || !(nm === 'n' || nm === 'client' || isPh)) return;
+  var sid = (f.querySelector('input[name=id]') || {}).value || '';
+  if (kind === 'c' && !isPh && (D.clients || []).some(function(c){ return c.n.toLowerCase() === x.value.trim().toLowerCase(); })) { dupShow(x, []); return; }
+  dupShow(x, dupFind(kind, x.value, isPh, sid));
+});
+function dupShow(x, a){
+  var w = x.parentNode.querySelector('.dupw[data-f="' + x.name + '"]');
+  if (!a.length) { if (w) w.remove(); return; }
+  if (!w) { w = document.createElement('div'); w.className = 'dupw'; w.setAttribute('data-f', x.name); x.insertAdjacentElement('afterend', w); }
+  w.innerHTML = '⚠️ ' + t('dupW') + ' ' + a.map(function(o){ return '<span class="lnk" ' + o.on + '>' + esc(o.n) + '</span>'; }).join(', ');
+}
+
+// при нови данни – календарът и дневникът се презареждат
+var render0 = render;
+render = function(d){ CALX = {}; LOGD = null; render0(d); };
+// ================= v3.3 · текстове =================
+Object.assign(I.bg, {
+  nvT:'🏠 Начало', nvC:'🏢 Фирми', nvK:'👷 Кандидати', nvP:'🤝 Партньори', nvM:'☰ Още',
+  mmOrd:'{n} отворени', calT:'Календар', mmCal:'задачи, пристигания, документи', mmRep:'обзор и анализ', revT:'Приходи', mmRev:'комисиони от партньори',
+  logT:'🧾 Дневник на промените', mmLog:'кой какво е променил', bkT:'Резервни копия', mmBk:'седмично + ръчно', mmSet:'етапи, документи, цветове',
+  hmCol:'За получаване', hmArr:'Пристигат (7 дни)',
+  gsT:'Търсене навсякъде', gsPh:'Фирма, кандидат, партньор, телефон…', gsHint:'Пиши поне 2 букви – търси във фирми, кандидати и партньори.', gsNone:'Нищо не е намерено',
+  k3Need:'търсят', k3Proc:'в процес', k3Work:'работят', noPlanS:'няма задача', aCands:'{a} активни · {w} работят · търсят {n}',
+  mtT:'Подходящи свободни кандидати', mtSum:'{n} подходящи', mtHint:'Кандидати без работодател със същата професия – по оценка и опит.', mtYrs:'г. опит', mtAdd:'Добави',
+  mtQ:'Да изпратя ли {k} към {e}?', mtOk:'✅ {k} е добавен',
+  ivT:'Данни на фирмата', ivContact:'Контакт', ivPhone:'Телефон', ivCity:'Държава / град', ivPos:'Професии', ivWorkers:'Работници', ivSalary:'Заплата', ivSrc:'Източник', ivInq:'Запитване', ivLast:'Последен контакт',
+  noLawyerS:'няма адвокат', hsT:'Задачи и история', hsSum:'{p} планирани · общо {n}', ntAll:'Всички бележки', flSum:'{n} файла · {f}',
+  calWd:'Пн,Вт,Ср,Чт,Пт,Сб,Нд', calTask:'Задача', calArr:'Пристигане', calDoc:'Документ изтича', calDone:'Изпълнена', calNone:'Нищо за този ден', calExp:'изтича',
+  calHint:'Задачите се записват и в Google Календар автоматично.',
+  revPaid:'Получено', revDue:'За получаване', revExp:'Очаквано', revTot:'Общо', revByM:'💶 Получено по месеци', revCol:'⏳ За събиране (кандидатът вече работи)', revGot:'Получено',
+  revNone:'Няма чакащи плащания 👍', revGotQ:'Партньорът плати ли комисиона за {n}? (днешна дата)',
+  revHint:'Комисионът го плаща партньорът (доставчикът) на нас. „За получаване“ = кандидатът работи, но не е платено. „Очаквано“ = кандидати в процес. Сумата е от кандидата, иначе от картата на партньора.',
+  rpOv:'Обзор', logNone:'Още няма записи', bkLast:'Последно копие', bkN:'Пазени копия', bkNow:'Направи копие сега', bkDone:'Копието е готово',
+  bkHint:'Цялата таблица се копира автоматично веднъж седмично в Drive (папка „🗄️ Резервни копия“). Пазят се последните 8 копия.',
+  dupW:'Може би вече съществува:', pTag:'🏷️ Етикет (кратко описание)', pTagPh:'напр. Бърз, но документите идват непълни', pPaid:'Получено',
+  mPfee:'🤝 Комисион от партньора (€)', mPaid:'получено', mDue:'за получаване', mPaidOn:'🤝 Получено от партньора на',
+  aPart:'🤝 Комисиони от партньори', aDue:'За получаване', aPaid:'Получено',
+  pDue:'За получаване', pCom:'Комисион (партньорът плаща на нас)', pComTxt:'На кандидат: {f} · Очаквано: {e}', pFee:'💶 Комисион, който ни плаща (€ на кандидат)'
+});
+Object.assign(I.tr, {
+  nvT:'🏠 Ana sayfa', nvC:'🏢 İşverenler', nvK:'👷 Adaylar', nvP:'🤝 Partnerler', nvM:'☰ Daha fazla',
+  mmOrd:'{n} açık', calT:'Takvim', mmCal:'görevler, varışlar, belgeler', mmRep:'özet ve analiz', revT:'Gelirler', mmRev:'partner komisyonları',
+  logT:'🧾 Değişiklik kaydı', mmLog:'kim neyi değiştirdi', bkT:'Yedekler', mmBk:'haftalık + elle', mmSet:'aşamalar, belgeler, renkler',
+  hmCol:'Alınacak', hmArr:'Gelenler (7 gün)',
+  gsT:'Her yerde ara', gsPh:'Firma, aday, partner, telefon…', gsHint:'En az 2 harf yaz – firmalarda, adaylarda ve partnerlerde arar.', gsNone:'Hiçbir şey bulunamadı',
+  k3Need:'istiyor', k3Proc:'süreçte', k3Work:'çalışıyor', noPlanS:'görev yok', aCands:'{a} aktif · {w} çalışıyor · {n} istiyor',
+  mtT:'Uygun boşta adaylar', mtSum:'{n} uygun', mtHint:'İşvereni olmayan, aynı meslekten adaylar – puan ve deneyime göre.', mtYrs:'yıl deneyim', mtAdd:'Ekle',
+  mtQ:'{k} → {e} firmasına gönderilsin mi?', mtOk:'✅ {k} eklendi',
+  ivT:'Firma bilgileri', ivContact:'İlgili kişi', ivPhone:'Telefon', ivCity:'Ülke / şehir', ivPos:'Meslekler', ivWorkers:'İşçi', ivSalary:'Maaş', ivSrc:'Kaynak', ivInq:'Talep', ivLast:'Son temas',
+  noLawyerS:'avukat yok', hsT:'Görevler ve geçmiş', hsSum:'{p} planlı · toplam {n}', ntAll:'Tüm notlar', flSum:'{n} dosya · {f}',
+  calWd:'Pt,Sa,Ça,Pe,Cu,Ct,Pz', calTask:'Görev', calArr:'Varış', calDoc:'Belge bitiyor', calDone:'Yapıldı', calNone:'Bu gün için bir şey yok', calExp:'bitiyor',
+  calHint:'Görevler otomatik olarak Google Takvim\'e de yazılır.',
+  revPaid:'Tahsil edildi', revDue:'Alınacak', revExp:'Beklenen', revTot:'Toplam', revByM:'💶 Aylara göre tahsilat', revCol:'⏳ Tahsil edilecek (aday çalışıyor)', revGot:'Alındı',
+  revNone:'Bekleyen ödeme yok 👍', revGotQ:'Partner {n} için komisyonu ödedi mi? (bugünün tarihi)',
+  revHint:'Komisyonu partner (tedarikçi) bize öder. "Alınacak" = aday çalışıyor ama ödenmedi. "Beklenen" = süreçteki adaylar. Tutar adayda yoksa partner kartındaki tutar kullanılır.',
+  rpOv:'Özet', logNone:'Henüz kayıt yok', bkLast:'Son yedek', bkN:'Saklanan yedek', bkNow:'Şimdi yedekle', bkDone:'Yedek hazır',
+  bkHint:'Tüm tablo haftada bir otomatik olarak Drive\'a kopyalanır ("🗄️ Резервни копия" klasörü). Son 8 yedek saklanır.',
+  dupW:'Zaten kayıtlı olabilir:', pTag:'🏷️ Etiket (kısa not)', pTagPh:'örn. Hızlı ama evraklar eksik geliyor', pPaid:'Tahsil edildi',
+  mPfee:'🤝 Partnerden komisyon (€)', mPaid:'tahsil edildi', mDue:'alınacak', mPaidOn:'🤝 Partnerden tahsil tarihi',
+  aPart:'🤝 Partner komisyonları', aDue:'Alınacak', aPaid:'Tahsil edildi',
+  pDue:'Alınacak', pCom:'Komisyon (partner bize öder)', pComTxt:'Aday başı: {f} · Beklenen: {e}', pFee:'💶 Bize ödediği komisyon (aday başı €)'
+});
 var PENDOPEN = null;
 try { (function(){ var q = new URLSearchParams(location.search), c = q.get('c'), k = q.get('k'); if (c || k) { PENDOPEN = { c: c || '', k: k || '' }; history.replaceState(null, '', location.pathname); } })(); } catch (e) {}
 function pendOpen(){
