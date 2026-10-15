@@ -320,6 +320,78 @@ html.dark .tls .tl.ok{background:#0f2a1c;border-color:#166534}
 html.dark .qt.pri{background:linear-gradient(135deg,#0063b5,#0f1d33)}
 html.dark .pseg{background:#172238}html.dark .pseg button{color:#94a3b8}html.dark .pseg button.on{background:#24324d;color:#fff}
 html.dark .px b,html.dark .kt b{color:#e2e8f0}html.dark .kt b[style]{filter:brightness(1.25)}
+/* ================= v3.2 · цветни компактни редове · бележки · процес ================= */
+.lst>.cr2,.lst>.kr2,.kls>.kr2{position:relative;overflow:hidden;padding:9px 12px 9px 0;gap:10px;align-items:center}
+.cr2 .sst,.kr2 .sst{width:5px;align-self:stretch;border-radius:0 4px 4px 0;flex:none;margin:-9px 0}
+.cav{width:36px;height:36px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12.5px;flex:none}
+.cr2 .cx,.kr2 .cx{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.cr2 .cx b,.kr2 .cx b{font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#0f172a}
+.cr2 .cx small,.kr2 .cx small{font-size:12px;color:#64748b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.emp{font-size:11px;font-weight:700;color:#0369a1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.emp em{font-style:normal;color:#64748b;font-weight:600}.emp.no{color:#94a3b8;font-weight:600}
+.pbar{display:block;height:5px;border-radius:3px;background:#e2e8f0;margin-top:4px;overflow:hidden;max-width:220px}.pbar i{display:block;height:100%;border-radius:3px}
+.pbar.big{height:9px;max-width:none;margin:2px 0 0}
+.crt{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex:none;max-width:42%;text-align:right}
+.kx2{font-size:11px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}.kx3{font-size:10.5px;font-weight:700;color:#64748b;white-space:nowrap}
+.kx2.r,.kx3.r{color:#b91c1c}.kx2.o{color:#c2410c}.kx2.a{color:#b45309}.kx2.g{color:#15803d}.kx2.c{color:#0891b2}.kx2.p{color:#6d28d9}
+.rdot{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;border-radius:50%;color:#fff;font-size:10px;font-weight:800;margin-left:2px}
+.lst>.over{background:#fff5f5!important}.lst>.today{background:#fffaf0!important}.lst>.dim{opacity:.55}
+.pinm{font-size:12px}
+.lgd{display:flex;flex-wrap:wrap;gap:5px;margin:6px 16px 2px}.lgd span{display:flex;align-items:center;gap:4px;font-size:10.5px;font-weight:700;color:#475569;background:#fff;border-radius:8px;padding:2px 7px}.lgd i{width:8px;height:8px;border-radius:50%;display:inline-block}
+/* компактен */
+body.cmp .lst{gap:5px}body.cmp .lst>.cr2,body.cmp .lst>.kr2,body.cmp .kls>.kr2{padding:6px 10px 6px 0;border-radius:12px}
+body.cmp .cr2 .sst,body.cmp .kr2 .sst{margin:-6px 0}body.cmp .cav{width:30px;height:30px;border-radius:9px;font-size:11px}
+body.cmp .cr2 .cx b,body.cmp .kr2 .cx b{font-size:14px}body.cmp .cr2 .cx small,body.cmp .kr2 .cx small{font-size:11.5px}
+body.cmp .lst>.ti .tr{padding:8px 12px}body.cmp .tr .tx b{font-size:14.5px}body.cmp .tr .tx small{font-size:12px}
+body.cmp h2{margin:14px 16px 6px}body.cmp .pc{padding:11px 12px;margin-bottom:7px}body.cmp .pst{margin-top:8px}
+/* 📌 бележки */
+.pins{display:flex;flex-direction:column;gap:6px;margin:10px 16px 0}.pins.sm{margin:8px 0 0}
+.nt{border:1px solid #e2e8f0;border-left:4px solid #94a3b8;border-radius:12px;padding:8px 10px 7px;font-size:13.5px;line-height:1.38;white-space:pre-wrap;word-break:break-word;background:#fff}
+.ntg{display:inline-block;font-size:10px;font-weight:800;border-radius:6px;padding:1px 6px;margin-right:6px;text-transform:uppercase;vertical-align:1px}
+.ntm{display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:11px;color:#64748b;margin-top:4px;white-space:normal}
+.nta{display:flex;gap:4px}.nta button{border:0;background:rgba(15,23,42,.06);border-radius:8px;padding:3px 7px;font-size:12px;font-family:inherit;color:#0f172a}
+.nfrm{background:#fff;margin:12px 16px 0;border-radius:14px;padding:10px;box-shadow:0 1px 3px rgba(15,23,42,.08)}.nfrm textarea{min-height:70px}.nfrm .save{margin-top:10px}
+.ntags{margin:8px 0 2px}.ntags button{font-size:12px!important}.npin{margin:6px 0 0!important;font-size:14px}
+.nflt{margin:12px 16px 0}.nls{display:flex;flex-direction:column;gap:6px;margin:0 16px}
+/* кандидат: процес */
+.kv32{margin:0 16px}.kv32 .box{margin:10px 0}.kv32 .pins{margin:10px 0 0}
+.ebox{display:flex;align-items:center;gap:10px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:14px;padding:9px 12px;margin-top:10px;cursor:pointer}
+.ebox>span:first-child{font-size:20px}.ebox div{flex:1;min-width:0;display:flex;flex-direction:column}.ebox small{font-size:10px;font-weight:800;color:#0369a1;text-transform:uppercase;letter-spacing:.03em}
+.ebox b{font-size:14.5px}.ebox b em{font-style:normal;font-weight:600;color:#64748b;font-size:12.5px}.ebox i{font-style:normal;font-size:11.5px;color:#92400e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ebox.no{background:#f8fafc;border-color:#e2e8f0}.ebox.no small{color:#94a3b8}.ebox .ar{color:#94a3b8}
+.box h4{display:flex;justify-content:space-between;align-items:center}.dpct{font-size:16px;text-transform:none}
+.ckr{display:flex;align-items:center;gap:9px;padding:6px 0;border-bottom:1px solid #f1f5f9;font-size:13.5px}.ckr:last-of-type{border:0}
+.ckr span{flex:1;min-width:0}.ckr small{font-size:11px;color:#92400e;font-weight:700}
+.ckr .cb{width:26px;height:26px;border-radius:8px;border:2px solid #fca5a5;background:#fff;font-size:14px;font-weight:800;color:#fff;flex:none;display:flex;align-items:center;justify-content:center;padding:0;font-family:inherit}
+.ckr.ok .cb{background:#22c55e;border-color:#22c55e}.ckr.wt .cb{background:#fef3c7;border-color:#f59e0b;font-size:12px}
+.ckr.no span{color:#b91c1c;font-weight:700}
+.ckr label{margin:0!important;font-size:11px!important;font-weight:800!important;color:#0063b5!important;background:#eff6ff;border-radius:8px;padding:4px 8px;cursor:pointer;white-space:nowrap}
+.tlx{position:relative;padding-left:24px}.tlx:before{content:'';position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:#e2e8f0}
+.stp{position:relative;padding:4px 0 9px}.stp .d{position:absolute;left:-24px;top:4px;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:800}
+.stp b{font-size:13.5px}.stp small{display:block;font-size:11.5px;color:#64748b;margin-top:1px}
+.stp.done .d{background:#22c55e}.stp.cur .d{background:#f59e0b;box-shadow:0 0 0 4px #fef3c7}.stp.todo .d{background:#fff;border:2px solid #cbd5e1}.stp.todo b{color:#94a3b8;font-weight:600}.stp.cur b{color:#b45309}
+.vact{display:flex;gap:6px;margin-top:6px}.vact input{flex:1;padding:8px;font-size:14px}.vact button{border:1px solid #86efac;background:#dcfce7;border-radius:10px;padding:8px 12px;font-weight:800;font-family:inherit;color:#166534;white-space:nowrap}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:6px}.kv div{background:#f8fafc;border-radius:10px;padding:7px 9px;min-width:0}.kv small{display:block;font-size:10px;color:#64748b;font-weight:800;text-transform:uppercase}.kv b{font-size:13px;word-break:break-word}
+.achips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.achips button,.achips a{border:1px solid #fde68a;background:#fffbeb;color:#92400e;border-radius:9px;padding:5px 9px;font-size:12px;font-weight:800;font-family:inherit;text-decoration:none}
+.achips button.on{background:#dcfce7;border-color:#86efac;color:#166534}.achips a{background:#e0f2fe;border-color:#bae6fd;color:#0369a1}
+.fu{display:flex;gap:6px}.fu button{flex:1;border-radius:12px;padding:8px 4px;font-size:11.5px;font-weight:700;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:2px}.fu b{font-size:14px}
+.fu .g{background:#f0fdf4;border:1px solid #86efac;color:#166534}.fu .a{background:#fffbeb;border:2px solid #f59e0b;color:#92400e}.fu .e{background:#f8fafc;border:1px solid #e2e8f0;color:#64748b}.fu .b{background:#fef2f2;border:1px solid #fca5a5;color:#b91c1c}
+.arrc{background:#fff;border-radius:14px;padding:10px 12px;margin:0 16px 6px;box-shadow:0 1px 2px rgba(15,23,42,.06);border-left:5px solid #0891b2;cursor:pointer}
+.arrc .t{display:flex;justify-content:space-between;font-weight:800;font-size:14.5px}.arrc .t span:last-child{color:#0891b2}.arrc small{display:block;font-size:12px;color:#64748b;margin-top:2px}
+.arrw{margin:10px 16px 0;background:#ecfeff;border:1px solid #a5f3fc;color:#155e75;border-radius:12px;padding:8px 12px;font-size:13px;font-weight:700}
+/* ⚙️ настройки */
+.stabs{display:flex;gap:4px;overflow-x:auto;padding:10px 16px 0}.stabs button{flex:none;border:1px solid #cbd5e1;background:#fff;border-radius:16px;padding:7px 11px;font-size:13px;font-weight:700;font-family:inherit;color:#334155}.stabs button.on{background:#0d2b50;color:#fff;border-color:#0d2b50}
+.spad{padding:0 16px}.srow{display:flex;align-items:center;gap:8px;background:#fff;border-radius:12px;padding:8px 10px;margin-bottom:5px;flex-wrap:wrap}.srow b{flex:1;font-size:13px;min-width:110px}
+.sws2{display:flex;gap:4px;flex-wrap:wrap}.sws2 i{width:20px;height:20px;border-radius:6px;cursor:pointer}.sws2 i.sel{outline:3px solid #0f172a;outline-offset:1px}
+.sed{display:flex;align-items:center;gap:6px;background:#fff;border-radius:12px;padding:7px 8px;margin-bottom:6px;flex-wrap:wrap}
+.sed input{padding:8px;font-size:14px}.sed .sic{width:46px;text-align:center}.sed .snm{flex:1;min-width:90px}.snum{width:24px;text-align:center;font-weight:800;color:#64748b}
+.sday{display:flex!important;align-items:center;gap:3px;margin:0!important;font-size:12px!important}.sday input{width:48px;padding:8px 4px}
+.smv{display:flex;gap:3px}.smv button{border:1px solid #e2e8f0;background:#f8fafc;border-radius:8px;width:28px;height:32px;font-size:14px;font-family:inherit}.smv .x{color:#b91c1c}
+.qadd{width:100%;border:1px dashed #94a3b8;background:#fff;border-radius:12px;padding:11px;font-size:14px;font-weight:700;color:#0063b5;font-family:inherit;margin-top:4px}
+/* 🌓 */
+html.dark .cr2 .cx b,html.dark .kr2 .cx b{color:#e2e8f0}html.dark .lst>.over{background:#2a1416!important}html.dark .lst>.today{background:#2a2112!important}
+html.dark .lgd span,html.dark .nfrm,html.dark .arrc,html.dark .srow,html.dark .sed,html.dark .qadd,html.dark .stabs button{background:#111a2e;color:#e2e8f0}
+html.dark .nt{background:#111a2e!important;color:#e2e8f0}html.dark .ebox{background:#0c2236;border-color:#0c4a6e}html.dark .kv div,html.dark .pbar{background:#172238}
+html.dark .ckr .cb{background:#0f172a}html.dark .ckr{border-color:#1e2a42}html.dark .arrw{background:#0c2a36;border-color:#155e75;color:#a5f3fc}
 </style></head><body>
 <div class="hd"><header><div><h1><img src="icon-192.png" alt="">ET CRM</h1><div class="d" id="dt"></div></div><div class="hr"><button class="lg" id="lgB" onclick="toggleLang()">TR</button><button class="me" id="meB" onclick="meMenu()">👤</button><button onclick="load(true)" id="rfB">⟳</button></div></header>
 <div id="sync"></div><nav class="tabs"><button id="tb_t" onclick="tab('t')"></button><button id="tb_o" onclick="tab('o')"></button><button id="tb_c" onclick="tab('c')"></button><button id="tb_k" onclick="tab('k')"></button><button id="tb_p" onclick="tab('p')"></button><button id="tb_r" onclick="tab('r')"></button></nav></div>
@@ -334,7 +406,7 @@ html.dark .px b,html.dark .kt b{color:#e2e8f0}html.dark .kt b[style]{filter:brig
 <button id="fab" type="button" onclick="fabGo()" aria-label="+">＋</button><div id="ksb"></div><div id="toast"></div><div id="prog"><div id="progT"></div><div class="pb"><i id="progB"></i></div></div>
 <script>
 var API_URL = 'https://script.google.com/macros/s/AKfycbw0FRgMaF2-h8xpuQqG92n4kL_uisbbduWT7FxWgJePem5aWlWkb4DvAKIhaGRrLr5VTw/exec';
-var APP_VER = '3.1';
+var APP_VER = '3.2';
 function ls(k, v){ try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }
 
 // ================= 🇧🇬 / 🇹🇷 ЕЗИК =================
@@ -635,7 +707,8 @@ function taskCard(x){
   if (!op) return h + '</div>';
   var sub = [x.desc, x.city].filter(Boolean).join(' · ');
   var rem = x.remind ? '<div class="s" style="color:#92400e;font-weight:700">🔔 ' + esc(x.remind) + '</div>' : '<div class="s" style="color:#b91c1c;font-weight:700">' + t('remNone') + '</div>';
-  return h + '<div class="tb">' + rem + (sub ? '<div class="s">' + esc(sub) + '</div>' : '') +
+  var pn = pinsOf('C', x.client);
+  return h + '<div class="tb">' + rem + (sub ? '<div class="s">' + esc(sub) + '</div>' : '') + (pn.length ? '<div class="pins sm">' + pn.slice(0, 2).map(function(n){ return noteHtml(n); }).join('') + '</div>' : '') +
     tiles(tl('✅', t('tlDone'), 'onclick="doneForm(' + x.row + ')"', '#dcfce7', 'ok') + telT(x.phone) + tl('🏢', t('tlEmp'), 'data-n="' + esc(x.client) + '" onclick="openC(this.dataset.n)"', '#ede9fe') +
       tl('📅', t('d1'), 'onclick="snooze(' + x.row + ',1)"', '#f1f5f9') + tl('📅', '+3', 'onclick="snooze(' + x.row + ',3)"', '#f1f5f9') + tl('📅', '+7', 'onclick="snooze(' + x.row + ',7)"', '#f1f5f9'), 'mini') + '</div></div>';
 }
@@ -643,7 +716,7 @@ function noTask(){ return D.clients.filter(function(c){ return !c.nx && D.closed
 function drawTasks(){
   var ts = D.tasks.filter(function(x){ return mine(x.rep); });
   var now = ts.filter(function(x){ return x.date <= D.today; }), next = ts.filter(function(x){ return x.date > D.today; }), free = noTask(), st = stale(); free = free.filter(function(c){ return st.indexOf(c) < 0; });
-  el('main').innerHTML = srchBox() + '<div id="qres"></div><div id="tbody"><div id="pushAsk"></div>' + homeTiles(now) +
+  el('main').innerHTML = srchBox() + '<div id="qres"></div><div id="tbody"><div id="pushAsk"></div>' + homeTiles(now) + arrSec() +
     sec(t('secToday'), now.length, '<div class="lst">' + now.map(taskCard).join('') + '</div>', t('noToday')) + expSec() + clubSec() + staleSec() +
     sec(t('next7'), next.length, '<div class="lst">' + next.map(taskCard).join('') + '</div>', t('noNext')) +
     sec(t('noTaskSec'), free.length, rows(free), t('allHave')) + '</div>';
@@ -695,11 +768,6 @@ function findC(q){
   out.sort(function(a, b){ return b.sc - a.sc || cmpC(a.c, b.c); });
   return out.map(function(x){ return x.c; });
 }
-function clientRow(c){
-  var col = (STC[c.s] || ['#e2e8f0', '#94a3b8'])[1];
-  return '<div class="lr" data-lp="c" data-n="' + esc(c.n) + '" onclick="openC(this.dataset.n)" title="' + esc(tv(c.s)) + '"><span class="dt" style="background:' + col + '"></span>' +
-    '<span class="nm">' + esc(c.n) + '</span><span class="ar">›</span></div>';
-}
 function rows(a){ return '<div class="lst">' + a.map(clientRow).join('') + '</div>'; }
 function results(q, pre){
   var a = pre || findC(q), MAXR = 50;
@@ -719,7 +787,7 @@ function onQ(){
 var CV = ls('et_cv') === 'b' ? 'b' : 'l';
 function cView(v){ CV = v; ls('et_cv', v); draw(); }
 function drawClients(){
-  el('main').innerHTML = srchBox() + '<div class="tbar">' + vSw(CV, 'cView') + '</div>' + fBar('c') + '<div id="cl"></div>';
+  el('main').innerHTML = srchBox() + '<div class="tbar">' + vSw(CV, 'cView') + '</div>' + fBar('c') + legend('c') + '<div id="cl"></div>';
   el('main').className = CV === 'b' ? 'wide' : '';
   listC();
 }
@@ -769,7 +837,7 @@ function newsOk(){ ls('et_seen', D.ver); closeSheet(); }
 function meMenu(){
   openSheet('👤 ' + (D && D.me ? D.me : ''), '<div class="who"><p style="font-size:15px;color:#334155">' + t('loggedAs') + ' <b>' + esc(D && D.me || '') + '</b>.</p>' +
     '<button id="pushB" onclick="closeSheet();pushOn()">' + t('pushOn') + '</button>' + (isAdm() ? '<button onclick="admOpen()">' + t('adm') + '</button>' : '') +
-    '<button onclick="themeNext()" id="thB">' + themeLab() + '</button><button onclick="toggleLang()">' + t('langBtn') + '</button><button onclick="showNews(true)">' + t('news') + '</button><button onclick="load(true);closeSheet()">' + t('refresh') + '</button><button onclick="logout()">' + t('logout') + '</button></div>');
+    '<button onclick="themeNext()" id="thB">' + themeLab() + '</button><button onclick="densNext()" id="dnB">' + densLab() + '</button>' + (isAdm() ? '<button onclick="setOpen(\'r\')">' + t('setT') + '</button>' : '') + '<button onclick="toggleLang()">' + t('langBtn') + '</button><button onclick="showNews(true)">' + t('news') + '</button><button onclick="load(true);closeSheet()">' + t('refresh') + '</button><button onclick="logout()">' + t('logout') + '</button></div>');
   pushBtn();
 }
 var PIN = '';
@@ -906,8 +974,8 @@ function drawCard(){
     (c.club ? '<div class="s" style="color:#b45309;font-weight:700">💳 ' + esc(c.club) + (c.clubTo ? ' · ' + esc(t('clubTxt', { d: fmt(c.clubTo) })) : '') + '</div>' : '') +
     (nx ? '<div class="nxt">📅 ' + fmt(nx.date) + (nx.time ? ' · ' + esc(nx.time) : '') + ' – ' + esc(tv(nx.type)) + (nx.remind ? ': ' + esc(nx.remind) : '') + '</div>'
         : '<div class="nxt no">' + t('noPlan') + '</div>') + staleLine(c) +
-    '</div>' + tiles(telT(c.phone) + (c.email ? tl('✉️', t('tlEmail'), 'href="mailto:' + esc(c.email) + '"', '#fef3c7') : '') +
-      tl('📋', t('tlTask'), 'data-n="' + esc(c.name) + '" onclick="openForm(this.dataset.n)"', '#dcfce7', 'ok') + tl('👷', t('tlCand'), 'data-n="' + esc(c.name) + '" onclick="kForm({emp:this.dataset.n})"', '#e0f2fe') +
+    '</div>' + pinsBox('C', c.name) + tiles(telT(c.phone) + (c.email ? tl('✉️', t('tlEmail'), 'href="mailto:' + esc(c.email) + '"', '#fef3c7') : '') +
+      tl('📋', t('tlTask'), 'data-n="' + esc(c.name) + '" onclick="openForm(this.dataset.n)"', '#dcfce7', 'ok') + tl('📝', t('tlNote'), 'onclick="nOpen(\'C\',CUR.name,CUR.name)"', '#fef3c7') + tl('👷', t('tlCand'), 'data-n="' + esc(c.name) + '" onclick="kForm({emp:this.dataset.n})"', '#e0f2fe') +
       tl('🔗', t('tlLink'), 'onclick="slShare()"', '#fef3c7') + (c.phone ? tl('💬', t('tlWa'), 'onclick="waPick(\'e\')"', '#dcfce7') : '') +
       tl('⋯', t('tlMore'), 'data-n="' + esc(c.name) + '" onclick="lpShow(\'🏢 \' + this.dataset.n, cMenu(this.dataset.n).slice(1))"', '#f1f5f9'));
   // ⚖️ Адвокат – винаги видим
@@ -1248,12 +1316,6 @@ function kMine(k){ return SEG === 'a' || !D.me || k.rep === D.me || mine((dcOf(k
 // ---------- 👷 Кандидати ----------
 var KQ = '', KF = '', KV = ls('et_kv') === 'b' ? 'b' : 'l', KPAGE = 0, KSEL = null, KOUT = null, KMAX = 80;
 function kSelOn(){ return !!KSEL && TAB === 'k' && el('card').style.display !== 'block'; }
-function kRow(k){
-  var w = kWarn(k), so = kSelOn(), sel = so && KSEL[k.id];
-  return '<div class="kr' + (sel ? ' sel' : '') + '" data-lp="k" data-k="' + esc(k.id) + '" onclick="kTap(this.dataset.k)">' + (so ? '<span class="ck">' + (sel ? '☑️' : '⬜') + '</span>' : '') +
-    '<span class="av">' + (w === 'x' ? '⛔' : w === 'w' ? '⚠️' : '👷') + '</span><span class="cx"><b>' + esc(k.n) + '</b>' +
-    '<small>' + kPill(k.st) + ' ' + esc([tv(k.pos), k.co, k.emp || t('kNoEmp')].filter(Boolean).join(' · ')) + '</small></span><span class="ar">›</span></div>';
-}
 function kTap(id){ if (kSelOn()) { if (KSEL[id]) delete KSEL[id]; else KSEL[id] = 1; listK(); kSelBar(); return; } kOpen(id); }
 function kFind(q){
   var toks = lat(q).split(' ').filter(Boolean), qd = q.replace(/[^0-9]/g, ''), digits = /^[0-9\s+()\/-]+$/.test(q.trim());
@@ -1268,7 +1330,7 @@ function kView(v){ KV = v; ls('et_kv', v); if (v === 'b') { KSEL = null; kSelBar
 function drawCands(){
   el('main').innerHTML = '<div class="srch"><input id="kq" type="search" enterkeyhint="search" autocomplete="off" placeholder="' + esc(t('kQ')) + '" value="' + esc(KQ) + '" oninput="KQ=this.value;KPAGE=0;KOUT=null;listK()"></div>' +
     '<div class="tbar">' + vSw(KV, 'kView') + (KV === 'l' ? '<button class="' + (KSEL ? 'on' : '') + '" onclick="kSelMode()">☑️ ' + t('kSel') + '</button>' : '') + '</div>' +
-    fBar('k') + '<div class="chips wf" id="kf"></div><div id="kl"></div>';
+    fBar('k') + legend('k') + '<div class="chips wf" id="kf"></div><div id="kl"></div>';
   el('main').className = KV === 'b' ? 'wide' : '';
   listK();
 }
@@ -1332,7 +1394,8 @@ function kDraw(){
     '<div class="s">' + (k.emp ? '🏢 <span class="lnk" data-n="' + esc(k.emp) + '" onclick="closeSheet();openC(this.dataset.n)">' + esc(k.emp) + '</span>' : '🏢 ' + t('kNoEmp')) + (k.rep ? ' · 👤 ' + esc(k.rep) : '') + (k.src ? ' · 🤝 ' + esc(k.src) : '') + (k.rt ? ' · ' + '★★★★★'.slice(0, k.rt) : '') + '</div>' +
     (k.dec ? '<div class="nxt" style="color:#15803d">' + esc(k.dec) + '</div>' : '') +
     '</div>' + tiles(telT(k.ph) + tl('💬', t('tlWa'), 'onclick="waPick(\'k\')"', '#dcfce7') + tl('✏️', t('tlEdit'), 'onclick="kForm(KC)"', '#f1f5f9') + tl('📄', 'PDF', 'onclick="kPdfGet([KC.id])"', '#fee2e2') +
-      (k.src ? tl('🤝', t('tlPart'), 'data-n="' + esc(k.src) + '" onclick="pOpenName(\'s\',this.dataset.n)"', '#fef3c7') : ''));
+      tl('📝', t('tlNote'), 'onclick="nOpen(\'K\',KC.id,KC.n)"', '#fef3c7') + (k.src ? tl('🤝', t('tlPart'), 'data-n="' + esc(k.src) + '" onclick="pOpenName(\'s\',this.dataset.n)"', '#fef3c7') : ''));
+  h += '<div class="kv32">' + empBox(k) + pinsBox('K', k.id) + docsBox(k) + procBox(k) + arrBox(k) + fuBox(k) + '</div>';
   if (isAdm() && (k.cost || k.pfee)) h += '<div class="box money"><h4>' + t('mTitle') + '</h4>' + (k.cost ? '<div class="dl"><span>' + t('mCost') + '</span><b>' + esc(k.cost) + ' €</b><span></span></div>' : '') +
     (k.pfee ? '<div class="dl"><span>' + t('mPfee') + (k.src ? ' · ' + esc(k.src) : '') + '</span><b>' + esc(k.pfee) + ' €</b>' + (k.ppaid ? '<span class="db ok">' + t('mPaid') + ' ' + fmt(k.ppaid) + '</span>' : '<span class="db w">' + t('mDue') + '</span>') + '</div>' : '') + '</div>';
   h += '<div class="box"><h4>' + t('kStage') + '</h4><div class="chips">' + (D.kst || []).map(function(s){
@@ -1852,7 +1915,7 @@ function kBoard(a){
     var cs = a.filter(function(k){ return k.st === s; }).sort(function(x, y){ return x.n.localeCompare(y.n); });
     return '<div class="kcol" data-s="' + esc(s) + '"><div class="kch">' + kPill(s) + '<span>' + cs.length + '</span></div><div class="kcb">' + cs.map(function(k){
       var w = kWarn(k);
-      return '<div class="kc" data-b="k" data-id="' + esc(k.id) + '" data-lp="k" data-k="' + esc(k.id) + '"><span class="kh" aria-label="drag">⠿</span><div class="kx" data-k="' + esc(k.id) + '" onclick="kOpen(this.dataset.k)"><b>' + (w === 'x' ? '⛔ ' : w === 'w' ? '⚠️ ' : '') + esc(k.n) + '</b>' +
+      return '<div class="kc" style="border-left-color:' + (w === 'x' ? '#ef4444' : kStCol(k.st)) + '" data-b="k" data-id="' + esc(k.id) + '" data-lp="k" data-k="' + esc(k.id) + '"><span class="kh" aria-label="drag">⠿</span><div class="kx" data-k="' + esc(k.id) + '" onclick="kOpen(this.dataset.k)"><b>' + (w === 'x' ? '⛔ ' : w === 'w' ? '⚠️ ' : '') + esc(k.n) + '</b>' +
         '<small>' + esc([tv(k.pos), k.co].filter(Boolean).join(' · ')) + '</small><small>🏢 ' + esc(k.emp || t('kNoEmp')) + '</small></div></div>';
     }).join('') + '<div class="kdrop">' + t('kbDrop') + '</div></div></div>';
   }).join('') + '</div>';
@@ -1862,7 +1925,7 @@ function cBoard(a){
     var cs = a.filter(function(c){ return c.s === s; });
     return '<div class="kcol" data-s="' + esc(s) + '"><div class="kch">' + pill(s) + '<span>' + cs.length + '</span></div><div class="kcb">' + cs.map(function(c){
       var nx = c.nx && c.nx !== '-' ? c.nx : '', cls = !nx ? 'no' : nx < D.today ? 'over' : nx === D.today ? 'today' : '';
-      return '<div class="kc ' + cls + '" data-b="c" data-id="' + esc(c.n) + '" data-lp="c" data-n="' + esc(c.n) + '"><span class="kh" aria-label="drag">⠿</span><div class="kx" data-n="' + esc(c.n) + '" onclick="openC(this.dataset.n)"><b>' + esc(c.n) + '</b>' +
+      return '<div class="kc ' + cls + '" style="border-left-color:' + cStCol(c.s) + '" data-b="c" data-id="' + esc(c.n) + '" data-lp="c" data-n="' + esc(c.n) + '"><span class="kh" aria-label="drag">⠿</span><div class="kx" data-n="' + esc(c.n) + '" onclick="openC(this.dataset.n)"><b>' + esc(c.n) + '</b>' +
         '<small>' + esc([c.c, tv(c.m), c.w ? '👷 ' + c.w : ''].filter(Boolean).join(' · ')) + '</small><small>' + (nx ? '📅 ' + fmt(nx) : t('noPlan')) + (SEG === 'a' && c.r ? ' · 👤 ' + esc(c.r) : '') + '</small></div></div>';
     }).join('') + '<div class="kdrop">' + t('kbDrop') + '</div></div></div>';
   }).join('') + '</div>';
@@ -2079,7 +2142,8 @@ function pDraw(){
   el('shT').textContent = (sup ? '🧑‍💼 ' : '⚖️ ') + p.n;
   var h = '<div class="phero' + (sup ? '' : ' law') + '"><div class="nm">' + esc(p.n) + (p.rt ? ' <span class="prt">★ ' + p.rt + '</span>' : '') + '</div><div class="sb">' + esc([p.k, p.c].filter(Boolean).join(' · ')) + '</div>' +
     '<span class="pill2">' + (sup ? '🧑‍💼 ' + t('pSup1') : '⚖️ ' + t('pLaw1')) + (p.sp ? ' · ' + esc(p.sp) : '') + '</span></div>';
-  h += tiles(telT(p.ph) + (p.em ? tl('✉️', t('tlEmail'), 'href="mailto:' + esc(p.em) + '"', '#fef3c7') : '') + tl('✏️', t('tlEdit'), 'onclick="pForm(PC)"', '#f1f5f9'));
+  h += pinsBox('P', p.id);
+  h += tiles(telT(p.ph) + tl('📝', t('tlNote'), 'onclick="nOpen(\'P\',PC.id,PC.n)"', '#fef3c7') + (p.em ? tl('✉️', t('tlEmail'), 'href="mailto:' + esc(p.em) + '"', '#fef3c7') : '') + tl('✏️', t('tlEdit'), 'onclick="pForm(PC)"', '#f1f5f9'));
   if (sup) {
     var ks = p.loading ? s.ks : p.cands, w = ks.filter(function(k){ return k.st === WORK_ST; }).length;
     h += '<div class="kts">' + kTile(t('pCands'), ks.length, '#0d2b50') + kTile(t('pWork'), w, '#15803d') + kTile(t('pOut'), ks.filter(function(k){ return kOut(k.st); }).length, '#64748b') + '</div>';
@@ -2173,6 +2237,320 @@ Object.assign(I.tr, { tabP:'🤝 Partnerler', pSup:'Tedarikçiler', pLaw:'Avukat
   tlCall:'Ara', tlEmail:'E-posta', tlEdit:'Düzenle', tlTask:'Görev', tlCand:'Aday', tlLink:'Link', tlWa:'Şablon', tlMore:'Daha', tlDone:'Tamam', tlEmp:'Firma', tlPart:'Partner',
   qtTask:'Yeni görev', qtTaskS:'Arama, toplantı…', qtCand:'Yeni aday', qtCandS:'Foto, pasaport, CV', qtEmp:'Yeni işveren', qtEmpS:'Firma + ilk görev', qtPart:'Yeni partner', qtPartS:'Tedarikçi / avukat',
   kpToday:'🔔 Bugün', kpLate:'⚠️ Gecikmiş', kpDocs:'🛂 Belge' });
+// ================= v3.2 · 🎨 цветове (етап = цвят) · 📏 компактен изглед · 📝 бележки с 📌 =================
+var CFG0 = { stc: {}, kc: {}, rc: {}, tags: [{ k: 'imp', i: '⚠️', bg: 'Важно', tr: 'Önemli', c: '#ef4444' }, { k: 'pay', i: '💶', bg: 'Плащане', tr: 'Ödeme', c: '#22c55e' },
+  { k: 'inf', i: 'ℹ️', bg: 'Инфо', tr: 'Bilgi', c: '#3b82f6' }, { k: 'acc', i: '🏠', bg: 'Квартира', tr: 'Konaklama', c: '#f59e0b' }, { k: 'doc', i: '📄', bg: 'Документи', tr: 'Evrak', c: '#8b5cf6' }],
+  docs: [], vs: [] };
+function cfg(){ return (D && D.cfg) || CFG0; }
+function lab(x){ return x ? (LANG === 'tr' ? (x.tr || x.bg) : (x.bg || x.tr)) : ''; }
+var PAL = ['#3b82f6', '#6366f1', '#0891b2', '#f59e0b', '#f97316', '#8b5cf6', '#ec4899', '#22c55e', '#16a34a', '#ef4444', '#64748b', '#94a3b8'];
+var CST0 = { 'Ново запитване': '#3b82f6', 'Осъществен контакт': '#6366f1', 'Изпратена оферта': '#f59e0b', 'Подписан договор': '#8b5cf6', 'Изпратени кандидати': '#0891b2',
+  'Интервю / подбор': '#f97316', 'Документи / виза': '#ec4899', 'Работниците започнаха': '#22c55e', 'Активен клиент': '#16a34a', 'Загубен': '#94a3b8' };
+var KST0 = { 'Нов кандидат': '#3b82f6', 'Проверен': '#3b82f6', 'Изпратен на работодател': '#f97316', 'Интервю': '#f97316', 'Одобрен': '#f97316', 'Документи': '#8b5cf6',
+  'Разрешение за работа': '#8b5cf6', 'Виза': '#8b5cf6', 'Пътува': '#0891b2', 'Пристигна': '#0891b2', 'Работи': '#22c55e', 'Отказан': '#94a3b8', 'Отпаднал': '#94a3b8' };
+var REPC = ['#0063b5', '#9333ea', '#16a34a', '#ea580c', '#db2777', '#0891b2', '#b45309'];
+function cStCol(s){ var c = cfg().stc || {}; if (c[s]) return c[s]; if (CST0[s]) return CST0[s]; var i = ((D && D.stages) || []).indexOf(s); return i < 0 ? '#94a3b8' : PAL[i % PAL.length]; }
+function kStCol(s){ var c = cfg().kc || {}; return c[s] || KST0[s] || '#94a3b8'; }
+function repCol(r){ var c = cfg().rc || {}; if (c[r]) return c[r]; var i = ((D && D.reps) || []).indexOf(r); if (i < 0) { i = 0; String(r).split('').forEach(function(ch){ i += ch.charCodeAt(0); }); } return REPC[i % REPC.length]; }
+function tint(hex, a){ var m = String(hex).match(/^#(..)(..)(..)$/); if (!m) return 'rgba(148,163,184,' + a + ')'; return 'rgba(' + parseInt(m[1], 16) + ',' + parseInt(m[2], 16) + ',' + parseInt(m[3], 16) + ',' + a + ')'; }
+function repDot(r){ var a = reps(r); if (!a.length) return ''; return a.slice(0, 2).map(function(n){ return '<span class="rdot" style="background:' + repCol(n) + '" title="' + esc(n) + '">' + esc(n.charAt(0).toUpperCase()) + '</span>'; }).join(''); }
+function cav(n, col){ return '<span class="cav" style="background:' + tint(col, .14) + ';color:' + col + '">' + esc(ini(n)) + '</span>'; }
+// 📏 Компактен / Удобен (за всеки човек отделно)
+var DENS = ls('et_dens') || 'c';
+function densApply(){ document.body.classList.toggle('cmp', DENS === 'c'); }
+function densLab(){ return t('dnLab') + ': ' + (DENS === 'c' ? t('dnC') : t('dnR')); }
+function densNext(){ DENS = DENS === 'c' ? 'r' : 'c'; ls('et_dens', DENS); densApply(); var b = el('dnB'); if (b) b.textContent = densLab(); if (D) draw(); }
+densApply();
+// легенда на цветовете над списъка
+function legend(kind){
+  var a = kind === 'c' ? (D.stages || []).filter(function(s){ return D.closed.indexOf(s) < 0; }).map(function(s){ return [cStCol(s), tv(s)]; })
+    : [['#3b82f6', t('lgPrep')], ['#f97316', t('lgEmp')], ['#8b5cf6', t('lgDocs')], ['#0891b2', t('lgTrav')], ['#22c55e', t('lgWork')], ['#ef4444', t('lgWarn')]];
+  if (kind === 'k') { var kc = cfg().kc || {}; if (Object.keys(kc).length) a = (D.kst || []).filter(function(s){ return !kOut(s); }).map(function(s){ return [kStCol(s), tv(s)]; }); }
+  var seen = {}; a = a.filter(function(x){ var k = x[0] + x[1]; if (seen[k]) return false; seen[k] = 1; return true; });
+  return '<div class="lgd">' + a.map(function(x){ return '<span><i style="background:' + x[0] + '"></i>' + esc(x[1]) + '</span>'; }).join('') + '</div>';
+}
+// ---- 📝 бележки
+function tagOf(k){ return (cfg().tags || []).filter(function(x){ return x.k === k; })[0]; }
+function nRefKey(k, r){ return k === 'C' ? String(r || '').trim().toLowerCase() : String(r || '').trim(); }
+function pinsOf(k, r){ var key = nRefKey(k, r); return ((D && D.pins) || []).filter(function(n){ return n.k === k && nRefKey(k, n.r) === key; }); }
+function dShort(ts){ return ts ? fmt(dayOf(ts)) : ''; }
+function noteHtml(n, full){
+  var tg = tagOf(n.tg), col = tg ? tg.c : '#94a3b8';
+  return '<div class="nt" style="background:' + tint(col, .07) + ';border-color:' + tint(col, .3) + ';border-left-color:' + col + '">' +
+    (tg ? '<span class="ntg" style="background:' + tint(col, .16) + ';color:' + col + '">' + esc((tg.i ? tg.i + ' ' : '') + lab(tg)) + '</span>' : '') + esc(n.tx) +
+    '<div class="ntm"><span>' + (n.pin ? '📌 ' : '') + esc(n.by || '') + (n.t ? ' · ' + dShort(n.t) : '') + (n.task ? ' · ✅ ' + t('nFromTask') : '') + '</span>' +
+    (full && !n.task ? '<span class="nta"><button onclick="nPin(\'' + esc(n.id) + '\')">' + (n.pin ? t('nUnpin') : '📌') + '</button><button onclick="nEdit(\'' + esc(n.id) + '\')">✏️</button>' +
+      (isAdm() || n.by === D.me ? '<button onclick="nDel(\'' + esc(n.id) + '\')">🗑️</button>' : '') + '</span>' : '') + '</div></div>';
+}
+function pinsBox(k, r){ var a = pinsOf(k, r); return a.length ? '<div class="pins">' + a.map(function(n){ return noteHtml(n); }).join('') + '</div>' : ''; }
+var NS = null;
+function nOpen(k, r, title){
+  NS = { k: k, r: r, title: title, list: pinsOf(k, r), loading: true, f: '', ed: null, tg: '', pin: false };
+  openSheet('📝 ' + title, ''); nDraw();
+  api('notesGet', [k, r]).then(function(a){ if (NS && NS.r === r) { NS.list = a; NS.loading = false; nDraw(); } }, function(e){ if (NS) { NS.loading = false; nDraw(); } err(e); });
+}
+function nTaskNotes(){
+  if (!NS || NS.k !== 'C' || !CUR || CUR.name.toLowerCase() !== String(NS.r).toLowerCase()) return [];
+  return (CUR.tasks || []).filter(function(x){ return x.status === 'Изпълнена' && x.desc; }).map(function(x){ return { id: 'T' + x.row, tx: x.desc, by: x.rep, t: Date.parse(x.date), task: true }; });
+}
+function nDraw(){
+  var s = NS; if (!s || el('sheet').style.display !== 'block') return;
+  var cur = el('nTx'); if (cur) s.txt = cur.value;
+  var ed = s.ed ? s.list.filter(function(n){ return n.id === s.ed; })[0] : null;
+  var tags = cfg().tags || [], all = s.list.concat(s.f ? [] : nTaskNotes());
+  var h = '<div class="nfrm"><textarea id="nTx" rows="3" placeholder="' + esc(t('nPh')) + '">' + esc(s.txt || '') + '</textarea>' +
+    '<div class="chips ntags">' + tags.map(function(x){ return '<button type="button" class="' + (s.tg === x.k ? 'on' : '') + '" style="' + (s.tg === x.k ? 'background:' + x.c + ';border-color:' + x.c + ';color:#fff' : 'border-color:' + tint(x.c, .5)) + '" onclick="NS.tg=NS.tg===\'' + esc(x.k) + '\'?\'\':\'' + esc(x.k) + '\';nDraw()">' + esc((x.i ? x.i + ' ' : '') + lab(x)) + '</button>'; }).join('') + '</div>' +
+    '<label class="chk npin"><input type="checkbox" id="nPin"' + (s.pin ? ' checked' : '') + ' onchange="NS.pin=this.checked"> 📌 ' + t('nPinTop') + '</label>' +
+    '<button class="save" id="nSv" onclick="nSave()">' + (ed ? t('save') : t('nSave')) + '</button>' + (ed ? '<button class="save sec2" onclick="NS.ed=null;NS.tg=\'\';NS.pin=false;el(\'nTx\').value=\'\';nDraw()">✕</button>' : '') + '</div>';
+  var cnt = function(f){ return all.filter(f).length; };
+  h += '<div class="chips nflt"><button class="' + (!s.f ? 'on' : '') + '" onclick="NS.f=\'\';nDraw()">' + t('nAll') + ' ' + all.length + '</button><button class="' + (s.f === '*' ? 'on' : '') + '" onclick="NS.f=\'*\';nDraw()">📌 ' + cnt(function(n){ return n.pin; }) + '</button>' +
+    tags.map(function(x){ var c = cnt(function(n){ return n.tg === x.k; }); return c ? '<button class="' + (s.f === x.k ? 'on' : '') + '" onclick="NS.f=\'' + esc(x.k) + '\';nDraw()">' + esc(x.i || lab(x)) + ' ' + c + '</button>' : ''; }).join('') + '</div>';
+  var f = all.filter(function(n){ return !s.f || (s.f === '*' ? n.pin : n.tg === s.f); });
+  var pin = f.filter(function(n){ return n.pin; }), oth = f.filter(function(n){ return !n.pin; }).sort(function(a, b){ return (b.t || 0) - (a.t || 0); });
+  if (pin.length) h += '<h2>📌 ' + t('nPinned') + '<span>' + pin.length + '</span></h2><div class="nls">' + pin.map(function(n){ return noteHtml(n, 1); }).join('') + '</div>';
+  h += '<h2>' + t('nOther') + '<span>' + oth.length + '</span></h2><div class="nls">' + (oth.length ? oth.map(function(n){ return noteHtml(n, 1); }).join('') : '<div class="empty">' + (s.loading ? t('loading') : t('nNone')) + '</div>') + '</div><div style="height:30px"></div>';
+  el('shB').innerHTML = h;
+}
+function nPinsSync(list){
+  var s = NS; if (!s) return; var key = nRefKey(s.k, s.r);
+  D.pins = (D.pins || []).filter(function(n){ return !(n.k === s.k && nRefKey(s.k, n.r) === key); }).concat(list.filter(function(n){ return n.pin; }));
+  if (CUR && el('card').style.display === 'block') drawCard();
+  if (D) draw();
+}
+function nSave(){
+  var s = NS, tx = el('nTx').value.trim(); if (!tx) { el('nTx').focus(); return; }
+  var b = el('nSv'); b.disabled = true; b.textContent = t('saving');
+  api('noteSave', [{ id: s.ed || '', k: s.k, r: s.r, tx: tx, tg: s.tg, pin: !!el('nPin').checked }]).then(function(a){
+    if (!NS || NS.r !== s.r) return; NS.list = a; NS.ed = null; NS.tg = ''; NS.pin = false; NS.txt = ''; el('nTx').value = ''; nPinsSync(a); nDraw(); toast(t('nSaved'));
+  }, function(e){ b.disabled = false; b.textContent = t('nSave'); err(e); });
+}
+function nEdit(id){ var n = NS.list.filter(function(x){ return x.id === id; })[0]; if (!n) return; NS.ed = id; NS.tg = n.tg; NS.pin = n.pin; var c = el('nTx'); if (c) c.value = n.tx; nDraw(); el('shB').scrollTop = 0; el('sheet').scrollTop = 0; }
+function nPin(id){
+  var s = NS, n = s.list.filter(function(x){ return x.id === id; })[0]; if (!n) return; n.pin = !n.pin; nPinsSync(s.list); nDraw();
+  api('noteSave', [{ id: id, k: s.k, r: s.r, tx: n.tx, tg: n.tg, pin: n.pin }]).then(function(a){ if (NS && NS.r === s.r) { NS.list = a; nPinsSync(a); nDraw(); } }, err);
+}
+function nDel(id){
+  if (!confirm(t('nDelQ'))) return; var s = NS;
+  api('noteDel', [id]).then(function(a){ if (NS && NS.r === s.r) { NS.list = a; nPinsSync(a); nDraw(); } }, err);
+}
+// ================= v3.2 · 📋 документи · ✈️ визов процес · 🛬 пристигане · 📞 проследяване =================
+function docList(){ return cfg().docs || []; }
+function stepList(){ return cfg().vs || []; }
+function docPct(k){
+  var ds = docList(); if (!ds.length) return null; var c = k.chk || {}, ok = 0, miss = [];
+  ds.forEach(function(d){ if (c[d.k] === 'ok') ok++; else if (c[d.k] !== 'w') miss.push(d); });
+  return { p: Math.round(ok / ds.length * 100), ok: ok, n: ds.length, miss: miss };
+}
+function pctCol(p){ return p >= 100 ? '#22c55e' : p >= 50 ? '#f59e0b' : '#ef4444'; }
+function stepCur(k){ var s = stepList(), v = k.vs || {}; for (var i = 0; i < s.length; i++) if (!(v[s[i].k] && v[s[i].k].d)) return i; return s.length; }
+function dDiff(d){ return Math.round((Date.parse(d) - Date.parse(D.today)) / 86400000); }
+// ---- ред в списъка с кандидати (компактен, цветен)
+function kRowRight(k){
+  var w = kWarn(k), dp = docPct(k), out = kOut(k.st), work = k.st === 'Работи';
+  if (out) return '<span class="kx2" style="color:#94a3b8">' + esc(tv(k.st)) + '</span>';
+  if (w) { var bad = KDOCS.filter(function(x){ var s = docSt(k[x[0]]); return s === 'x' || s === 'w'; })[0], n = bad ? dDiff(k[bad[0]]) : 0;
+    return '<span class="kx2 r">' + esc(t(bad[1]).split(' ')[0]) + ' ' + (n < 0 ? t('docExp') : t('docDays', { n: n })) + '</span>' + repDot(k.rep); }
+  if (work && k.fu && k.fu.s) { var nx = [7, 30, 90].filter(function(n){ return k.fu[n] && !k.fu[n].r; })[0];
+    return '<span class="kx2 g">' + esc(t('fuDay', { n: dDiff(k.fu.s) * -1 + 0 })) + '</span>' + (nx ? '<span class="kx3">📞 ' + nx + '. ' + t('fuD') + ' · ' + fmt(k.fu[nx].d) + '</span>' : '') + repDot(k.rep); }
+  if (k.arr && k.arr.d && k.arr.d >= D.today) return '<span class="kx2 c">🛬 ' + fmt(k.arr.d) + '</span>' + repDot(k.rep);
+  var si = stepCur(k), st = stepList()[si];
+  if (dp && !dp.ok && dp.miss.length === dp.n) return '<span class="kx3">📋 %0</span>' + repDot(k.rep);
+  if (dp && dp.p < 100) return '<span class="kx2" style="color:' + pctCol(dp.p) + '">%' + dp.p + '</span><span class="kx3 r">' + dp.miss.slice(0, 4).map(function(d){ return d.i || '•'; }).join('') + ' ' + t('dMiss') + '</span>' + repDot(k.rep);
+  if (dp && st && si > 0) return '<span class="kx2 p">✈️ ' + esc(lab(st)) + '</span>' + repDot(k.rep);
+  if (dp) return '<span class="kx2 g">✓ ' + t('dReady') + '</span>' + repDot(k.rep);
+  return repDot(k.rep);
+}
+function kRow(k){
+  var so = kSelOn(), sel = so && KSEL[k.id], col = kWarn(k) === 'x' ? '#ef4444' : kStCol(k.st), dp = docPct(k), e = k.emp ? dcOf(k.emp) : null;
+  var bar = dp && !kOut(k.st) && k.st !== 'Работи' ? '<span class="pbar"><i style="width:' + dp.p + '%;background:' + pctCol(dp.p) + '"></i></span>' : '';
+  if (k.st === 'Работи' && k.fu && k.fu.s) { var dd = Math.min(90, -dDiff(k.fu.s)); bar = '<span class="pbar"><i style="width:' + Math.max(3, Math.round(dd / 90 * 100)) + '%;background:#16a34a"></i></span>'; }
+  return '<div class="kr kr2' + (sel ? ' sel' : '') + (kWarn(k) === 'x' ? ' over' : '') + (kOut(k.st) ? ' dim' : '') + '" data-lp="k" data-k="' + esc(k.id) + '" onclick="kTap(this.dataset.k)">' + (so ? '<span class="ck">' + (sel ? '☑️' : '⬜') + '</span>' : '') +
+    '<span class="sst" style="background:' + col + '"></span>' + cav(k.n, col) +
+    '<span class="cx"><b>' + esc(k.n) + '</b><small>' + esc([tv(k.pos), k.co].filter(Boolean).join(' · ')) + '</small>' +
+    (k.emp ? '<span class="emp">🏢 → ' + esc(k.emp) + (e && e.c ? ' <em>· ' + esc(e.c) + '</em>' : '') + (pinsOf('C', k.emp).length ? ' 📌' : '') + '</span>' : '<span class="emp no">🏢 ' + t('kNoEmp') + '</span>') + bar + '</span>' +
+    '<span class="crt">' + kRowRight(k) + '</span></div>';
+}
+// ---- ред в списъка с работодатели
+function clientRow(c){
+  var col = cStCol(c.s), closed = D.closed.indexOf(c.s) > -1, nx = c.nx && c.nx !== '-' ? c.nx : '', cls = '', due = '';
+  if (closed) { cls = ' dim'; due = '<span class="kx2" style="color:#94a3b8">' + esc(tv(c.s)) + '</span>'; }
+  else if (!nx) { due = '<span class="kx2 a">⚠️ ' + t('noTaskS') + '</span>'; }
+  else if (nx < D.today) { cls = ' over'; due = '<span class="kx2 r">⚠️ ' + t('lateN', { n: -dDiff(nx) }) + '</span>'; }
+  else if (nx === D.today) { cls = ' today'; due = '<span class="kx2 o">🔔 ' + t('today') + '</span>'; }
+  else due = '<span class="kx2" style="color:#64748b">📅 ' + fmt(nx) + '</span>';
+  var ks = (D.cands || []).filter(function(k){ return String(k.emp || '').toLowerCase() === c.n.toLowerCase(); }).length;
+  return '<div class="lr cr2' + cls + '" data-lp="c" data-n="' + esc(c.n) + '" onclick="openC(this.dataset.n)" title="' + esc(tv(c.s)) + '"><span class="sst" style="background:' + col + '"></span>' + cav(c.n, col) +
+    '<span class="cx"><b>' + esc(c.n) + (pinsOf('C', c.n).length ? ' <span class="pinm">📌</span>' : '') + '</b><small>' + esc([c.c, tv(c.m), c.w ? '👷 ' + (ks ? ks + '/' : '') + c.w : ks ? '👷 ' + ks : ''].filter(Boolean).join(' · ')) + '</small></span>' +
+    '<span class="crt">' + due + repDot(c.r) + '</span></div>';
+}
+// ---- карта на кандидата: нови секции
+function empBox(k){
+  if (!k.emp) return '<div class="ebox no" onclick="kForm(KC)"><span>🏢</span><div><small>' + t('eGoing') + '</small><b>' + t('kNoEmp') + '</b></div><span class="ar">✏️</span></div>';
+  var e = dcOf(k.emp), p = pinsOf('C', k.emp)[0];
+  return '<div class="ebox" data-n="' + esc(k.emp) + '" onclick="closeSheet();openC(this.dataset.n)"><span>🏢</span><div><small>' + t('eGoing') + '</small><b>' + esc(k.emp) + (e && e.c ? ' <em>· ' + esc(e.c) + '</em>' : '') + '</b>' +
+    (p ? '<i>📌 ' + esc(p.tx.slice(0, 90)) + '</i>' : '') + '</div><span class="ar">›</span></div>';
+}
+function docsBox(k){
+  var ds = docList(); if (!ds.length) return ''; var dp = docPct(k), c = k.chk || {};
+  return '<div class="box dbx"><h4>📋 ' + t('dTitle') + '<span class="dpct" style="color:' + pctCol(dp.p) + '">%' + dp.p + '</span></h4>' +
+    '<div class="pbar big"><i style="width:' + dp.p + '%;background:' + pctCol(dp.p) + '"></i></div><div class="s" style="margin:4px 0 6px">' + esc(t('dCnt', { a: dp.ok, n: dp.n })) + (dp.miss.length ? ' · <b style="color:#b91c1c">' + t('dMissN', { n: dp.miss.length }) + '</b>' : '') + '</div>' +
+    ds.map(function(d){ var v = c[d.k] || '', cls = v === 'ok' ? 'ok' : v === 'w' ? 'wt' : 'no';
+      return '<div class="ckr ' + cls + '"><button class="cb" data-d="' + esc(d.k) + '" onclick="kChk(this.dataset.d)">' + (v === 'ok' ? '✓' : v === 'w' ? '⏳' : '') + '</button><span>' + esc((d.i ? d.i + ' ' : '') + lab(d)) + '</span>' +
+        (v === 'w' ? '<small>' + t('dWait') + '</small>' : v === 'ok' ? '' : upLabel('📎 ' + t('dUp'), '', 'doc', k.id)) + '</div>'; }).join('') +
+    '<div class="s" style="margin-top:6px">' + t('dHint') + (isAdm() ? ' · <span class="lnk" onclick="setOpen(\'d\')">⚙️ ' + t('dEdit') + '</span>' : '') + '</div></div>';
+}
+function kSaveJ(id, f, obj, msg){
+  kLocal(id, function(c){ c[f] = obj; }); kDraw(); draw();
+  var d = { id: id }; d[f] = JSON.stringify(obj);
+  google.script.run.withSuccessHandler(function(x){ kLocal(id, function(c){ c[f] = x[f]; }); if (msg) toast(msg); }).withQueued(function(){ toast(t('qSaved'), 3000); }).withFailureHandler(function(e){ err(e); load(); }).saveCand(d);
+}
+function kChk(dk){ var k = KC; if (!k) return; var c = Object.assign({}, k.chk || {}), v = c[dk] || ''; c[dk] = v === '' ? 'ok' : v === 'ok' ? 'w' : ''; if (!c[dk]) delete c[dk]; kSaveJ(k.id, 'chk', c); }
+// ✈️ визов процес
+function procBox(k){
+  var s = stepList(); if (!s.length) return ''; var v = k.vs || {}, ci = stepCur(k);
+  var h = '<div class="box"><h4>✈️ ' + t('vTitle') + '<span style="color:#b45309;text-transform:none">' + (ci >= s.length ? '✓ ' + t('vDone') : t('vStep', { a: ci + 1, n: s.length })) + '</span></h4><div class="tlx">';
+  s.forEach(function(st, i){
+    var x = v[st.k] || {}, cls = x.d ? 'done' : i === ci ? 'cur' : 'todo';
+    h += '<div class="stp ' + cls + '"><span class="d">' + (x.d ? '✓' : i === ci ? '●' : '') + '</span><b>' + esc(lab(st)) + '</b>';
+    if (x.d) h += '<small>' + fmt(x.d) + ' ' + x.d.slice(0, 4) + (i > 0 && v[s[i - 1].k] && v[s[i - 1].k].d ? ' · ' + t('vTook', { n: Math.max(0, Math.round((Date.parse(x.d) - Date.parse(v[s[i - 1].k].d)) / 86400000)) }) : '') +
+      ' <span class="lnk" data-i="' + i + '" onclick="vUndo(+this.dataset.i)">↩️</span></small>';
+    else if (i === ci) h += '<small>' + (x.p ? '📅 ' + fmt(x.p) + ' · ' + (dDiff(x.p) >= 0 ? t('vIn', { n: dDiff(x.p) }) : t('vLate', { n: -dDiff(x.p) })) : t('vNoDate')) + '</small>' +
+      '<div class="vact"><input type="date" id="vP" value="' + esc(x.p || '') + '" onchange="vPlan(this.value)"><button class="ok" onclick="vDoneStep()">✓ ' + t('vOk') + '</button></div>';
+    else if (x.p) h += '<small>📅 ' + fmt(x.p) + '</small>';
+    h += '</div>';
+  });
+  return h + '</div>' + (isAdm() ? '<div class="s"><span class="lnk" onclick="setOpen(\'v\')">⚙️ ' + t('vEdit') + '</span></div>' : '') + '</div>';
+}
+function vTask(k, date, remind){
+  if (!k.emp || !dcOf(k.emp) || !date) return;
+  google.script.run.withSuccessHandler(function(){}).withQueued(function(){}).withFailureHandler(function(){}).saveTask({ client: dcOf(k.emp).n, type: 'Документи / виза', date: date, time: '10:00', remind: remind.slice(0, 80), desc: 'Кандидат ' + k.id + ' · ' + k.n, rep: reps(k.rep)[0] || D.me });
+}
+function vPlan(d){
+  var k = KC, s = stepList(), ci = stepCur(k); if (!s[ci]) return; var v = JSON.parse(JSON.stringify(k.vs || {}));
+  v[s[ci].k] = Object.assign({}, v[s[ci].k] || {}, { p: d }); kSaveJ(k.id, 'vs', v, '📅 ' + lab(s[ci]));
+  if (d) vTask(k, d, '✈️ ' + lab(s[ci]) + ' – ' + k.n);
+}
+function vDoneStep(){
+  var k = KC, s = stepList(), ci = stepCur(k); if (!s[ci]) return; var v = JSON.parse(JSON.stringify(k.vs || {}));
+  v[s[ci].k] = Object.assign({}, v[s[ci].k] || {}, { d: D.today }); kSaveJ(k.id, 'vs', v, '✓ ' + lab(s[ci]));
+  var nx = s[ci + 1]; if (nx) vTask(k, addD(Number(s[ci].d) || 0), '✈️ ' + lab(nx) + ' – ' + k.n);
+  if (!k.emp) toast(t('vNoEmpTask'), 3500);
+}
+function vUndo(i){ var k = KC, s = stepList(); if (!s[i] || !confirm(t('vUndoQ', { s: lab(s[i]) }))) return; var v = JSON.parse(JSON.stringify(k.vs || {})); if (v[s[i].k]) delete v[s[i].k].d; kSaveJ(k.id, 'vs', v); }
+// 🛬 пристигане и посрещане
+var ARRF = [['fl', 'aFl', 'text', 'TK 1029'], ['d', 'aDate', 'date'], ['t', 'aTime', 'time'], ['ap', 'aAp', 'text', 'SOF'], ['g', 'aG', 'text'], ['acc', 'aAcc', 'text'], ['fd', 'aFd', 'date']];
+function arrBox(k){
+  var a = k.arr || {}, has = a.fl || a.d;
+  var kv = function(l, v, span){ return v ? '<div' + (span ? ' style="grid-column:span 2"' : '') + '><small>' + t(l) + '</small><b>' + esc(v) + '</b></div>' : ''; };
+  return '<div class="box"><h4>🛬 ' + t('aTitle') + '<span class="lnk" style="text-transform:none" onclick="arrForm()">' + (has ? '✏️' : '➕ ' + t('aAdd')) + '</span></h4>' +
+    (has ? '<div class="kv">' + kv('aFl', a.fl) + kv('aDate', a.d ? fmt(a.d) + ' ' + a.d.slice(0, 4) + (a.t ? ' · ' + a.t : '') : '') + kv('aAp', a.ap) + kv('aG', a.g ? '🚐 ' + a.g : '') +
+      kv('aFd', a.fd ? fmt(a.fd) : '') + kv('aAcc', a.acc ? '🏠 ' + a.acc : '', 1) + '</div>' +
+      '<div class="achips"><button class="' + (a.tk ? 'on' : '') + '" onclick="arrTog(\'tk\')">' + (a.tk ? '✓ ' : '⏳ ') + t('aTk') + '</button><button class="' + (a.gc ? 'on' : '') + '" onclick="arrTog(\'gc\')">' + (a.gc ? '✓ ' : '⏳ ') + t('aGc') + '</button>' +
+      (a.acc ? '<a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(a.acc) + '" target="_blank" rel="noopener">📍 ' + t('map').replace(/^\S+\s/, '') + '</a>' : '') + '</div>'
+      : '<div class="s">' + t('aNone') + '</div>') + '</div>';
+}
+function arrTog(f){ var k = KC, a = Object.assign({}, k.arr || {}); a[f] = !a[f]; kSaveJ(k.id, 'arr', a); }
+function arrForm(){
+  var a = (KC && KC.arr) || {};
+  openSheet('🛬 ' + KC.n, '<form id="frm" onsubmit="return arrSend(event)">' + ARRF.map(function(f){ return fld(t(f[1]), '<input name="' + f[0] + '" type="' + f[2] + '" value="' + esc(a[f[0]] || '') + '"' + (f[3] ? ' placeholder="' + f[3] + '"' : '') + '>'); }).join('') +
+    '<button class="save" id="sv">' + t('save') + '</button></form>');
+}
+function arrSend(e){
+  e.preventDefault(); var k = KC, d = formData(), old = k.arr || {}, a = Object.assign({}, old);
+  ARRF.forEach(function(f){ a[f[0]] = d[f[0]] || ''; });
+  openSheet('👷 ' + k.n, ''); kSaveJ(k.id, 'arr', a, t('rec'));
+  if (a.d && a.d !== old.d) vTask(k, a.d, '🛬 ' + t('aMeet') + ': ' + k.n + (a.fl ? ' ' + a.fl : '') + (a.t ? ' ' + a.t : ''));
+  return false;
+}
+// 📞 след започване на работа 7 / 30 / 90
+function fuBox(k){
+  var f = k.fu; if (!f || !f.s) return '';
+  return '<div class="box"><h4>📞 ' + t('fuTitle') + '<span style="text-transform:none;color:#15803d">' + esc(t('fuDay', { n: -dDiff(f.s) })) + '</span></h4><div class="fu">' + [7, 30, 90].map(function(n){
+    var x = f[n] || {}, cls = x.r === 'ok' ? 'g' : x.r === 'bad' ? 'b' : x.d && x.d <= D.today ? 'a' : 'e';
+    return '<button class="' + cls + '" onclick="fuSet(' + n + ')"><b>' + (x.r === 'ok' ? '✓ ' : x.r === 'bad' ? '⚠️ ' : '') + n + '. ' + t('fuD') + '</b>' + (x.r === 'ok' ? t('fuOk') + ' 😊' : x.r === 'bad' ? t('fuBad') : x.d ? (x.d === D.today ? t('today') + ' 📞' : fmt(x.d)) : '') + '</button>'; }).join('') +
+    '</div><div class="s" style="margin-top:6px">' + esc(t('fuStart', { d: fmt(f.s) + ' ' + f.s.slice(0, 4) })) + '</div></div>';
+}
+function fuSet(n){
+  var k = KC; lpShow('📞 ' + n + '. ' + t('fuD') + ' · ' + k.n, [[t('fuOk') + ' 😊', function(){ fuSave(n, 'ok'); }], [t('fuBad') + ' ⚠️', function(){ fuSave(n, 'bad'); }], [t('fuReset'), function(){ fuSave(n, ''); }]]);
+}
+function fuSave(n, r){
+  var k = KC, f = JSON.parse(JSON.stringify(k.fu || {})); f[n] = Object.assign({}, f[n] || {}, { r: r, at: r ? D.today : '' }); kSaveJ(k.id, 'fu', f, '📞 ' + n + '. ' + t('fuD'));
+  if (r === 'bad') { nOpen('K', k.id, k.n); var x = el('nTx'); if (x) { x.value = '📞 ' + n + '. ' + t('fuD') + ': '; NS.tg = 'imp'; NS.pin = true; } }
+}
+// 🛬 Днес пристигат (начален екран)
+function arrSec(){
+  var a = (D.cands || []).filter(function(k){ return k.arr && k.arr.d === D.today && kMine(k); });
+  var wk = (D.cands || []).filter(function(k){ return k.arr && k.arr.d >= D.today && k.arr.d <= addD(6) && kMine(k); }).length;
+  if (!a.length) return wk ? '<div class="arrw">🛬 ' + esc(t('aWeek', { n: wk })) + '</div>' : '';
+  return '<h2>🛬 ' + t('aToday') + '<span>' + a.length + '</span></h2>' + a.sort(function(x, y){ return String(x.arr.t || '').localeCompare(String(y.arr.t || '')); }).map(function(k){ var r = k.arr;
+    return '<div class="arrc" data-k="' + esc(k.id) + '" onclick="kOpen(this.dataset.k)"><div class="t"><span>' + esc(k.n) + '</span><span>' + esc(r.t || '') + '</span></div>' +
+      '<small>' + esc(['✈️ ' + (r.fl || '—'), r.ap, r.g ? '🚐 ' + r.g : '⚠️ ' + t('aNoG')].filter(Boolean).join(' · ')) + '</small>' + (r.acc || k.emp ? '<small>' + esc([r.acc ? '🏠 ' + r.acc : '', k.emp ? '🏢 ' + k.emp : ''].filter(Boolean).join(' · ')) + '</small>' : '') + '</div>'; }).join('');
+}
+// ================= v3.2 · ⚙️ Процес и цветове (админ): етапи → цвят, документи, визови стъпки, етикети =================
+var SC = null, STAB = 'r';
+function setOpen(tb){ if (!isAdm()) return; SC = JSON.parse(JSON.stringify(cfg())); ['docs', 'vs', 'tags'].forEach(function(k){ if (!SC[k] || !SC[k].length) SC[k] = JSON.parse(JSON.stringify(CFG0[k] || [])); }); STAB = tb || 'r'; openSheet(t('setT'), ''); setDraw(); }
+function sw(cur, fn){ return '<div class="sws2">' + PAL.map(function(c){ return '<i class="' + (c === cur ? 'sel' : '') + '" style="background:' + c + '" onclick="' + fn.replace('#C', c) + '"></i>'; }).join('') + '</div>'; }
+function setDraw(){
+  if (!SC) return; var h = '<div class="stabs">' + [['r', '🎨 ' + t('setCol')], ['d', '📋 ' + t('setDocs')], ['v', '✈️ ' + t('setVs')], ['g', '🏷️ ' + t('setTags')]].map(function(x){ return '<button class="' + (STAB === x[0] ? 'on' : '') + '" onclick="STAB=\'' + x[0] + '\';setDraw()">' + x[1] + '</button>'; }).join('') + '</div><div class="spad">';
+  if (STAB === 'r') {
+    var row = function(lbl, cur, fn, dot){ return '<div class="srow">' + (dot || '') + '<b>' + esc(lbl) + '</b>' + sw(cur, fn) + '</div>'; };
+    h += '<h2>' + t('setEmpSt') + '</h2>' + (D.stages || []).map(function(s, i){ return row(tv(s), (SC.stc || {})[s] || cStCol(s), 'setCol(\'stc\',' + i + ',\'#C\')'); }).join('');
+    h += '<h2>' + t('setCandSt') + '</h2>' + (D.kst || []).map(function(s, i){ return row(tv(s), (SC.kc || {})[s] || kStCol(s), 'setCol(\'kc\',' + i + ',\'#C\')'); }).join('');
+    h += '<h2>' + t('setTeam') + '</h2>' + (D.reps || []).map(function(r, i){ var c = (SC.rc || {})[r] || repCol(r); return row(r, c, 'setCol(\'rc\',' + i + ',\'#C\')', '<span class="rdot" style="background:' + c + '">' + esc(r.charAt(0)) + '</span>'); }).join('');
+    h += '<div class="s" style="margin:10px 2px">' + t('setColHint') + '</div>';
+  } else {
+    var key = { d: 'docs', v: 'vs', g: 'tags' }[STAB], a = SC[key];
+    h += '<div class="s" style="margin:4px 2px 10px">' + t({ d: 'setDocsH', v: 'setVsH', g: 'setTagsH' }[STAB]) + '</div>';
+    h += a.map(function(x, i){
+      return '<div class="sed">' + (STAB !== 'v' ? '<input class="sic" value="' + esc(x.i || '') + '" maxlength="4" oninput="SC.' + key + '[' + i + '].i=this.value">' : '<span class="snum">' + (i + 1) + '</span>') +
+        '<input class="snm" value="' + esc(lab(x)) + '" oninput="setNm(\'' + key + '\',' + i + ',this.value)">' +
+        (STAB === 'v' ? '<label class="sday">+<input type="number" min="0" max="365" value="' + (Number(x.d) || 0) + '" oninput="SC.vs[' + i + '].d=+this.value||0">' + t('setDays') + '</label>' : '') +
+        '<span class="smv"><button onclick="setMv(\'' + key + '\',' + i + ',-1)">↑</button><button onclick="setMv(\'' + key + '\',' + i + ',1)">↓</button><button class="x" onclick="setRm(\'' + key + '\',' + i + ')">✕</button></span>' +
+        (STAB === 'g' ? sw(x.c, 'SC.tags[' + i + '].c=\'#C\';setDraw()') : '') + '</div>';
+    }).join('');
+    h += '<button class="qadd" onclick="setAdd(\'' + key + '\')">➕ ' + t({ d: 'setAddDoc', v: 'setAddStep', g: 'setAddTag' }[STAB]) + '</button>';
+  }
+  h += '<button class="save" id="sv" onclick="setSave()">💾 ' + t('save') + '</button><div style="height:24px"></div></div>';
+  el('shB').innerHTML = h;
+}
+function setCol(map, i, c){ var arr = map === 'stc' ? D.stages : map === 'kc' ? D.kst : D.reps; SC[map] = SC[map] || {}; SC[map][arr[i]] = c; setDraw(); }
+function setNm(key, i, v){ var x = SC[key][i]; if (x.n0 === undefined && x.bg === x.tr) { x.bg = v; x.tr = v; } else if (LANG === 'tr') x.tr = v; else x.bg = v; }
+function setMv(key, i, d){ var a = SC[key], j = i + d; if (j < 0 || j >= a.length) return; var x = a[i]; a[i] = a[j]; a[j] = x; setDraw(); }
+function setRm(key, i){ if (!confirm(t('setRmQ', { n: lab(SC[key][i]) }))) return; SC[key].splice(i, 1); setDraw(); }
+function setAdd(key){ var x = { k: 'n' + Date.now().toString(36), bg: '', tr: '' }; if (key === 'vs') x.d = 3; if (key === 'tags') { x.c = PAL[SC.tags.length % PAL.length]; x.i = '🏷️'; } if (key === 'docs') x.i = '📎'; SC[key].push(x); setDraw();
+  var ins = document.querySelectorAll('#shB .snm'); if (ins.length) ins[ins.length - 1].focus(); }
+function setSave(){
+  ['docs', 'vs', 'tags'].forEach(function(k){ SC[k] = SC[k].filter(function(x){ return String(x.bg || x.tr || '').trim(); }); });
+  var b = el('sv'); b.disabled = true; b.textContent = t('saving');
+  api('saveCfg', [SC]).then(function(c){ D.cfg = c; ls('et_data', JSON.stringify(D)); toast(t('rec')); closeSheet(); draw(); }, function(e){ b.disabled = false; b.textContent = '💾 ' + t('save'); err(e); });
+}
+// ================= v3.2 · 🇧🇬 / 🇹🇷 =================
+Object.assign(I.bg, { tlNote:'Бележка', dnLab:'📏 Изглед', dnC:'Компактен', dnR:'Удобен', lgPrep:'Подготовка', lgEmp:'При работодател', lgDocs:'Документи / виза', lgTrav:'Пътува / пристигна', lgWork:'Работи', lgWarn:'Проблем с документ',
+  nFromTask:'от задача', nUnpin:'📌 махни', nPh:'Нова бележка… напр. „Иска само работници с английски“', nPinTop:'Закачи най-горе', nSave:'💾 Запази бележката', nAll:'Всички', nPinned:'Закачени', nOther:'Други бележки',
+  nNone:'Още няма бележки', nSaved:'📝 Бележката е записана', nDelQ:'Да изтрия ли бележката?',
+  fuDay:'{n}. ден работа', fuD:'ден', dMiss:'липсва', dReady:'Готов', noTaskS:'Няма задача', lateN:'{n} дни закъснение', eGoing:'Отива при',
+  dTitle:'Документи', dCnt:'{a} / {n} документа', dMissN:'{n} липсват', dWait:'чака се', dUp:'Качи', dHint:'Докосни квадратчето: ✓ готово → ⏳ чака се → празно', dEdit:'промени списъка',
+  vTitle:'Виза / разрешение', vDone:'завършен', vStep:'стъпка {a} / {n}', vTook:'{n} дни', vIn:'след {n} дни', vLate:'{n} дни закъснение', vNoDate:'няма дата – избери', vOk:'Готово', vEdit:'промени стъпките',
+  vNoEmpTask:'Няма работодател – задача за следващата стъпка не е създадена', vUndoQ:'Да върна ли стъпката „{s}“ като незавършена?',
+  aTitle:'Пристигане и посрещане', aAdd:'добави', aFl:'Полет №', aDate:'Дата на пристигане', aTime:'Час', aAp:'Летище', aG:'Посреща', aAcc:'Квартира (адрес)', aFd:'Първи работен ден',
+  aTk:'Билет купен', aGc:'Посрещането е уговорено', aNone:'Още няма данни за пътуването.', aMeet:'Посрещни', aToday:'Днес пристигат', aWeek:'{n} пристигат тази седмица', aNoG:'няма кой да посрещне',
+  fuTitle:'След започване на работа', fuOk:'Доволни', fuBad:'Има проблем', fuReset:'↩️ Не е проверено', fuStart:'Започна работа на {d} · задачите за 7/30/90 ден са в календара',
+  setT:'⚙️ Процес и цветове', setCol:'Цветове', setDocs:'Документи', setVs:'Визови стъпки', setTags:'Етикети', setEmpSt:'Етапи на работодателя', setCandSt:'Етапи на кандидата', setTeam:'Екип (цвят на отговорника)',
+  setColHint:'Цветовете са общи за целия екип.', setDocsH:'Списъкът документи за всеки кандидат. ↑↓ подреждане · ✕ махане.', setVsH:'Стъпките на визовия процес. „+дни“ = след колко дни да се създаде задача за следващата стъпка.',
+  setTagsH:'Етикети за бележките (цвят + икона).', setDays:'дни', setAddDoc:'Нов документ', setAddStep:'Нова стъпка', setAddTag:'Нов етикет', setRmQ:'Да махна ли „{n}“?' });
+Object.assign(I.tr, { tlNote:'Not', dnLab:'📏 Görünüm', dnC:'Kompakt', dnR:'Rahat', lgPrep:'Hazırlık', lgEmp:'İşverende', lgDocs:'Evrak / vize', lgTrav:'Yolda / geldi', lgWork:'Çalışıyor', lgWarn:'Belge sorunu',
+  nFromTask:'görevden', nUnpin:'📌 kaldır', nPh:'Yeni not… örn. "Sadece İngilizce bilen işçi istiyor"', nPinTop:'Başa sabitle', nSave:'💾 Notu kaydet', nAll:'Hepsi', nPinned:'Sabitlenmiş', nOther:'Diğer notlar',
+  nNone:'Henüz not yok', nSaved:'📝 Not kaydedildi', nDelQ:'Not silinsin mi?',
+  fuDay:'{n}. gün çalışıyor', fuD:'gün', dMiss:'eksik', dReady:'Hazır', noTaskS:'Görev yok', lateN:'{n} gün geç', eGoing:'Gideceği firma',
+  dTitle:'Belge listesi', dCnt:'{a} / {n} belge', dMissN:'{n} eksik', dWait:'bekleniyor', dUp:'Yükle', dHint:'Kutuya dokun: ✓ tamam → ⏳ bekleniyor → boş', dEdit:'listeyi düzenle',
+  vTitle:'Vize / izin süreci', vDone:'tamamlandı', vStep:'adım {a} / {n}', vTook:'{n} gün sürdü', vIn:'{n} gün kaldı', vLate:'{n} gün geçti', vNoDate:'tarih yok – seç', vOk:'Tamamlandı', vEdit:'adımları düzenle',
+  vNoEmpTask:'İşveren yok – sonraki adım için görev açılmadı', vUndoQ:'"{s}" adımı tamamlanmamış olarak geri alınsın mı?',
+  aTitle:'Varış ve karşılama', aAdd:'ekle', aFl:'Uçuş no', aDate:'Varış tarihi', aTime:'Saat', aAp:'Havalimanı', aG:'Karşılayan', aAcc:'Konaklama (adres)', aFd:'İlk iş günü',
+  aTk:'Bilet alındı', aGc:'Karşılama ayarlandı', aNone:'Henüz yolculuk bilgisi yok.', aMeet:'Karşıla', aToday:'Bugün gelenler', aWeek:'Bu hafta {n} kişi geliyor', aNoG:'karşılayan belli değil',
+  fuTitle:'İşe başladıktan sonra', fuOk:'Memnun', fuBad:'Sorun var', fuReset:'↩️ Kontrol edilmedi', fuStart:'{d} tarihinde işe başladı · 7/30/90. gün görevleri takvimde',
+  setT:'⚙️ Süreç ve renkler', setCol:'Renkler', setDocs:'Belgeler', setVs:'Vize adımları', setTags:'Etiketler', setEmpSt:'İşveren aşamaları', setCandSt:'Aday aşamaları', setTeam:'Ekip (sorumlu rengi)',
+  setColHint:'Renkler tüm ekip için ortaktır.', setDocsH:'Her aday için belge listesi. ↑↓ sırala · ✕ kaldır.', setVsH:'Vize süreci adımları. "+gün" = sonraki adım için kaç gün sonra görev açılsın.',
+  setTagsH:'Not etiketleri (renk + ikon).', setDays:'gün', setAddDoc:'Yeni belge', setAddStep:'Yeni adım', setAddTag:'Yeni etiket', setRmQ:'"{n}" kaldırılsın mı?' });
 var PENDOPEN = null;
 try { (function(){ var q = new URLSearchParams(location.search), c = q.get('c'), k = q.get('k'); if (c || k) { PENDOPEN = { c: c || '', k: k || '' }; history.replaceState(null, '', location.pathname); } })(); } catch (e) {}
 function pendOpen(){
