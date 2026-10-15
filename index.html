@@ -254,9 +254,75 @@ html.dark #toast,html.dark #prog{background:#e2e8f0;color:#0f172a}
 html.dark #qbar{background:#0c4a6e;color:#e0f2fe}html.dark #off{background:#3a2a0a;color:#fde68a}
 html.dark .db{background:#172238;color:#94a3b8}html.dark .db.ok{background:#14361f;color:#86efac}html.dark .db.w{background:#3a230a;color:#fdba74}html.dark .db.x{background:#3b1414;color:#fca5a5}
 html.dark .ph a,html.dark .mb{background:#172238}
+/* ================= v3.1 · 🔲 карти вместо бутони ================= */
+body{background:#eef2f7}
+/* списъците стават отделни карти */
+.lst{background:none;box-shadow:none;overflow:visible;display:flex;flex-direction:column;gap:8px}
+.lst>.lr,.lst>.ti,.lst>.kr,.kls>.kr{background:#fff;border-radius:16px;border-top:0;box-shadow:0 1px 3px rgba(15,23,42,.07),0 4px 14px rgba(15,23,42,.04)}
+.lst>.ti{border-left:5px solid #3b82f6;overflow:hidden}.lst>.ti.today{border-left-color:#f97316}.lst>.ti.over{border-left-color:#ef4444}
+.lst>.ti.op{background:#fff}.box,.kpi,.empty,details.sec,.ord,.bar{border-radius:16px}
+.lr .pill{margin-left:auto;margin-right:2px}
+/* плочки */
+.tls{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0 0}
+.tls .tl{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:10px 2px;min-height:76px;
+  text-decoration:none;color:#0f172a;font-family:inherit;box-shadow:0 1px 2px rgba(15,23,42,.05);-webkit-tap-highlight-color:transparent;cursor:pointer}
+.tls .tl:active{transform:scale(.96)}
+.tls .tl i{font-style:normal;width:40px;height:40px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:20px;background:#f1f5f9}
+.tls .tl b{font-size:11.5px;font-weight:700;line-height:1.15;text-align:center}
+.tls .tl.ok{background:#f0fdf4;border-color:#86efac}
+.tls.mini{gap:6px}.tls.mini .tl{min-height:60px;padding:7px 2px;border-radius:13px}.tls.mini .tl i{width:30px;height:30px;font-size:16px;border-radius:10px}.tls.mini .tl b{font-size:10.5px}
+.box.hero+.tls,.hero+.tls{margin:0 16px 4px}
+#cdB>.tls,#shB>.tls{margin:0 16px 4px}
+.tb .tls{margin-top:8px}
+/* начален екран */
+.qts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 16px 0}
+.qt{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;background:#fff;border:0;border-radius:18px;padding:14px 13px;min-height:104px;font-family:inherit;color:#0f172a;
+  box-shadow:0 1px 3px rgba(15,23,42,.08),0 6px 18px rgba(15,23,42,.05);cursor:pointer}
+.qt:active{transform:scale(.97)}
+.qt i{font-style:normal;width:40px;height:40px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:21px;background:#f1f5f9}
+.qt b{font-size:15px}.qt small{font-size:12px;color:#64748b}
+.qt.pri{background:linear-gradient(135deg,#0063b5,#0d2b50);color:#fff}.qt.pri small{color:#cbd5e1}.qt.pri i{background:rgba(255,255,255,.18)}
+.kts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 16px 0}
+.kt{display:flex;flex-direction:column;align-items:flex-start;gap:2px;background:#fff;border:0;border-radius:16px;padding:10px 12px;font-family:inherit;color:#0f172a;box-shadow:0 1px 3px rgba(15,23,42,.07);text-align:left}
+.kt span{font-size:11.5px;font-weight:700;color:#64748b}.kt b{font-size:24px;font-weight:800}
+#shB>.kts,#cdB>.kts{margin:12px 16px 0}
+/* ＋ */
+#fab{display:none;position:fixed;right:18px;bottom:calc(22px + env(safe-area-inset-bottom));z-index:8;width:60px;height:60px;border-radius:19px;border:0;background:#0063b5;color:#fff;font-size:32px;line-height:1;
+  align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(0,99,181,.42);cursor:pointer}
+#fab:active{transform:scale(.94)}
+/* 🤝 партньори */
+.pseg{display:flex;background:#e2e8f0;border-radius:14px;padding:4px;margin:12px 16px 0}
+.pseg button{flex:1;border:0;background:none;border-radius:11px;padding:10px 6px;font-size:14px;font-weight:700;color:#475569;font-family:inherit}
+.pseg button small{background:rgba(15,23,42,.08);border-radius:9px;padding:1px 7px;margin-left:3px;font-size:11.5px}
+.pseg button.on{background:#fff;color:#0f172a;box-shadow:0 1px 3px rgba(15,23,42,.14)}
+form .pseg{margin:0}
+.pc{background:#fff;margin:0 16px 10px;border-radius:18px;padding:14px;box-shadow:0 1px 3px rgba(15,23,42,.07),0 6px 18px rgba(15,23,42,.04);cursor:pointer}
+.pc.law{border-left:5px solid #7c3aed}
+.ptop{display:flex;align-items:center;gap:12px}.pav{width:48px;height:48px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex:none}
+.px{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.px b{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.px small{font-size:12.5px;color:#64748b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ptop .ar{color:#94a3b8;font-size:22px}
+.prt{display:inline-block;background:#dcfce7;color:#166534;font-size:11px;font-weight:800;border-radius:8px;padding:1px 7px;vertical-align:middle}
+.pst{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px}.pst div{background:#f8fafc;border-radius:12px;padding:7px 9px}
+.pst small{display:block;font-size:10px;color:#64748b;font-weight:800;text-transform:uppercase;letter-spacing:.03em}.pst b{font-size:16.5px}
+.phero{background:linear-gradient(135deg,#0d2b50,#0063b5);color:#fff;border-radius:20px;padding:16px;margin:14px 16px 12px}
+.phero.law{background:linear-gradient(135deg,#3b0764,#7c3aed)}
+.phero .nm{font-size:20px;font-weight:800}.phero .sb{font-size:13px;opacity:.85;margin-top:3px}
+.pill2{display:inline-block;background:rgba(255,255,255,.2);border-radius:10px;padding:3px 10px;font-size:12px;font-weight:700;margin-top:9px}
+.phero .prt{background:rgba(255,255,255,.22);color:#fff}
+.upb .upa{display:flex;flex-direction:column;align-items:center;gap:4px;background:#fff;border:1px solid #cbd5e1;border-radius:12px;padding:14px 4px;font-size:14px;font-weight:700;color:#0f172a;text-decoration:none}
+.upb .upa span{font-size:26px}
+/* 🌓 */
+html.dark body{background:#0b1220}
+html.dark .lst>.lr,html.dark .lst>.ti,html.dark .lst>.kr,html.dark .kls>.kr,html.dark .tls .tl,html.dark .qt,html.dark .kt,html.dark .pc,html.dark .upb .upa{background:#111a2e;color:#e2e8f0;border-color:#24324d}
+html.dark .lst>.ti.op{background:#111a2e}
+html.dark .tls .tl i,html.dark .qt i,html.dark .pst div{background:#172238!important}
+html.dark .tls .tl.ok{background:#0f2a1c;border-color:#166534}
+html.dark .qt.pri{background:linear-gradient(135deg,#0063b5,#0f1d33)}
+html.dark .pseg{background:#172238}html.dark .pseg button{color:#94a3b8}html.dark .pseg button.on{background:#24324d;color:#fff}
+html.dark .px b,html.dark .kt b{color:#e2e8f0}html.dark .kt b[style]{filter:brightness(1.25)}
 </style></head><body>
 <div class="hd"><header><div><h1><img src="icon-192.png" alt="">ET CRM</h1><div class="d" id="dt"></div></div><div class="hr"><button class="lg" id="lgB" onclick="toggleLang()">TR</button><button class="me" id="meB" onclick="meMenu()">👤</button><button onclick="load(true)" id="rfB">⟳</button></div></header>
-<div id="sync"></div><nav class="tabs"><button id="tb_t" onclick="tab('t')"></button><button id="tb_o" onclick="tab('o')"></button><button id="tb_c" onclick="tab('c')"></button><button id="tb_k" onclick="tab('k')"></button><button id="tb_r" onclick="tab('r')"></button></nav></div>
+<div id="sync"></div><nav class="tabs"><button id="tb_t" onclick="tab('t')"></button><button id="tb_o" onclick="tab('o')"></button><button id="tb_c" onclick="tab('c')"></button><button id="tb_k" onclick="tab('k')"></button><button id="tb_p" onclick="tab('p')"></button><button id="tb_r" onclick="tab('r')"></button></nav></div>
 <div class="seg" id="seg"><button id="sg_m" onclick="seg('m')"></button><button id="sg_a" onclick="seg('a')"></button></div>
 <div id="off"></div><div id="qbar" onclick="qFlush()"></div><div id="main"><div class="load" id="ld0"></div></div>
 <div id="lpm" onclick="if(event.target===this)lpClose()"><div class="bx" id="lpmB"></div></div><div id="card" class="sheet"><div class="top"><button onclick="closeCard()">←</button><b id="cdT"></b></div><div id="cdB"></div></div>
@@ -265,10 +331,10 @@ html.dark .ph a,html.dark .mb{background:#172238}
 <div id="login"><button class="lgl" id="lgL" onclick="toggleLang()">TR</button><div class="logo"><img src="icon-192.png" alt=""></div><h1>Employeetrade CRM</h1><p id="lgP"></p>
 <div class="dots" id="dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
 <div class="pad"><button onclick="pinK(1)">1</button><button onclick="pinK(2)">2</button><button onclick="pinK(3)">3</button><button onclick="pinK(4)">4</button><button onclick="pinK(5)">5</button><button onclick="pinK(6)">6</button><button onclick="pinK(7)">7</button><button onclick="pinK(8)">8</button><button onclick="pinK(9)">9</button><span></span><button onclick="pinK(0)">0</button><button class="x" onclick="pinB()">⌫</button></div><div id="lerr"></div></div>
-<div id="ksb"></div><div id="toast"></div><div id="prog"><div id="progT"></div><div class="pb"><i id="progB"></i></div></div>
+<button id="fab" type="button" onclick="fabGo()" aria-label="+">＋</button><div id="ksb"></div><div id="toast"></div><div id="prog"><div id="progT"></div><div class="pb"><i id="progB"></i></div></div>
 <script>
 var API_URL = 'https://script.google.com/macros/s/AKfycbw0FRgMaF2-h8xpuQqG92n4kL_uisbbduWT7FxWgJePem5aWlWkb4DvAKIhaGRrLr5VTw/exec';
-var APP_VER = '3.0';
+var APP_VER = '3.1';
 function ls(k, v){ try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }
 
 // ================= 🇧🇬 / 🇹🇷 ЕЗИК =================
@@ -352,7 +418,7 @@ function toggleLang(){ LANG = LANG === 'tr' ? 'bg' : 'tr'; ls('et_lang', LANG); 
 function applyLang(){
   document.documentElement.lang = LANG;
   el('lgB').textContent = LANG === 'tr' ? 'BG' : 'TR'; el('lgL').textContent = el('lgB').textContent;
-  [['t', 'tabT'], ['o', 'tabO'], ['c', 'tabC'], ['k', 'tabK'], ['r', 'tabR']].forEach(function(x){ var s = t(x[1]), i = s.indexOf(' '); el('tb_' + x[0]).innerHTML = '<i>' + s.slice(0, i) + '</i>' + esc(s.slice(i + 1)); });
+  [['t', 'tabT'], ['o', 'tabO'], ['c', 'tabC'], ['k', 'tabK'], ['p', 'tabP'], ['r', 'tabR']].forEach(function(x){ var s = t(x[1]), i = s.indexOf(' '); el('tb_' + x[0]).innerHTML = '<i>' + s.slice(0, i) + '</i>' + esc(s.slice(i + 1)); });
   el('sg_m').textContent = t('mine'); el('sg_a').textContent = t('all'); el('off').textContent = t('off');
   el('lgP').textContent = t('pin'); if (el('ld0')) el('ld0').textContent = t('loading');
 }
@@ -525,10 +591,11 @@ function draw(){
   var ae = document.activeElement, fq = !!(ae && ae.id === 'q'), pos = fq ? ae.selectionStart : 0;
   if (TAB === 'k' && ae && ae.id === 'kq') { listK(); return; }
   setTimeout(function(){ var q = el('q'); if (fq && q && document.activeElement !== q) { q.focus(); try { q.setSelectionRange(pos, pos); } catch (e) {} } }, 0);
-  ['t','o','c','k','r'].forEach(function(k){ el('tb_' + k).className = TAB === k ? 'on' : ''; });
+  ['t','o','c','k','p','r'].forEach(function(k){ el('tb_' + k).className = TAB === k ? 'on' : ''; });
   el('sg_m').className = SEG === 'm' ? 'on' : ''; el('sg_a').className = SEG === 'a' ? 'on' : '';
   el('main').className = ''; if (TAB !== 'k') kSelOff(true);
-  if (TAB === 'c') drawClients(); else if (TAB === 'o') drawOrders(); else if (TAB === 'k') drawCands(); else if (TAB === 'r') drawReport(); else drawTasks();
+  if (TAB === 'c') drawClients(); else if (TAB === 'o') drawOrders(); else if (TAB === 'k') drawCands(); else if (TAB === 'p') drawPartners(); else if (TAB === 'r') drawReport(); else drawTasks();
+  fabSet();
 }
 
 // ---------- 📋 Задачи ----------
@@ -569,14 +636,14 @@ function taskCard(x){
   var sub = [x.desc, x.city].filter(Boolean).join(' · ');
   var rem = x.remind ? '<div class="s" style="color:#92400e;font-weight:700">🔔 ' + esc(x.remind) + '</div>' : '<div class="s" style="color:#b91c1c;font-weight:700">' + t('remNone') + '</div>';
   return h + '<div class="tb">' + rem + (sub ? '<div class="s">' + esc(sub) + '</div>' : '') +
-    '<div class="acts">' + tel(x.phone) + '<button data-n="' + esc(x.client) + '" onclick="openC(this.dataset.n)">' + t('emp') + '</button></div>' +
-    '<div class="acts"><button class="ok" onclick="doneForm(' + x.row + ')">' + t('done') + '</button><button onclick="snooze(' + x.row + ',1)">' + t('d1') + '</button><button onclick="snooze(' + x.row + ',3)">+3</button><button onclick="snooze(' + x.row + ',7)">+7</button></div></div></div>';
+    tiles(tl('✅', t('tlDone'), 'onclick="doneForm(' + x.row + ')"', '#dcfce7', 'ok') + telT(x.phone) + tl('🏢', t('tlEmp'), 'data-n="' + esc(x.client) + '" onclick="openC(this.dataset.n)"', '#ede9fe') +
+      tl('📅', t('d1'), 'onclick="snooze(' + x.row + ',1)"', '#f1f5f9') + tl('📅', '+3', 'onclick="snooze(' + x.row + ',3)"', '#f1f5f9') + tl('📅', '+7', 'onclick="snooze(' + x.row + ',7)"', '#f1f5f9'), 'mini') + '</div></div>';
 }
 function noTask(){ return D.clients.filter(function(c){ return !c.nx && D.closed.indexOf(c.s) < 0 && mine(c.r); }); }
 function drawTasks(){
   var ts = D.tasks.filter(function(x){ return mine(x.rep); });
   var now = ts.filter(function(x){ return x.date <= D.today; }), next = ts.filter(function(x){ return x.date > D.today; }), free = noTask(), st = stale(); free = free.filter(function(c){ return st.indexOf(c) < 0; });
-  el('main').innerHTML = srchBox() + '<div id="qres"></div><div id="tbody"><div id="pushAsk"></div><div class="big"><button onclick="openForm()">' + t('newTask') + '</button></div>' +
+  el('main').innerHTML = srchBox() + '<div id="qres"></div><div id="tbody"><div id="pushAsk"></div>' + homeTiles(now) +
     sec(t('secToday'), now.length, '<div class="lst">' + now.map(taskCard).join('') + '</div>', t('noToday')) + expSec() + clubSec() + staleSec() +
     sec(t('next7'), next.length, '<div class="lst">' + next.map(taskCard).join('') + '</div>', t('noNext')) +
     sec(t('noTaskSec'), free.length, rows(free), t('allHave')) + '</div>';
@@ -652,7 +719,7 @@ function onQ(){
 var CV = ls('et_cv') === 'b' ? 'b' : 'l';
 function cView(v){ CV = v; ls('et_cv', v); draw(); }
 function drawClients(){
-  el('main').innerHTML = srchBox() + '<div class="big"><button onclick="openForm()">' + t('newTask') + '</button></div><div class="tbar">' + vSw(CV, 'cView') + '</div>' + fBar('c') + '<div id="cl"></div>';
+  el('main').innerHTML = srchBox() + '<div class="tbar">' + vSw(CV, 'cView') + '</div>' + fBar('c') + '<div id="cl"></div>';
   el('main').className = CV === 'b' ? 'wide' : '';
   listC();
 }
@@ -839,13 +906,13 @@ function drawCard(){
     (c.club ? '<div class="s" style="color:#b45309;font-weight:700">💳 ' + esc(c.club) + (c.clubTo ? ' · ' + esc(t('clubTxt', { d: fmt(c.clubTo) })) : '') + '</div>' : '') +
     (nx ? '<div class="nxt">📅 ' + fmt(nx.date) + (nx.time ? ' · ' + esc(nx.time) : '') + ' – ' + esc(tv(nx.type)) + (nx.remind ? ': ' + esc(nx.remind) : '') + '</div>'
         : '<div class="nxt no">' + t('noPlan') + '</div>') + staleLine(c) +
-    '<div class="acts">' + tel(c.phone) + (c.email ? '<a href="mailto:' + esc(c.email) + '">✉️</a>' : '') + '</div>' +
-    '<div class="acts"><button class="ok" data-n="' + esc(c.name) + '" onclick="openForm(this.dataset.n)">' + t('addTask') + '</button>' +
-    '<button data-n="' + esc(c.name) + '" onclick="kForm({emp:this.dataset.n})">' + t('addCand') + '</button><button onclick="slShare()">' + t('slBtn') + '</button>' + (c.phone ? '<button onclick="waPick(\'e\')">' + t('waBtn') + '</button>' : '') +
-    '<button data-n="' + esc(c.name) + '" onclick="lpShow(\'🏢 \' + this.dataset.n, cMenu(this.dataset.n).slice(1))">' + t('more') + '</button></div></div>';
+    '</div>' + tiles(telT(c.phone) + (c.email ? tl('✉️', t('tlEmail'), 'href="mailto:' + esc(c.email) + '"', '#fef3c7') : '') +
+      tl('📋', t('tlTask'), 'data-n="' + esc(c.name) + '" onclick="openForm(this.dataset.n)"', '#dcfce7', 'ok') + tl('👷', t('tlCand'), 'data-n="' + esc(c.name) + '" onclick="kForm({emp:this.dataset.n})"', '#e0f2fe') +
+      tl('🔗', t('tlLink'), 'onclick="slShare()"', '#fef3c7') + (c.phone ? tl('💬', t('tlWa'), 'onclick="waPick(\'e\')"', '#dcfce7') : '') +
+      tl('⋯', t('tlMore'), 'data-n="' + esc(c.name) + '" onclick="lpShow(\'🏢 \' + this.dataset.n, cMenu(this.dataset.n).slice(1))"', '#f1f5f9'));
   // ⚖️ Адвокат – винаги видим
   h += '<div class="box law"><div class="lb">' + t('lawyer') + '</div>' + (c.lawyer || c.lawPhone
-    ? '<div class="t">' + esc(c.lawyer || '—') + '</div>' + (c.lawPhone ? '<div class="s">📞 ' + esc(c.lawPhone) + '</div>' : '') +
+    ? '<div class="t"><span class="lnk" data-n="' + esc(c.lawyer || '') + '" onclick="pOpenName(\'l\',this.dataset.n)">' + esc(c.lawyer || '—') + '</span></div>' + (c.lawPhone ? '<div class="s">📞 ' + esc(c.lawPhone) + '</div>' : '') +
       '<div class="acts">' + tel(c.lawPhone) + '<button onclick="editLaw()">✏️</button></div>'
     : '<div class="s">' + t('noLawyer') + '</div><div class="acts"><button onclick="editLaw()">' + t('addLawyer') + '</button></div>') + '</div>';
   // 👷 Кандидати
@@ -912,13 +979,13 @@ function fIcon(f){
 
 // ---------- ⚖️ Адвокат ----------
 function editLaw(){
-  var c = CUR, dl = (D.lawyers || []).map(function(l){ return '<option value="' + esc(l[0]) + '">'; }).join('');
+  var c = CUR, dl = lawList().map(function(l){ return '<option value="' + esc(l[0]) + '">'; }).join('');
   openSheet(t('lawyer') + ' – ' + c.name, '<form id="frm" onsubmit="return sendLaw(event)">' +
     fld(t('lawName'), '<input name="lawyer" id="lwN" list="lwl" autocomplete="off" value="' + esc(c.lawyer) + '" oninput="lawFill()"><datalist id="lwl">' + dl + '</datalist>') +
     fld(t('lawPhone'), '<input name="lawPhone" id="lwP" type="tel" value="' + esc(c.lawPhone) + '">') +
     '<button class="save" id="sv">' + t('save') + '</button></form>');
 }
-function lawFill(){ var n = el('lwN').value.trim(), hit = (D.lawyers || []).filter(function(l){ return l[0] === n; })[0]; if (hit && hit[1] && !el('lwP').value.trim()) el('lwP').value = hit[1]; }
+function lawFill(){ var n = el('lwN').value.trim(), hit = lawList().filter(function(l){ return l[0] === n; })[0]; if (hit && hit[1] && !el('lwP').value.trim()) el('lwP').value = hit[1]; }
 function sendLaw(e){
   e.preventDefault(); var d = formData(); svState(true);
   google.script.run.withSuccessHandler(function(c){ setCur(c); closeSheet(); drawCard(); toast(t('lawSaved')); load(); })
@@ -982,7 +1049,7 @@ function upload(fs, mode, cand){
   var fail = function(e){ progOff(); err(e); finish(); };
   var finish = function(){
     progOff(); if (nOk) toast(t('upd', { n: nOk }));
-    if (cand) { if (KC && KC.id === cand) kOpen(cand); else if (CAND && CAND.name === cand) openCand(cand); if (CUR) refreshCard(); }
+    if (cand) { if (PC && PC.id === cand) pOpen(cand); else if (KC && KC.id === cand) kOpen(cand); else if (CAND && CAND.name === cand) openCand(cand); if (CUR) refreshCard(); }
     else { if (mode === 'photo') OPEN.photos = true; else OPEN.files = true; try { localStorage.setItem('et_open', JSON.stringify(OPEN)); } catch (e) {} refreshCard(); }
   };
   var nextF = function(){
@@ -1028,6 +1095,10 @@ function dlF(id){
 }
 function delF(id, name, cand){
   if (!confirm(t('del', { n: name }))) return;
+  if (cand && /^P-/.test(cand)) {
+    google.script.run.withSuccessHandler(function(p){ if (PC && PC.id === cand) { PC = p; pDraw(); } toast(t('deleted') + name); }).withFailureHandler(err).trashFile(id, '', cand);
+    return;
+  }
   if (cand && /^K-/.test(cand)) {
     google.script.run.withSuccessHandler(function(k){ if (KC && KC.id === cand) { KC = k; kDraw(); } toast(t('deleted') + name); }).withFailureHandler(err).trashFile(id, '', cand);
     return;
@@ -1196,7 +1267,6 @@ function vSw(cur, fn){ return '<div class="vsw"><button class="' + (cur === 'l' 
 function kView(v){ KV = v; ls('et_kv', v); if (v === 'b') { KSEL = null; kSelBar(); } drawCands(); }
 function drawCands(){
   el('main').innerHTML = '<div class="srch"><input id="kq" type="search" enterkeyhint="search" autocomplete="off" placeholder="' + esc(t('kQ')) + '" value="' + esc(KQ) + '" oninput="KQ=this.value;KPAGE=0;KOUT=null;listK()"></div>' +
-    '<div class="big"><button onclick="kForm()">' + t('kNew') + '</button></div>' +
     '<div class="tbar">' + vSw(KV, 'kView') + (KV === 'l' ? '<button class="' + (KSEL ? 'on' : '') + '" onclick="kSelMode()">☑️ ' + t('kSel') + '</button>' : '') + '</div>' +
     fBar('k') + '<div class="chips wf" id="kf"></div><div id="kl"></div>';
   el('main').className = KV === 'b' ? 'wide' : '';
@@ -1261,7 +1331,8 @@ function kDraw(){
     '<div class="s">' + esc([tv(k.pos), k.co, k.exp ? k.exp + ' ' + t('yrs') : '', k.lg ? '🗣️ ' + k.lg : ''].filter(Boolean).join(' · ')) + '</div>' +
     '<div class="s">' + (k.emp ? '🏢 <span class="lnk" data-n="' + esc(k.emp) + '" onclick="closeSheet();openC(this.dataset.n)">' + esc(k.emp) + '</span>' : '🏢 ' + t('kNoEmp')) + (k.rep ? ' · 👤 ' + esc(k.rep) : '') + (k.src ? ' · 🤝 ' + esc(k.src) : '') + (k.rt ? ' · ' + '★★★★★'.slice(0, k.rt) : '') + '</div>' +
     (k.dec ? '<div class="nxt" style="color:#15803d">' + esc(k.dec) + '</div>' : '') +
-    '<div class="acts">' + tel(k.ph) + '<button onclick="waPick(\'k\')">' + t('waBtn') + '</button><button onclick="kForm(KC)">' + t('edit') + '</button><button onclick="kPdfGet([KC.id])">' + t('pdfBtn') + '</button></div></div>';
+    '</div>' + tiles(telT(k.ph) + tl('💬', t('tlWa'), 'onclick="waPick(\'k\')"', '#dcfce7') + tl('✏️', t('tlEdit'), 'onclick="kForm(KC)"', '#f1f5f9') + tl('📄', 'PDF', 'onclick="kPdfGet([KC.id])"', '#fee2e2') +
+      (k.src ? tl('🤝', t('tlPart'), 'data-n="' + esc(k.src) + '" onclick="pOpenName(\'s\',this.dataset.n)"', '#fef3c7') : ''));
   if (isAdm() && (k.cost || k.pfee)) h += '<div class="box money"><h4>' + t('mTitle') + '</h4>' + (k.cost ? '<div class="dl"><span>' + t('mCost') + '</span><b>' + esc(k.cost) + ' €</b><span></span></div>' : '') +
     (k.pfee ? '<div class="dl"><span>' + t('mPfee') + (k.src ? ' · ' + esc(k.src) : '') + '</span><b>' + esc(k.pfee) + ' €</b>' + (k.ppaid ? '<span class="db ok">' + t('mPaid') + ' ' + fmt(k.ppaid) + '</span>' : '<span class="db w">' + t('mDue') + '</span>') + '</div>' : '') + '</div>';
   h += '<div class="box"><h4>' + t('kStage') + '</h4><div class="chips">' + (D.kst || []).map(function(s){
@@ -1304,7 +1375,7 @@ function kForm(k){
   h += fld(t('kLang'), '<input name="lg" value="' + esc(k.lg || '') + '" placeholder="English, Hindi…">');
   h += half(fld(t('kEmp'), '<input name="emp" list="kel" autocomplete="off" value="' + esc(k.emp || '') + '"><datalist id="kel">' + D.clients.map(function(c){ return '<option value="' + esc(c.n) + '">'; }).join('') + '</datalist>'),
     fld(t('kStage'), '<select name="st">' + opts(withCur(D.kst || [], k.st), k.st || (D.kst || [])[0]) + '</select>'));
-  h += half(fld(t('kRep'), '<select name="rep">' + opts(blank(D.reps), k.rep || (isNew ? D.me : '')) + '</select>'), fld(t('kSrc'), '<input name="src" value="' + esc(k.src || '') + '">'));
+  h += half(fld(t('kRep'), '<select name="rep">' + opts(blank(D.reps), k.rep || (isNew ? D.me : '')) + '</select>'), fld(t('kSrc'), '<input name="src" list="psl" autocomplete="off" value="' + esc(k.src || '') + '"><datalist id="psl">' + pNames('s').map(function(n){ return '<option value="' + esc(n) + '">'; }).join('') + '</datalist>'));
   h += fld(t('kRate'), '<select name="rt">' + ['', '1', '2', '3', '4', '5'].map(function(x){ return '<option value="' + x + '"' + (String(k.rt || '') === x ? ' selected' : '') + '>' + (x ? '★★★★★'.slice(0, +x) : '—') + '</option>'; }).join('') + '</select>');
   h += '<div class="nx"><h3>' + t('kDocs') + '</h3>' + (isAdm() ? fld(t('kPass'), '<input name="pp" autocomplete="off" value="' + esc(k.pp || '') + '">') : '') +
     half(fld(t('kPassTo'), '<input type="date" name="ppTo" value="' + esc(k.ppTo || '') + '">'), fld(t('kMed'), '<input type="date" name="med" value="' + esc(k.med || '') + '">')) +
@@ -1628,7 +1699,7 @@ Object.assign(I.tr, {
 });
 // ================= v3.0 · 🔎 Многостепенен филтър (Държава И Професия И Етап И Отговорник И Работодател) =================
 // В една група: „или“ (Непал или Индия) · между групите: „и“
-var FG = { k: ['co', 'pos', 'st', 'rep', 'emp'], c: ['co', 'pos', 'st', 'rep'] };
+var FG = { k: ['co', 'pos', 'st', 'rep', 'emp', 'src'], c: ['co', 'pos', 'st', 'rep'] };
 var FL = { k: {}, c: {} };
 try { var _fl = JSON.parse(ls('et_flt') || 'null'); if (_fl && _fl.k && _fl.c) FL = _fl; } catch (e) {}
 function fSave(){ ls('et_flt', JSON.stringify(FL)); }
@@ -1651,7 +1722,7 @@ function fMatch(kind, it){
   return FG[kind].every(function(g){ var a = f[g]; if (!a || !a.length) return true; var v = fGet(kind, it, g); return v.some(function(x){ return a.indexOf(String(x || '')) > -1; }); });
 }
 function fCount(kind){ var f = FL[kind]; return FG[kind].reduce(function(s, g){ return s + ((f[g] || []).length); }, 0); }
-function fLab(g, kind){ return t({ co: 'fCo', pos: 'fPosL', st: 'fSt', rep: 'fRepL', emp: 'fEmpL' }[g]); }
+function fLab(g, kind){ return t({ co: 'fCo', pos: 'fPosL', st: 'fSt', rep: 'fRepL', emp: 'fEmpL', src: 'fSrcL' }[g]); }
 function fVal(g, v){ return g === 'emp' && !v ? t('kNoEmp') : tv(v); }
 // лента над списъка: бутон + активните филтри (× маха)
 function fBar(kind){
@@ -1690,6 +1761,7 @@ function kSelAll(){
 }
 function kSelBar(){
   var b = el('ksb'); if (!b) return;
+  fabSet();
   if (!KSEL || TAB !== 'k') { b.style.display = 'none'; document.body.classList.remove('selm'); return; }
   var n = kSelIds().length; document.body.classList.add('selm');
   b.style.display = 'block';
@@ -1942,6 +2014,165 @@ function themeLab(){ return t('thLab') + ': ' + t({ auto: 'thAuto', light: 'thLi
 function themeNext(){ THEME = { auto: 'light', light: 'dark', dark: 'auto' }[THEME] || 'auto'; ls('et_theme', THEME); themeApply(); var b = el('thB'); if (b) b.textContent = themeLab(); }
 if (THM) { try { THM.addEventListener('change', themeApply); } catch (e) { try { THM.addListener(themeApply); } catch (x) {} } }
 themeApply();
+// ================= v3.1 · 🤝 Партньори: доставчици на работници + адвокати =================
+var PSEG = ls('et_pseg') === 'l' ? 'l' : 's', PQ = '', PC = null;
+var PCOL = [['#e0f2fe', '#0369a1'], ['#fef3c7', '#b45309'], ['#ede9fe', '#6d28d9'], ['#dcfce7', '#15803d'], ['#fce7f3', '#be185d'], ['#ffedd5', '#c2410c']];
+function pList(ty){ return ((D && D.partners) || []).filter(function(p){ return !ty || p.t === ty; }); }
+function pNames(ty){ return pList(ty).map(function(p){ return p.n; }).sort(function(a, b){ return a.localeCompare(b); }); }
+function lawList(){
+  var m = {}; (D.lawyers || []).forEach(function(l){ m[l[0]] = l[1] || ''; });
+  pList('l').forEach(function(p){ if (!m[p.n] || p.ph) m[p.n] = p.ph || m[p.n] || ''; });
+  return Object.keys(m).sort().map(function(n){ return [n, m[n]]; });
+}
+function pById(id){ return pList().filter(function(p){ return p.id === id; })[0]; }
+function pOpenName(ty, n){ var k = String(n || '').trim().toLowerCase(), p = pList(ty).filter(function(x){ return x.n.toLowerCase() === k; })[0]; if (p) pOpen(p.id); else toast(t('pNone')); }
+function ini(n){ var w = String(n || '').replace(/[^\p{L}\p{N}\s]/gu, ' ').trim().split(/\s+/); return ((w[0] || '?').charAt(0) + (w[1] ? w[1].charAt(0) : (w[0] || '').charAt(1) || '')).toUpperCase(); }
+function pColor(n){ var h = 0; String(n).split('').forEach(function(c){ h = (h * 31 + c.charCodeAt(0)) >>> 0; }); return PCOL[h % PCOL.length]; }
+var WORK_ST = 'Работи', VISA_ST = ['Документи', 'Разрешение за работа', 'Виза'];
+// статистика от заредените данни (без нова заявка)
+function pStats(p){
+  var key = p.n.toLowerCase();
+  if (p.t === 's') {
+    var ks = (D.cands || []).filter(function(k){ return String(k.src || '').trim().toLowerCase() === key; }), w = ks.filter(function(k){ return k.st === WORK_ST; });
+    var due = 0, paid = 0; ks.forEach(function(k){ var fee = Number(k.pfee) || Number(p.fee) || 0; if (!fee) return; if (k.ppaid) paid += fee; else if (k.st === WORK_ST) due += fee; });
+    return { a: ks.length, w: w.length, due: due, paid: paid, ks: ks };
+  }
+  var es = (D.clients || []).filter(function(c){ return String(c.lw || '').trim().toLowerCase() === key; }), en = es.map(function(c){ return c.n.toLowerCase(); });
+  var kc = (D.cands || []).filter(function(k){ return en.indexOf(String(k.emp || '').toLowerCase()) > -1; });
+  return { e: es.length, k: kc.length, v: kc.filter(function(k){ return VISA_ST.indexOf(k.st) > -1; }).length, es: es };
+}
+function pFind(q){ var toks = lat(q).split(' ').filter(Boolean); return pList(PSEG).filter(function(p){ var hay = lat([p.n, p.k, p.c, p.sp, p.rep].join(' ')); var d = q.replace(/\D/g, ''); return (d.length >= 3 && String(p.ph).replace(/\D/g, '').indexOf(d) > -1) || toks.every(function(x){ return hay.indexOf(x) > -1; }); }); }
+function pSeg(s){ PSEG = s; ls('et_pseg', s); PQ = ''; drawPartners(); }
+function drawPartners(){
+  var ns = pList('s').length, nl = pList('l').length;
+  el('main').innerHTML = '<div class="pseg"><button class="' + (PSEG === 's' ? 'on' : '') + '" onclick="pSeg(\'s\')">🧑‍💼 ' + t('pSup') + ' <small>' + ns + '</small></button><button class="' + (PSEG === 'l' ? 'on' : '') + '" onclick="pSeg(\'l\')">⚖️ ' + t('pLaw') + ' <small>' + nl + '</small></button></div>' +
+    '<div class="srch"><input id="pq" type="search" autocomplete="off" placeholder="' + esc(t('pQ')) + '" value="' + esc(PQ) + '" oninput="PQ=this.value;listP()"></div><div id="pl"></div>';
+  listP();
+}
+function listP(){
+  var q = PQ.trim(), a = q ? pFind(q) : pList(PSEG);
+  a = a.map(function(p){ return { p: p, s: pStats(p) }; }).sort(function(x, y){ return (PSEG === 's' ? y.s.a - x.s.a : y.s.e - x.s.e) || x.p.n.localeCompare(y.p.n); });
+  el('pl').innerHTML = '<h2>' + (PSEG === 's' ? t('pSupL') : t('pLawL')) + '<span>' + a.length + '</span></h2>' + (a.length ? a.map(function(x){ return pCard(x.p, x.s); }).join('') :
+    '<div class="empty">' + t('pNone') + '</div><div class="qnew"><button onclick="pForm(null,PSEG)">' + (PSEG === 's' ? t('pNewSup') : t('pNewLaw')) + '</button></div>');
+}
+function pCard(p, s){
+  var col = p.t === 'l' ? ['#ede9fe', '#6d28d9'] : pColor(p.n), st = p.t === 's'
+    ? [[t('pActive'), s.a], [t('pWork'), s.w, '#15803d'], isAdm() ? [t('pDue'), eur(s.due), s.due ? '#b45309' : ''] : [t('pVisa'), s.ks.filter(function(k){ return VISA_ST.indexOf(k.st) > -1; }).length]]
+    : [[t('pEmps'), s.e], [t('pCands'), s.k], [t('pVisa'), s.v, s.v ? '#be185d' : '']];
+  return '<div class="pc' + (p.t === 'l' ? ' law' : '') + '" data-id="' + esc(p.id) + '" onclick="if(!event.target.closest(\'.tl\'))pOpen(this.dataset.id)">' +
+    '<div class="ptop"><span class="pav" style="background:' + col[0] + ';color:' + col[1] + '">' + (p.t === 'l' ? '⚖️' : esc(ini(p.n))) + '</span><span class="px"><b>' + esc(p.n) + (p.rt ? ' <span class="prt">★ ' + p.rt + '</span>' : '') + '</b>' +
+    '<small>' + esc([p.c, p.sp, p.k].filter(Boolean).join(' · ') || '—') + '</small></span><span class="ar">›</span></div>' +
+    '<div class="pst">' + st.map(function(x){ return '<div><small>' + x[0] + '</small><b' + (x[2] ? ' style="color:' + x[2] + '"' : '') + '>' + x[1] + '</b></div>'; }).join('') + '</div>' +
+    tiles(telT(p.ph), 'mini') + '</div>';
+}
+// ---- карта на партньора
+function pOpen(id){
+  var p = pById(id); PC = Object.assign({ cands: [], emps: [], files: [], photos: [], loading: true }, p || { id: id, n: '…', t: PSEG });
+  openSheet((PC.t === 'l' ? '⚖️ ' : '🧑‍💼 ') + PC.n, ''); pDraw();
+  google.script.run.withSuccessHandler(function(x){ if (PC && PC.id === id) { PC = x; pDraw(); pLocal(x); } })
+    .withFailureHandler(function(e){ if (PC && PC.id === id) { closeSheet(); err(e); } }).pGet(id);
+}
+function pLocal(x){ var a = (D.partners = D.partners || []), i = a.findIndex(function(p){ return p.id === x.id; }); var o = {}; ['id', 't', 'n', 'k', 'ph', 'em', 'c', 'sp', 'rt', 'rep', 'i', 'fee'].forEach(function(k){ if (k in x) o[k] = x[k]; }); if (i > -1) a[i] = o; else a.push(o); }
+function pDraw(){
+  var p = PC; if (!p || el('sheet').style.display !== 'block') return;
+  var sup = p.t === 's', s = pStats(p);
+  el('shT').textContent = (sup ? '🧑‍💼 ' : '⚖️ ') + p.n;
+  var h = '<div class="phero' + (sup ? '' : ' law') + '"><div class="nm">' + esc(p.n) + (p.rt ? ' <span class="prt">★ ' + p.rt + '</span>' : '') + '</div><div class="sb">' + esc([p.k, p.c].filter(Boolean).join(' · ')) + '</div>' +
+    '<span class="pill2">' + (sup ? '🧑‍💼 ' + t('pSup1') : '⚖️ ' + t('pLaw1')) + (p.sp ? ' · ' + esc(p.sp) : '') + '</span></div>';
+  h += tiles(telT(p.ph) + (p.em ? tl('✉️', t('tlEmail'), 'href="mailto:' + esc(p.em) + '"', '#fef3c7') : '') + tl('✏️', t('tlEdit'), 'onclick="pForm(PC)"', '#f1f5f9'));
+  if (sup) {
+    var ks = p.loading ? s.ks : p.cands, w = ks.filter(function(k){ return k.st === WORK_ST; }).length;
+    h += '<div class="kts">' + kTile(t('pCands'), ks.length, '#0d2b50') + kTile(t('pWork'), w, '#15803d') + kTile(t('pOut'), ks.filter(function(k){ return kOut(k.st); }).length, '#64748b') + '</div>';
+    if (isAdm()) { var due = 0, paid = 0; ks.forEach(function(k){ var fee = Number(k.pfee) || Number(p.fee) || 0; if (k.ppaid) paid += fee; else if (k.st === WORK_ST) due += fee; });
+      h += '<div class="box money"><h4>' + t('pCom') + '</h4><div class="s">' + esc(t('pComTxt', { f: p.fee ? eur(p.fee) : '—', p: eur(paid) })) + ' · <b style="color:#b45309">' + t('pDue') + ' ' + eur(due) + '</b></div></div>'; }
+    h += '<h2>' + t('pCandsL') + '<span>' + ks.length + '</span></h2>' + (ks.length ? '<div class="lst kls">' + ks.map(kRow).join('') + '</div>' : '<div class="empty">' + (p.loading ? t('loading') : t('pNoCands')) + '</div>');
+  } else {
+    var es = p.loading ? s.es.map(function(c){ return { n: c.n, s: c.s, c: c.c, w: c.w }; }) : p.emps;
+    h += '<div class="kts">' + kTile(t('pEmps'), es.length, '#6d28d9') + kTile(t('pCands'), s.k, '#0d2b50') + kTile(t('pVisa'), s.v, '#be185d') + '</div>';
+    h += '<h2>' + t('pEmpsL') + '<span>' + es.length + '</span></h2>' + (es.length ? '<div class="lst">' + es.map(function(c){ var col = (STC[c.s] || ['#e2e8f0', '#94a3b8'])[1]; return '<div class="lr" data-n="' + esc(c.n) + '" onclick="closeSheet();openC(this.dataset.n)"><span class="dt" style="background:' + col + '"></span><span class="nm">' + esc(c.n) + '</span>' + pill(c.s) + '<span class="ar">›</span></div>'; }).join('') + '</div>' : '<div class="empty">' + (p.loading ? t('loading') : t('pNoEmps')) + '</div>');
+  }
+  if (p.notes) h += '<div class="box"><h4>' + t('kNotes') + '</h4><div class="notes">' + esc(p.notes) + '</div></div>';
+  h += '<h2>' + t('pFiles') + '<span>' + ((p.files || []).length + (p.photos || []).length) + '</span></h2><div class="box">' +
+    ((p.photos || []).length ? photoGrid(p.photos) : '') + ((p.files || []).length ? p.files.map(function(f){ return fileRow(f, p.id); }).join('') : (p.photos || []).length ? '' : '<div class="s">' + (p.loading ? t('loading') : t('pNoFiles')) + '</div>') +
+    '<div class="upb" style="margin:12px 0 0">' + upLabel('<span>📸</span>' + t('photo').replace('📸 ', ''), 'image/*', 'photo', p.id) + upLabel('<span>📎</span>' + t('doc').replace('📎 ', ''), '', 'doc', p.id) +
+    (p.url ? '<a class="upa" href="' + safeUrl(p.url) + '" target="_blank" rel="noopener"><span>📁</span>Drive</a>' : '<span></span>') + '</div></div>';
+  if (canDel() && !p.loading) h += '<div class="acts" style="margin:12px 16px 30px"><button style="color:#b91c1c" onclick="pDelQ()">' + t('lpDel') + '</button></div>';
+  el('shB').innerHTML = h;
+}
+// ---- ➕ / ✏️
+function pForm(p, type){
+  p = p || {}; var isNew = !p.id, ty = p.t || type || PSEG;
+  var h = '<form id="frm" onsubmit="return pSend(event)"><input type="hidden" name="id" value="' + esc(p.id || '') + '">';
+  if (isNew) h += fld(t('pType'), '<div class="pseg" style="margin:0"><button type="button" id="pt_s" class="' + (ty === 's' ? 'on' : '') + '" onclick="pTy(\'s\')">🧑‍💼 ' + t('pSup1') + '</button><button type="button" id="pt_l" class="' + (ty === 'l' ? 'on' : '') + '" onclick="pTy(\'l\')">⚖️ ' + t('pLaw1') + '</button></div><input type="hidden" name="t" id="pT" value="' + (ty === 'l' ? 'Адвокат' : 'Доставчик') + '">');
+  h += fld(t('pName'), '<input name="n" required autocomplete="off" value="' + esc(p.n || '') + '">');
+  h += half(fld(t('pContact'), '<input name="k" value="' + esc(p.k || '') + '">'), fld(t('pPhone'), '<input name="ph" type="tel" value="' + esc(p.ph || '') + '">'));
+  h += half(fld(t('pEmail'), '<input name="em" type="email" value="' + esc(p.em || '') + '">'), fld(t('pCity'), '<input name="c" value="' + esc(p.c || '') + '">'));
+  h += fld('<span id="pSpL">' + (ty === 'l' ? t('pSpecL') : t('pSpecS')) + '</span>', '<input name="sp" value="' + esc(p.sp || '') + '">');
+  h += half(fld(t('kRate'), '<select name="rt">' + ['', '1', '2', '3', '4', '5'].map(function(x){ return '<option value="' + x + '"' + (String(p.rt || '') === x ? ' selected' : '') + '>' + (x ? '★★★★★'.slice(0, +x) : '—') + '</option>'; }).join('') + '</select>'),
+    fld(t('kRep'), '<select name="rep">' + opts(blank(D.reps), p.rep || (isNew ? D.me : '')) + '</select>'));
+  if (isAdm()) h += '<div id="pFeeB" style="display:' + (ty === 'l' ? 'none' : 'block') + '">' + fld(t('pFee'), '<input name="fee" inputmode="decimal" value="' + esc(p.fee === undefined ? '' : p.fee) + '" placeholder="0">') + '</div>';
+  h += fld(t('kNotes'), '<textarea name="notes" rows="4">' + esc(p.notes || '') + '</textarea>');
+  h += '<button class="save" id="sv">' + t('save') + '</button></form>';
+  openSheet(isNew ? (ty === 'l' ? t('pNewLaw') : t('pNewSup')) : '✏️ ' + p.n, h);
+}
+function pTy(x){ el('pT').value = x === 'l' ? 'Адвокат' : 'Доставчик'; el('pt_s').className = x === 's' ? 'on' : ''; el('pt_l').className = x === 'l' ? 'on' : ''; el('pSpL').textContent = x === 'l' ? t('pSpecL') : t('pSpecS'); var f = el('pFeeB'); if (f) f.style.display = x === 'l' ? 'none' : 'block'; }
+function pSend(e){
+  e.preventDefault(); var d = formData(); if (!d.id) delete d.id; svState(true);
+  google.script.run.withSuccessHandler(function(x){ pLocal(x); PC = x; toast(t('pSaved')); PSEG = x.t; ls('et_pseg', x.t); openSheet('', ''); pDraw(); draw(); })
+    .withQueued(function(){ queued(); })
+    .withFailureHandler(function(er){ svState(false); err(er); }).savePartner(d);
+  return false;
+}
+function pDelQ(){
+  var p = PC; if (!p || !confirm(t('pDelQ', { n: p.n }))) return;
+  D.partners = pList().filter(function(x){ return x.id !== p.id; }); closeSheet(); draw(); toast(t('deleted') + p.n);
+  google.script.run.withSuccessHandler(function(){}).withFailureHandler(function(e){ err(e); load(); }).pDel(p.id);
+}
+// ================= v3.1 · 🔲 Карти вместо бутони =================
+function tl(ic, lab, act, bg, cls){
+  var a = /^href=/.test(act || ''), tag = a ? 'a' : 'button';
+  return '<' + tag + ' class="tl' + (cls ? ' ' + cls : '') + '" ' + (act || '') + (a ? ' rel="noopener"' : ' type="button"') + '><i' + (bg ? ' style="background:' + bg + '"' : '') + '>' + ic + '</i><b>' + esc(lab) + '</b></' + tag + '>';
+}
+function tiles(h, cls){ return h ? '<div class="tls' + (cls ? ' ' + cls : '') + '">' + h + '</div>' : ''; }
+function telT(p){
+  var d = intl(p); if (!p || d.length < 6) return '';
+  return tl('📞', t('tlCall'), 'href="tel:+' + d + '"', '#e0f2fe') + tl('🟢', 'WhatsApp', 'href="whatsapp://send?phone=' + d + '"', '#dcfce7') + tl('💜', 'Viber', 'href="viber://chat?number=%2B' + d + '"', '#ede9fe');
+}
+// Начален екран: големи карти за бързи действия + броячи
+function qTile(ic, ti, sub, act, cls, bg){ return '<button type="button" class="qt' + (cls ? ' ' + cls : '') + '" onclick="' + act + '"><i' + (bg ? ' style="background:' + bg + '"' : '') + '>' + ic + '</i><b>' + esc(ti) + '</b><small>' + esc(sub) + '</small></button>'; }
+function kTile(l, v, col, act){ return '<button type="button" class="kt"' + (act ? ' onclick="' + act + '"' : '') + '><span>' + l + '</span><b style="color:' + col + '">' + v + '</b></button>'; }
+function homeTiles(now){
+  var late = now.filter(function(x){ return x.date < D.today; }).length, docs = (D.cands || []).filter(function(k){ return kWarn(k) && kMine(k); }).length;
+  return '<div class="qts">' + qTile('📋', t('qtTask'), t('qtTaskS'), 'openForm()', 'pri') + qTile('👷', t('qtCand'), t('qtCandS'), 'kForm()', '', '#e0f2fe') +
+    qTile('🏢', t('qtEmp'), t('qtEmpS'), 'openForm()', '', '#ede9fe') + qTile('🤝', t('qtPart'), t('qtPartS'), 'pForm()', '', '#dcfce7') + '</div>' +
+    '<div class="kts">' + kTile(t('kpToday'), now.length - late, '#c2410c') + kTile(t('kpLate'), late, '#b91c1c') + kTile(t('kpDocs'), docs, '#be185d', docs ? "tab('k')" : '') + '</div>';
+}
+// ＋ плаващ бутон – според раздела
+function fabSet(){
+  var b = el('fab'); if (!b) return;
+  var on = D && ['c', 'k', 'p'].indexOf(TAB) > -1 && !(KSEL && TAB === 'k');
+  b.style.display = on ? 'flex' : 'none';
+}
+function fabGo(){ if (TAB === 'c') openForm(); else if (TAB === 'k') kForm(); else if (TAB === 'p') pForm(null, PSEG); }
+// ================= v3.1 · 🇧🇬 / 🇹🇷 =================
+Object.assign(I.bg, { tabP:'🤝 Партньори', pSup:'Доставчици', pLaw:'Адвокати', pSupL:'Доставчици на работници', pLawL:'Адвокати', pSup1:'Доставчик на работници', pLaw1:'Адвокат',
+  pQ:'🔎 Търси партньор: име, държава, телефон…', pNone:'Няма партньори', pNewSup:'➕ Нов доставчик', pNewLaw:'➕ Нов адвокат', pCands:'Кандидати', pWork:'Работят', pDue:'Дължимо', pActive:'Активни',
+  pOut:'Отказани', pEmps:'Работодатели', pVisa:'Във виза', pCom:'💶 Комисион', pComTxt:'На кандидат: {f} · Платено: {p}', pCandsL:'Изпратени кандидати', pEmpsL:'Работодатели', pFiles:'📎 Файлове и договори',
+  pNoCands:'Още няма кандидати от този партньор.', pNoEmps:'Още няма работодатели с този адвокат.', pNoFiles:'Няма файлове – договор, лиценз, ценоразпис…',
+  pType:'Вид', pName:'Име / фирма *', pContact:'Лице за контакт', pPhone:'Телефон / WhatsApp', pEmail:'Имейл', pCity:'Държава / град', pSpecS:'Какви работници / бележка', pSpecL:'Специалност (разрешения, визи…)',
+  pFee:'💶 Комисион на кандидат (€)', pSaved:'✅ Партньорът е записан', pDelQ:'Да изтрия ли партньора „{n}“?\nКандидатите и работодателите остават, записът отива в „🗑️ Изтрити“.', fSrcL:'🤝 Партньор',
+  tlCall:'Звънни', tlEmail:'Имейл', tlEdit:'Промени', tlTask:'Задача', tlCand:'Кандидат', tlLink:'Линк', tlWa:'Шаблон', tlMore:'Още', tlDone:'Готово', tlEmp:'Фирма', tlPart:'Партньор',
+  qtTask:'Нова задача', qtTaskS:'Обаждане, среща…', qtCand:'Нов кандидат', qtCandS:'Снимки, паспорт, CV', qtEmp:'Нов работодател', qtEmpS:'Фирма + първа задача', qtPart:'Нов партньор', qtPartS:'Доставчик / адвокат',
+  kpToday:'🔔 Днес', kpLate:'⚠️ Просрочени', kpDocs:'🛂 Документи' });
+Object.assign(I.tr, { tabP:'🤝 Partnerler', pSup:'Tedarikçiler', pLaw:'Avukatlar', pSupL:'İşçi tedarikçileri', pLawL:'Avukatlar', pSup1:'İşçi tedarikçisi', pLaw1:'Avukat',
+  pQ:'🔎 Partner ara: isim, ülke, telefon…', pNone:'Partner yok', pNewSup:'➕ Yeni tedarikçi', pNewLaw:'➕ Yeni avukat', pCands:'Aday', pWork:'Çalışıyor', pDue:'Borç', pActive:'Aktif',
+  pOut:'Reddedilen', pEmps:'İşveren', pVisa:'Vizede', pCom:'💶 Komisyon', pComTxt:'Aday başı: {f} · Ödenen: {p}', pCandsL:'Gönderdiği adaylar', pEmpsL:'İşverenler', pFiles:'📎 Dosyalar ve sözleşmeler',
+  pNoCands:'Bu partnerden henüz aday yok.', pNoEmps:'Bu avukatla henüz işveren yok.', pNoFiles:'Dosya yok – sözleşme, lisans, fiyat listesi…',
+  pType:'Tür', pName:'İsim / firma *', pContact:'Yetkili kişi', pPhone:'Telefon / WhatsApp', pEmail:'E-posta', pCity:'Ülke / şehir', pSpecS:'Hangi işçiler / not', pSpecL:'Uzmanlık (izin, vize…)',
+  pFee:'💶 Aday başı komisyon (€)', pSaved:'✅ Partner kaydedildi', pDelQ:'"{n}" partneri silinsin mi?\nAdaylar ve işverenler kalır, kayıt "🗑️ Изтрити" sayfasına gider.', fSrcL:'🤝 Partner',
+  tlCall:'Ara', tlEmail:'E-posta', tlEdit:'Düzenle', tlTask:'Görev', tlCand:'Aday', tlLink:'Link', tlWa:'Şablon', tlMore:'Daha', tlDone:'Tamam', tlEmp:'Firma', tlPart:'Partner',
+  qtTask:'Yeni görev', qtTaskS:'Arama, toplantı…', qtCand:'Yeni aday', qtCandS:'Foto, pasaport, CV', qtEmp:'Yeni işveren', qtEmpS:'Firma + ilk görev', qtPart:'Yeni partner', qtPartS:'Tedarikçi / avukat',
+  kpToday:'🔔 Bugün', kpLate:'⚠️ Gecikmiş', kpDocs:'🛂 Belge' });
 var PENDOPEN = null;
 try { (function(){ var q = new URLSearchParams(location.search), c = q.get('c'), k = q.get('k'); if (c || k) { PENDOPEN = { c: c || '', k: k || '' }; history.replaceState(null, '', location.pathname); } })(); } catch (e) {}
 function pendOpen(){

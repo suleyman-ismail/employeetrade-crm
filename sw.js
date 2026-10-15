@@ -1,6 +1,6 @@
 // Employeetrade CRM – кешира интерфейса, за да се отваря веднага (данните идват от API-то)
 // ⚠️ Flexi CRM е на същия адрес (suleyman-ismail.github.io) – трием САМО нашите стари кешове (et-crm-*)
-const CACHE = 'et-crm-v30';
+const CACHE = 'et-crm-v31';
 const SHELL = ['./', 'index.html', 'f.html', 'manifest.webmanifest', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: 'reload' }))))); self.skipWaiting(); });
 self.addEventListener('activate', e => {
